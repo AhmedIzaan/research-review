@@ -1,0 +1,218 @@
+[
+  {
+    "paper_id": "2024.acl-long.71",
+    "title": "Grounding Language Model with Chunking-Free In-Context Retrieval",
+    "authors": [
+      "Hongjin Qian",
+      "Zheng Liu",
+      "Kelong Mao",
+      "Yujia Zhou",
+      "Zhicheng Dou"
+    ],
+    "year": 2024,
+    "abstract": "This paper presents a novel Chunking-Free In-Context (CFIC) retrieval approach, specifically tailored for Retrieval-Augmented Generation (RAG) systems. Traditional RAG systems often struggle with grounding responses using precise evidence text due to the challenges of processing lengthy documents and filtering out irrelevant content. Commonly employed solutions, such as document chunking and adapting language models to handle longer contexts, have their limitations. These methods either disrupt the semantic coherence of the text or fail to effectively address the issues of noise and inaccuracy in evidence retrieval.The CFIC approach addresses these challenges by circumventing the conventional chunking process. It utilizes the encoded hidden states of documents for in-context retrieval, employing auto-aggressive decoding to accurately identify the specific evidence text required for user queries, eliminating the need for chunking. CFIC is further enhanced by incorporating two innovative decoding strategies, namely Constrained Sentence Prefix Decoding and Skip Decoding. These strategies not only improve the efficiency of the retrieval process but also ensure that the fidelity of the generated grounding text evidence is maintained.Our evaluations of CFIC on a range of open question answering datasets demonstrate its superiority in retrieving relevant and accurate information, offering a significant improvement over traditional methods. By doing away with the need for document chunking, CFIC presents a more streamlined, effective, and efficient retrieval solution, making it a valuable advancement in the field of RAG systems.",
+    "url": "https://aclanthology.org/2024.acl-long.71/",
+    "doi": "10.18653/v1/2024.acl-long.71",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2024.acl-long.668",
+    "title": "Transferable and Efficient Non-Factual Content Detection via Probe Training with Offline Consistency Checking",
+    "authors": [
+      "Xiaokang Zhang",
+      "Zijun Yao",
+      "Jing Zhang",
+      "Kaifeng Yun",
+      "Jifan Yu",
+      "Juanzi Li",
+      "Jie Tang"
+    ],
+    "year": 2024,
+    "abstract": "This paper proposes PiNose, which trains a probing model on offline self-consistency checking results, thereby circumventing the need for human-annotated data and achieving transferability across diverse data distributions. As the consistency check process is offline, PiNose reduces the computational burden of generating multiple responses by online consistency verification. Additionally, it examines various aspects of internal states prior to response decoding, contributing to more effective detection of factual inaccuracies. Experiment results on both factuality detection and question answering benchmarks show that PiNose achieves surpassing results than existing factuality detection methods.",
+    "url": "https://aclanthology.org/2024.acl-long.668/",
+    "doi": "10.18653/v1/2024.acl-long.668",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2025.naacl-long.509",
+    "title": "Self-calibration for Language Model Quantization and Pruning",
+    "authors": [
+      "Miles Williams",
+      "George Chrysostomou",
+      "Nikolaos Aletras"
+    ],
+    "year": 2025,
+    "abstract": "Quantization and pruning are fundamental approaches for model compression, enabling efficient inference for language models. In a post-training setting, state-of-the-art quantization and pruning methods require calibration data, a small set of unlabeled examples. Conventionally, this is randomly sampled web text, aiming to reflect the model training data. However, this poses two key problems: (1) unrepresentative calibration examples can harm model performance, and (2) organizations increasingly avoid releasing model training data. In this paper, we propose self-calibration as a solution. Our approach requires no external data, instead leveraging the model itself to generate synthetic calibration data, with a view to better approximating the pre-training data distribution. We extensively compare the performance of self-calibration with several baselines, across a variety of models, compression methods, and tasks. Our approach proves consistently competitive in maximizing downstream task performance, frequently outperforming even using real data.",
+    "url": "https://aclanthology.org/2025.naacl-long.509/",
+    "doi": "10.18653/v1/2025.naacl-long.509",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.777Z"
+  },
+  {
+    "paper_id": "2024.acl-long.406",
+    "title": "Can LLMs Reason with Rules? Logic Scaffolding for Stress-Testing and Improving LLMs",
+    "authors": [
+      "Siyuan Wang",
+      "Zhongyu Wei",
+      "Yejin Choi",
+      "Xiang Ren"
+    ],
+    "year": 2024,
+    "abstract": "Large language models (LLMs) have achieved impressive human-like performance across various reasoning tasks. However, their mastery of underlying inferential rules still falls short of human capabilities. To investigate this, we propose a logic scaffolding inferential rule generation framework, to construct an inferential rule base, ULogic, comprising both primitive and compositional rules across five domains. Our analysis of GPT-series models over a rule subset reveals significant gaps in LLMs’ logic understanding compared to human performance, especially in compositional and structural complex rules with certain bias patterns. We further distill these rules into a smaller-scale inference engine for flexible rule generation and enhancing downstream reasoning. Through a multi-judger evaluation, our inference engine proves effective in generating accurate, complex and abstract conclusions and premises, and improve various commonsense reasoning tasks. Overall, our work sheds light on LLMs’ limitations in grasping inferential rule and suggests ways to enhance their logical reasoning abilities .",
+    "url": "https://aclanthology.org/2024.acl-long.406/",
+    "doi": "10.18653/v1/2024.acl-long.406",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2024.acl-long.174",
+    "title": "UniBridge: A Unified Approach to Cross-Lingual Transfer Learning for Low-Resource Languages",
+    "authors": [
+      "Trinh Pham",
+      "Khoi Le",
+      "Anh Tuan Luu"
+    ],
+    "year": 2024,
+    "abstract": "In this paper, we introduce UniBridge (Cross-Lingual Transfer Learning with Optimized Embeddings and Vocabulary), a comprehensive approach developed to improve the effectiveness of Cross-Lingual Transfer Learning, particularly in languages with limited resources. Our approach tackles two essential elements of a language model: the initialization of embeddings and the optimal vocabulary size. Specifically, we propose a novel embedding initialization method that leverages both lexical and semantic alignment for a language. In addition, we present a method for systematically searching for the optimal vocabulary size, ensuring a balance between model complexity and linguistic coverage. Our experiments across multilingual datasets show that our approach greatly improves the F1-Score in several languages. UniBridge is a robust and adaptable solution for cross-lingual systems in various languages, highlighting the significance of initializing embeddings and choosing the right vocabulary size in cross-lingual environments.",
+    "url": "https://aclanthology.org/2024.acl-long.174/",
+    "doi": "10.18653/v1/2024.acl-long.174",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2024.acl-long.288",
+    "title": "UHGEval: Benchmarking the Hallucination of Chinese Large Language Models via Unconstrained Generation",
+    "authors": [
+      "Xun Liang",
+      "Shichao Song",
+      "Simin Niu",
+      "Zhiyu Li",
+      "Feiyu Xiong",
+      "Bo Tang",
+      "Yezhaohui Wang",
+      "Dawei He",
+      "Cheng Peng",
+      "Zhonghao Wang",
+      "Haiying Deng"
+    ],
+    "year": 2024,
+    "abstract": "Large language models (LLMs) produce hallucinated text, compromising their practical utility in professional contexts. To assess the reliability of LLMs, numerous initiatives have developed benchmark evaluations for hallucination phenomena. However, they often employ constrained generation techniques to produce the evaluation dataset due to cost and time limitations. For instance, this may involve employing directed hallucination induction or deliberately modifying authentic text to generate hallucinations. These are not congruent with the unrestricted text generation demanded by real-world applications. Furthermore, a well-established Chinese-language dataset dedicated to the evaluation of hallucinations is presently lacking. Consequently, we have developed an Unconstrained Hallucination Generation Evaluation (UHGEval) benchmark, containing hallucinations generated by LLMs with minimal restrictions. Concurrently, we have established a comprehensive benchmark evaluation framework to aid subsequent researchers in undertaking scalable and reproducible experiments. We have also evaluated prominent Chinese LLMs and the GPT series models to derive insights regarding hallucination.",
+    "url": "https://aclanthology.org/2024.acl-long.288/",
+    "doi": "10.18653/v1/2024.acl-long.288",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2025.naacl-long.491",
+    "title": "Grounding Fallacies Misrepresenting Scientific Publications in Evidence",
+    "authors": [
+      "Max Glockner",
+      "Yufang Hou",
+      "Preslav Nakov",
+      "Iryna Gurevych"
+    ],
+    "year": 2025,
+    "abstract": "Health-related misinformation claims often falsely cite a credible biomedical publication as evidence. These publications only superficially seem to support the false claim, when logical fallacies are applied. In this work, we aim to detect and to highlight such fallacies, which requires assessing the exact content of the misrepresented publications. To achieve this, we introduce MissciPlus, an extension of the fallacy detection dataset Missci. MissciPlus extends Missci by grounding the applied fallacies in real-world passages from misrepresented studies. This creates a realistic test-bed for detecting and verbalizing fallacies under real-world input conditions, and enables new and realistic passage-retrieval tasks. MissciPlus is the first logical fallacy dataset which pairs the real-world misrepresented evidence with incorrect claims, identical to the input to evidence-based fact-checking models. With MissciPlus, we i) benchmark retrieval models in identifying passages that support claims only with fallacious reasoning, ii) evaluate how well LLMs verbalize fallacious reasoning based on misrepresented scientific passages, and iii) assess the effectiveness of fact-checking models in refuting claims that misrepresent biomedical research. Our findings show that current fact-checking models struggle to use misrepresented scientific passages to refute misinformation. Moreover, these passages can mislead LLMs into accepting false claims as true.",
+    "url": "https://aclanthology.org/2025.naacl-long.491/",
+    "doi": "10.18653/v1/2025.naacl-long.491",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.777Z"
+  },
+  {
+    "paper_id": "2024.acl-long.586",
+    "title": "The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models",
+    "authors": [
+      "Junyi Li",
+      "Jie Chen",
+      "Ruiyang Ren",
+      "Xiaoxue Cheng",
+      "Wayne Xin Zhao",
+      "Jian-Yun Nie",
+      "Ji-Rong Wen"
+    ],
+    "year": 2024,
+    "abstract": "In the era of large language models (LLMs), hallucination (the tendency to generate factually incorrect content) poses great challenges to trustworthy and reliable deployment of LLMs in real-world applications. To tackle the hallucination, three key questions should be well studied: how to detect hallucinations (detection), why do LLMs hallucinate (source), and what can be done to mitigate them (mitigation). To address these challenges, this work presents a systematic empirical study on LLM hallucinations, focused on the three aspects of hallucination detection, source and mitigation. Specially, we construct a new hallucination benchmark HaluEval 2.0, and design a simple yet effective detection method for LLM hallucinations. Furthermore, we zoom into the different training or utilization stages of LLMs and extensively analyze the potential factors that lead to the LLM hallucinations. Finally, we implement and examine a series of widely used techniques to mitigate the hallucinations in LLMs. Our work has led to several important findings to understand the hallucination origin and mitigate the hallucinations in LLMs.",
+    "url": "https://aclanthology.org/2024.acl-long.586/",
+    "doi": "10.18653/v1/2024.acl-long.586",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2024.acl-long.544",
+    "title": "On the Impact of Calibration Data in Post-training Quantization and Pruning",
+    "authors": [
+      "Miles Williams",
+      "Nikolaos Aletras"
+    ],
+    "year": 2024,
+    "abstract": "Quantization and pruning form the foundation of compression for neural networks, enabling efficient inference for large language models (LLMs). Recently, various quantization and pruning techniques have demonstrated remarkable performance in a post-training setting. They rely upon calibration data, a small set of unlabeled examples that are used to generate layer activations. However, no prior work has systematically investigated how the calibration data impacts the effectiveness of model compression methods. In this paper, we present the first extensive empirical study on the effect of calibration data upon LLM performance. We trial a variety of quantization and pruning methods, datasets, tasks, and models. Surprisingly, we find substantial variations in downstream task performance, contrasting existing work that suggests a greater level of robustness to the calibration data. Finally, we make a series of recommendations for the effective use of calibration data in LLM quantization and pruning.",
+    "url": "https://aclanthology.org/2024.acl-long.544/",
+    "doi": "10.18653/v1/2024.acl-long.544",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  },
+  {
+    "paper_id": "2025.naacl-long.420",
+    "title": "GroundCocoa: A Benchmark for Evaluating Compositional & Conditional Reasoning in Language Models",
+    "authors": [
+      "Harsh Kohli",
+      "Sachin Kumar",
+      "Huan Sun"
+    ],
+    "year": 2025,
+    "abstract": "The rapid progress of large language models (LLMs) has seen them excel and frequently surpass human performance on standard benchmarks. This has enabled many downstream applications, such as LLM agents, to rely on their reasoning to address complex task requirements. However, LLMs are known to unexpectedly falter in simple tasks and under seemingly straightforward circumstances - underscoring the need for better and more diverse evaluation setups to measure their true capabilities. To this end, we choose to study compositional and conditional reasoning, two aspects that are central to human cognition, and introduce GroundCocoa - a lexically diverse benchmark connecting these reasoning skills to the real-world problem of flight booking. Our task involves aligning detailed user preferences with available flight options presented in a multiple-choice format. Results indicate a significant disparity in performance among current state-of-the-art LLMs with even the best performing model, GPT-4 Turbo, not exceeding 67% accuracy despite advanced prompting techniques.",
+    "url": "https://aclanthology.org/2025.naacl-long.420/",
+    "doi": "10.18653/v1/2025.naacl-long.420",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.777Z"
+  },
+  {
+    "paper_id": "2025.naacl-short.8",
+    "title": "Cross-lingual Transfer of Reward Models in Multilingual Alignment",
+    "authors": [
+      "Jiwoo Hong",
+      "Noah Lee",
+      "Rodrigo Martínez-Castaño",
+      "César Rodríguez",
+      "James Thorne"
+    ],
+    "year": 2025,
+    "abstract": "Reinforcement learning with human feedback (RLHF) is shown to largely benefit from precise reward models (RMs). However, recent studies in reward modeling schemes are skewed towards English, limiting the applicability of RLHF in multilingual alignments. In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English. Our experimental results demonstrate the strong cross-lingual transfer of English RMs, exceeding target language RMs by 3~4% average increase in Multilingual RewardBench. Furthermore, we analyze the cross-lingual transfer of RMs through the representation shifts. Finally, we perform multilingual alignment to exemplify how cross-lingual transfer in RM propagates to enhanced multilingual instruction-following capability.",
+    "url": "https://aclanthology.org/2025.naacl-short.8/",
+    "doi": "10.18653/v1/2025.naacl-short.8",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.777Z"
+  },
+  {
+    "paper_id": "2024.acl-long.624",
+    "title": "AlignBench: Benchmarking Chinese Alignment of Large Language Models",
+    "authors": [
+      "Xiao Liu",
+      "Xuanyu Lei",
+      "Shengyuan Wang",
+      "Yue Huang",
+      "Andrew Feng",
+      "Bosi Wen",
+      "Jiale Cheng",
+      "Pei Ke",
+      "Yifan Xu",
+      "Weng Lam Tam",
+      "Xiaohan Zhang",
+      "Lichao Sun",
+      "Xiaotao Gu",
+      "Hongning Wang",
+      "Jing Zhang",
+      "Minlie Huang",
+      "Yuxiao Dong",
+      "Jie Tang"
+    ],
+    "year": 2024,
+    "abstract": "Alignment has become a critical step for instruction-tuned Large Language Models (LLMs) to become helpful assistants. However, effective evaluation of alignment for emerging Chinese LLMs is still significantly lacking, calling for real-scenario grounded, open-ended, challenging and automatic evaluations tailored for alignment. To fill in this gap, we introduce AlignBench, a comprehensive multi-dimensional benchmark for evaluating LLMs’ alignment in Chinese. We tailor a human-in-the-loop data curation pipeline, containing 8 main categories, 683 real-scenario rooted queries and corresponding human verified references.To ensure references’ correctness, each knowledge-intensive query is accompanied with evidences collected from reliable webpages (including the url and quotation) by our annotators.For automatic evaluation, our benchmark employs a rule-calibrated multi-dimensional LLM-as-Judge (CITATION) with Chain-of-Thought to generate explanations and final ratings as evaluations, ensuring high reliability and interpretability.All evaluation codes and data are publicly available at https://github.com/THUDM/AlignBench",
+    "url": "https://aclanthology.org/2024.acl-long.624/",
+    "doi": "10.18653/v1/2024.acl-long.624",
+    "source": "ACL Anthology official XML snapshot",
+    "retrieved_at": "2026-11-08T10:49:42.409Z"
+  }
+]

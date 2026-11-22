@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-11-14T14:15:10.618758+00:00",
+  "python_passed": 108,
+  "python_skipped": 2,
+  "python_failures": 0,
+  "javascript_tests_passed": 11,
+  "javascript_test_method": "Node pure helpers and minimal DOM interaction harness; not a browser",
+  "javascript_syntax": "passed for app.js, trace-model.js and trace-view.js",
+  "html_integrity": "unique IDs, literal app targets and linked assets checked",
+  "protected_experiment_files_unchanged": 331,
+  "new_model_calls": 0,
+  "browser_visual_verification": "Unavailable: Chrome startup was blocked in this restricted shell during app development."
+}

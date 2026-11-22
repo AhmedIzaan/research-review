@@ -1,0 +1,162 @@
+[
+  {
+    "paper_id": "2025.naacl-long.342",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S01.txt",
+    "sha256": "7e4d01811d3f39edbfa3dd1e750828d39cb4c91cb0d1b930c436aaa5487e77ea",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2024.acl-long.18",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S02.txt",
+    "sha256": "f6f7bf0e4e7352333632e058e7b7205cdce5b4f27d9e1fe9d66d74a7dea68685",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2024.findings-acl.804",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S03.txt",
+    "sha256": "49a9da6a7357a10c6f53b672fda6fd3adb12643e643f7be4b240dcdf54c2328d",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.acl-long.1368",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S11.txt",
+    "sha256": "a4bfeb22cb316e9ee09d78440da5e68b8a26e94ed15ae4499ab72667ce57f8d0",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.667",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S12.txt",
+    "sha256": "d2cfce4bb4e792b6b137ddcc8602b3e80c7bf5f961daea05839eba122cad29a0",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.631",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S13.txt",
+    "sha256": "c665a0fad4ec5421aadfe288e78b3022d9c7d2e63f3de94d0ff4aceb3fa03ef3",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.emnlp-main.1704",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S14.txt",
+    "sha256": "d034d827ed55206b54e3030b33b28826c12ec652b089af69ee452df40e1b0983",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.1120",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S15.txt",
+    "sha256": "de63324ee88b189bbefe0210205a00ecac46e93108872086521779abb773fa29",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.sigdial-1.26",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S17.txt",
+    "sha256": "b640146e4a41b89b00861e42491072204439fa67e3ff516172f678c2e9aba7c6",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.acl-demo.57",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S18.txt",
+    "sha256": "b88a57e557628d586cf6c252ae7eb70e4be5f5a337c8c39d9809a4d6313c7f1a",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.477",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S19.txt",
+    "sha256": "f69e6add7f6c47eb99030841ef52d775af08e07174d51240805be7f751bc88eb",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2025.sdp-1.9",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/S20_published.txt",
+    "sha256": "7cbce28884eb1b42875723b83a9b71c38ff8d3ef5fe4206fac3bc5d224ec39ec",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed conference/workshop proceedings; official publisher record verified"
+  },
+  {
+    "paper_id": "2026.emnlp-main.167",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P003.txt",
+    "sha256": "76684a65b6bf16a75db82d7c4484d88cdab25dcda638c668e0540e0fb5a6b3bb",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  },
+  {
+    "paper_id": "2026.emnlp-main.688",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P008.txt",
+    "sha256": "206e5149bd657adf6f0853464a54d14afc5373505c1861837c183d080593d653",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  },
+  {
+    "paper_id": "2025.emnlp-main.1292",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P009.txt",
+    "sha256": "b9345e5fd15c57cef4cbddfb52495812461de779d88d54b8cfc933cd81f542fa",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  },
+  {
+    "paper_id": "2026.findings-emnlp.574",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P069.txt",
+    "sha256": "41981c3c4eb61c0a46ad501073dd6733b72a650ca71241aeb2380d697464fa8f",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  },
+  {
+    "paper_id": "2026.acl-long.1984",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P083.txt",
+    "sha256": "89d1ba458699cd1db17da46625b7414d31fc925928f0b553dacf23cc9ccc86d3",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed publication; official publisher/proceedings or PubMed record verified"
+  },
+  {
+    "paper_id": "2026.lrec-1.370",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P077.txt",
+    "sha256": "985b2e83c6d5aa719719e46e50d66c58d1a6c5a50d45cb61fde039212b1f87ce",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  },
+  {
+    "paper_id": "2026.acl-long.85",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P103.txt",
+    "sha256": "67d767a1707d57447a11e988fcaea145d99fd704f22b43c94a2638c7d184e6cc",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  },
+  {
+    "paper_id": "2024.hcinlp-1.6",
+    "source_capture": "outputs/mg3010-a2-final/fulltext/P126.txt",
+    "sha256": "b18490ec229a91328d395191701a79f1510cbc1ee8d42b8aac50f6fd14c25e1b",
+    "timestamp_note": "Date from existing review provenance; exact retrieval time not recorded in this import.",
+    "processing": "Extract Abstract to Introduction, remove capture line/page prefixes and PDF soft-hyphen control character, join whitespace.",
+    "version_note": "Peer-reviewed proceedings; official publication record verified"
+  }
+]

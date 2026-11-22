@@ -1,0 +1,88 @@
+{
+  "query": "latent probing llm novelty judgment",
+  "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "retrieved_at": "2026-11-08T11:29:05.949009+00:00",
+  "papers": [
+    {
+      "paper_id": "2026.findings-emnlp.574",
+      "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+      "authors": [
+        "Tim Schopf",
+        "Tobias Schreieder",
+        "Akiko Aizawa"
+      ],
+      "year": 2026,
+      "abstract": "Automated novelty judgment can accelerate scientific discovery by enabling efficient evaluation, refinement, and comparison of research ideas. While large language models are increasingly adopted for this task, we investigate a previously overlooked limitation in their judgment capabilities: despite generating reasoning rationales that closely mirror those of human experts, their final novelty judgments often diverge substantially. We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response. Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+      "url": "https://aclanthology.org/2026.findings-emnlp.574/",
+      "doi": "10.18653/2026.findings-emnlp.574",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2026.lrec-1.370",
+      "title": "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+      "authors": [
+        "Tim Schopf",
+        "Michael Färber"
+      ],
+      "year": 2026,
+      "abstract": "Judging the novelty of research ideas is crucial for advancing science, enabling the identification of unexplored directions, and ensuring contributions meaningfully extend existing knowledge rather than reiterate minor variations. However, given the exponential growth of scientific literature, manually judging the novelty of research ideas through literature reviews is labor-intensive, subjective, and infeasible at scale. Therefore, recent efforts have proposed automated approaches for research idea novelty judgment. Yet, evaluation of these approaches remains largely inconsistent and is typically based on non-standardized human evaluations, hindering large-scale, comparable evaluations. To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments. It comprises 1,381 research ideas derived from and judged by human experts as well as nine automated evaluation metrics designed to assess both rubric-based novelty scores and textual justifications of novelty judgments. Using this benchmark, we evaluate several state-of-the-art large language models (LLMs) on their ability to judge the novelty of research ideas. Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models. Data and code available at: https://github.com/TimSchopf/RINoBench. Keywords: research idea novelty judgment, evaluation benchmark, scientific discovery, llm-as-a-judge",
+      "url": "https://aclanthology.org/2026.lrec-1.370/",
+      "doi": "10.63317/4c3gy3f7epnj",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2024.acl-long.146",
+      "title": "MELA: Multilingual Evaluation of Linguistic Acceptability",
+      "authors": [
+        "Ziyin Zhang",
+        "Yikang Liu",
+        "Weifang Huang",
+        "Junyu Mao",
+        "Rui Wang",
+        "Hai Hu"
+      ],
+      "year": 2024,
+      "abstract": "In this work, we present the largest benchmark to date on linguistic acceptability: Multilingual Evaluation of Linguistic Acceptability—MELA, with 46K samples covering 10 languages from a diverse set of language families. We establish LLM baselines on this benchmark, and investigate cross-lingual transfer in acceptability judgements with XLM-R. In pursuit of multilingual interpretability, we conduct probing experiments with fine-tuned XLM-R to explore the process of syntax capability acquisition. Our results show that GPT-4o exhibits a strong multilingual ability, outperforming fine-tuned XLM-R, while open-source multilingual models lag behind by a noticeable gap. Cross-lingual transfer experiments show that transfer in acceptability judgment is non-trivial: 500 Icelandic fine-tuning examples lead to 23 MCC performance in a completely unrelated language—Chinese. Results of our probing experiments indicate that training on MELA improves the performance of XLM-R on syntax-related tasks.",
+      "url": "https://aclanthology.org/2024.acl-long.146/",
+      "doi": "10.18653/v1/2024.acl-long.146",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.sdp-1.9",
+      "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+      "authors": [
+        "Simra Shahid",
+        "Marissa Radensky",
+        "Raymond Fok",
+        "Pao Siangliulue",
+        "Daniel S Weld",
+        "Tom Hope"
+      ],
+      "year": 2025,
+      "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+      "url": "https://aclanthology.org/2025.sdp-1.9/",
+      "doi": "10.18653/v1/2025.sdp-1.9",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    },
+    {
+      "paper_id": "2024.acl-short.31",
+      "title": "What Does Parameter-free Probing Really Uncover?",
+      "authors": [
+        "Tommi Buder-Gröndahl"
+      ],
+      "year": 2024,
+      "abstract": "Supervised approaches to probing large language models (LLMs) have been criticized of using pre-defined theory-laden target labels. As an alternative, parameter-free probing constructs structural representations bottom-up via information derived from the LLM alone. This has been suggested to capture a genuine “LLM-internal grammar”. However, its relation to familiar linguistic formalisms remains unclear. I extend prior work on a parameter-free probing technique called perturbed masking applied to BERT, by comparing its results to the Universal Dependencies (UD) formalism for English. The results highlight several major discrepancies between BERT and UD, which lack correlates in linguistic theory. This raises the question of whether human grammar is the correct analogy to interpret BERT in the first place.",
+      "url": "https://aclanthology.org/2024.acl-short.31/",
+      "doi": "10.18653/v1/2024.acl-short.31",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    }
+  ],
+  "status": "ok",
+  "error": null,
+  "cache_hit": false
+}

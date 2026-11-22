@@ -1,0 +1,78 @@
+{
+  "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "paper_count": 2114,
+  "queries": [
+    {
+      "query": "ResearchAgent iterative research idea generation scientific literature large language models",
+      "status": "ok",
+      "paper_ids": [
+        "2025.naacl-long.342",
+        "2025.sdp-1.9",
+        "2025.findings-emnlp.477",
+        "2025.emnlp-main.1292",
+        "2024.acl-long.18"
+      ],
+      "titles": [
+        "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+        "Literature-Grounded Novelty Assessment of Scientific Ideas",
+        "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
+        "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+        "SciMON: Scientific Inspiration Machines Optimized for Novelty"
+      ]
+    },
+    {
+      "query": "SciMON Scientific Inspiration Machines Optimized for Novelty",
+      "status": "ok",
+      "paper_ids": [
+        "2024.acl-long.18",
+        "2025.sdp-1.9",
+        "2026.lrec-1.370",
+        "2026.findings-emnlp.574",
+        "2025.sigdial-1.26"
+      ],
+      "titles": [
+        "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+        "Literature-Grounded Novelty Assessment of Scientific Ideas",
+        "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+        "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+        "Exploring the Design of Multi-Agent LLM Dialogues for Research Ideation"
+      ]
+    },
+    {
+      "query": "research idea novelty feasibility adversarial review",
+      "status": "ok",
+      "paper_ids": [
+        "2025.findings-emnlp.667",
+        "2025.sdp-1.9",
+        "2026.emnlp-main.167",
+        "2025.sigdial-1.26",
+        "2026.lrec-1.370"
+      ],
+      "titles": [
+        "InfAL: Inference Time Adversarial Learning for Improving Research Ideation",
+        "Literature-Grounded Novelty Assessment of Scientific Ideas",
+        "LDC: Learning to Generate Research Idea with Dynamic Control",
+        "Exploring the Design of Multi-Agent LLM Dialogues for Research Ideation",
+        "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas"
+      ]
+    },
+    {
+      "query": "hallucination scientific citation verification",
+      "status": "ok",
+      "paper_ids": [
+        "2024.sdp-1.25",
+        "2024.sdp-1.9",
+        "2024.acl-long.79",
+        "2025.sdp-1.31",
+        "2025.sdp-1.32"
+      ],
+      "titles": [
+        "Zero-shot Scientific Claim Verification Using LLMs and Citation Text",
+        "Cited Text Spans for Scientific Citation Text Generation",
+        "Citation-Enhanced Generation for LLM-based Chatbots",
+        "A.M.P at SciHal2025: Automated Hallucination Detection in Scientific Content via LLMs and Prompt Engineering",
+        "SciBERT Meets Contrastive Learning: A Solution for Scientific Hallucination Detection"
+      ]
+    }
+  ]
+}

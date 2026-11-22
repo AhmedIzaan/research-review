@@ -1,0 +1,20 @@
+[
+  {
+    "notebook": "01_Baseline_Experiments.ipynb",
+    "executed_python_cells": 5,
+    "status": "passed",
+    "runner": "trusted Python-cell fallback"
+  },
+  {
+    "notebook": "02_Multi_Agent_Review.ipynb",
+    "executed_python_cells": 4,
+    "status": "passed",
+    "runner": "trusted Python-cell fallback"
+  },
+  {
+    "notebook": "03_Evaluation_and_Ablation.ipynb",
+    "executed_python_cells": 5,
+    "status": "passed",
+    "runner": "trusted Python-cell fallback"
+  }
+]

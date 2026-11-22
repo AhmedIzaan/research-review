@@ -1,0 +1,93 @@
+{
+  "stage": "corrected_live_pilot_evaluated_with_one_generic_role_failure",
+  "test_counts": {
+    "tests": 59,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "live_generated_ideas": 29,
+  "independent_judgments": 16,
+  "human_ratings": 0,
+  "blockers": [
+    "Larger-sample and human evaluation remain unperformed."
+  ],
+  "untested_integrations": [
+    "Role-restricted wire schema live retry behavior",
+    "LangGraph adapter (library unavailable)",
+    "Real Jupyter-kernel execution"
+  ],
+  "notebook_runner": "Trusted Python-cell fallback: real smoke_v2 outputs in 14 code cells; five actual corrected-study figure attachments",
+  "budget_two_seeds_three_rounds": {
+    "generation_review": 122,
+    "judge": 16,
+    "total_before_retries": 138
+  },
+  "model": "gemini-3.5-flash-lite",
+  "original_user_artifacts_modified": false,
+  "credential_configured": true,
+  "credential_validity": "Confirmed in user terminal: Gemini 3.5 Flash-Lite structured JSON success, 24 tokens.",
+  "connection_check": "gemini_connection_check.json",
+  "single_command_suite": "../.venv/bin/python scripts/run_experiments.py",
+  "suite_status": "smoke/suite_status.json",
+  "retrieval_backend": "local_bm25",
+  "corpus": {
+    "indexed_records": 2114,
+    "fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+    "manifest": "../data/corpus/manifest.json",
+    "source": "Six pinned official ACL XML downloads plus attributed project/prior-work anchors"
+  },
+  "latest_suite_attempt": {
+    "started_at": "2026-11-08T12:34:24.661051+00:00",
+    "stage": "finished",
+    "status": "completed_with_failures",
+    "plan": {
+      "seeds": 2,
+      "rounds": 3,
+      "generation_review_calls": 122,
+      "judge_calls_upper_bound": 16,
+      "total_calls_upper_bound": 138,
+      "with_retries_upper_bound": 414,
+      "planning_input_tokens": 897000,
+      "planning_output_tokens": 193200,
+      "note": "Planning token assumptions, not measured usage. Six natural-budget configurations; no equal-cost causal claim."
+    },
+    "expected_configurations": 12,
+    "saved_configurations": 12,
+    "missing_configurations": [],
+    "unscored_final_configurations": [],
+    "failed_runs": [
+      "83a601546935997556e1"
+    ],
+    "reviewer_failures": 1,
+    "judge_failures": 0,
+    "analysis": {
+      "status": "analyzed",
+      "valid_score_rows": 26,
+      "failed_score_rows": 0,
+      "n_seeds": 2,
+      "n_final_rows": 12,
+      "limitations": "Same-model judge bias, abstract-only search coverage, natural unequal budgets, purposive seeds, no human calibration yet. Missing judgments excluded and counted; no claim of scientific success."
+    },
+    "finished_at": "2026-11-08T13:12:58.115123+00:00",
+    "jupyter_dependencies_available": false,
+    "notebook_execution": "pending; inspect saved study with the project notebooks"
+  },
+  "saved_initial_ideas": 2,
+  "completed_revision_outputs": 28,
+  "unique_judgments_attempted": 16,
+  "accepted_final_condition_rows": 12,
+  "expected_final_condition_rows": 12,
+  "next_study": "results/smoke_v2",
+  "evidence_protocol": "passage_ids_v1",
+  "latest_study": "results/smoke_v2",
+  "quote_validation_failures": 0,
+  "remaining_execution_failures": [
+    {
+      "seed_id": "2024.acl-long.18",
+      "configuration": "generic",
+      "round": 2,
+      "error": "Reviewer returned wrong role"
+    }
+  ]
+}

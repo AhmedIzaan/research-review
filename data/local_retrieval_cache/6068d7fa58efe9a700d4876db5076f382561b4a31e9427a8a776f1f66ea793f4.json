@@ -1,0 +1,89 @@
+{
+  "query": "latent novelty probing language models",
+  "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "retrieved_at": "2026-11-08T12:52:02.041527+00:00",
+  "papers": [
+    {
+      "paper_id": "2026.findings-emnlp.574",
+      "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+      "authors": [
+        "Tim Schopf",
+        "Tobias Schreieder",
+        "Akiko Aizawa"
+      ],
+      "year": 2026,
+      "abstract": "Automated novelty judgment can accelerate scientific discovery by enabling efficient evaluation, refinement, and comparison of research ideas. While large language models are increasingly adopted for this task, we investigate a previously overlooked limitation in their judgment capabilities: despite generating reasoning rationales that closely mirror those of human experts, their final novelty judgments often diverge substantially. We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response. Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+      "url": "https://aclanthology.org/2026.findings-emnlp.574/",
+      "doi": "10.18653/2026.findings-emnlp.574",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2024.sdp-1.5",
+      "title": "Toward Structured Related Work Generation with Novelty Statements",
+      "authors": [
+        "Kazuya Nishimura",
+        "Kuniaki Saito",
+        "Tosho Hirasawa",
+        "Yoshitaka Ushiku"
+      ],
+      "year": 2024,
+      "abstract": "To help readers understand the novelty and the research context, an excellent related work section is structured (i.e., the section consists of paragraphs determined by categorizing papers into several topics) and includes descriptions of novelty. However, previous studies viewed related work generation as multi-document summarization, and the structure and novelty statement are ignored in such studies. In this paper, we redefine the related work generation task as summarization with structure (i.e., multiple paragraphs with citation) and novelty statement. For this task, we propose a quality-oriented dataset and evaluation metrics. Experiments evaluated the state-of-the-art language models on our tasks, and we confirmed the issues with the current models and the validity of the evaluation indicators.",
+      "url": "https://aclanthology.org/2024.sdp-1.5/",
+      "doi": null,
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.668Z"
+    },
+    {
+      "paper_id": "2024.acl-long.18",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "authors": [
+        "Qingyun Wang",
+        "Doug Downey",
+        "Heng Ji",
+        "Tom Hope"
+      ],
+      "year": 2024,
+      "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction—severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature. Code, data, and resources are publicly available for research purposes: https://github.com/eaglew/clbd.",
+      "url": "https://aclanthology.org/2024.acl-long.18/",
+      "doi": "10.18653/v1/2024.acl-long.18",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2026.lrec-1.370",
+      "title": "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+      "authors": [
+        "Tim Schopf",
+        "Michael Färber"
+      ],
+      "year": 2026,
+      "abstract": "Judging the novelty of research ideas is crucial for advancing science, enabling the identification of unexplored directions, and ensuring contributions meaningfully extend existing knowledge rather than reiterate minor variations. However, given the exponential growth of scientific literature, manually judging the novelty of research ideas through literature reviews is labor-intensive, subjective, and infeasible at scale. Therefore, recent efforts have proposed automated approaches for research idea novelty judgment. Yet, evaluation of these approaches remains largely inconsistent and is typically based on non-standardized human evaluations, hindering large-scale, comparable evaluations. To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments. It comprises 1,381 research ideas derived from and judged by human experts as well as nine automated evaluation metrics designed to assess both rubric-based novelty scores and textual justifications of novelty judgments. Using this benchmark, we evaluate several state-of-the-art large language models (LLMs) on their ability to judge the novelty of research ideas. Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models. Data and code available at: https://github.com/TimSchopf/RINoBench. Keywords: research idea novelty judgment, evaluation benchmark, scientific discovery, llm-as-a-judge",
+      "url": "https://aclanthology.org/2026.lrec-1.370/",
+      "doi": "10.63317/4c3gy3f7epnj",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sdp-1.9",
+      "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+      "authors": [
+        "Simra Shahid",
+        "Marissa Radensky",
+        "Raymond Fok",
+        "Pao Siangliulue",
+        "Daniel S Weld",
+        "Tom Hope"
+      ],
+      "year": 2025,
+      "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+      "url": "https://aclanthology.org/2025.sdp-1.9/",
+      "doi": "10.18653/v1/2025.sdp-1.9",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    }
+  ],
+  "status": "ok",
+  "error": null,
+  "cache_hit": false
+}

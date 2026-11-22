@@ -1,0 +1,200 @@
+[
+  {
+    "blind_id": "2a09667cbd67dbc2f1832dd7",
+    "seed_id": "topic:Does an abstention threshold calibrated on English factual question answering remain reliable on translated Urdu questions, and can a small separate Urdu calibration set reduce the resulting coverage and accuracy gap?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 0,
+    "run_id": "6e70d8dce5a689d6ddb2",
+    "is_final": false,
+    "accepted": true,
+    "idea": {
+      "title": "Cross-Lingual Transfer and Calibration of Abstention Thresholds in Translated Factual Question Answering",
+      "research_problem": "Evaluating whether an abstention threshold calibrated on English factual question answering remains reliable when applied to translated Urdu questions, and whether a small separate Urdu calibration set can close the resulting coverage and accuracy gap.",
+      "research_gap": "Prior work demonstrates that open-domain QA and multi-granularity answer evaluation rely on uncertainty or confidence tuning predominantly in high-resource languages like English. While benchmarks like IrokoBench reveal performance drops on low-resource and translated tasks, there is a bounded search finding that no existing study measures how translation artifacts distort token-probability-based abstention thresholds or whether low-resource calibration sets can recover optimal coverage-risk trade-offs.",
+      "methodology": "We freeze an open-access model (Llama-3.1-8B-Instruct via HuggingFace) and evaluate its generation probabilities on English factual QA datasets (e.g., EntityQuestions) and their machine-translated Urdu counterparts from IrokoBench. We compute softmax-based predictive entropy and max-probability scores over output token distributions. We establish an English-calibrated abstention threshold to target a fixed risk level (e.g., 10% error rate). We then construct a separate Urdu calibration subset to fit a shifted threshold via temperature scaling and quantile adjustment, measuring the resulting impact on selective prediction accuracy and coverage.",
+      "expected_contribution": "We hypothesize that English-calibrated abstention thresholds suffer from severe over-confidence or under-confidence when transferred zero-shot to translated Urdu questions due to tokenization and perplexity shifts. We further hypothesize that a minor domain-matched Urdu calibration set will realign the risk-coverage curve without requiring model parameter updates.",
+      "experimental_setup": "We use Llama-3.1-8B-Instruct via local HuggingFace transformers. The evaluation dataset comprises 1,000 English question-answer pairs and their professional or machine-translated Urdu equivalents from IrokoBench. We split the Urdu data into a calibration set (300 samples) and a test set (700 samples). We compare zero-shot transfer of the English threshold against the Urdu-calibrated threshold using selective accuracy and risk-coverage area under the curve (RC-AUC).",
+      "evaluation_strategy": "We report selective classification performance via Risk-Coverage curves. The calibration split determines the decision threshold for a target error rate of 0.10. The test split measures actual empirical risk and coverage. Confidence aggregation relies on sequence-level probability normalization. Statistical significance is tested using paired permutation tests across bootstrap resamples.",
+      "feasibility_assumptions": [
+        "Token-level output probabilities can be fully extracted from the open-weight Llama-3.1-8B-Instruct model via local inference.",
+        "Machine-translated Urdu evaluation data from IrokoBench accurately represents low-resource factual QA structural patterns.",
+        "A calibration subset of 300 instances is sufficient to estimate reliable quantile thresholds without severe overfitting."
+      ],
+      "references": [
+        "2024.acl-long.365",
+        "2025.naacl-long.139",
+        "2024.acl-long.745",
+        "2025.naacl-long.453"
+      ],
+      "search_queries": [
+        "cross lingual abstention threshold calibration question answering",
+        "uncertainty estimation translated low resource qa",
+        "selective prediction risk coverage language transfer"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "The open-weight model provides direct, unconstrained access to complete target-token logits for probability extraction.",
+          "validation_step": "Run a forward pass on 50 pilot examples and verify extraction of output token log-probabilities.",
+          "acceptance_criterion": "100% success rate in retrieving exact log-probabilities for generated tokens.",
+          "fallback": "Switch to score-based verbalized confidence extraction if logit access fails."
+        },
+        {
+          "assumption": "The 300-sample Urdu calibration set provides stable quantile estimates for the abstention threshold.",
+          "validation_step": "Compute bootstrap variance of the estimated threshold across 50 resamplings of the calibration set.",
+          "acceptance_criterion": "Standard deviation of the threshold is below 5% of the mean threshold value.",
+          "fallback": "Apply Laplace smoothing and defensive quantile interpolation to stabilize estimates."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2024.acl-long.365",
+          "shared_mechanism": "Utilizes model uncertainty and response decoding strategies for open-domain factual question answering.",
+          "proposed_difference": "Focuses exclusively on multi-granularity English evaluation rather than cross-lingual transfer of abstention thresholds to low-resource translated data.",
+          "verification_needed": "Confirm whether multi-granularity scoring interacts with cross-lingual probability shifts in Urdu."
+        },
+        {
+          "paper_id": "2025.naacl-long.139",
+          "shared_mechanism": "Evaluates open and proprietary large language models on African and low-resource multilingual benchmarks including translate-test settings.",
+          "proposed_difference": "Assesses static benchmark accuracy rather than dynamic abstention threshold calibration and selective prediction risk-coverage trade-offs.",
+          "verification_needed": "Test whether translate-test approaches alter uncertainty calibration compared to native-language prompting."
+        }
+      ],
+      "core_hypothesis": "Abstention thresholds optimized on English factual QA fail to maintain target error rates when applied zero-shot to translated Urdu questions, but a small separate Urdu calibration set restores optimal risk-coverage performance.",
+      "distinctive_mechanism": "Empirically isolating and correcting the cross-lingual threshold shift in token-probability-based selective prediction using a minimal target-language calibration split.",
+      "minimum_test": "Evaluate Llama-3.1-8B-Instruct on 100 English and 100 translated Urdu QA pairs, applying an English-derived confidence threshold versus an Urdu-calibrated threshold, and measure coverage at a fixed 10% error rate."
+    }
+  },
+  {
+    "blind_id": "7499ac2e23e94e8190228acb",
+    "seed_id": "topic:Does an abstention threshold calibrated on English factual question answering remain reliable on translated Urdu questions, and can a small separate Urdu calibration set reduce the resulting coverage and accuracy gap?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 1,
+    "run_id": "6e70d8dce5a689d6ddb2",
+    "is_final": false,
+    "accepted": true,
+    "idea": {
+      "title": "Cross-Lingual Transfer and Calibration of Abstention Thresholds in Translated Factual Question Answering",
+      "research_problem": "Evaluating whether an abstention threshold calibrated on English factual question answering remains reliable when applied to translated Urdu questions, and whether a small separate Urdu calibration set can close the resulting coverage and accuracy gap.",
+      "research_gap": "Prior work demonstrates that open-domain QA and multi-granularity answer evaluation rely on uncertainty or confidence tuning predominantly in high-resource languages like English (2024.acl-long.365). While benchmarks like IrokoBench reveal performance drops on low-resource and translated tasks (2025.naacl-long.139), there is a bounded search finding that no existing study measures how translation artifacts distort token-probability-based abstention thresholds or whether low-resource calibration sets can recover optimal coverage-risk trade-offs.",
+      "methodology": "We freeze an open-access model (Llama-3.1-8B-Instruct via HuggingFace) and evaluate its generation probabilities on English factual QA datasets (e.g., EntityQuestions) and their machine-translated Urdu counterparts from IrokoBench (2025.naacl-long.139). We compute sequence-normalized length-adjusted token probability and entropy scores over output token distributions. We establish an English-calibrated abstention threshold to target a fixed risk level (e.g., 10% error rate). We then construct a separate Urdu calibration subset to fit a shifted threshold via temperature scaling and quantile adjustment, measuring the resulting impact on selective prediction accuracy and coverage.",
+      "expected_contribution": "We hypothesize that English-calibrated abstention thresholds suffer from severe over-confidence or under-confidence when transferred zero-shot to translated Urdu questions due to tokenization and perplexity shifts. We further hypothesize that a minor domain-matched Urdu calibration set will realign the risk-coverage curve without requiring model parameter updates.",
+      "experimental_setup": "We use Llama-3.1-8B-Instruct via local HuggingFace transformers with 4-bit NF4 quantization to fit within consumer VRAM limits. The evaluation dataset comprises 1,000 English question-answer pairs and their machine-translated Urdu equivalents from IrokoBench (2025.naacl-long.139). We split the Urdu data into a calibration set (300 samples) and a test set (700 samples). We compare zero-shot transfer of the English threshold against the Urdu-calibrated threshold using selective accuracy and risk-coverage area under the curve.",
+      "evaluation_strategy": "We report selective classification performance via Risk-Coverage curves. The calibration split determines the decision threshold for a target error rate of 0.10. The test split measures actual empirical risk and coverage. Confidence aggregation relies on length-normalized sequence probability. Statistical significance is tested using paired permutation tests across bootstrap resamples.",
+      "feasibility_assumptions": [
+        "Token-level output probabilities can be fully extracted from the quantized Llama-3.1-8B-Instruct model via local inference without OOM errors.",
+        "Machine-translated Urdu evaluation data from IrokoBench accurately represents low-resource factual QA structural patterns.",
+        "A calibration subset of 300 instances is sufficient to estimate reliable quantile thresholds without severe overfitting."
+      ],
+      "references": [
+        "2024.acl-long.365",
+        "2025.naacl-long.139",
+        "2024.acl-long.745",
+        "2025.naacl-long.453"
+      ],
+      "search_queries": [
+        "cross lingual abstention threshold calibration question answering",
+        "uncertainty estimation translated low resource qa",
+        "selective prediction risk coverage language transfer"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "The quantized open-weight model provides direct access to complete target-token logits for probability extraction.",
+          "validation_step": "Run a forward pass on 50 pilot examples and verify extraction of output token log-probabilities under 4-bit bitsandbytes configuration.",
+          "acceptance_criterion": "100% success rate in retrieving exact log-probabilities for generated tokens within memory constraints.",
+          "fallback": "Switch to score-based verbalized confidence extraction if logit access fails."
+        },
+        {
+          "assumption": "The 300-sample Urdu calibration set provides stable quantile estimates for the abstention threshold.",
+          "validation_step": "Compute bootstrap variance of the estimated threshold across 50 resamplings of the calibration set.",
+          "acceptance_criterion": "Standard deviation of the threshold is below 5% of the mean threshold value.",
+          "fallback": "Apply Laplace smoothing and defensive quantile interpolation to stabilize estimates."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2024.acl-long.365",
+          "shared_mechanism": "Utilizes model uncertainty and response decoding strategies for open-domain factual question answering.",
+          "proposed_difference": "Focuses exclusively on multi-granularity English evaluation rather than cross-lingual transfer of abstention thresholds to low-resource translated data.",
+          "verification_needed": "Confirm whether multi-granularity scoring interacts with cross-lingual probability shifts in Urdu."
+        },
+        {
+          "paper_id": "2025.naacl-long.139",
+          "shared_mechanism": "Evaluates open and proprietary large language models on African and low-resource multilingual benchmarks including translate-test settings.",
+          "proposed_difference": "Assesses static benchmark accuracy rather than dynamic abstention threshold calibration and selective prediction risk-coverage trade-offs.",
+          "verification_needed": "Test whether translate-test approaches alter uncertainty calibration compared to native-language prompting."
+        }
+      ],
+      "core_hypothesis": "Abstention thresholds optimized on English factual QA fail to maintain target error rates when applied zero-shot to translated Urdu questions, but a small separate Urdu calibration set restores optimal risk-coverage performance.",
+      "distinctive_mechanism": "Empirically isolating and correcting the cross-lingual threshold shift in token-probability-based selective prediction using a minimal target-language calibration split.",
+      "minimum_test": "Evaluate Llama-3.1-8B-Instruct on 100 English and 100 translated Urdu QA pairs, applying an English-derived confidence threshold versus an Urdu-calibrated threshold, and measure coverage at a fixed 10% error rate."
+    }
+  },
+  {
+    "blind_id": "7499ac2e23e94e8190228acb",
+    "seed_id": "topic:Does an abstention threshold calibrated on English factual question answering remain reliable on translated Urdu questions, and can a small separate Urdu calibration set reduce the resulting coverage and accuracy gap?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 2,
+    "run_id": "6e70d8dce5a689d6ddb2",
+    "is_final": true,
+    "accepted": false,
+    "idea": {
+      "title": "Cross-Lingual Transfer and Calibration of Abstention Thresholds in Translated Factual Question Answering",
+      "research_problem": "Evaluating whether an abstention threshold calibrated on English factual question answering remains reliable when applied to translated Urdu questions, and whether a small separate Urdu calibration set can close the resulting coverage and accuracy gap.",
+      "research_gap": "Prior work demonstrates that open-domain QA and multi-granularity answer evaluation rely on uncertainty or confidence tuning predominantly in high-resource languages like English (2024.acl-long.365). While benchmarks like IrokoBench reveal performance drops on low-resource and translated tasks (2025.naacl-long.139), there is a bounded search finding that no existing study measures how translation artifacts distort token-probability-based abstention thresholds or whether low-resource calibration sets can recover optimal coverage-risk trade-offs.",
+      "methodology": "We freeze an open-access model (Llama-3.1-8B-Instruct via HuggingFace) and evaluate its generation probabilities on English factual QA datasets (e.g., EntityQuestions) and their machine-translated Urdu counterparts from IrokoBench (2025.naacl-long.139). We compute sequence-normalized length-adjusted token probability and entropy scores over output token distributions. We establish an English-calibrated abstention threshold to target a fixed risk level (e.g., 10% error rate). We then construct a separate Urdu calibration subset to fit a shifted threshold via temperature scaling and quantile adjustment, measuring the resulting impact on selective prediction accuracy and coverage.",
+      "expected_contribution": "We hypothesize that English-calibrated abstention thresholds suffer from severe over-confidence or under-confidence when transferred zero-shot to translated Urdu questions due to tokenization and perplexity shifts. We further hypothesize that a minor domain-matched Urdu calibration set will realign the risk-coverage curve without requiring model parameter updates.",
+      "experimental_setup": "We use Llama-3.1-8B-Instruct via local HuggingFace transformers with 4-bit NF4 quantization to fit within consumer VRAM limits. The evaluation dataset comprises 1,000 English question-answer pairs and their machine-translated Urdu equivalents from IrokoBench (2025.naacl-long.139). We split the Urdu data into a calibration set (300 samples) and a test set (700 samples). We compare zero-shot transfer of the English threshold against the Urdu-calibrated threshold using selective accuracy and risk-coverage area under the curve.",
+      "evaluation_strategy": "We report selective classification performance via Risk-Coverage curves. The calibration split determines the decision threshold for a target error rate of 0.10. The test split measures actual empirical risk and coverage. Confidence aggregation relies on length-normalized sequence probability. Statistical significance is tested using paired permutation tests across bootstrap resamples.",
+      "feasibility_assumptions": [
+        "Token-level output probabilities can be fully extracted from the quantized Llama-3.1-8B-Instruct model via local inference without OOM errors.",
+        "Machine-translated Urdu evaluation data from IrokoBench accurately represents low-resource factual QA structural patterns.",
+        "A calibration subset of 300 instances is sufficient to estimate reliable quantile thresholds without severe overfitting."
+      ],
+      "references": [
+        "2024.acl-long.365",
+        "2025.naacl-long.139",
+        "2024.acl-long.745",
+        "2025.naacl-long.453"
+      ],
+      "search_queries": [
+        "cross lingual abstention threshold calibration question answering",
+        "uncertainty estimation translated low resource qa",
+        "selective prediction risk coverage language transfer"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "The quantized open-weight model provides direct access to complete target-token logits for probability extraction.",
+          "validation_step": "Run a forward pass on 50 pilot examples and verify extraction of output token log-probabilities under 4-bit bitsandbytes configuration.",
+          "acceptance_criterion": "100% success rate in retrieving exact log-probabilities for generated tokens within memory constraints.",
+          "fallback": "Switch to score-based verbalized confidence extraction if logit access fails."
+        },
+        {
+          "assumption": "The 300-sample Urdu calibration set provides stable quantile estimates for the abstention threshold.",
+          "validation_step": "Compute bootstrap variance of the estimated threshold across 50 resamplings of the calibration set.",
+          "acceptance_criterion": "Standard deviation of the threshold is below 5% of the mean threshold value.",
+          "fallback": "Apply Laplace smoothing and defensive quantile interpolation to stabilize estimates."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2024.acl-long.365",
+          "shared_mechanism": "Utilizes model uncertainty and response decoding strategies for open-domain factual question answering.",
+          "proposed_difference": "Focuses exclusively on multi-granularity English evaluation rather than cross-lingual transfer of abstention thresholds to low-resource translated data.",
+          "verification_needed": "Confirm whether multi-granularity scoring interacts with cross-lingual probability shifts in Urdu."
+        },
+        {
+          "paper_id": "2025.naacl-long.139",
+          "shared_mechanism": "Evaluates open and proprietary large language models on African and low-resource multilingual benchmarks including translate-test settings.",
+          "proposed_difference": "Assesses static benchmark accuracy rather than dynamic abstention threshold calibration and selective prediction risk-coverage trade-offs.",
+          "verification_needed": "Test whether translate-test approaches alter uncertainty calibration compared to native-language prompting."
+        }
+      ],
+      "core_hypothesis": "Abstention thresholds optimized on English factual QA fail to maintain target error rates when applied zero-shot to translated Urdu questions, but a small separate Urdu calibration set restores optimal risk-coverage performance.",
+      "distinctive_mechanism": "Empirically isolating and correcting the cross-lingual threshold shift in token-probability-based selective prediction using a minimal target-language calibration split.",
+      "minimum_test": "Evaluate Llama-3.1-8B-Instruct on 100 English and 100 translated Urdu QA pairs, applying an English-derived confidence threshold versus an Urdu-calibrated threshold, and measure coverage at a fixed 10% error rate."
+    }
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "source_contexts_checked": 98,
+  "exact_source_passages_checked": 5037,
+  "status": "all_resolved_excerpts_match_supplied_abstracts",
+  "scope": "Offline provenance regression on actual pilot request contexts; no new model judgments or semantic-support validation."
+}

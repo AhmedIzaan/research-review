@@ -1,0 +1,27 @@
+[
+  {
+    "paper_id": "arxiv:2602.14367v1",
+    "title": "InnoEval: On Research Idea Evaluation as a Knowledge-Grounded, Multi-Perspective Reasoning Problem",
+    "authors": [
+      "Shuofei Qiao",
+      "Yunxiang Wei",
+      "Xuehai Wang",
+      "Bin Wu",
+      "Boyang Xue",
+      "Ningyu Zhang",
+      "Hossein A. Rahmani",
+      "Wang Yanshan",
+      "Qiang Zhang",
+      "Keyan Ding",
+      "Jeff Z. Pan",
+      "Huajun Chen",
+      "Emine Yilmaz"
+    ],
+    "year": 2026,
+    "abstract": "The rapid evolution of Large Language Models has catalyzed a surge in scientific idea production, yet this leap has not been accompanied by a matching advance in idea evaluation. The fundamental nature of scientific evaluation needs knowledgeable grounding, collective deliberation, and multi-criteria decision-making. However, existing idea evaluation methods often suffer from narrow knowledge horizons, flattened evaluation dimensions, and the inherent bias in LLM-as-a-Judge. To address these, we regard idea evaluation as a knowledge-grounded, multi-perspective reasoning problem and introduce InnoEval, a deep innovation evaluation framework designed to emulate human-level idea assessment. We apply a heterogeneous deep knowledge search engine that retrieves and grounds dynamic evidence from diverse online sources. We further achieve review consensus with an innovation review board containing reviewers with distinct academic backgrounds, enabling a multi-dimensional decoupled evaluation across multiple metrics. We construct comprehensive datasets derived from authoritative peer-reviewed submissions to benchmark InnoEval. Experiments demonstrate that InnoEval can consistently outperform baselines in point-wise, pair-wise, and group-wise evaluation tasks, exhibiting judgment patterns and consensus highly aligned with human experts.",
+    "url": "https://proceedings.mlr.press/v306/qiao26h.html",
+    "doi": "",
+    "source": "Existing primary-source capture: arXiv v1 abstract; publication metadata verified separately in prior review",
+    "retrieved_at": "2026-11-07"
+  }
+]

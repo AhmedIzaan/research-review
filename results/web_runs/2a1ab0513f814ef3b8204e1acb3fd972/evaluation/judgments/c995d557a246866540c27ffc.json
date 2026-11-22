@@ -1,0 +1,1067 @@
+{
+  "blind_id": "c995d557a246866540c27ffc",
+  "spec_hash": "8105d50683fab4606a82d1590ec6041b908ab8077b3cf9aecd04edb2551bb39c",
+  "judgment": {
+    "novelty": 4,
+    "feasibility": 4,
+    "clarity": 5,
+    "importance": 4,
+    "evidence_grounding": 4,
+    "rationale": {
+      "novelty": "The proposal presents a distinct experimental paradigm by combining counterfactual rule changes that mathematically invert classification labels with the evaluation of post-hoc textual explanation faithfulness and persuasion. This goes beyond static rule reasoning tests.",
+      "feasibility": "The resource constraints and hardware requirements are realistic. Using Llama-3-8B-Instruct locally with greedy decoding, alongside a well-defined 1,000-sample dataset split and regex/symbolic validation checks, provides a concrete implementation plan.",
+      "clarity": "The research problem, dataset construction steps, experimental configurations, metrics, and data splits are clearly and precisely defined.",
+      "importance": "Understanding whether post-hoc explanations genuinely track logical rules or merely maintain surface persuasiveness during logical inversions is vital for reliable and safe deployment of explainable AI systems.",
+      "evidence_grounding": "The cited literature correctly contextualizes current limitations in LLM logical reasoning and the role of persuasiveness, providing appropriate backing for the research gaps identified."
+    },
+    "evidence": [
+      {
+        "paper_id": "2024.acl-long.406",
+        "claim": "LLMs' mastery of underlying inferential rules still falls short of robust capabilities.",
+        "supporting_excerpt": "However, their mastery of underlying inferential rules still falls short of human capabilities.",
+        "relation": "supports"
+      },
+      {
+        "paper_id": "2024.acl-short.49",
+        "claim": "It is unclear to what extent generated explanations capture true prediction factors versus persuasive artifacts.",
+        "supporting_excerpt": "However, it is unclear to what extent these explanations are truly capturing the factors responsible for the model’s predictions: the most “human-like” explanation may be different from the one that is most faithful to the model’s true decision making process.",
+        "relation": "supports"
+      },
+      {
+        "paper_id": "2024.acl-short.49",
+        "claim": "Counterfactual input edits can evaluate faithfulness by measuring label distribution and explanation shifts.",
+        "supporting_excerpt": "In this work, we introduce the correlational counterfactual test (CCT), a faithfulness metric based on counterfactual input edits that takes into account not just the binary label change, but the total shift in the model’s predicted label distribution.",
+        "relation": "supports"
+      },
+      {
+        "paper_id": "2025.naacl-long.539",
+        "claim": "Models performing well in classification can perform poorly in explainability metrics like faithfulness.",
+        "supporting_excerpt": "We observe that models that work well for classification do not perform well in explainability metrics like plausibility and faithfulness.",
+        "relation": "supports"
+      }
+    ],
+    "uncertainty": "The automated parsing of free-text explanations for rule references via regular expressions may introduce noise if models express logical rule alterations through paraphrasing rather than direct clause quotation."
+  },
+  "replications": [
+    {
+      "repeat": 0,
+      "judgment": {
+        "novelty": 4,
+        "feasibility": 4,
+        "clarity": 5,
+        "importance": 4,
+        "evidence_grounding": 4,
+        "rationale": {
+          "novelty": "The proposal presents a distinct experimental paradigm by combining counterfactual rule changes that mathematically invert classification labels with the evaluation of post-hoc textual explanation faithfulness and persuasion. This goes beyond static rule reasoning tests.",
+          "feasibility": "The resource constraints and hardware requirements are realistic. Using Llama-3-8B-Instruct locally with greedy decoding, alongside a well-defined 1,000-sample dataset split and regex/symbolic validation checks, provides a concrete implementation plan.",
+          "clarity": "The research problem, dataset construction steps, experimental configurations, metrics, and data splits are clearly and precisely defined.",
+          "importance": "Understanding whether post-hoc explanations genuinely track logical rules or merely maintain surface persuasiveness during logical inversions is vital for reliable and safe deployment of explainable AI systems.",
+          "evidence_grounding": "The cited literature correctly contextualizes current limitations in LLM logical reasoning and the role of persuasiveness, providing appropriate backing for the research gaps identified."
+        },
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.406",
+            "claim": "LLMs' mastery of underlying inferential rules still falls short of robust capabilities.",
+            "supporting_excerpt": "However, their mastery of underlying inferential rules still falls short of human capabilities.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-short.49",
+            "claim": "It is unclear to what extent generated explanations capture true prediction factors versus persuasive artifacts.",
+            "supporting_excerpt": "However, it is unclear to what extent these explanations are truly capturing the factors responsible for the model’s predictions: the most “human-like” explanation may be different from the one that is most faithful to the model’s true decision making process.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-short.49",
+            "claim": "Counterfactual input edits can evaluate faithfulness by measuring label distribution and explanation shifts.",
+            "supporting_excerpt": "In this work, we introduce the correlational counterfactual test (CCT), a faithfulness metric based on counterfactual input edits that takes into account not just the binary label change, but the total shift in the model’s predicted label distribution.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2025.naacl-long.539",
+            "claim": "Models performing well in classification can perform poorly in explainability metrics like faithfulness.",
+            "supporting_excerpt": "We observe that models that work well for classification do not perform well in explainability metrics like plausibility and faithfulness.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The automated parsing of free-text explanations for rule references via regular expressions may introduce noise if models express logical rule alterations through paraphrasing rather than direct clause quotation."
+      },
+      "error": null,
+      "events": [
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 1,
+          "timestamp": "2026-11-17T06:12:59.036019+00:00",
+          "prompt_hash": "29ce90d7660bc661118d228d45b68d438f31d0da6b29310bc2b78197f88fb964",
+          "input_tokens": 13527,
+          "output_tokens": 582,
+          "thinking_tokens": 0,
+          "total_tokens": 14109,
+          "estimated_cost_usd": 0.0,
+          "status": "ok",
+          "validation_failure": false,
+          "elapsed_seconds": 7.037787706001836
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "judgment": {
+        "novelty": 4,
+        "feasibility": 4,
+        "clarity": 5,
+        "importance": 4,
+        "evidence_grounding": 4,
+        "rationale": {
+          "novelty": "The proposal introduces a focused investigation into whether LLM-generated free-text explanations for rule-based classification track minimal counterfactual rule changes or maintain persuasive unfaithfulness. While counterfactual evaluation and persuasion studies exist independently, their intersection on rule explanation fidelity is a distinct and well-justified contribution.",
+          "feasibility": "The project is well-scoped within a 6-week timeframe, utilizing an accessible open-source model (Llama-3-8B-Instruct or smaller variant), a synthetic generation pipeline with symbolic verification, and a manageable dataset of 1,000 instances.",
+          "clarity": "The operational definitions, data construction pipeline, hypothesis, and minimum test are clearly articulated with precise evaluation metrics and validation steps.",
+          "importance": "Understanding whether explanation stability masks logical rule violations addresses a critical trust and interpretability gap in deploying large language models for high-stakes rule-governed classification tasks.",
+          "evidence_grounding": "The cited literature correctly contextualizes work on LLM logical reasoning limitations, counterfactual modifications, and persuasion benchmarking, though the synthesis directly targets a novel gap."
+        },
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.406",
+            "claim": "LLMs mastery of underlying inferential rules falls short of human capabilities.",
+            "supporting_excerpt": "However, their mastery of underlying inferential rules still falls short of human capabilities.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-short.49",
+            "claim": "Counterfactual input edits can be used as a faithfulness metric for free-text explanations.",
+            "supporting_excerpt": "In this work, we introduce the correlational counterfactual test (CCT), a faithfulness metric based on counterfactual input edits that takes into account not just the binary label change, but the total shift in the model’s predicted label distribution.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-long.329",
+            "claim": "LLMs can generate plausible explanations that are unfaithful to underlying reasoning.",
+            "supporting_excerpt": "But an LLM could make up reasonably sounding explanations that are unfaithful to its underlying reasoning.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The automated parsing of free-text explanations via regular expressions might misclassify nuanced semantic acknowledgments of logical rule flips, potentially requiring manual validation on a larger sample subset."
+      },
+      "error": null,
+      "events": [
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 1,
+          "timestamp": "2026-11-17T06:13:14.036148+00:00",
+          "prompt_hash": "29ce90d7660bc661118d228d45b68d438f31d0da6b29310bc2b78197f88fb964",
+          "input_tokens": 13527,
+          "output_tokens": 542,
+          "thinking_tokens": 0,
+          "total_tokens": 14069,
+          "estimated_cost_usd": 0.0,
+          "status": "ok",
+          "validation_failure": false,
+          "elapsed_seconds": 5.988588901993353
+        }
+      ]
+    }
+  ],
+  "score_summary": {
+    "novelty": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "feasibility": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "clarity": {
+      "median": 5.0,
+      "min": 5,
+      "max": 5
+    },
+    "importance": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "evidence_grounding": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    }
+  },
+  "search": [
+    {
+      "query": "LLM explanation faithfulness rule reasoning",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T06:12:20.400847+00:00",
+      "papers": [
+        {
+          "paper_id": "2024.acl-long.329",
+          "title": "On Measuring Faithfulness or Self-consistency of Natural Language Explanations",
+          "authors": [
+            "Letitia Parcalabescu",
+            "Anette Frank"
+          ],
+          "year": 2024,
+          "abstract": "Large language models (LLMs) can explain their predictions through post-hoc or Chain-of-Thought (CoT) explanations. But an LLM could make up reasonably sounding explanations that are unfaithful to its underlying reasoning. Recent work has designed tests that aim to judge the faithfulness of post-hoc or CoT explanations. In this work we argue that these faithfulness tests do not measure faithfulness to the models’ inner workings – but rather their self-consistency at output level.Our contributions are three-fold: i) We clarify the status of faithfulness tests in view of model explainability, characterising them as self-consistency tests instead. This assessment we underline by ii) constructing a Comparative Consistency Bank for self-consistency tests that for the first time compares existing tests on a common suite of 11 open LLMs and 5 tasks – including iii) our new self-consistency measure CC-SHAP. CC-SHAP is a fine-grained measure (not a test) of LLM self-consistency. It compares how a model’s input contributes to the predicted answer and to generating the explanation. Our fine-grained CC-SHAP metric allows us iii) to compare LLM behaviour when making predictions and to analyse the effect of other consistency tests at a deeper level, which takes us one step further towards measuring faithfulness by bringing us closer to the internals of the model than strictly surface output-oriented tests.",
+          "url": "https://aclanthology.org/2024.acl-long.329/",
+          "doi": "10.18653/v1/2024.acl-long.329",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-short.49",
+          "title": "The Probabilities Also Matter: A More Faithful Metric for Faithfulness of Free-Text Explanations in Large Language Models",
+          "authors": [
+            "Noah Siegel",
+            "Oana-Maria Camburu",
+            "Nicolas Heess",
+            "Maria Perez-Ortiz"
+          ],
+          "year": 2024,
+          "abstract": "In order to oversee advanced AI systems, it is important to understand their reasons for generating a given output. When prompted, large language models (LLMs) can provide natural language explanations or reasoning traces that sound plausible and receive high ratings from human annotators. However, it is unclear to what extent these explanations are truly capturing the factors responsible for the model’s predictions: the most “human-like” explanation may be different from the one that is most faithful to the model’s true decision making process. In this work, we introduce the correlational counterfactual test (CCT), a faithfulness metric based on counterfactual input edits that takes into account not just the binary label change, but the total shift in the model’s predicted label distribution. We evaluate the faithfulness of free-text explanations generated by few-shot-prompted LLMs from the Llama-2 family on three NLP tasks. We find that these explanations are indeed more likely to mention factors when they are impactful to the model’s prediction, with the degree of association increasing with model size but varying significantly by task.",
+          "url": "https://aclanthology.org/2024.acl-short.49/",
+          "doi": "10.18653/v1/2024.acl-short.49",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.539",
+          "title": "Main Predicate and Their Arguments as Explanation Signals For Intent Classification",
+          "authors": [
+            "Sameer Pimparkhede",
+            "Pushpak Bhattacharyya"
+          ],
+          "year": 2025,
+          "abstract": "Intent classification is crucial for conversational agents (chatbots), and deep learning models perform well in this area. However, little research has been done on the explainability of intent classification due to the absence of suitable benchmark data. Human annotation of explanation signals in text samples is time-consuming and costly. However, from inspection of data on intent classification, we see that, more often than not, the main verb denotes the action, and the direct object indicates the domain of conversation, serving as explanation signals for intent. This observation enables us to hypothesize that the main predicate in the text utterances, along with the arguments of the main predicate, can serve as explanation signals. Leveraging this, we introduce a new technique to automatically augment text samples from intent classification datasets with word-level explanations. We mark main predicates (primarily verbs) and their arguments (dependency relations) as explanation signals in benchmark intent classification datasets ATIS and SNIPS, creating a unique 21k-instance dataset for explainability. Further, we experiment with deep learning and language models. We observe that models that work well for classification do not perform well in explainability metrics like plausibility and faithfulness. We also observe that guiding models to focus on explanation signals from our dataset during training improves the plausibility Token F1 score by 3-4%, improving the model’s reasoning.",
+          "url": "https://aclanthology.org/2025.naacl-long.539/",
+          "doi": "10.18653/v1/2025.naacl-long.539",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.184",
+          "title": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+          "authors": [
+            "Guangya Wan",
+            "Yuqi Wu",
+            "Jie Chen",
+            "Sheng Li"
+          ],
+          "year": 2025,
+          "abstract": "Self-consistency mitigates hallucinations in Large Language Models (LLMs) by sampling multiple reasoning paths, but it lacks a systematic approach to determine the optimal number of samples or select the most faithful rationale. To address this limitation, we introduce Reasoning-Aware Self-Consistency (RASC), a novel framework that enhances sampling efficiency and reasoning faithfulness by dynamically evaluating both outputs and rationales. RASC assesses the quality of reasoning and the consistency of answers for each generated sample, using these assessments to guide early stopping decisions and rationale selection. The framework employs criteria-based stopping and weighted majority voting, enabling more informed choices on when to halt sampling and which rationale to select. Our comprehensive experiments across diverse question-answering datasets demonstrate that RASC outperforms existing methods, reducing sample usage by approximately 70% while maintaining accuracy. Moreover, RASC facilitates the selection of high-fidelity rationales, thereby improving the faithfulness of LLM outputs. Our approach effectively addresses the efficiency-accuracy trade-off in LLM reasoning tasks, offering a new perspective for more nuanced, faithful, and effective utilization of LLMs in resource-constrained environments.",
+          "url": "https://aclanthology.org/2025.naacl-long.184/",
+          "doi": "10.18653/v1/2025.naacl-long.184",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.655",
+          "title": "One Prompt To Rule Them All: LLMs for Opinion Summary Evaluation",
+          "authors": [
+            "Tejpalsingh Siledar",
+            "Swaroop Nath",
+            "Sankara Muddu",
+            "Rupasai Rangaraju",
+            "Swaprava Nath",
+            "Pushpak Bhattacharyya",
+            "Suman Banerjee",
+            "Amey Patil",
+            "Sudhanshu Singh",
+            "Muthusamy Chelliah",
+            "Nikesh Garera"
+          ],
+          "year": 2024,
+          "abstract": "Evaluation of opinion summaries using conventional reference-based metrics often fails to provide a comprehensive assessment and exhibits limited correlation with human judgments. While Large Language Models (LLMs) have shown promise as reference-free metrics for NLG evaluation, their potential remains unexplored for opinion summary evaluation. Furthermore, the absence of sufficient opinion summary evaluation datasets hinders progress in this area. In response, we introduce the SUMMEVAL-OP dataset, encompassing 7 dimensions crucial to the evaluation of opinion summaries: fluency, coherence, relevance, faithfulness, aspect coverage, sentiment consistency, and specificity. We propose OP-I-PROMPT, a dimension-independent prompt, along with OP-PROMPTS, a dimension-dependent set of prompts for opinion summary evaluation. Our experiments demonstrate that OP-I-PROMPT emerges as a good alternative for evaluating opinion summaries, achieving an average Spearman correlation of 0.70 with human judgments, surpassing prior methodologies. Remarkably, we are the first to explore the efficacy of LLMs as evaluators, both on closed-source and open-source models, in the opinion summary evaluation domain.",
+          "url": "https://aclanthology.org/2024.acl-long.655/",
+          "doi": "10.18653/v1/2024.acl-long.655",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "counterfactual evaluation of text explanations",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T06:12:20.404831+00:00",
+      "papers": [
+        {
+          "paper_id": "2024.acl-short.49",
+          "title": "The Probabilities Also Matter: A More Faithful Metric for Faithfulness of Free-Text Explanations in Large Language Models",
+          "authors": [
+            "Noah Siegel",
+            "Oana-Maria Camburu",
+            "Nicolas Heess",
+            "Maria Perez-Ortiz"
+          ],
+          "year": 2024,
+          "abstract": "In order to oversee advanced AI systems, it is important to understand their reasons for generating a given output. When prompted, large language models (LLMs) can provide natural language explanations or reasoning traces that sound plausible and receive high ratings from human annotators. However, it is unclear to what extent these explanations are truly capturing the factors responsible for the model’s predictions: the most “human-like” explanation may be different from the one that is most faithful to the model’s true decision making process. In this work, we introduce the correlational counterfactual test (CCT), a faithfulness metric based on counterfactual input edits that takes into account not just the binary label change, but the total shift in the model’s predicted label distribution. We evaluate the faithfulness of free-text explanations generated by few-shot-prompted LLMs from the Llama-2 family on three NLP tasks. We find that these explanations are indeed more likely to mention factors when they are impactful to the model’s prediction, with the degree of association increasing with model size but varying significantly by task.",
+          "url": "https://aclanthology.org/2024.acl-short.49/",
+          "doi": "10.18653/v1/2024.acl-short.49",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-industry.42",
+          "title": "From Generating Answers to Building Explanations: Integrating Multi-Round RAG and Causal Modeling for Scientific QA",
+          "authors": [
+            "Victor Barres",
+            "Clifton James McFate",
+            "Aditya Kalyanpur",
+            "Kailash Karthik Saravanakumar",
+            "Lori Moon",
+            "Natnael Seifu",
+            "Abraham Bautista-Castillo"
+          ],
+          "year": 2025,
+          "abstract": "Application of LLMs for complex causal question answering can be stymied by their opacity and propensity for hallucination. Although recent approaches such as Retrieval Augmented Generation and Chain of Thought prompting have improved reliability, we argue current approaches are insufficient and further fail to satisfy key criteria humans use to select and evaluate causal explanations. Inspired by findings from the social sciences, we present an implemented causal QA approach that combines iterative RAG with guidance from a formal model of causation. Our causal model is backed by the Cogent reasoning engine, allowing users to interactively perform counterfactual analysis and refine their answer. Our approach has been integrated into a deployed Collaborative Research Assistant (Cora) and we present a pilot evaluation in the life sciences domain.",
+          "url": "https://aclanthology.org/2025.naacl-industry.42/",
+          "doi": "10.18653/v1/2025.naacl-industry.42",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.593",
+          "title": "CLOMO: Counterfactual Logical Modification with Large Language Models",
+          "authors": [
+            "Yinya Huang",
+            "Ruixin Hong",
+            "Hongming Zhang",
+            "Wei Shao",
+            "Zhicheng Yang",
+            "Dong Yu",
+            "Changshui Zhang",
+            "Xiaodan Liang",
+            "Linqi Song"
+          ],
+          "year": 2024,
+          "abstract": "In this study, we delve into the realm of counterfactual reasoning capabilities of large language models (LLMs). Our primary objective is to cultivate the counterfactual thought processes within LLMs and rigorously assess these processes for their validity. Specifically, we introduce a novel task, Counterfactual Logical Modification (CLOMO), and a high-quality human-annotated benchmark. In this task, LLMs must adeptly alter a given argumentative text to uphold a predetermined logical relationship. To effectively evaluate a generation model’s counterfactual capabilities, we propose an innovative evaluation metric, the decomposed Self-Evaluation Score (SES) to directly evaluate the natural language output of LLMs instead of modeling the task as a multiple-choice problem. Analysis shows that the proposed automatic metric aligns well with human preference. Our experimental results show that while LLMs demonstrate a notable capacity for logical counterfactual thinking, there remains a discernible gap between their current abilities and human performance. Code and data are available at https://github.com/Eleanor-H/CLOMO.",
+          "url": "https://aclanthology.org/2024.acl-long.593/",
+          "doi": "10.18653/v1/2024.acl-long.593",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.500",
+          "title": "Multi-Aspect Controllable Text Generation with Disentangled Counterfactual Augmentation",
+          "authors": [
+            "Yi Liu",
+            "Xiangyu Liu",
+            "Xiangrong Zhu",
+            "Wei Hu"
+          ],
+          "year": 2024,
+          "abstract": "Multi-aspect controllable text generation aims to control the generated texts in attributes from multiple aspects (e.g., “positive” from sentiment and “sport” from topic). Existing works neglect attribute correlations formed by the intertwining of different attributes. Particularly, the stereotype formed by imbalanced attribute correlations significantly affects multi-aspect control. In this paper, we propose MAGIC, a new multi-aspect controllable text generation method with disentangled counterfactual augmentation. We alleviate the issue of imbalanced attribute correlations during training using counterfactual feature vectors in the attribute latent space by disentanglement. During inference, we enhance attribute correlations by target-guided counterfactual augmentation to further improve multi-aspect control. Experiments show that MAGIC outperforms state-of-the-art baselines in both imbalanced and balanced attribute correlation scenarios.",
+          "url": "https://aclanthology.org/2024.acl-long.500/",
+          "doi": "10.18653/v1/2024.acl-long.500",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-short.39",
+          "title": "Born Differently Makes a Difference: Counterfactual Study of Bias in Biography Generation from a Data-to-Text Perspective",
+          "authors": [
+            "Biaoyan Fang",
+            "Ritvik Dinesh",
+            "Xiang Dai",
+            "Sarvnaz Karimi"
+          ],
+          "year": 2024,
+          "abstract": "How do personal attributes affect biography generation? Addressing this question requires an identical pair of biographies where only the personal attributes of interest are different. However, it is rare in the real world. To address this, we propose a counterfactual methodology from a data-to-text perspective, manipulating the personal attributes of interest while keeping the co-occurring attributes unchanged. We first validate that the fine-tuned Flan-T5 model generates the biographies based on the given attributes. This work expands the analysis of gender-centered bias in text generation. Our results confirm the well-known bias in gender and also show the bias in regions, in both individual and its related co-occurring attributes in semantic machining and sentiment.",
+          "url": "https://aclanthology.org/2024.acl-short.39/",
+          "doi": "10.18653/v1/2024.acl-short.39",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "persuasive language and logic in language models",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T06:12:20.413608+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-long.506",
+          "title": "Measuring and Benchmarking Large Language Models’ Capabilities to Generate Persuasive Language",
+          "authors": [
+            "Amalie Brogaard Pauli",
+            "Isabelle Augenstein",
+            "Ira Assent"
+          ],
+          "year": 2025,
+          "abstract": "We are exposed to much information trying to influence us, such as teaser messages, debates, politically framed news, and propaganda — all of which use persuasive language. With the recent interest in Large Language Models (LLMs), we study the ability of LLMs to produce persuasive text. As opposed to prior work which focuses on particular domains or types of persuasion, we conduct a general study across various domains to measure and benchmark to what degree LLMs produce persuasive language - both when explicitly instructed to rewrite text to be more or less persuasive and when only instructed to paraphrase. We construct the new dataset Persuasive-Pairs of pairs of a short text and its rewrite by an LLM to amplify or diminish persuasive language. We multi-annotate the pairs on a relative scale for persuasive language: a valuable resource in itself, and for training a regression model to score and benchmark persuasive language, including for new LLMs across domains. In our analysis, we find that different ‘personas’ in LLaMA3’s system prompt change persuasive language substantially, even when only instructed to paraphrase.",
+          "url": "https://aclanthology.org/2025.naacl-long.506/",
+          "doi": "10.18653/v1/2025.naacl-long.506",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.90",
+          "title": "Evaluating Intention Detection Capability of Large Language Models in Persuasive Dialogues",
+          "authors": [
+            "Hiromasa Sakurai",
+            "Yusuke Miyao"
+          ],
+          "year": 2024,
+          "abstract": "We investigate intention detection in persuasive multi-turn dialogs employing the largest available Large Language Models (LLMs).Much of the prior research measures the intention detection capability of machine learning models without considering the conversational history.To evaluate LLMs’ intention detection capability in conversation, we modified the existing datasets of persuasive conversation and created datasets using a multiple-choice paradigm.It is crucial to consider others’ perspectives through their utterances when engaging in a persuasive conversation, especially when making a request or reply that is inconvenient for others.This feature makes the persuasive dialogue suitable for the dataset of measuring intention detection capability.We incorporate the concept of ‘face acts,’ which categorize how utterances affect mental states.This approach enables us to measure intention detection capability by focusing on crucial intentions and to conduct comprehensible analysis according to intention types.",
+          "url": "https://aclanthology.org/2024.acl-long.90/",
+          "doi": "10.18653/v1/2024.acl-long.90",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.858",
+          "title": "The Earth is Flat because...: Investigating LLMs’ Belief towards Misinformation via Persuasive Conversation",
+          "authors": [
+            "Rongwu Xu",
+            "Brian Lin",
+            "Shujian Yang",
+            "Tianqi Zhang",
+            "Weiyan Shi",
+            "Tianwei Zhang",
+            "Zhixuan Fang",
+            "Wei Xu",
+            "Han Qiu"
+          ],
+          "year": 2024,
+          "abstract": "Large language models (LLMs) encapsulate vast amounts of knowledge but still remain vulnerable to external misinformation. Existing research mainly studied this susceptibility behavior in a single-turn setting. However, belief can change during a multi-turn conversation, especially a persuasive one. Therefore, in this study, we delve into LLMs’ susceptibility to persuasive conversations, particularly on factual questions that they can answer correctly. We first curate the Farm (i.e., Fact to Misinform) dataset, which contains factual questions paired with systematically generated persuasive misinformation. Then, we develop a testing framework to track LLMs’ belief changes in a persuasive dialogue. Through extensive experiments, we find that LLMs’ correct beliefs on factual knowledge can be easily manipulated by various persuasive strategies.",
+          "url": "https://aclanthology.org/2024.acl-long.858/",
+          "doi": "10.18653/v1/2024.acl-long.858",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.510",
+          "title": "Logic-of-Thought: Injecting Logic into Contexts for Full Reasoning in Large Language Models",
+          "authors": [
+            "Tongxuan Liu",
+            "Wenjiang Xu",
+            "Weizhe Huang",
+            "Yuting Zeng",
+            "Jiaxing Wang",
+            "Xingyu Wang",
+            "Hailong Yang",
+            "Jing Li"
+          ],
+          "year": 2025,
+          "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across various tasks but their performance in complex logical reasoning tasks remains unsatisfactory. Although some prompting methods, such as Chain-of-Thought, can improve the reasoning ability of LLMs to some extent, they suffer from an unfaithful issue where derived conclusions may not align with the generated reasoning chain. To address this issue, some studies employ the approach of propositional logic to further enhance logical reasoning abilities of LLMs. However, the potential omissions in the extraction of logical expressions in these methods can cause information loss in the logical reasoning process, thereby generating incorrect results. To this end, we propose Logic-of-Thought (LoT) prompting which employs propositional logic to generate expanded logical information descriptions and utilizes them as an additional augmentation to original contexts, thereby ensuring information completeness and enhancing logical reasoning ability. LoT is orthogonal to existing prompting methods and can be seamlessly integrated with them. Extensive experiments demonstrate that LoT boosts the performance of various prompting methods with a striking margin across five logical reasoning tasks. In particular, LoT enhances Chain-of-Thought’s performance on the ReClor dataset by +4.35%, improves Chain-of-Thought with Self-Consistency’s performance on the RuleTaker dataset by +3.52%, and boosts performance of Tree-of-Thoughts on the ProofWriter dataset by +8%.",
+          "url": "https://aclanthology.org/2025.naacl-long.510/",
+          "doi": "10.18653/v1/2025.naacl-long.510",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.203",
+          "title": "Communication Makes Perfect: Persuasion Dataset Construction via Multi-LLM Communication",
+          "authors": [
+            "Weicheng Ma",
+            "Hefan Zhang",
+            "Ivory Yang",
+            "Shiyu Ji",
+            "Joice Chen",
+            "Farnoosh Hashemi",
+            "Shubham Mohole",
+            "Ethan Gearey",
+            "Michael Macy",
+            "Saeed Hassanpour",
+            "Soroush Vosoughi"
+          ],
+          "year": 2025,
+          "abstract": "Large Language Models (LLMs) have shown proficiency in generating persuasive dialogue, yet concerns about the fluency and sophistication of their outputs persist. This paper presents a multi-LLM communication framework designed to enhance the generation of persuasive data automatically. This framework facilitates the efficient production of high-quality, diverse linguistic content with minimal human oversight. Through extensive evaluations, we demonstrate that the generated data excels in naturalness, linguistic diversity, and the strategic use of persuasion, even in complex scenarios involving social taboos. The framework also proves adept at generalizing across novel contexts. Our results highlight the framework’s potential to significantly advance research in both computational and social science domains concerning persuasive communication.",
+          "url": "https://aclanthology.org/2025.naacl-long.203/",
+          "doi": "10.18653/v1/2025.naacl-long.203",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "Do Language-Model Explanations for Rule-Based Classification Track Underlying Rules or Maintain Persuasion under Minimal Counterfactual Rule Changes? We construct a synthetic rule-following classification dataset with strict template-disjoint splits. Each sample pairs a deterministic multi-clause lo",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T06:12:20.423986+00:00",
+      "papers": [
+        {
+          "paper_id": "2024.acl-long.406",
+          "title": "Can LLMs Reason with Rules? Logic Scaffolding for Stress-Testing and Improving LLMs",
+          "authors": [
+            "Siyuan Wang",
+            "Zhongyu Wei",
+            "Yejin Choi",
+            "Xiang Ren"
+          ],
+          "year": 2024,
+          "abstract": "Large language models (LLMs) have achieved impressive human-like performance across various reasoning tasks. However, their mastery of underlying inferential rules still falls short of human capabilities. To investigate this, we propose a logic scaffolding inferential rule generation framework, to construct an inferential rule base, ULogic, comprising both primitive and compositional rules across five domains. Our analysis of GPT-series models over a rule subset reveals significant gaps in LLMs’ logic understanding compared to human performance, especially in compositional and structural complex rules with certain bias patterns. We further distill these rules into a smaller-scale inference engine for flexible rule generation and enhancing downstream reasoning. Through a multi-judger evaluation, our inference engine proves effective in generating accurate, complex and abstract conclusions and premises, and improve various commonsense reasoning tasks. Overall, our work sheds light on LLMs’ limitations in grasping inferential rule and suggests ways to enhance their logical reasoning abilities .",
+          "url": "https://aclanthology.org/2024.acl-long.406/",
+          "doi": "10.18653/v1/2024.acl-long.406",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-short.30",
+          "title": "MTP: A Dataset for Multi-Modal Turning Points in Casual Conversations",
+          "authors": [
+            "Gia-Bao Ho",
+            "Chang Tan",
+            "Zahra Darban",
+            "Mahsa Salehi",
+            "Reza Haf",
+            "Wray Buntine"
+          ],
+          "year": 2024,
+          "abstract": "Detecting critical moments, such as emotional outbursts or changes in decisions during conversations, is crucial for understanding shifts in human behavior and their consequences. Our work introduces a novel problem setting focusing on these moments as turning points (TPs), accompanied by a meticulously curated, high-consensus, human-annotated multi-modal dataset. We provide precise timestamps, descriptions, and visual-textual evidence high-lighting changes in emotions, behaviors, perspectives, and decisions at these turning points. We also propose a framework, TPMaven, utilizing state-of-the-art vision-language models to construct a narrative from the videos and large language models to classify and detect turning points in our multi-modal dataset. Evaluation results show that TPMaven achieves an F1-score of 0.88 in classification and 0.61 in detection, with additional explanations aligning with human expectations.",
+          "url": "https://aclanthology.org/2024.acl-short.30/",
+          "doi": "10.18653/v1/2024.acl-short.30",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.765",
+          "title": "Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models",
+          "authors": [
+            "Shengzhi Li",
+            "Rongyu Lin",
+            "Shichao Pei"
+          ],
+          "year": 2024,
+          "abstract": "Multi-modal large language models (MLLMs) are expected to support multi-turn queries of interchanging image and text modalities in production. However, the current MLLMs trained with visual-question-answering (VQA) datasets could suffer from degradation, as VQA datasets lack the diversity and complexity of the original text instruction datasets with which the underlying language model was trained. To address this degradation, we first collect a lightweight, 5k-sample VQA preference dataset where answers were annotated by Gemini for five quality metrics in a granular fashion and investigate standard Supervised Fine-tuning, rejection sampling, Direct Preference Optimization (DPO) and SteerLM algorithms. Our findings indicate that with DPO, we can surpass the instruction-following capabilities of the language model, achieving a 6.73 score on MT-Bench, compared to Vicuna’s 6.57 and LLaVA’s 5.99. This enhancement in textual instruction-following capability correlates with boosted visual instruction performance (+4.9% on MM-Vet, +6% on LLaVA-Bench), with minimal alignment tax on visual knowledge benchmarks compared to the previous RLHF approach. In conclusion, we propose a distillation-based multi-modal alignment model with fine-grained annotations on a small dataset that restores and boosts MLLM’s language capability after visual instruction tuning.",
+          "url": "https://aclanthology.org/2024.acl-long.765/",
+          "doi": "10.18653/v1/2024.acl-long.765",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.92",
+          "title": "Persuading across Diverse Domains: a Dataset and Persuasion Large Language Model",
+          "authors": [
+            "Chuhao Jin",
+            "Kening Ren",
+            "Lingzhen Kong",
+            "Xiting Wang",
+            "Ruihua Song",
+            "Huan Chen"
+          ],
+          "year": 2024,
+          "abstract": "Persuasive dialogue requires multi-turn following and planning abilities to achieve the goal of persuading users, which is still challenging even for state-of-the-art large language models (LLMs). Previous works focus on retrieval-based models or generative models in a specific domain due to a lack of data across multiple domains. In this paper, we leverage GPT-4 to create the first multi-domain persuasive dialogue dataset DailyPersuasion. Then we propose a general method named PersuGPT to learn a persuasion model based on LLMs through intent-to-strategy reasoning, which summarizes the intent of user’s utterance and reasons next strategy to respond. Moreover, we design a simulation-based preference optimization, which utilizes a learned user model and our model to simulate next turns and estimate their rewards more accurately. Experimental results on two datasets indicate that our proposed method outperforms all baselines in terms of automatic evaluation metric Win-Rate and human evaluation. The code and data are available at https://persugpt.github.io.",
+          "url": "https://aclanthology.org/2024.acl-long.92/",
+          "doi": "10.18653/v1/2024.acl-long.92",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.391",
+          "title": "End-to-end Learning of Logical Rules for Enhancing Document-level Relation Extraction",
+          "authors": [
+            "Kunxun Qi",
+            "Jianfeng Du",
+            "Hai Wan"
+          ],
+          "year": 2024,
+          "abstract": "Document-level relation extraction (DocRE) aims to extract relations between entities in a whole document. One of the pivotal challenges of DocRE is to capture the intricate interdependencies between relations of entity pairs. Previous methods have shown that logical rules can explicitly help capture such interdependencies. These methods either learn logical rules to refine the output of a trained DocRE model, or first learn logical rules from annotated data and then inject the learnt rules into a DocRE model using an auxiliary training objective. However, these learning pipelines may suffer from the issue of error propagation. To mitigate this issue, we propose Joint Modeling Relation extraction and Logical rules or JMRL for short, a novel rule-based framework that jointly learns both a DocRE model and logical rules in an end-to-end fashion. Specifically, we parameterize a rule reasoning module in JMRL to simulate the inference of logical rules, thereby explicitly modeling the reasoning process. We also introduce an auxiliary loss and a residual connection mechanism in JMRL to better reconcile the DocRE model and the rule reasoning module. Experimental results on four benchmark datasets demonstrate that our proposed JMRL framework is consistently superior to existing rule-based frameworks, improving five baseline models for DocRE by a significant margin.",
+          "url": "https://aclanthology.org/2024.acl-long.391/",
+          "doi": "10.18653/v1/2024.acl-long.391",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "Do Language-Model Explanations for Rule-Based Classification Track Underlying Rules or Maintain Persuasion under Minimal Counterfactual Rule Changes? We construct a synthetic rule-following classification dataset with strict template-disjoint splits via a seeded generator and deterministic Python va",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T06:12:20.429409+00:00",
+      "papers": [
+        {
+          "paper_id": "2024.acl-long.406",
+          "title": "Can LLMs Reason with Rules? Logic Scaffolding for Stress-Testing and Improving LLMs",
+          "authors": [
+            "Siyuan Wang",
+            "Zhongyu Wei",
+            "Yejin Choi",
+            "Xiang Ren"
+          ],
+          "year": 2024,
+          "abstract": "Large language models (LLMs) have achieved impressive human-like performance across various reasoning tasks. However, their mastery of underlying inferential rules still falls short of human capabilities. To investigate this, we propose a logic scaffolding inferential rule generation framework, to construct an inferential rule base, ULogic, comprising both primitive and compositional rules across five domains. Our analysis of GPT-series models over a rule subset reveals significant gaps in LLMs’ logic understanding compared to human performance, especially in compositional and structural complex rules with certain bias patterns. We further distill these rules into a smaller-scale inference engine for flexible rule generation and enhancing downstream reasoning. Through a multi-judger evaluation, our inference engine proves effective in generating accurate, complex and abstract conclusions and premises, and improve various commonsense reasoning tasks. Overall, our work sheds light on LLMs’ limitations in grasping inferential rule and suggests ways to enhance their logical reasoning abilities .",
+          "url": "https://aclanthology.org/2024.acl-long.406/",
+          "doi": "10.18653/v1/2024.acl-long.406",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.203",
+          "title": "Communication Makes Perfect: Persuasion Dataset Construction via Multi-LLM Communication",
+          "authors": [
+            "Weicheng Ma",
+            "Hefan Zhang",
+            "Ivory Yang",
+            "Shiyu Ji",
+            "Joice Chen",
+            "Farnoosh Hashemi",
+            "Shubham Mohole",
+            "Ethan Gearey",
+            "Michael Macy",
+            "Saeed Hassanpour",
+            "Soroush Vosoughi"
+          ],
+          "year": 2025,
+          "abstract": "Large Language Models (LLMs) have shown proficiency in generating persuasive dialogue, yet concerns about the fluency and sophistication of their outputs persist. This paper presents a multi-LLM communication framework designed to enhance the generation of persuasive data automatically. This framework facilitates the efficient production of high-quality, diverse linguistic content with minimal human oversight. Through extensive evaluations, we demonstrate that the generated data excels in naturalness, linguistic diversity, and the strategic use of persuasion, even in complex scenarios involving social taboos. The framework also proves adept at generalizing across novel contexts. Our results highlight the framework’s potential to significantly advance research in both computational and social science domains concerning persuasive communication.",
+          "url": "https://aclanthology.org/2025.naacl-long.203/",
+          "doi": "10.18653/v1/2025.naacl-long.203",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-short.30",
+          "title": "MTP: A Dataset for Multi-Modal Turning Points in Casual Conversations",
+          "authors": [
+            "Gia-Bao Ho",
+            "Chang Tan",
+            "Zahra Darban",
+            "Mahsa Salehi",
+            "Reza Haf",
+            "Wray Buntine"
+          ],
+          "year": 2024,
+          "abstract": "Detecting critical moments, such as emotional outbursts or changes in decisions during conversations, is crucial for understanding shifts in human behavior and their consequences. Our work introduces a novel problem setting focusing on these moments as turning points (TPs), accompanied by a meticulously curated, high-consensus, human-annotated multi-modal dataset. We provide precise timestamps, descriptions, and visual-textual evidence high-lighting changes in emotions, behaviors, perspectives, and decisions at these turning points. We also propose a framework, TPMaven, utilizing state-of-the-art vision-language models to construct a narrative from the videos and large language models to classify and detect turning points in our multi-modal dataset. Evaluation results show that TPMaven achieves an F1-score of 0.88 in classification and 0.61 in detection, with additional explanations aligning with human expectations.",
+          "url": "https://aclanthology.org/2024.acl-short.30/",
+          "doi": "10.18653/v1/2024.acl-short.30",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.92",
+          "title": "Persuading across Diverse Domains: a Dataset and Persuasion Large Language Model",
+          "authors": [
+            "Chuhao Jin",
+            "Kening Ren",
+            "Lingzhen Kong",
+            "Xiting Wang",
+            "Ruihua Song",
+            "Huan Chen"
+          ],
+          "year": 2024,
+          "abstract": "Persuasive dialogue requires multi-turn following and planning abilities to achieve the goal of persuading users, which is still challenging even for state-of-the-art large language models (LLMs). Previous works focus on retrieval-based models or generative models in a specific domain due to a lack of data across multiple domains. In this paper, we leverage GPT-4 to create the first multi-domain persuasive dialogue dataset DailyPersuasion. Then we propose a general method named PersuGPT to learn a persuasion model based on LLMs through intent-to-strategy reasoning, which summarizes the intent of user’s utterance and reasons next strategy to respond. Moreover, we design a simulation-based preference optimization, which utilizes a learned user model and our model to simulate next turns and estimate their rewards more accurately. Experimental results on two datasets indicate that our proposed method outperforms all baselines in terms of automatic evaluation metric Win-Rate and human evaluation. The code and data are available at https://persugpt.github.io.",
+          "url": "https://aclanthology.org/2024.acl-long.92/",
+          "doi": "10.18653/v1/2024.acl-long.92",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.391",
+          "title": "End-to-end Learning of Logical Rules for Enhancing Document-level Relation Extraction",
+          "authors": [
+            "Kunxun Qi",
+            "Jianfeng Du",
+            "Hai Wan"
+          ],
+          "year": 2024,
+          "abstract": "Document-level relation extraction (DocRE) aims to extract relations between entities in a whole document. One of the pivotal challenges of DocRE is to capture the intricate interdependencies between relations of entity pairs. Previous methods have shown that logical rules can explicitly help capture such interdependencies. These methods either learn logical rules to refine the output of a trained DocRE model, or first learn logical rules from annotated data and then inject the learnt rules into a DocRE model using an auxiliary training objective. However, these learning pipelines may suffer from the issue of error propagation. To mitigate this issue, we propose Joint Modeling Relation extraction and Logical rules or JMRL for short, a novel rule-based framework that jointly learns both a DocRE model and logical rules in an end-to-end fashion. Specifically, we parameterize a rule reasoning module in JMRL to simulate the inference of logical rules, thereby explicitly modeling the reasoning process. We also introduce an auxiliary loss and a residual connection mechanism in JMRL to better reconcile the DocRE model and the rule reasoning module. Experimental results on four benchmark datasets demonstrate that our proposed JMRL framework is consistently superior to existing rule-based frameworks, improving five baseline models for DocRE by a significant margin.",
+          "url": "https://aclanthology.org/2024.acl-long.391/",
+          "doi": "10.18653/v1/2024.acl-long.391",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    }
+  ],
+  "events": [
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-17T06:12:59.036019+00:00",
+      "prompt_hash": "29ce90d7660bc661118d228d45b68d438f31d0da6b29310bc2b78197f88fb964",
+      "input_tokens": 13527,
+      "output_tokens": 582,
+      "thinking_tokens": 0,
+      "total_tokens": 14109,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 7.037787706001836
+    },
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-17T06:13:14.036148+00:00",
+      "prompt_hash": "29ce90d7660bc661118d228d45b68d438f31d0da6b29310bc2b78197f88fb964",
+      "input_tokens": 13527,
+      "output_tokens": 542,
+      "thinking_tokens": 0,
+      "total_tokens": 14069,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 5.988588901993353
+    }
+  ],
+  "error": null,
+  "literature_context": {
+    "coverage": {
+      "protocol": "multi_query_shared_evidence_v1",
+      "selection_policy": "Shared evidence per seed/replicate; cited papers first, then interleaved multi-query hits.",
+      "query_count": 5,
+      "paper_count": 19,
+      "paper_limit": 24,
+      "search_failures": 0,
+      "missing_cited_ids": [],
+      "omitted_cited_ids": [],
+      "omitted_hit_count": 0,
+      "limitations": "Bounded abstract corpus and lexical search; incomplete retrieval does not establish novelty."
+    },
+    "fingerprint": "7eb324818fb0e5e48054ce3855aa4dffe57b6fe53d53ac127e9bfdc44934ed03",
+    "queries": [
+      "LLM explanation faithfulness rule reasoning",
+      "counterfactual evaluation of text explanations",
+      "persuasive language and logic in language models",
+      "Do Language-Model Explanations for Rule-Based Classification Track Underlying Rules or Maintain Persuasion under Minimal Counterfactual Rule Changes? We construct a synthetic rule-following classification dataset with strict template-disjoint splits. Each sample pairs a deterministic multi-clause lo",
+      "Do Language-Model Explanations for Rule-Based Classification Track Underlying Rules or Maintain Persuasion under Minimal Counterfactual Rule Changes? We construct a synthetic rule-following classification dataset with strict template-disjoint splits via a seeded generator and deterministic Python va"
+    ],
+    "papers": [
+      {
+        "paper_id": "2024.acl-long.406",
+        "title": "Can LLMs Reason with Rules? Logic Scaffolding for Stress-Testing and Improving LLMs",
+        "authors": [
+          "Siyuan Wang",
+          "Zhongyu Wei",
+          "Yejin Choi",
+          "Xiang Ren"
+        ],
+        "year": 2024,
+        "abstract": "Large language models (LLMs) have achieved impressive human-like performance across various reasoning tasks. However, their mastery of underlying inferential rules still falls short of human capabilities. To investigate this, we propose a logic scaffolding inferential rule generation framework, to construct an inferential rule base, ULogic, comprising both primitive and compositional rules across five domains. Our analysis of GPT-series models over a rule subset reveals significant gaps in LLMs’ logic understanding compared to human performance, especially in compositional and structural complex rules with certain bias patterns. We further distill these rules into a smaller-scale inference engine for flexible rule generation and enhancing downstream reasoning. Through a multi-judger evaluation, our inference engine proves effective in generating accurate, complex and abstract conclusions and premises, and improve various commonsense reasoning tasks. Overall, our work sheds light on LLMs’ limitations in grasping inferential rule and suggests ways to enhance their logical reasoning abilities .",
+        "url": "https://aclanthology.org/2024.acl-long.406/",
+        "doi": "10.18653/v1/2024.acl-long.406",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.593",
+        "title": "CLOMO: Counterfactual Logical Modification with Large Language Models",
+        "authors": [
+          "Yinya Huang",
+          "Ruixin Hong",
+          "Hongming Zhang",
+          "Wei Shao",
+          "Zhicheng Yang",
+          "Dong Yu",
+          "Changshui Zhang",
+          "Xiaodan Liang",
+          "Linqi Song"
+        ],
+        "year": 2024,
+        "abstract": "In this study, we delve into the realm of counterfactual reasoning capabilities of large language models (LLMs). Our primary objective is to cultivate the counterfactual thought processes within LLMs and rigorously assess these processes for their validity. Specifically, we introduce a novel task, Counterfactual Logical Modification (CLOMO), and a high-quality human-annotated benchmark. In this task, LLMs must adeptly alter a given argumentative text to uphold a predetermined logical relationship. To effectively evaluate a generation model’s counterfactual capabilities, we propose an innovative evaluation metric, the decomposed Self-Evaluation Score (SES) to directly evaluate the natural language output of LLMs instead of modeling the task as a multiple-choice problem. Analysis shows that the proposed automatic metric aligns well with human preference. Our experimental results show that while LLMs demonstrate a notable capacity for logical counterfactual thinking, there remains a discernible gap between their current abilities and human performance. Code and data are available at https://github.com/Eleanor-H/CLOMO.",
+        "url": "https://aclanthology.org/2024.acl-long.593/",
+        "doi": "10.18653/v1/2024.acl-long.593",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-short.49",
+        "title": "The Probabilities Also Matter: A More Faithful Metric for Faithfulness of Free-Text Explanations in Large Language Models",
+        "authors": [
+          "Noah Siegel",
+          "Oana-Maria Camburu",
+          "Nicolas Heess",
+          "Maria Perez-Ortiz"
+        ],
+        "year": 2024,
+        "abstract": "In order to oversee advanced AI systems, it is important to understand their reasons for generating a given output. When prompted, large language models (LLMs) can provide natural language explanations or reasoning traces that sound plausible and receive high ratings from human annotators. However, it is unclear to what extent these explanations are truly capturing the factors responsible for the model’s predictions: the most “human-like” explanation may be different from the one that is most faithful to the model’s true decision making process. In this work, we introduce the correlational counterfactual test (CCT), a faithfulness metric based on counterfactual input edits that takes into account not just the binary label change, but the total shift in the model’s predicted label distribution. We evaluate the faithfulness of free-text explanations generated by few-shot-prompted LLMs from the Llama-2 family on three NLP tasks. We find that these explanations are indeed more likely to mention factors when they are impactful to the model’s prediction, with the degree of association increasing with model size but varying significantly by task.",
+        "url": "https://aclanthology.org/2024.acl-short.49/",
+        "doi": "10.18653/v1/2024.acl-short.49",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.506",
+        "title": "Measuring and Benchmarking Large Language Models’ Capabilities to Generate Persuasive Language",
+        "authors": [
+          "Amalie Brogaard Pauli",
+          "Isabelle Augenstein",
+          "Ira Assent"
+        ],
+        "year": 2025,
+        "abstract": "We are exposed to much information trying to influence us, such as teaser messages, debates, politically framed news, and propaganda — all of which use persuasive language. With the recent interest in Large Language Models (LLMs), we study the ability of LLMs to produce persuasive text. As opposed to prior work which focuses on particular domains or types of persuasion, we conduct a general study across various domains to measure and benchmark to what degree LLMs produce persuasive language - both when explicitly instructed to rewrite text to be more or less persuasive and when only instructed to paraphrase. We construct the new dataset Persuasive-Pairs of pairs of a short text and its rewrite by an LLM to amplify or diminish persuasive language. We multi-annotate the pairs on a relative scale for persuasive language: a valuable resource in itself, and for training a regression model to score and benchmark persuasive language, including for new LLMs across domains. In our analysis, we find that different ‘personas’ in LLaMA3’s system prompt change persuasive language substantially, even when only instructed to paraphrase.",
+        "url": "https://aclanthology.org/2025.naacl-long.506/",
+        "doi": "10.18653/v1/2025.naacl-long.506",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.329",
+        "title": "On Measuring Faithfulness or Self-consistency of Natural Language Explanations",
+        "authors": [
+          "Letitia Parcalabescu",
+          "Anette Frank"
+        ],
+        "year": 2024,
+        "abstract": "Large language models (LLMs) can explain their predictions through post-hoc or Chain-of-Thought (CoT) explanations. But an LLM could make up reasonably sounding explanations that are unfaithful to its underlying reasoning. Recent work has designed tests that aim to judge the faithfulness of post-hoc or CoT explanations. In this work we argue that these faithfulness tests do not measure faithfulness to the models’ inner workings – but rather their self-consistency at output level.Our contributions are three-fold: i) We clarify the status of faithfulness tests in view of model explainability, characterising them as self-consistency tests instead. This assessment we underline by ii) constructing a Comparative Consistency Bank for self-consistency tests that for the first time compares existing tests on a common suite of 11 open LLMs and 5 tasks – including iii) our new self-consistency measure CC-SHAP. CC-SHAP is a fine-grained measure (not a test) of LLM self-consistency. It compares how a model’s input contributes to the predicted answer and to generating the explanation. Our fine-grained CC-SHAP metric allows us iii) to compare LLM behaviour when making predictions and to analyse the effect of other consistency tests at a deeper level, which takes us one step further towards measuring faithfulness by bringing us closer to the internals of the model than strictly surface output-oriented tests.",
+        "url": "https://aclanthology.org/2024.acl-long.329/",
+        "doi": "10.18653/v1/2024.acl-long.329",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-industry.42",
+        "title": "From Generating Answers to Building Explanations: Integrating Multi-Round RAG and Causal Modeling for Scientific QA",
+        "authors": [
+          "Victor Barres",
+          "Clifton James McFate",
+          "Aditya Kalyanpur",
+          "Kailash Karthik Saravanakumar",
+          "Lori Moon",
+          "Natnael Seifu",
+          "Abraham Bautista-Castillo"
+        ],
+        "year": 2025,
+        "abstract": "Application of LLMs for complex causal question answering can be stymied by their opacity and propensity for hallucination. Although recent approaches such as Retrieval Augmented Generation and Chain of Thought prompting have improved reliability, we argue current approaches are insufficient and further fail to satisfy key criteria humans use to select and evaluate causal explanations. Inspired by findings from the social sciences, we present an implemented causal QA approach that combines iterative RAG with guidance from a formal model of causation. Our causal model is backed by the Cogent reasoning engine, allowing users to interactively perform counterfactual analysis and refine their answer. Our approach has been integrated into a deployed Collaborative Research Assistant (Cora) and we present a pilot evaluation in the life sciences domain.",
+        "url": "https://aclanthology.org/2025.naacl-industry.42/",
+        "doi": "10.18653/v1/2025.naacl-industry.42",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.90",
+        "title": "Evaluating Intention Detection Capability of Large Language Models in Persuasive Dialogues",
+        "authors": [
+          "Hiromasa Sakurai",
+          "Yusuke Miyao"
+        ],
+        "year": 2024,
+        "abstract": "We investigate intention detection in persuasive multi-turn dialogs employing the largest available Large Language Models (LLMs).Much of the prior research measures the intention detection capability of machine learning models without considering the conversational history.To evaluate LLMs’ intention detection capability in conversation, we modified the existing datasets of persuasive conversation and created datasets using a multiple-choice paradigm.It is crucial to consider others’ perspectives through their utterances when engaging in a persuasive conversation, especially when making a request or reply that is inconvenient for others.This feature makes the persuasive dialogue suitable for the dataset of measuring intention detection capability.We incorporate the concept of ‘face acts,’ which categorize how utterances affect mental states.This approach enables us to measure intention detection capability by focusing on crucial intentions and to conduct comprehensible analysis according to intention types.",
+        "url": "https://aclanthology.org/2024.acl-long.90/",
+        "doi": "10.18653/v1/2024.acl-long.90",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-short.30",
+        "title": "MTP: A Dataset for Multi-Modal Turning Points in Casual Conversations",
+        "authors": [
+          "Gia-Bao Ho",
+          "Chang Tan",
+          "Zahra Darban",
+          "Mahsa Salehi",
+          "Reza Haf",
+          "Wray Buntine"
+        ],
+        "year": 2024,
+        "abstract": "Detecting critical moments, such as emotional outbursts or changes in decisions during conversations, is crucial for understanding shifts in human behavior and their consequences. Our work introduces a novel problem setting focusing on these moments as turning points (TPs), accompanied by a meticulously curated, high-consensus, human-annotated multi-modal dataset. We provide precise timestamps, descriptions, and visual-textual evidence high-lighting changes in emotions, behaviors, perspectives, and decisions at these turning points. We also propose a framework, TPMaven, utilizing state-of-the-art vision-language models to construct a narrative from the videos and large language models to classify and detect turning points in our multi-modal dataset. Evaluation results show that TPMaven achieves an F1-score of 0.88 in classification and 0.61 in detection, with additional explanations aligning with human expectations.",
+        "url": "https://aclanthology.org/2024.acl-short.30/",
+        "doi": "10.18653/v1/2024.acl-short.30",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.203",
+        "title": "Communication Makes Perfect: Persuasion Dataset Construction via Multi-LLM Communication",
+        "authors": [
+          "Weicheng Ma",
+          "Hefan Zhang",
+          "Ivory Yang",
+          "Shiyu Ji",
+          "Joice Chen",
+          "Farnoosh Hashemi",
+          "Shubham Mohole",
+          "Ethan Gearey",
+          "Michael Macy",
+          "Saeed Hassanpour",
+          "Soroush Vosoughi"
+        ],
+        "year": 2025,
+        "abstract": "Large Language Models (LLMs) have shown proficiency in generating persuasive dialogue, yet concerns about the fluency and sophistication of their outputs persist. This paper presents a multi-LLM communication framework designed to enhance the generation of persuasive data automatically. This framework facilitates the efficient production of high-quality, diverse linguistic content with minimal human oversight. Through extensive evaluations, we demonstrate that the generated data excels in naturalness, linguistic diversity, and the strategic use of persuasion, even in complex scenarios involving social taboos. The framework also proves adept at generalizing across novel contexts. Our results highlight the framework’s potential to significantly advance research in both computational and social science domains concerning persuasive communication.",
+        "url": "https://aclanthology.org/2025.naacl-long.203/",
+        "doi": "10.18653/v1/2025.naacl-long.203",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.539",
+        "title": "Main Predicate and Their Arguments as Explanation Signals For Intent Classification",
+        "authors": [
+          "Sameer Pimparkhede",
+          "Pushpak Bhattacharyya"
+        ],
+        "year": 2025,
+        "abstract": "Intent classification is crucial for conversational agents (chatbots), and deep learning models perform well in this area. However, little research has been done on the explainability of intent classification due to the absence of suitable benchmark data. Human annotation of explanation signals in text samples is time-consuming and costly. However, from inspection of data on intent classification, we see that, more often than not, the main verb denotes the action, and the direct object indicates the domain of conversation, serving as explanation signals for intent. This observation enables us to hypothesize that the main predicate in the text utterances, along with the arguments of the main predicate, can serve as explanation signals. Leveraging this, we introduce a new technique to automatically augment text samples from intent classification datasets with word-level explanations. We mark main predicates (primarily verbs) and their arguments (dependency relations) as explanation signals in benchmark intent classification datasets ATIS and SNIPS, creating a unique 21k-instance dataset for explainability. Further, we experiment with deep learning and language models. We observe that models that work well for classification do not perform well in explainability metrics like plausibility and faithfulness. We also observe that guiding models to focus on explanation signals from our dataset during training improves the plausibility Token F1 score by 3-4%, improving the model’s reasoning.",
+        "url": "https://aclanthology.org/2025.naacl-long.539/",
+        "doi": "10.18653/v1/2025.naacl-long.539",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.858",
+        "title": "The Earth is Flat because...: Investigating LLMs’ Belief towards Misinformation via Persuasive Conversation",
+        "authors": [
+          "Rongwu Xu",
+          "Brian Lin",
+          "Shujian Yang",
+          "Tianqi Zhang",
+          "Weiyan Shi",
+          "Tianwei Zhang",
+          "Zhixuan Fang",
+          "Wei Xu",
+          "Han Qiu"
+        ],
+        "year": 2024,
+        "abstract": "Large language models (LLMs) encapsulate vast amounts of knowledge but still remain vulnerable to external misinformation. Existing research mainly studied this susceptibility behavior in a single-turn setting. However, belief can change during a multi-turn conversation, especially a persuasive one. Therefore, in this study, we delve into LLMs’ susceptibility to persuasive conversations, particularly on factual questions that they can answer correctly. We first curate the Farm (i.e., Fact to Misinform) dataset, which contains factual questions paired with systematically generated persuasive misinformation. Then, we develop a testing framework to track LLMs’ belief changes in a persuasive dialogue. Through extensive experiments, we find that LLMs’ correct beliefs on factual knowledge can be easily manipulated by various persuasive strategies.",
+        "url": "https://aclanthology.org/2024.acl-long.858/",
+        "doi": "10.18653/v1/2024.acl-long.858",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.765",
+        "title": "Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models",
+        "authors": [
+          "Shengzhi Li",
+          "Rongyu Lin",
+          "Shichao Pei"
+        ],
+        "year": 2024,
+        "abstract": "Multi-modal large language models (MLLMs) are expected to support multi-turn queries of interchanging image and text modalities in production. However, the current MLLMs trained with visual-question-answering (VQA) datasets could suffer from degradation, as VQA datasets lack the diversity and complexity of the original text instruction datasets with which the underlying language model was trained. To address this degradation, we first collect a lightweight, 5k-sample VQA preference dataset where answers were annotated by Gemini for five quality metrics in a granular fashion and investigate standard Supervised Fine-tuning, rejection sampling, Direct Preference Optimization (DPO) and SteerLM algorithms. Our findings indicate that with DPO, we can surpass the instruction-following capabilities of the language model, achieving a 6.73 score on MT-Bench, compared to Vicuna’s 6.57 and LLaVA’s 5.99. This enhancement in textual instruction-following capability correlates with boosted visual instruction performance (+4.9% on MM-Vet, +6% on LLaVA-Bench), with minimal alignment tax on visual knowledge benchmarks compared to the previous RLHF approach. In conclusion, we propose a distillation-based multi-modal alignment model with fine-grained annotations on a small dataset that restores and boosts MLLM’s language capability after visual instruction tuning.",
+        "url": "https://aclanthology.org/2024.acl-long.765/",
+        "doi": "10.18653/v1/2024.acl-long.765",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.184",
+        "title": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+        "authors": [
+          "Guangya Wan",
+          "Yuqi Wu",
+          "Jie Chen",
+          "Sheng Li"
+        ],
+        "year": 2025,
+        "abstract": "Self-consistency mitigates hallucinations in Large Language Models (LLMs) by sampling multiple reasoning paths, but it lacks a systematic approach to determine the optimal number of samples or select the most faithful rationale. To address this limitation, we introduce Reasoning-Aware Self-Consistency (RASC), a novel framework that enhances sampling efficiency and reasoning faithfulness by dynamically evaluating both outputs and rationales. RASC assesses the quality of reasoning and the consistency of answers for each generated sample, using these assessments to guide early stopping decisions and rationale selection. The framework employs criteria-based stopping and weighted majority voting, enabling more informed choices on when to halt sampling and which rationale to select. Our comprehensive experiments across diverse question-answering datasets demonstrate that RASC outperforms existing methods, reducing sample usage by approximately 70% while maintaining accuracy. Moreover, RASC facilitates the selection of high-fidelity rationales, thereby improving the faithfulness of LLM outputs. Our approach effectively addresses the efficiency-accuracy trade-off in LLM reasoning tasks, offering a new perspective for more nuanced, faithful, and effective utilization of LLMs in resource-constrained environments.",
+        "url": "https://aclanthology.org/2025.naacl-long.184/",
+        "doi": "10.18653/v1/2025.naacl-long.184",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.500",
+        "title": "Multi-Aspect Controllable Text Generation with Disentangled Counterfactual Augmentation",
+        "authors": [
+          "Yi Liu",
+          "Xiangyu Liu",
+          "Xiangrong Zhu",
+          "Wei Hu"
+        ],
+        "year": 2024,
+        "abstract": "Multi-aspect controllable text generation aims to control the generated texts in attributes from multiple aspects (e.g., “positive” from sentiment and “sport” from topic). Existing works neglect attribute correlations formed by the intertwining of different attributes. Particularly, the stereotype formed by imbalanced attribute correlations significantly affects multi-aspect control. In this paper, we propose MAGIC, a new multi-aspect controllable text generation method with disentangled counterfactual augmentation. We alleviate the issue of imbalanced attribute correlations during training using counterfactual feature vectors in the attribute latent space by disentanglement. During inference, we enhance attribute correlations by target-guided counterfactual augmentation to further improve multi-aspect control. Experiments show that MAGIC outperforms state-of-the-art baselines in both imbalanced and balanced attribute correlation scenarios.",
+        "url": "https://aclanthology.org/2024.acl-long.500/",
+        "doi": "10.18653/v1/2024.acl-long.500",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.510",
+        "title": "Logic-of-Thought: Injecting Logic into Contexts for Full Reasoning in Large Language Models",
+        "authors": [
+          "Tongxuan Liu",
+          "Wenjiang Xu",
+          "Weizhe Huang",
+          "Yuting Zeng",
+          "Jiaxing Wang",
+          "Xingyu Wang",
+          "Hailong Yang",
+          "Jing Li"
+        ],
+        "year": 2025,
+        "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across various tasks but their performance in complex logical reasoning tasks remains unsatisfactory. Although some prompting methods, such as Chain-of-Thought, can improve the reasoning ability of LLMs to some extent, they suffer from an unfaithful issue where derived conclusions may not align with the generated reasoning chain. To address this issue, some studies employ the approach of propositional logic to further enhance logical reasoning abilities of LLMs. However, the potential omissions in the extraction of logical expressions in these methods can cause information loss in the logical reasoning process, thereby generating incorrect results. To this end, we propose Logic-of-Thought (LoT) prompting which employs propositional logic to generate expanded logical information descriptions and utilizes them as an additional augmentation to original contexts, thereby ensuring information completeness and enhancing logical reasoning ability. LoT is orthogonal to existing prompting methods and can be seamlessly integrated with them. Extensive experiments demonstrate that LoT boosts the performance of various prompting methods with a striking margin across five logical reasoning tasks. In particular, LoT enhances Chain-of-Thought’s performance on the ReClor dataset by +4.35%, improves Chain-of-Thought with Self-Consistency’s performance on the RuleTaker dataset by +3.52%, and boosts performance of Tree-of-Thoughts on the ProofWriter dataset by +8%.",
+        "url": "https://aclanthology.org/2025.naacl-long.510/",
+        "doi": "10.18653/v1/2025.naacl-long.510",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.92",
+        "title": "Persuading across Diverse Domains: a Dataset and Persuasion Large Language Model",
+        "authors": [
+          "Chuhao Jin",
+          "Kening Ren",
+          "Lingzhen Kong",
+          "Xiting Wang",
+          "Ruihua Song",
+          "Huan Chen"
+        ],
+        "year": 2024,
+        "abstract": "Persuasive dialogue requires multi-turn following and planning abilities to achieve the goal of persuading users, which is still challenging even for state-of-the-art large language models (LLMs). Previous works focus on retrieval-based models or generative models in a specific domain due to a lack of data across multiple domains. In this paper, we leverage GPT-4 to create the first multi-domain persuasive dialogue dataset DailyPersuasion. Then we propose a general method named PersuGPT to learn a persuasion model based on LLMs through intent-to-strategy reasoning, which summarizes the intent of user’s utterance and reasons next strategy to respond. Moreover, we design a simulation-based preference optimization, which utilizes a learned user model and our model to simulate next turns and estimate their rewards more accurately. Experimental results on two datasets indicate that our proposed method outperforms all baselines in terms of automatic evaluation metric Win-Rate and human evaluation. The code and data are available at https://persugpt.github.io.",
+        "url": "https://aclanthology.org/2024.acl-long.92/",
+        "doi": "10.18653/v1/2024.acl-long.92",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.655",
+        "title": "One Prompt To Rule Them All: LLMs for Opinion Summary Evaluation",
+        "authors": [
+          "Tejpalsingh Siledar",
+          "Swaroop Nath",
+          "Sankara Muddu",
+          "Rupasai Rangaraju",
+          "Swaprava Nath",
+          "Pushpak Bhattacharyya",
+          "Suman Banerjee",
+          "Amey Patil",
+          "Sudhanshu Singh",
+          "Muthusamy Chelliah",
+          "Nikesh Garera"
+        ],
+        "year": 2024,
+        "abstract": "Evaluation of opinion summaries using conventional reference-based metrics often fails to provide a comprehensive assessment and exhibits limited correlation with human judgments. While Large Language Models (LLMs) have shown promise as reference-free metrics for NLG evaluation, their potential remains unexplored for opinion summary evaluation. Furthermore, the absence of sufficient opinion summary evaluation datasets hinders progress in this area. In response, we introduce the SUMMEVAL-OP dataset, encompassing 7 dimensions crucial to the evaluation of opinion summaries: fluency, coherence, relevance, faithfulness, aspect coverage, sentiment consistency, and specificity. We propose OP-I-PROMPT, a dimension-independent prompt, along with OP-PROMPTS, a dimension-dependent set of prompts for opinion summary evaluation. Our experiments demonstrate that OP-I-PROMPT emerges as a good alternative for evaluating opinion summaries, achieving an average Spearman correlation of 0.70 with human judgments, surpassing prior methodologies. Remarkably, we are the first to explore the efficacy of LLMs as evaluators, both on closed-source and open-source models, in the opinion summary evaluation domain.",
+        "url": "https://aclanthology.org/2024.acl-long.655/",
+        "doi": "10.18653/v1/2024.acl-long.655",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-short.39",
+        "title": "Born Differently Makes a Difference: Counterfactual Study of Bias in Biography Generation from a Data-to-Text Perspective",
+        "authors": [
+          "Biaoyan Fang",
+          "Ritvik Dinesh",
+          "Xiang Dai",
+          "Sarvnaz Karimi"
+        ],
+        "year": 2024,
+        "abstract": "How do personal attributes affect biography generation? Addressing this question requires an identical pair of biographies where only the personal attributes of interest are different. However, it is rare in the real world. To address this, we propose a counterfactual methodology from a data-to-text perspective, manipulating the personal attributes of interest while keeping the co-occurring attributes unchanged. We first validate that the fine-tuned Flan-T5 model generates the biographies based on the given attributes. This work expands the analysis of gender-centered bias in text generation. Our results confirm the well-known bias in gender and also show the bias in regions, in both individual and its related co-occurring attributes in semantic machining and sentiment.",
+        "url": "https://aclanthology.org/2024.acl-short.39/",
+        "doi": "10.18653/v1/2024.acl-short.39",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.391",
+        "title": "End-to-end Learning of Logical Rules for Enhancing Document-level Relation Extraction",
+        "authors": [
+          "Kunxun Qi",
+          "Jianfeng Du",
+          "Hai Wan"
+        ],
+        "year": 2024,
+        "abstract": "Document-level relation extraction (DocRE) aims to extract relations between entities in a whole document. One of the pivotal challenges of DocRE is to capture the intricate interdependencies between relations of entity pairs. Previous methods have shown that logical rules can explicitly help capture such interdependencies. These methods either learn logical rules to refine the output of a trained DocRE model, or first learn logical rules from annotated data and then inject the learnt rules into a DocRE model using an auxiliary training objective. However, these learning pipelines may suffer from the issue of error propagation. To mitigate this issue, we propose Joint Modeling Relation extraction and Logical rules or JMRL for short, a novel rule-based framework that jointly learns both a DocRE model and logical rules in an end-to-end fashion. Specifically, we parameterize a rule reasoning module in JMRL to simulate the inference of logical rules, thereby explicitly modeling the reasoning process. We also introduce an auxiliary loss and a residual connection mechanism in JMRL to better reconcile the DocRE model and the rule reasoning module. Experimental results on four benchmark datasets demonstrate that our proposed JMRL framework is consistently superior to existing rule-based frameworks, improving five baseline models for DocRE by a significant margin.",
+        "url": "https://aclanthology.org/2024.acl-long.391/",
+        "doi": "10.18653/v1/2024.acl-long.391",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      }
+    ]
+  }
+}

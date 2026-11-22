@@ -1,0 +1,68 @@
+[
+  {
+    "file": "2024.sdp.xml",
+    "repository": "acl-org/acl-anthology",
+    "repository_path": "data/xml/2024.sdp.xml",
+    "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+    "git_blob_sha": "536f62827cd7ed92d710f38626315d6cdd757fb8",
+    "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2024.sdp.xml",
+    "downloaded_at": "2026-11-08T10:49:41.668Z",
+    "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+    "character_count": 61868
+  },
+  {
+    "file": "2025.sdp.xml",
+    "repository": "acl-org/acl-anthology",
+    "repository_path": "data/xml/2025.sdp.xml",
+    "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+    "git_blob_sha": "5a24921a026a3dc5ba77d833d189e108d1ce3df3",
+    "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2025.sdp.xml",
+    "downloaded_at": "2026-11-08T10:49:41.753Z",
+    "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+    "character_count": 77381
+  },
+  {
+    "file": "2024.sigdial.xml",
+    "repository": "acl-org/acl-anthology",
+    "repository_path": "data/xml/2024.sigdial.xml",
+    "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+    "git_blob_sha": "994766bdf725a9026b76a0f57867d8d693ddcb06",
+    "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2024.sigdial.xml",
+    "downloaded_at": "2026-11-08T10:49:41.904Z",
+    "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+    "character_count": 115143
+  },
+  {
+    "file": "2025.sigdial.xml",
+    "repository": "acl-org/acl-anthology",
+    "repository_path": "data/xml/2025.sigdial.xml",
+    "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+    "git_blob_sha": "28cb955e922e79451b2ebf181291af878e78fead",
+    "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2025.sigdial.xml",
+    "downloaded_at": "2026-11-08T10:49:42.064Z",
+    "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+    "character_count": 108574
+  },
+  {
+    "file": "2024.acl.xml",
+    "repository": "acl-org/acl-anthology",
+    "repository_path": "data/xml/2024.acl.xml",
+    "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+    "git_blob_sha": "ec42b95de4d7f96315c90eff423408bf16dfc08a",
+    "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2024.acl.xml",
+    "downloaded_at": "2026-11-08T10:49:42.409Z",
+    "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+    "character_count": 2290247
+  },
+  {
+    "file": "2025.naacl.xml",
+    "repository": "acl-org/acl-anthology",
+    "repository_path": "data/xml/2025.naacl.xml",
+    "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+    "git_blob_sha": "e89468365c1546485cdd5e653341ca36d3a0f2f8",
+    "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2025.naacl.xml",
+    "downloaded_at": "2026-11-08T10:49:42.777Z",
+    "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+    "character_count": 2210368
+  }
+]

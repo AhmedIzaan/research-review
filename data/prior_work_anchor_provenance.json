@@ -1,0 +1,9 @@
+{
+  "arxiv:2602.14367v1": {
+    "capture": "outputs/mg3010-a2-final/fulltext/P079.txt",
+    "sha256": "7d80bb37cb411f4ad25ae8b1b5618c88ed79fe7101ec81793def9a6d34d8a113",
+    "abstract_version": "arXiv 2602.14367v1",
+    "publication_metadata": "outputs/mg3010-a2-final/verified_metadata.json S079",
+    "processing": "Remove captured line prefixes; take Abstract to Keywords and normalize whitespace; no generated text."
+  }
+}

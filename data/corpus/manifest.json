@@ -1,0 +1,215 @@
+{
+  "built_at": "2026-11-08T11:00:57.897862+00:00",
+  "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "paper_count": 2114,
+  "downloaded_raw_records": 2122,
+  "downloaded_usable_abstracts": 2097,
+  "imported_project_anchors": [
+    "2024.findings-acl.804",
+    "2025.acl-long.1368",
+    "2025.findings-emnlp.667",
+    "2025.findings-emnlp.631",
+    "2025.emnlp-main.1704",
+    "2025.findings-emnlp.1120",
+    "2025.acl-demo.57",
+    "2025.findings-emnlp.477",
+    "2026.emnlp-main.167",
+    "2026.emnlp-main.688",
+    "2025.emnlp-main.1292",
+    "2026.findings-emnlp.574",
+    "2026.acl-long.1984",
+    "2026.lrec-1.370",
+    "2026.acl-long.85",
+    "2024.hcinlp-1.6",
+    "arxiv:2602.14367v1"
+  ],
+  "sources": [
+    {
+      "file": "2024.sdp.xml",
+      "repository": "acl-org/acl-anthology",
+      "repository_path": "data/xml/2024.sdp.xml",
+      "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+      "git_blob_sha": "536f62827cd7ed92d710f38626315d6cdd757fb8",
+      "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2024.sdp.xml",
+      "downloaded_at": "2026-11-08T10:49:41.668Z",
+      "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+      "character_count": 61868,
+      "sha256": "9ddd7a193ddb5475a19fd44408749f4cad4bc381d6108e001ce46e2e9d2dd1e4",
+      "usable_papers": 31
+    },
+    {
+      "file": "2025.sdp.xml",
+      "repository": "acl-org/acl-anthology",
+      "repository_path": "data/xml/2025.sdp.xml",
+      "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+      "git_blob_sha": "5a24921a026a3dc5ba77d833d189e108d1ce3df3",
+      "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2025.sdp.xml",
+      "downloaded_at": "2026-11-08T10:49:41.753Z",
+      "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+      "character_count": 77381,
+      "sha256": "71fa0c9a7ca24bbf3f7db8baef4de9c65f0bd9d67ad1685f8baec1a7ffef6db4",
+      "usable_papers": 34
+    },
+    {
+      "file": "2024.sigdial.xml",
+      "repository": "acl-org/acl-anthology",
+      "repository_path": "data/xml/2024.sigdial.xml",
+      "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+      "git_blob_sha": "994766bdf725a9026b76a0f57867d8d693ddcb06",
+      "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2024.sigdial.xml",
+      "downloaded_at": "2026-11-08T10:49:41.904Z",
+      "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+      "character_count": 115143,
+      "sha256": "73a57c8548a3e5d516787d017e0116a8579105bb88e11367a265282112ff5eda",
+      "usable_papers": 65
+    },
+    {
+      "file": "2025.sigdial.xml",
+      "repository": "acl-org/acl-anthology",
+      "repository_path": "data/xml/2025.sigdial.xml",
+      "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+      "git_blob_sha": "28cb955e922e79451b2ebf181291af878e78fead",
+      "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2025.sigdial.xml",
+      "downloaded_at": "2026-11-08T10:49:42.064Z",
+      "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+      "character_count": 108574,
+      "sha256": "7d576192c6f9f36370a1b8de6b715971c9227b91d15795b457e0e7f96e907fbc",
+      "usable_papers": 59
+    },
+    {
+      "file": "2024.acl.xml",
+      "repository": "acl-org/acl-anthology",
+      "repository_path": "data/xml/2024.acl.xml",
+      "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+      "git_blob_sha": "ec42b95de4d7f96315c90eff423408bf16dfc08a",
+      "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2024.acl.xml",
+      "downloaded_at": "2026-11-08T10:49:42.409Z",
+      "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+      "character_count": 2290247,
+      "sha256": "ae3421c74893ced05d54934564391e02a411ac5be06b5f251d9b53e481664749",
+      "usable_papers": 1029
+    },
+    {
+      "file": "2025.naacl.xml",
+      "repository": "acl-org/acl-anthology",
+      "repository_path": "data/xml/2025.naacl.xml",
+      "commit": "3b320071c97927135c7e86d84b6d626b4943dc4a",
+      "git_blob_sha": "e89468365c1546485cdd5e653341ca36d3a0f2f8",
+      "source_url": "https://github.com/acl-org/acl-anthology/blob/3b320071c97927135c7e86d84b6d626b4943dc4a/data/xml/2025.naacl.xml",
+      "downloaded_at": "2026-11-08T10:49:42.777Z",
+      "acquisition": "Connected GitHub tool, read-only fetch_file/fetch_blob",
+      "character_count": 2210368,
+      "sha256": "77863a1960893a964acbfba060e4de4aea0023c1b8b04bb94398a1de4e034ecd",
+      "usable_papers": 879
+    }
+  ],
+  "excluded_records": [
+    {
+      "paper_id": "2024.acl-long.475",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.9",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.43",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.49",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.82",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.97",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.136",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.192",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.201",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.232",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.255",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.261",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.322",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.347",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.351",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.363",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.365",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.482",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.487",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.493",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.514",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.529",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-long.637",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-short.31",
+      "reason": "Missing title or abstract"
+    },
+    {
+      "paper_id": "2025.naacl-industry.66",
+      "reason": "Missing title or abstract"
+    }
+  ],
+  "selection": "All paper elements with nonempty title and abstract in the six pinned collections; no outcome-based filtering.",
+  "representation": "Titles, authors, years, abstracts, URLs, and available DOIs; not full-paper PDFs.",
+  "limitations": "Bounded venue/year snapshot, mostly 2024–2025 plus project anchors; lexical retrieval misses paraphrases and outside-corpus prior art.",
+  "licenses": {
+    "ACL_materials_since_2016": "CC BY 4.0; retain individual attribution; third-party materials may differ",
+    "policy_url": "https://aclanthology.org/faq/copyright/"
+  }
+}

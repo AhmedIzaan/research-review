@@ -1,0 +1,84 @@
+{
+  "query": "hallucination scientific citation verification",
+  "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "retrieved_at": "2026-11-08T10:59:48.628036+00:00",
+  "papers": [
+    {
+      "paper_id": "2024.sdp-1.25",
+      "title": "Zero-shot Scientific Claim Verification Using LLMs and Citation Text",
+      "authors": [
+        "Carlos Alvarez",
+        "Maxwell Bennett",
+        "Lucy Wang"
+      ],
+      "year": 2024,
+      "abstract": "Due to rapidly changing and advancing science, it is important to check the veracity of scientific claims and whether they are supported by research evidence. Previous versions of this task depended on supervised training, where labeled datasets were constructed through manual claim writing and evidence identification, sometimes coupled with mining citation relationships in papers. In this work, we investigate whether zero-shot scientific claim verification could be enabled using large language models (LLMs) and distant supervision examples taken directly from citation texts. We derive an in-context learning (ICL) dataset, SCitance, consisting of citation sentences (“citances”), LLM-generated negations, evidence documents, and veracity labels, and find that prompting GPT-4 with ICL examples from this dataset yields comparable performance (within 1 point F1) to previous finetuned models trained on manually curated claim-evidence pairs. Our results suggest that prompting LLMs with citance-evidence pairs directly poses a viable alternative to finetuning scientific claim verification models with manually-curated data.",
+      "url": "https://aclanthology.org/2024.sdp-1.25/",
+      "doi": null,
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.668Z"
+    },
+    {
+      "paper_id": "2024.sdp-1.9",
+      "title": "Cited Text Spans for Scientific Citation Text Generation",
+      "authors": [
+        "Xiangci Li",
+        "Yi-Hui Lee",
+        "Jessica Ouyang"
+      ],
+      "year": 2024,
+      "abstract": "An automatic citation generation system aims to concisely and accurately describe the relationship between two scientific articles. To do so, such a system must ground its outputs to the content of the cited paper to avoid non-factual hallucinations. Due to the length of scientific documents, existing abstractive approaches have conditioned only on cited paper abstracts. We demonstrate empirically that the abstract is not always the most appropriate input for citation generation and that models trained in this way learn to hallucinate. We propose to condition instead on the cited text span (CTS) as an alternative to the abstract. Because manual CTS annotation is extremely time- and labor-intensive, we experiment with distant labeling of candidate CTS sentences, achieving sufficiently strong performance to substitute for expensive human annotations in model training, and we propose a human-in-the-loop, keyword-based CTS retrieval approach that makes generating citation texts grounded in the full text of cited papers both promising and practical.",
+      "url": "https://aclanthology.org/2024.sdp-1.9/",
+      "doi": null,
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.668Z"
+    },
+    {
+      "paper_id": "2024.acl-long.79",
+      "title": "Citation-Enhanced Generation for LLM-based Chatbots",
+      "authors": [
+        "Weitao Li",
+        "Junkai Li",
+        "Weizhi Ma",
+        "Yang Liu"
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) exhibit powerful general intelligence across diverse scenarios, including their integration into chatbots. However, a vital challenge of LLM-based chatbots is that they may produce hallucinated content in responses, which significantly limits their applicability. Various efforts have been made to alleviate hallucination, such as retrieval augmented generation and reinforcement learning with human feedback, but most of them require additional training and data annotation. In this paper, we propose a novel post-hoc Citation-Enhanced Generation (CEG) approach combined with retrieval argumentation. Unlike previous studies that focus on preventing hallucinations during generation, our method addresses this issue in a post-hoc way. It incorporates a retrieval module to search for supporting documents relevant to the generated content, and employs a natural language inference-based citation generation module. Once the statements in the generated content lack of reference, our model can regenerate responses until all statements are supported by citations. Note that our method is a training-free plug-and-play plugin that is capable of various LLMs. Experiments on various hallucination-related datasets show our framework outperforms state-of-the-art methods in both hallucination detection and response regeneration on three benchmarks. Our code and datasets can be found at https://github.com/Tsinghua-dhy/CEG.",
+      "url": "https://aclanthology.org/2024.acl-long.79/",
+      "doi": "10.18653/v1/2024.acl-long.79",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.sdp-1.31",
+      "title": "A.M.P at SciHal2025: Automated Hallucination Detection in Scientific Content via LLMs and Prompt Engineering",
+      "authors": [
+        "Le Nguyen Anh Khoa",
+        "Thìn Đặng Văn"
+      ],
+      "year": 2025,
+      "abstract": "This paper presents our system developed for SciHal2025: Hallucination Detection for Scientific Content. The primary goal of this task is to detect hallucinated claims based on the corresponding reference. Our methodology leverages strategic prompt engineering to enhance LLMs’ ability to accurately distinguish between factual assertions and hallucinations in scientific contexts. Moreover, we discovered that aggregating the fine-grained classification results from the more complex subtask (subtask 2) into the simplified label set required for the simpler subtask (subtask 1) significantly improved performance compared to direct classification for subtask 1. This work contributes to the development of more reliable AI-powered research tools by providing a systematic framework for hallucination detection in scientific content.",
+      "url": "https://aclanthology.org/2025.sdp-1.31/",
+      "doi": "10.18653/v1/2025.sdp-1.31",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    },
+    {
+      "paper_id": "2025.sdp-1.32",
+      "title": "SciBERT Meets Contrastive Learning: A Solution for Scientific Hallucination Detection",
+      "authors": [
+        "Crivoi Carla",
+        "Ana Sabina Uban"
+      ],
+      "year": 2025,
+      "abstract": "As AI systems become more involved in scientific research, there is growing concern about the accuracy of their outputs. Tools powered by large language models can generate summaries and answers that appear well-formed, but sometimes include claims that are not actually supported by the cited references. In this paper, we focus on identifying these hallucinated claims. We propose a system built on SciBERT and contrastive learning to detect whether a scientific claim can be inferred from the referenced content. Our method was evaluated in the SciHal 2025 shared task, which includes both coarse and fine-grained hallucination labels. The results show that our model performs well on supported and clearly unsupported claims, but struggles with ambiguous or low-resource categories. These findings highlight both the promise and the limitations of current models in improving the trustworthiness of AI-generated scientific content.",
+      "url": "https://aclanthology.org/2025.sdp-1.32/",
+      "doi": "10.18653/v1/2025.sdp-1.32",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    }
+  ],
+  "status": "ok",
+  "error": null,
+  "cache_hit": false
+}

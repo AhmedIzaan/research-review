@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Inspect and test literature-grounded research ideation with specialized reviewers.">
+  <title>Research Review Studio</title>
+  <link rel="stylesheet" href="/assets/styles.css"><link rel="stylesheet" href="/assets/trace.css"><script src="/assets/trace-model.js" defer></script><script src="/assets/trace-view.js" defer></script><script src="/assets/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<aside class="sidebar">
+  <a class="brand" href="#workspace" aria-label="Research Review Studio home"><span class="brand-mark">r<span>∴</span></span><span>Research Review<small>STUDIO / FAST–NUCES</small></span></a>
+  <div class="nav-label">RESEARCH WORKBENCH</div>
+  <nav aria-label="Main navigation">
+    <a href="#workspace" data-page="workspace"><span>◈</span> Review workspace</a>
+    <a href="#trace" data-page="trace"><span>◎</span> Trace explorer</a>
+    <a href="#literature" data-page="literature"><span>▤</span> Literature library</a>
+    <a href="#experiments" data-page="experiments"><span>▥</span> Experiment results</a>
+    <a href="#history" data-page="history"><span>◷</span> Run history</a>
+  </nav>
+  <div class="sidebar-note"><span class="tiny-label">THE RESEARCH QUESTION</span><p>Can specialized critique improve a research idea?</p><small>Trace the evidence. Inspect the trade-offs. Test the contribution.</small></div>
+  <div class="connection"><span class="dot" id="connection-dot"></span><div id="connection">Connecting to backend…</div></div>
+</aside>
+<div class="shell">
+  <header class="topbar"><span>AGENTIC AI / RESEARCH IDEATION</span><div><span class="pill" id="model-pill">Loading model</span><span class="local-label">LOCAL WORKSPACE</span></div></header>
+  <main id="main" tabindex="-1">
+    <div id="notification" class="notice error" role="alert" hidden></div>
+    <section id="page-workspace" class="page">
+      <div class="page-heading"><div><div class="eyebrow">FROM LITERATURE TO A TESTABLE PROPOSAL</div><h1>A better idea starts<br>with a better review.</h1><p class="lede">Four perspectives. Verifiable literature. Every revision visible.</p></div><button class="button secondary" id="load-example">↗ Open completed example</button></div>
+      <div class="pipeline" aria-label="Workflow"><span><b>01</b> Retrieve literature</span><i>→</i><span><b>02</b> Generate idea</span><i>→</i><span><b>03</b> Independent reviews</span><i>→</i><span><b>04</b> Refine & inspect</span></div>
+      <div class="workspace-grid">
+        <section class="card setup-card" aria-labelledby="setup-title">
+          <div class="section-head"><h2 id="setup-title">Start a review</h2><span class="tiny-label">LIVE PIPELINE</span></div>
+          <form id="run-form">
+            <div class="segmented" aria-label="Input type"><button type="button" class="selected" id="mode-paper" aria-pressed="true">Seed paper</button><button type="button" id="mode-topic" aria-pressed="false">Research topic</button></div>
+            <div id="paper-input"><label for="seed">Choose a scientific paper</label><select id="seed" required><option value="">Loading seed papers…</option></select><div class="seed-preview" id="seed-preview"></div></div>
+            <div id="topic-input" hidden><label for="topic">Your AI / NLP research topic</label><textarea id="topic" maxlength="500" rows="3" placeholder="e.g. Evaluating factual reliability in retrieval-augmented generation"></textarea><p class="help">Searches the pinned scholarly corpus for relevant abstracts.</p></div>
+            <label for="configuration">Review configuration</label><select id="configuration"><option value="full">Specialized panel · full system</option><option value="one_shot">Baseline A · one-shot generation</option><option value="generic">Baseline B · generic iterative review</option><option value="full_unguarded">Ablation · full panel without revision safeguard</option><option value="generic_matched">Control · four generic reviewers</option><option value="feasibility_to_generic">Control · feasibility replaced by generic</option><option value="contrarian_to_generic">Control · contrarian replaced by generic</option><option value="no_feasibility">Ablation · without feasibility</option><option value="no_contrarian">Ablation · without contrarian</option><option value="no_novelty_retrieval">Ablation · without novelty retrieval</option></select>
+            <div id="role-chips" class="chips"></div>
+            <div class="form-row"><div><label for="rounds">Review rounds</label><select id="rounds"><option value="1">1 round · quick test</option><option value="2">2 rounds</option><option value="3">3 rounds · full trace</option></select></div><div><label>Literature source</label><div class="input-readonly">Local scholarly corpus</div></div></div>
+            <details class="advanced"><summary>Practical constraints</summary><label for="constraints" class="sr-only">Research constraints</label><textarea id="constraints" rows="4" maxlength="2000"></textarea></details>
+            <label class="checkbox"><input type="checkbox" id="verify-dependencies" checked><span>Verify dataset and model dependencies<small>Checks claims against source evidence. Unknown facts remain unverified; hardware fit requires measurement.</small></span></label>
+            <label class="checkbox"><input type="checkbox" id="revision-guard" checked><span>Check each revision before accepting it<small>Preserves the incumbent if the safeguard identifies regression or no progress. Rejected candidates remain visible and independently evaluated.</small></span></label>
+            <div class="form-row"><div><label for="judge-repeats">Independent rating repetitions</label><select id="judge-repeats"><option value="1">1 · quick check</option><option value="2" selected>2 · report median and range</option><option value="3">3 · stronger variability check</option></select></div><div><label for="judge-model">Judge model (optional)</label><input id="judge-model" maxlength="100" placeholder="Server default" pattern="[A-Za-z0-9._-]*"><small>Use an available model ID. Same-model bias remains if unchanged.</small></div></div>
+            <label class="checkbox"><input type="checkbox" id="final-review" checked><span>Assess the final revised proposal<small>Fresh independent panel, including a new prior-art search. Does not add another revision.</small></span></label>
+            <label class="checkbox"><input type="checkbox" id="audit-evidence" checked><span>Audit citation support<small>Checks whether final reviewers’ cited excerpts support their claims. Same-model judgment, not proof.</small></span></label>
+            <label class="checkbox"><input type="checkbox" id="evaluate" checked><span>Compare with independent rubric evaluation<small>Scores initial and revised ideas with feedback withheld. The same model may share biases.</small></span></label>
+            <div class="budget"><span>Planned calls <strong id="budget-count">—</strong></span><small id="budget-detail">Before retries · no calls until you start</small></div>
+            <button class="button primary wide" id="start-run" type="submit">Generate & review <span>→</span></button>
+            <p class="help">Uses your server’s Gemini key. This creates a separate demo run, not a matched experimental comparison.</p>
+          </form>
+        </section>
+        <section class="card trace-intro"><div class="section-head"><h2>What makes this testable?</h2><span class="pill subtle">OUR CONTRIBUTION</span></div><h3>Specialized criticism,<br>grounded in prior work.</h3><p>Each reviewer sees the same proposal independently. The revision step receives all critiques, including disagreements.</p><div class="role-overview"><div><span class="role-icon novelty">N</span><p><strong>Novelty</strong><small>Search for overlapping work; cite exact source passages.</small></p></div><div><span class="role-icon feasibility">F</span><p><strong>Feasibility</strong><small>Challenge data, compute, scope, and experimental design.</small></p></div><div><span class="role-icon clarity">C</span><p><strong>Clarity & importance</strong><small>Make the question specific and the contribution meaningful.</small></p></div><div><span class="role-icon contrarian">X</span><p><strong>Contrarian</strong><small>Expose weak assumptions and credible failure modes.</small></p></div></div><div class="research-note">ResearchAgent is the foundation. Our contribution is the implementation and comparative evaluation of specialized roles and literature-grounded novelty checks.</div></section>
+      </div>
+    </section>
+    <section id="page-trace" class="page" hidden>
+      <div class="trace-page-top"><div><div class="eyebrow">THE RESEARCH, STEP BY STEP</div><h1>Trace explorer<span class="trace-heading-dot">.</span></h1><p class="lede">Follow the idea. Understand the criticism. Inspect the evidence.</p></div><button class="button secondary" id="export-run" type="button">↓ Export full trace</button></div>
+      <div class="trace-picker-bar"><label for="trace-picker">Explore a run</label><select id="trace-picker"><option value="">Choose a saved research trace…</option></select><a href="#workspace" class="button primary">+ New review</a></div>
+      <section id="live-status" class="card live-status" aria-live="polite" hidden><div class="section-head"><div><span class="eyebrow">EXECUTION STATUS</span><h2 id="job-status">Starting…</h2></div><button class="button secondary" id="cancel-run">Cancel run</button></div><p id="job-message"></p><div class="telemetry" id="job-telemetry"></div><details><summary>Request & event log</summary><ol id="event-log" class="event-log"></ol></details></section>
+      <div id="trace-empty" class="trace-empty-state"><span class="trace-empty-icon">◎</span><h2>Every idea has a story.</h2><p>Choose a saved run above, or start a review to follow the literature, critiques, and refinements here.</p><button type="button" class="button secondary" id="trace-open-example">Open a completed example →</button></div>
+      <p id="trace-announcer" class="sr-only" role="status" aria-live="polite"></p>
+      <section id="trace" class="trace-explorer" aria-label="Research trace" hidden></section>
+    </section>
+    <section id="page-literature" class="page" hidden><div class="eyebrow">RETRIEVABLE. TRACEABLE. REAL.</div><h1>Literature library</h1><p class="lede">Search <span id="corpus-count">the</span> scholarly records using titles and abstracts.</p><form class="card search-form" id="search-form"><label for="search-query" class="sr-only">Search literature</label><input id="search-query" maxlength="300" required placeholder="Search scientific idea generation, multi-agent review, RAG…"><button class="button primary" type="submit">Search literature →</button></form><p class="help">A pinned ACL Anthology snapshot plus project anchors. BM25 lexical retrieval; abstracts, not full PDFs. Missing matches do not establish novelty.</p><div id="search-status" role="status"></div><div id="search-results" class="paper-list"></div></section>
+    <section id="page-experiments" class="page" hidden><div class="eyebrow">EVIDENCE BEFORE CLAIMS</div><h1>What did the experiments show?</h1><p class="lede">Inspect the actual saved pilot, including failures and trade-offs.</p><div class="toolbar"><label for="study">Study</label><select id="study"></select><button class="button secondary" id="refresh-study">Refresh results</button></div><div id="study-content"></div></section>
+    <section id="page-history" class="page" hidden><div class="eyebrow">EVERY RUN HAS A TRACE</div><h1>Research history</h1><p class="lede">Reopen completed experiments or inspect a live demo’s progress.</p><div class="toolbar"><label for="history-filter">Configuration</label><select id="history-filter"><option value="">All configurations</option><option value="full">Full specialized panel</option><option value="generic">Generic review</option><option value="one_shot">One shot</option><option value="no_feasibility">No feasibility</option><option value="no_contrarian">No contrarian</option><option value="no_novelty_retrieval">No novelty retrieval</option></select><button class="button secondary" id="refresh-history">Refresh history</button></div><h2>Interactive demo runs</h2><div id="job-history" class="history-list"></div><h2>Controlled experiments</h2><div id="run-history" class="history-list"></div></section>
+    <footer>Literature-Grounded Research Idea Generation Using Specialized Multi-Agent Reviewers<span>FAST–NUCES Islamabad · Agentic AI</span></footer>
+  </main>
+</div>
+</body></html>

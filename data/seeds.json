@@ -1,0 +1,369 @@
+[
+  {
+    "paper_id": "2025.naacl-long.342",
+    "title": "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+    "authors": [
+      "Jinheon Baek",
+      "Sujay Kumar Jauhar",
+      "Silviu Cucerzan",
+      "Sung Ju Hwang"
+    ],
+    "year": 2025,
+    "abstract": "The pace of scientific research, vital for improving human life, is complex, slow, and needs specialized expertise. Meanwhile, novel, impactful research often stems from both a deep understanding of prior work, and a cross-pollination of ideas across domains and fields. To enhance the productivity of researchers, we propose ResearchAgent, which leverages the encyclopedic knowledge and linguistic reasoning capabilities of Large Language Models (LLMs) to assist them in their work. This system automatically defines novel problems, proposes methods and designs experiments, while iteratively refining them based on the feedback from collaborative LLM-powered reviewing agents. Specifically, starting with a core scientific paper, ResearchAgent is augmented not only with relevant publications by connecting information over an academic graph but also entities retrieved from a knowledge store derived from shared underlying concepts mined across numerous papers. Then, mimicking a scientific approach to improving ideas with peer discussions, we leverage multiple LLM-based ReviewingAgents that provide reviews and feedback via iterative revision processes. These reviewing agents are instantiated with human preference-aligned LLMs whose criteria for evaluation are elicited from actual human judgments via LLM prompting. We experimentally validate our ResearchAgent on scientific publications across multiple disciplines, showing its effectiveness in generating novel, clear, and valid ideas based on both human and modelbased evaluation results. Our initial foray into AI-mediated scientific research has important implications for the development of future systems aimed at supporting researchers in their ideation and operationalization of novel work1.",
+    "url": "https://aclanthology.org/2025.naacl-long.342/",
+    "doi": "10.18653/v1/2025.naacl-long.342",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2024.acl-long.18",
+    "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+    "authors": [
+      "Qingyun Wang",
+      "Doug Downey",
+      "Heng Ji",
+      "Tom Hope"
+    ],
+    "year": 2024,
+    "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction— severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SCIMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature1.",
+    "url": "https://aclanthology.org/2024.acl-long.18/",
+    "doi": "10.18653/v1/2024.acl-long.18",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2024.findings-acl.804",
+    "title": "Large Language Models for Automated Open-domain Scientific Hypotheses Discovery",
+    "authors": [
+      "Zonglin Yang",
+      "Xinya Du",
+      "Junxian Li",
+      "Jie Zheng",
+      "Soujanya Poria",
+      "Erik Cambria"
+    ],
+    "year": 2024,
+    "abstract": "Hypothetical induction is recognized as the main reasoning type when scientists make observations about the world and try to propose hypotheses to explain those observations. Past research on hypothetical induction is under a constrained setting: (1) the observation annotations in the dataset are carefully manually handpicked sentences (resulting in a close-domain setting); and (2) the ground truth hypotheses are mostly commonsense knowledge, making the task less challenging. In this work, we tackle these problems by proposing the first dataset for social science academic hypotheses discovery, with the final goal to create systems that automatically generate valid, novel, and helpful scientific hypotheses, given only a pile of raw web corpus. Unlike previous settings, the new dataset requires (1) using open-domain data (raw web corpus) as observations; and (2) proposing hypotheses even new to humanity. A multi-module framework is developed for the task, including three different feedback mechanisms to boost performance, which exhibits superior performance in terms of both GPT-4 based and expert-based evaluation. To the best of our knowledge, this is the first work showing that LLMs are able to generate novel (“not existing in literature”) and valid (“reflecting reality”) scientific hypotheses1.",
+    "url": "https://aclanthology.org/2024.findings-acl.804/",
+    "doi": "10.18653/v1/2024.findings-acl.804",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.acl-long.1368",
+    "title": "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
+    "authors": [
+      "Haoyang Su",
+      "Renqi Chen",
+      "Shixiang Tang",
+      "Zhenfei Yin",
+      "Xinzhe Zheng",
+      "Jinzhe Li",
+      "Biqing Qi",
+      "Qi Wu",
+      "Hui Li",
+      "Wanli Ouyang",
+      "Philip Torr",
+      "Bowen Zhou",
+      "Nanqing Dong"
+    ],
+    "year": 2025,
+    "abstract": "The rapid advancement of scientific progress requires innovative tools that can accelerate knowledge discovery. Although recent AI methods, particularly large language models (LLMs), have shown promise in tasks such as hypothesis generation and experimental design, they fall short of replicating the collaborative nature of real-world scientific practices, where diverse experts work together in teams to tackle complex problems. To address the limitations, we propose an LLM-based multi-agent system, i.e., Virtual Scientists (VIRSCI), designed to mimic the teamwork inherent in scientific research. VIRSCI organizes a team of agents to collaboratively generate, evaluate, and refine research ideas. Through comprehensive experiments, we demonstrate that this multiagent approach outperforms the state-of-theart method in producing novel scientific ideas. We further investigate the collaboration mechanisms that contribute to its tendency to produce ideas with higher novelty, offering valuable insights to guide future research and illuminating pathways toward building a robust system for autonomous scientific discovery. The code is available at https://github.com/open-sci encelab/Virtual-Scientists.",
+    "url": "https://aclanthology.org/2025.acl-long.1368/",
+    "doi": "10.18653/v1/2025.acl-long.1368",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.667",
+    "title": "InfAL: Inference Time Adversarial Learning for Improving Research Ideation",
+    "authors": [
+      "Sikun Guo",
+      "Amir Hassan Shariatmadari",
+      "Peng Wang",
+      "Albert Huang",
+      "Aidong Zhang"
+    ],
+    "year": 2025,
+    "abstract": "Advancements in Large Language Models (LLMs) have opened new opportunities for scientific discovery by assisting researchers in generating novel hypotheses and ideas. In this process, a major challenge is how to optimally and efficiently utilize LLMs’ parametric knowledge obtained from their pretraining process. Inspired by Generative Adversarial Networks (GANs), we propose inference time adversarial learning (termed InfAL), implemented through multi-LLM-agent interactions, to enhance research ideation. This approach optimizes the utilization of LLMs’ parametric knowledge without requiring additional model training, making adversarial learning efficient and context-driven. To evaluate the quality of generated ideas, we propose a relative quality ranking metric as a scalable alternative to human evaluation. Our results show that InfAL significantly improves idea generation, with GPT-4o achieving a 21% increase in novelty and a 322% increase in feasibility, demonstrating its transformative potential for driving innovation in scientific research.",
+    "url": "https://aclanthology.org/2025.findings-emnlp.667/",
+    "doi": "10.18653/v1/2025.findings-emnlp.667",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.631",
+    "title": "From Hypothesis to Publication: A Comprehensive Survey of AI-Driven Research Support Systems",
+    "authors": [
+      "Zekun Zhou",
+      "Xiaocheng Feng",
+      "Lei Huang",
+      "Xiachong Feng",
+      "Ziyun Song",
+      "Ruihan Chen",
+      "Liang Zhao",
+      "Weitao Ma",
+      "Yuxuan Gu",
+      "Baoxin Wang",
+      "Dayong Wu",
+      "Guoping Hu",
+      "Ting Liu",
+      "Bing Qin"
+    ],
+    "year": 2025,
+    "abstract": "Research is a fundamental process driving the advancement of human civilization, yet it demands substantial time and effort from researchers. In recent years, the rapid development of artificial intelligence (AI) technologies has inspired researchers to explore how AI can accelerate and enhance research. To monitor relevant advancements, this paper presents a systematic review of the progress in this domain. Specifically, we organize the relevant studies into three main categories: hypothesis formulation, hypothesis validation, and manuscript publication. Hypothesis formulation involves knowledge synthesis and hypothesis generation. Hypothesis validation includes the verification of scientific claims, theorem proving, and experiment validation. Manuscript publication encompasses manuscript writing and the peer review process. Furthermore, we identify and discuss the current challenges faced in these areas, as well as potential future directions for research. Finally, we also offer a comprehensive overview of existing benchmarks and tools across various domains that support the integration of AI into the research process. We hope this paper serves as an introduction for beginners and fosters future research. Resources have been made publicly available1.",
+    "url": "https://aclanthology.org/2025.findings-emnlp.631/",
+    "doi": "10.18653/v1/2025.findings-emnlp.631",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.emnlp-main.1704",
+    "title": "Can Large Language Models Unlock Novel Scientific Research Ideas?",
+    "authors": [
+      "Sandeep Kumar",
+      "Tirthankar Ghosal",
+      "Vinayak Goyal",
+      "Asif Ekbal"
+    ],
+    "year": 2025,
+    "abstract": "The widespread adoption of Large Language Models (LLMs) and publicly available ChatGPT have marked a significant turning point in the integration of Artificial Intelligence (AI) into people’s everyday lives. This study examines the ability of Large Language Models (LLMs) to generate future research ideas from scientific papers. Unlike tasks such as summarization or translation, idea generation lacks a clearly defined reference set or structure, making manual evaluation the default standard. However, human evaluation in this setting is extremely challenging — it requires substantial domain expertise, contextual understanding of the paper, and awareness of the current research landscape. This makes it time-consuming, costly, and fundamentally non-scalable, particularly as new LLMs are being released at a rapid pace. Currently, there is no automated evaluation metric specifically designed for this task. To address this gap, we propose two automated evaluation metrics: Idea Alignment Score (IAScore) and Idea Distinctness Index. We further conducted human evaluation to assess the novelty, relevance, and feasibility of the generated future research ideas. This investigation offers insights into the evolving role of LLMs in idea generation, highlighting both its capability and limitations. Our work contributes to the ongoing efforts in evaluating and utilizing language models for generating future research ideas. We make our datasets and codes publicly available1. “Innovation is seeing what everybody has seen and thinking what nobody has thought” —Dr. Albert Szent-Györgyi",
+    "url": "https://aclanthology.org/2025.emnlp-main.1704/",
+    "doi": "10.18653/v1/2025.emnlp-main.1704",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.1120",
+    "title": "ReviewEval: An Evaluation Framework for AI-Generated Reviews",
+    "authors": [
+      "Madhav Krishan Garg",
+      "Tejash Prasad",
+      "Tanmay Singhal",
+      "Chhavi Kirtani",
+      "Murari Mandal",
+      "Dhruv Kumar"
+    ],
+    "year": 2025,
+    "abstract": "The escalating volume of academic research, coupled with a shortage of qualified reviewers, necessitates innovative approaches to peer review. In this work, we propose: ❶ ReviewEval, a comprehensive evaluation framework for AI-generated reviews that measures alignment with human assessments, verifies factual accuracy, assesses analytical depth, identifies degree of constructiveness and adherence to reviewer guidelines; and ❷ ReviewAgent, an LLM-based review generation agent featuring a novel alignment mechanism to tailor feedback to target conferences and journals, along with a self-refinement loop that iteratively optimizes its intermediate outputs and an external improvement loop using ReviewEval to improve upon the final reviews. ReviewAgent improves actionable insights by 6.78% and 47.62% over existing AI baselines and expert reviews respectively. Further, it boosts analytical depth by 3.97% and 12.73%, enhances adherence to guidelines by 10.11% and 47.26% respectively. This paper establishes essential metrics for AIbased peer review and substantially enhances the reliability and impact of AI-generated reviews in academic research.",
+    "url": "https://aclanthology.org/2025.findings-emnlp.1120/",
+    "doi": "10.18653/v1/2025.findings-emnlp.1120",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.sigdial-1.26",
+    "title": "Exploring the Design of Multi-Agent LLM Dialogues for Research Ideation",
+    "authors": [
+      "Keisuke Ueda",
+      "Wataru Hirota",
+      "Takuto Asakura",
+      "Takahiro Omi",
+      "Kosuke Takahashi",
+      "Kosuke Arima",
+      "Tatsuya Ishigaki"
+    ],
+    "year": 2025,
+    "abstract": "Large language models (LLMs) are increasingly used to support creative tasks such as research idea generation. While recent work has shown that structured dialogues between LLMs can improve the novelty and feasibility of generated ideas, the optimal design of such interactions remains unclear. In this study, we conduct a comprehensive analysis of multiagent LLM dialogues for scientific ideation. We compare different configurations of agent roles, number of agents, and dialogue depth to understand how these factors influence the novelty and feasibility of generated ideas. Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement. Our results show that enlarging the agent cohort, deepening the interaction depth, and broadening agent persona heterogeneity each enrich the diversity of generated ideas. Moreover, specifically increasing critic-side diversity within the ideation–critique–revision loop further boosts the feasibility of the final proposals. Our findings offer practical guidelines for building effective multi-agent LLM systems for scientific ideation. Our code is available at 1.",
+    "url": "https://aclanthology.org/2025.sigdial-1.26/",
+    "doi": "",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.acl-demo.57",
+    "title": "IRIS: Interactive Research Ideation System for Accelerating Scientific Discovery",
+    "authors": [
+      "Aniketh Garikaparthi",
+      "Manasi Patwardhan",
+      "Lovekesh Vig",
+      "Arman Cohan"
+    ],
+    "year": 2025,
+    "abstract": "The rapid advancement in capabilities of large language models (LLMs) raises a pivotal question: How can LLMs accelerate scientific discovery? This work tackles the crucial first stage of research, generating novel hypotheses. While recent work on automated hypothesis generation focuses on multi-agent frameworks and extending test-time compute, none of the approaches effectively incorporate transparency and steerability through a synergistic Human-in-the-loop (HITL) approach. To address this gap, we introduce IRIS for interactive hypothesis generationm, an open-source platform designed for researchers to leverage LLM-assisted scientific ideation. IRIS incorporates innovative features to enhance ideation, including adaptive test-time compute expansion via Monte Carlo Tree Search (MCTS), fine-grained feedback mechanism, and querybased literature synthesis. Designed to empower researchers with greater control and insight throughout the ideation process. We additionally conduct a user study with researchers across diverse disciplines, validating the effectiveness of our system in enhancing ideation. We open-source our code here.",
+    "url": "https://aclanthology.org/2025.acl-demo.57/",
+    "doi": "10.18653/v1/2025.acl-demo.57",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.findings-emnlp.477",
+    "title": "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
+    "authors": [
+      "Long Li",
+      "Weiwen Xu",
+      "Jiayan Guo",
+      "Ruochen Zhao",
+      "Xingxuan Li",
+      "Yuqian Yuan",
+      "Boqiang Zhang",
+      "Yuming Jiang",
+      "Yifei Xin",
+      "Ronghao Dang",
+      "Yu Rong",
+      "Deli Zhao",
+      "Tian Feng",
+      "Lidong Bing"
+    ],
+    "year": 2025,
+    "abstract": "Research ideation is crucial for scientific progress, but the exponential increase in scientific literature makes it challenging to stay updated and identify impactful directions. Recent developments in large language models (LLMs) offer a promising avenue to automate this process. However, existing methods for idea generation either trivially prompt LLMs or expose LLMs to extensive literature without indicating useful information. Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain. This organization helps LLMs better grasp current advancements, thereby improving ideation capabilities. Further, we present Idea Arena, a protocol for evaluating idea-generation methods from different perspectives, which aligns closely with the preferences of human researchers. Experiments show that CoI agent consistently outperforms existing methods and matches human quality in idea generation. Moreover, CoI agent is budgetfriendly, requiring only $0.50 to generate a candidate idea and its experimental design1 .",
+    "url": "https://aclanthology.org/2025.findings-emnlp.477/",
+    "doi": "10.18653/v1/2025.findings-emnlp.477",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.sdp-1.9",
+    "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+    "authors": [
+      "Simra Shahid",
+      "Marissa Radensky",
+      "Raymond Fok",
+      "Pao Siangliulue",
+      "Daniel S Weld",
+      "Tom Hope"
+    ],
+    "year": 2025,
+    "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facetbased LLM re-ranking. It incorporates expertlabeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+    "url": "https://aclanthology.org/2025.sdp-1.9/",
+    "doi": "10.18653/v1/2025.sdp-1.9",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2026.emnlp-main.167",
+    "title": "LDC: Learning to Generate Research Idea with Dynamic Control",
+    "authors": [
+      "Ruochen Li",
+      "Liqiang Jing",
+      "Chi Han",
+      "Jiawei Zhou",
+      "Xinya Du"
+    ],
+    "year": 2026,
+    "abstract": "Recent advancements in large language models (LLMs) have demonstrated their potential in automating the scientific research ideation. Existing approaches primarily focus on prompting techniques, often producing ideas misaligned with expert standards – novelty, feasibility, and effectiveness, which are widely recognized by the research community as the three key subdimensions of high-quality ideas. Also, balancing these dimensions remains challenging due to their inherent trade-offs. To address these limitations, we propose the first framework that employs a two-stage approach combining Supervised Fine-Tuning (SFT) and controllable Reinforcement Learning (RL) for the task. In the SFT stage, the model learns foundational patterns from pairs of research papers and their corresponding follow-up ideas. In the RL stage, multi-dimensional reward models guided by fine-grained feedback evaluate and optimize the model across key dimensions. During inference, dimensional controllers coordinated by a sentence-level decoder enable dynamic context-aware steering of the idea generation process. Our framework provides a balanced approach to research idea generation, achieving high-quality outcomes in the experiment by dynamically navigating the trade-offs among novelty, feasibility, and effectiveness.",
+    "url": "https://aclanthology.org/2026.emnlp-main.167/",
+    "doi": "10.18653/2026.emnlp-main.167",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2026.emnlp-main.688",
+    "title": "Ideation Arena: Evaluating LLM Generated Research Ideas with Battle-style Human Expert Assessment",
+    "authors": [
+      "Zhiyu Chen",
+      "Keyu Zhao",
+      "Jigao Fu",
+      "Dong Liang",
+      "Yanbiao Wu",
+      "Jiaoyang Li",
+      "Haidong Xue",
+      "Xinhua Zeng",
+      "Yuanyi Zhen",
+      "Fengli Xu",
+      "Yong Li"
+    ],
+    "year": 2026,
+    "abstract": "Evaluating research ideas generated by LLMs is difficult because their scientific value cannot be fully determined by objective criteria, and no single reference answer specifies what counts as a good idea. To address this challenge, we introduce Ideation Arena, a battle style platform that evaluates research ideas through pairwise human assessment. Ideation Arena evaluates ideas generated by 14 frontier LLMs and 5 research agent architectures built on 2 base models. To ensure a common starting point, Ideation Arena builds shared literature contexts from papers familiar to the participating researchers and provides the same contexts to all LLMs and agents. We collect over 6, 000 double blind pairwise comparisons from 105 active computer science researchers and construct an Elo rating leaderboard of proposal-stage expert preferences in computer science under a shared closed-context protocol. We validate the rankings through interrater agreement and robustness analyses, showing that the leaderboard remains stable under changes in annotator composition and domain coverage. Our results show substantial variation in agent effectiveness, with some frameworks improving ideation quality over their backbones and others offering little benefit or even underperforming their base models. We further construct Ideation Arena Eval, a benchmark for assessing whether automated evaluators align with human preferences in research ideation. Experiments with current LLM judges show that they still cannot reliably reproduce expert preferences, with the best judge reaching 72.56% Soft Accuracy on Overall Quality. Our code, data, and leaderboards are available at https://github.com/ foss12138/Research-Ideation-Arena.",
+    "url": "https://aclanthology.org/2026.emnlp-main.688/",
+    "doi": "10.18653/2026.emnlp-main.688",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2025.emnlp-main.1292",
+    "title": "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+    "authors": [
+      "Rosni Vasu",
+      "Chandrayee Basu",
+      "Bhavana Dalvi Mishra",
+      "Cristina Sarasua",
+      "Peter Clark",
+      "Abraham Bernstein"
+    ],
+    "year": 2025,
+    "abstract": "Large Language models have demonstrated promising performance in research ideation across scientific domains. Hypothesis development, the process of generating a highly specific declarative statement connecting a research idea with empirical validation, has received relatively less attention. Existing approaches trivially deploy retrieval augmentation and focus only on the quality of the final output ignoring the underlying reasoning process behind ideation. We present HypER (Hypothesis Generation with Explanation and Reasoning), a small language model (SLM) trained for literature-guided reasoning and evidence-based hypothesis generation. HypER is trained in a multi-task setting to discriminate between valid and invalid scientific reasoning chains in presence of controlled distractions. We find that HypER outperforms the base model, distinguishing valid from invalid reasoning chains (+22% average absolute F1), generates better evidence-grounded hypotheses (0.327 vs. 0.305 base model) with high feasibility and impact as judged by human experts (>3.5 on 5-point Likert scale). Resource at §.",
+    "url": "https://aclanthology.org/2025.emnlp-main.1292/",
+    "doi": "10.18653/v1/2025.emnlp-main.1292",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2026.findings-emnlp.574",
+    "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+    "authors": [
+      "Tim Schopf",
+      "Tobias Schreieder",
+      "Akiko Aizawa"
+    ],
+    "year": 2026,
+    "abstract": "Automated novelty judgment can accelerate scientific discovery by enabling efficient evaluation, refinement, and comparison of research ideas. While large language models are increasingly adopted for this task, we investigate a previously overlooked limitation in their judgment capabilities: despite generating reasoning rationales that closely mirror those of human experts, their final novelty judgments often diverge substantially. We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response. Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+    "url": "https://aclanthology.org/2026.findings-emnlp.574/",
+    "doi": "10.18653/2026.findings-emnlp.574",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2026.acl-long.1984",
+    "title": "GUIDE: Towards Scalable Advising for Research Ideas",
+    "authors": [
+      "Yaowenqi Liu",
+      "Bingxu Meng",
+      "Rui Pan",
+      "Yuxing Liu",
+      "Jerry Huang",
+      "Jiaxuan You",
+      "Tong Zhang"
+    ],
+    "year": 2026,
+    "abstract": "The field of AI research is advancing at an unprecedented pace, enabling automated hypothesis generation and experimental design across diverse domains such as biology, mathematics, and artificial intelligence. Despite these advancements, there remains a significant gap in the availability of scalable advising systems capable of providing high-quality, well-reasoned feedback to refine proposed hypotheses and experimental designs. To address this challenge, we explore key factors that underlie the development of robust advising systems, including model size, data reweighting, context length, confidence estimation, and structured reasoning processes. Our findings reveal that a relatively small model, when equipped with a well-compressed literature database and a structured reasoning framework, can outperform powerful general-purpose language models such as Deepseek-R1 in terms of acceptance rates for self-ranked top-30% submissions to ICLR 2025. Moreover, when limited to highconfidence predictions, our system achieves an acceptance rate exceeding 90% on the ICLR 2025 test set, underscoring its potential to significantly enhance the quality and efficiency of hypothesis generation and experimental design.",
+    "url": "https://aclanthology.org/2026.acl-long.1984/",
+    "doi": "10.18653/v1/2026.acl-long.1984",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2026.lrec-1.370",
+    "title": "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+    "authors": [
+      "Tim Schopf",
+      "Michael Färber"
+    ],
+    "year": 2026,
+    "abstract": "Judging the novelty of research ideas is crucial for advancing science, enabling the identification of unexplored directions, and ensuring contributions meaningfully extend existing knowledge rather than reiterate minor variations. However, given the exponential growth of scientific literature, manually judging the novelty of research ideas through literature reviews is labor-intensive, subjective, and infeasible at scale. Therefore, recent efforts have proposed automated approaches for research idea novelty judgment. Yet, evaluation of these approaches remains largely inconsistent and is typically based on non-standardized human evaluations, hindering large-scale, comparable evaluations. To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments. It comprises 1,381 research ideas derived from and judged by human experts as well as nine automated evaluation metrics designed to assess both rubric-based novelty scores and textual justifications of novelty judgments. Using this benchmark, we evaluate several state-of-the-art large language models (LLMs) on their ability to judge the novelty of research ideas. Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models. Data and code available at: https://github.com/TimSchopf/RINoBench. Keywords: research idea novelty judgment, evaluation benchmark, scientific discovery, llm-as-a-judge",
+    "url": "https://aclanthology.org/2026.lrec-1.370/",
+    "doi": "10.63317/4c3gy3f7epnj",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2026.acl-long.85",
+    "title": "CHIMERA: A Knowledge Base of Scientific Idea Recombinations for Research Analysis and Ideation",
+    "authors": [
+      "Noy Sternlicht",
+      "Tom Hope"
+    ],
+    "year": 2026,
+    "abstract": "A hallmark of human innovation is recombination—the creation of novel ideas by integrating elements from existing concepts and mechanisms. In this work, we introduce CHIMERA, the first large-scale Knowledge Base (KB) of recombination examples automatically mined from the scientific literature. CHIMERA enables empirical analysis of how scientists recombine concepts and draw inspiration from different areas, and enables training models that propose cross-disciplinary research directions. To construct this KB, we define a new information extraction task: identifying recombination instances in papers. We curate an expertannotated dataset and use it to fine-tune an LLM-based extraction model, which we apply to a broad corpus of AI papers. We also demonstrate generalization to a biological domain. We showcase the utility of CHIMERA through two applications. First, we analyze patterns of recombination across AI subfields. Second, we train a scientific hypothesis generation model using the KB, showing that it can propose directions that researchers rate as inspiring.",
+    "url": "https://aclanthology.org/2026.acl-long.85/",
+    "doi": "10.18653/v1/2026.acl-long.85",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  },
+  {
+    "paper_id": "2024.hcinlp-1.6",
+    "title": "An Interactive Co-Pilot for Accelerated Research Ideation",
+    "authors": [
+      "Harshit Nigam",
+      "Manasi Patwardhan",
+      "Lovekesh Vig",
+      "Gautam Shroff"
+    ],
+    "year": 2024,
+    "abstract": "In the realm of research support tools, there exists a notable void in resources tailored specifically for aiding researchers during the crucial ideation phase of the research life-cycle. We address this gap by introducing ‘Acceleron’, a ‘Co-Pilot’ for researchers, designed specifically to accelerate the ideation phase of the research life-cycle. Leveraging the reasoning and domain-specific skills of Large Language Models (LLMs) within an agent-based architecture with distinct personas, Acceleron aids researchers through the formulation of a comprehensive research proposals. It emulates the ideation process, engaging researchers in an interactive fashion to validate the novelty of the proposal and generate plausible set-of hypotheses. Notably, it addresses challenges inherent in LLMs, such as hallucinations, implements a two-stage aspect-based retrieval to manage precision-recall trade-offs, and tackles issues of unanswerability. Our observations and enduser evaluations illustrate the efficacy of Acceleron as an enhancer of researcher’s productivity.",
+    "url": "https://aclanthology.org/2024.hcinlp-1.6/",
+    "doi": "10.18653/v1/2024.hcinlp-1.6",
+    "source": "ACL Anthology; imported saved primary-source capture",
+    "retrieved_at": "2026-11-07"
+  }
+]

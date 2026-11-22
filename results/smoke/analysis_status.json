@@ -1,0 +1,8 @@
+{
+  "status": "analyzed",
+  "valid_score_rows": 17,
+  "failed_score_rows": 6,
+  "n_seeds": 2,
+  "n_final_rows": 7,
+  "limitations": "Same-model judge bias, abstract-only search coverage, natural unequal budgets, purposive seeds, no human calibration yet. Missing judgments excluded and counted; no claim of scientific success."
+}

@@ -1,0 +1,3 @@
+blind_id,seed_id,replicate,configuration,round,run_id,is_final,novelty,feasibility,clarity,importance,evidence_grounding,judge_error,judge_model
+e7f12abb685106864f1a41be,topic:Reducing incorrect answers in RAG systems by detecting contradictions between retrieved documents and allowing the model to abstain when evidence is insufficient.,0,full,0,fff8592ef95a73dda616,False,3,3,4,4,3,,gemini-3.5-flash-lite
+9cc87cdbee69333b3455b247,topic:Reducing incorrect answers in RAG systems by detecting contradictions between retrieved documents and allowing the model to abstain when evidence is insufficient.,0,full,1,fff8592ef95a73dda616,True,4,3,4,4,3,,gemini-3.5-flash-lite

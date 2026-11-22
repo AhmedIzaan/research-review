@@ -1,0 +1,981 @@
+{
+  "blind_id": "4175b54dd02d3f30ee1b127c",
+  "spec_hash": "2683f52d58a0de2c04926f0a9c9fb590301597fc69d672c298f351dac3fb940d",
+  "judgment": {
+    "novelty": 3,
+    "feasibility": 4,
+    "clarity": 5,
+    "importance": 4,
+    "evidence_grounding": 4,
+    "rationale": {
+      "novelty": "The interaction between few-shot example ordering variance and demonstration class imbalance builds plausibly on prior work studying prompt sensitivity and example selection.",
+      "feasibility": "The experimental setup is concrete and realistic, using standard datasets and tractable permutations within consumer hardware or API constraints.",
+      "clarity": "The operational definitions, evaluation metrics, and validation steps are described precisely and without ambiguity.",
+      "importance": "Quantifying and mitigating worst-case variance due to prompt composition addresses a core reliability challenge for deploying LLMs in classification tasks.",
+      "evidence_grounding": "Prior literature regarding prompt sensitivity and demonstration selection is accurately cited and reflects the contextual background of in-context learning fragility."
+    },
+    "evidence": [
+      {
+        "paper_id": "2024.acl-long.155",
+        "claim": "ICL effectiveness relies heavily on demonstration quality, quantity, and permutation, causing unstable performance.",
+        "supporting_excerpt": "Despite its potential, ICL’s effectiveness heavily relies on the quality, quantity, and permutation of demonstrations, commonly leading to suboptimal and unstable performance.",
+        "relation": "supports"
+      },
+      {
+        "paper_id": "2024.acl-long.155",
+        "claim": "Demonstration methods can reduce performance variance among varying permutations and address imbalanced class distributions.",
+        "supporting_excerpt": "Moreover, our method effectively reduces performance variance among varying demonstrations, permutations, and templates, and displays the capability to address imbalanced class distributions.",
+        "relation": "supports"
+      }
+    ],
+    "uncertainty": "The proposed study assumes that truncation does not severely harm semantic cues, but extreme class imbalance combined with token constraints could alter label priors in ways not fully captured by simple cosine similarity."
+  },
+  "replications": [
+    {
+      "repeat": 0,
+      "judgment": {
+        "novelty": 3,
+        "feasibility": 4,
+        "clarity": 5,
+        "importance": 4,
+        "evidence_grounding": 4,
+        "rationale": {
+          "novelty": "The interaction between few-shot example ordering variance and demonstration class imbalance builds plausibly on prior work studying prompt sensitivity and example selection.",
+          "feasibility": "The experimental setup is concrete and realistic, using standard datasets and tractable permutations within consumer hardware or API constraints.",
+          "clarity": "The operational definitions, evaluation metrics, and validation steps are described precisely and without ambiguity.",
+          "importance": "Quantifying and mitigating worst-case variance due to prompt composition addresses a core reliability challenge for deploying LLMs in classification tasks.",
+          "evidence_grounding": "Prior literature regarding prompt sensitivity and demonstration selection is accurately cited and reflects the contextual background of in-context learning fragility."
+        },
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.155",
+            "claim": "ICL effectiveness relies heavily on demonstration quality, quantity, and permutation, causing unstable performance.",
+            "supporting_excerpt": "Despite its potential, ICL’s effectiveness heavily relies on the quality, quantity, and permutation of demonstrations, commonly leading to suboptimal and unstable performance.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-long.155",
+            "claim": "Demonstration methods can reduce performance variance among varying permutations and address imbalanced class distributions.",
+            "supporting_excerpt": "Moreover, our method effectively reduces performance variance among varying demonstrations, permutations, and templates, and displays the capability to address imbalanced class distributions.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The proposed study assumes that truncation does not severely harm semantic cues, but extreme class imbalance combined with token constraints could alter label priors in ways not fully captured by simple cosine similarity."
+      },
+      "error": null,
+      "events": [
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 1,
+          "timestamp": "2026-11-17T02:45:51.601941+00:00",
+          "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+          "input_tokens": null,
+          "output_tokens": null,
+          "thinking_tokens": null,
+          "total_tokens": null,
+          "estimated_cost_usd": null,
+          "status": "failed",
+          "validation_failure": false,
+          "error": "HTTP 503",
+          "elapsed_seconds": 2.0183618019946152
+        },
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 2,
+          "timestamp": "2026-11-17T02:46:06.602105+00:00",
+          "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+          "input_tokens": 13499,
+          "output_tokens": 391,
+          "thinking_tokens": 0,
+          "total_tokens": 13890,
+          "estimated_cost_usd": 0.0,
+          "status": "ok",
+          "validation_failure": false,
+          "elapsed_seconds": 3.609772846000851
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "judgment": {
+        "novelty": 3,
+        "feasibility": 4,
+        "clarity": 4,
+        "importance": 4,
+        "evidence_grounding": 4,
+        "rationale": {
+          "novelty": "The study investigates the combined interaction of example ordering and class imbalance within few-shot in-context demonstration sets. While prompt ordering sensitivity and demonstration selection have been studied individually (e.g., 2025.naacl-long.73, 2025.naacl-long.17), quantifying their interaction with class imbalance skew provides a plausible and useful incremental contribution.",
+          "feasibility": "The methodology is concrete, using standard public datasets (AG News), fixed-shot settings, and feasible computational setups (12GB consumer GPU or API access) supported by reasonable validation steps and a pilot fallback plan.",
+          "clarity": "The operational definitions, evaluation metrics (mean accuracy, standard deviation, worst-case accuracy), and experimental steps are clearly specified and easy to follow.",
+          "importance": "Understanding the interaction between class imbalance and prompt ordering is practically valuable for improving the robustness and reliability of few-shot text classification systems.",
+          "evidence_grounding": "The cited literature correctly contextualizes prompt brittleness and in-context learning sensitivity, and the proposal accurately references prior work."
+        },
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-long.73",
+            "claim": "Prior work introduces metrics like sensitivity and consistency to quantify model behavior across prompt variations.",
+            "supporting_excerpt": "We therefore introduce two metrics for classification tasks, namely sensitivity and consistency, which are complementary to task performance.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-long.155",
+            "claim": "In-context learning effectiveness heavily relies on demonstration quality, quantity, and permutation.",
+            "supporting_excerpt": "Despite its potential, ICL’s effectiveness heavily relies on the quality, quantity, and permutation of demonstrations, commonly leading to suboptimal and unstable performance.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The search is bounded to retrieved ACL Anthology abstracts, which limits exhaustive claims of total novelty; further empirical verification is needed to confirm whether ordering variance metrics interact orthogonally with class imbalance under different model architectures."
+      },
+      "error": null,
+      "events": [
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 1,
+          "timestamp": "2026-11-17T02:46:21.602335+00:00",
+          "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+          "input_tokens": null,
+          "output_tokens": null,
+          "thinking_tokens": null,
+          "total_tokens": null,
+          "estimated_cost_usd": null,
+          "status": "failed",
+          "validation_failure": false,
+          "error": "HTTP 503",
+          "elapsed_seconds": 2.9557635960009065
+        },
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 2,
+          "timestamp": "2026-11-17T02:46:36.602622+00:00",
+          "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+          "input_tokens": 13499,
+          "output_tokens": 483,
+          "thinking_tokens": 0,
+          "total_tokens": 13982,
+          "estimated_cost_usd": 0.0,
+          "status": "ok",
+          "validation_failure": false,
+          "elapsed_seconds": 3.815563566997298
+        }
+      ]
+    }
+  ],
+  "score_summary": {
+    "novelty": {
+      "median": 3.0,
+      "min": 3,
+      "max": 3
+    },
+    "feasibility": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "clarity": {
+      "median": 4.5,
+      "min": 4,
+      "max": 5
+    },
+    "importance": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "evidence_grounding": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    }
+  },
+  "search": [
+    {
+      "query": "prompt sensitivity class imbalance few-shot classification",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T02:44:39.867693+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-long.73",
+          "title": "What Did I Do Wrong? Quantifying LLMs’ Sensitivity and Consistency to Prompt Engineering",
+          "authors": [
+            "Federico Errica",
+            "Davide Sanvito",
+            "Giuseppe Siracusano",
+            "Roberto Bifulco"
+          ],
+          "year": 2025,
+          "abstract": "Large Language Models (LLMs) changed the way we design and interact with software systems. Their ability to process and extract information from text has drastically improved productivity in a number of routine tasks. Developers that want to include these models in their software stack, however, face a dreadful challenge: debugging LLMs’ inconsistent behavior across minor variations of the prompt. We therefore introduce two metrics for classification tasks, namely sensitivity and consistency, which are complementary to task performance. First, sensitivity measures changes of predictions across rephrasings of the prompt, and does not require access to ground truth labels. Instead, consistency measures how predictions vary across rephrasings for elements of the same class. We perform an empirical comparison of these metrics on text classification tasks, using them as guideline for understanding failure modes of the LLM. Our hope is that sensitivity and consistency will be helpful to guide prompt engineering and obtain LLMs that balance robustness with performance.",
+          "url": "https://aclanthology.org/2025.naacl-long.73/",
+          "doi": "10.18653/v1/2025.naacl-long.73",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-srw.19",
+          "title": "Label-Aware Automatic Verbalizer for Few-Shot Text Classification in Mid-To-Low Resource Languages",
+          "authors": [
+            "Thanakorn Thaminkaew",
+            "Piyawat Lertvittayakumjorn",
+            "Peerapon Vateekul"
+          ],
+          "year": 2024,
+          "abstract": "Prompt-based learning has shown its effectiveness in few-shot text classification. A key factor in its success is a verbalizer, which translates output from a language model into a predicted class. Notably, the simplest and widely acknowledged verbalizer employs manual labels to represent the classes. However, manual selection may not yield the optimal words for a given language model, potentially leading to subpar classification performance, especially in mid-to-low resource languages with weaker language models. Therefore, we propose Label-Aware Automatic Verbalizer (LAAV), effectively augmenting manual labels for improved few-shot classification results. Specifically, we utilize the label name along with the conjunction “and” to induce the model to generate more effective words for the verbalizer. Experimental results on four mid-to-low resource Southeast Asian languages demonstrate that LAAV significantly outperforms existing verbalizers.",
+          "url": "https://aclanthology.org/2024.acl-srw.19/",
+          "doi": "10.18653/v1/2024.acl-srw.19",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.340",
+          "title": "Active Few-Shot Learning for Text Classification",
+          "authors": [
+            "Saeed Ahmadnia",
+            "Arash Yousefi Jordehi",
+            "Mahsa Hosseini Khasheh Heyran",
+            "Seyed Abolghasem Mirroshandel",
+            "Owen Rambow",
+            "Cornelia Caragea"
+          ],
+          "year": 2025,
+          "abstract": "The rise of Large Language Models (LLMs) has boosted the use of Few-Shot Learning (FSL) methods in natural language processing, achieving acceptable performance even when working with limited training data. The goal of FSL is to effectively utilize a small number of annotated samples in the learning process. However, the performance of FSL suffers when unsuitable support samples are chosen. This problem arises due to the heavy reliance on a limited number of support samples, which hampers consistent performance improvement even when more support samples are added. To address this challenge, we propose an active learning-based instance selection mechanism that identifies effective support instances from the unlabeled pool and can work with different LLMs. Our experiments on five tasks show that our method frequently improves the performance of FSL. We make our implementation available on GitHub.",
+          "url": "https://aclanthology.org/2025.naacl-long.340/",
+          "doi": "10.18653/v1/2025.naacl-long.340",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.373",
+          "title": "Leveraging Machine-Generated Rationales to Facilitate Social Meaning Detection in Conversations",
+          "authors": [
+            "Ritam Dutt",
+            "Zhen Wu",
+            "Jiaxin Shi",
+            "Divyanshu Sheth",
+            "Prakhar Gupta",
+            "Carolyn Rose"
+          ],
+          "year": 2024,
+          "abstract": "We present a generalizable classification approach that leverages Large Language Models (LLMs) to facilitate the detection of implicitly encoded social meaning in conversations. We design a multi-faceted prompt to extract a textual explanation of the reasoning that connects visible cues to underlying social meanings. These extracted explanations or rationales serve as augmentations to the conversational text to facilitate dialogue understanding and transfer. Our empirical results over 2,340 experimental settings demonstrate the significant positive impact of adding these rationales. Our findings hold true for in-domain classification, zero-shot, and few-shot domain transfer for two different social meaning detection tasks, each spanning two different corpora.",
+          "url": "https://aclanthology.org/2024.acl-long.373/",
+          "doi": "10.18653/v1/2024.acl-long.373",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.35",
+          "title": "Leveraging Codebook Knowledge with NLI and ChatGPT for Zero-Shot Political Relation Classification",
+          "authors": [
+            "Yibo Hu",
+            "Erick Skorupa Parolin",
+            "Latifur Khan",
+            "Patrick Brandt",
+            "Javier Osorio",
+            "Vito D’Orazio"
+          ],
+          "year": 2024,
+          "abstract": "Is it possible accurately classify political relations within evolving event ontologies without extensive annotations? This study investigates zero-shot learning methods that use expert knowledge from existing annotation codebook, and evaluates the performance of advanced ChatGPT (GPT-3.5/4) and a natural language inference (NLI)-based model called ZSP. ChatGPT uses codebook’s labeled summaries as prompts, whereas ZSP breaks down the classification task into context, event mode, and class disambiguation to refine task-specific hypotheses. This decomposition enhances interpretability, efficiency, and adaptability to schema changes. The experiments reveal ChatGPT’s strengths and limitations, and crucially show ZSP’s outperformance of dictionary-based methods and its competitive edge over some supervised models. These findings affirm the value of ZSP for validating event records and advancing ontology development. Our study underscores the efficacy of leveraging transfer learning and existing domain expertise to enhance research efficiency and scalability.",
+          "url": "https://aclanthology.org/2024.acl-long.35/",
+          "doi": "10.18653/v1/2024.acl-long.35",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "in-context learning order effect text classification",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T02:44:39.869579+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-long.586",
+          "title": "Is In-Context Learning a Type of Error-Driven Learning? Evidence from the Inverse Frequency Effect in Structural Priming",
+          "authors": [
+            "Zhenghao Zhou",
+            "Robert Frank",
+            "R. Thomas McCoy"
+          ],
+          "year": 2025,
+          "abstract": "Large language models (LLMs) have shown the emergent capability of in-context learning (ICL). One line of research has claimed that ICL is functionally equivalent to gradient descent, a type of error-driven learning mechanism. In this paper, we introduce a new way of diagnosing whether ICL is functionally performing error-driven learning. Our approach is based on the inverse frequency effect (IFE)—a phenomenon in which an agent’s behavior is influenced to a greater degree when presented with improbable examples as compared to more likely ones. The IFE has previously been identified in psycholinguistics where humans exhibit the IFE in the context of structural priming (the tendency for people to produce sentence structures they have encountered recently). In that context, the IFE has been used as evidence that human structural priming must involve error-driven learning mechanisms. In our experiments, we simulated structural priming with ICL and found that LLMs indeed display the IFE, with the effect being stronger in larger models. We conclude that at least in the case we studied, ICL is indeed a type of error-driven learning, supporting the hypothesis that an error signal is implicitly computed in the forward pass during ICL. Our results suggest that both humans and LLMs make use of error-driven processing mechanisms in on-line processing.",
+          "url": "https://aclanthology.org/2025.naacl-long.586/",
+          "doi": "10.18653/v1/2025.naacl-long.586",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.166",
+          "title": "ChronosLex: Time-aware Incremental Training for Temporal Generalization of Legal Classification Tasks",
+          "authors": [
+            "Santosh T.Y.S.S",
+            "Tuan-Quang Vuong",
+            "Matthias Grabmair"
+          ],
+          "year": 2024,
+          "abstract": "This study investigates the challenges posed by the dynamic nature of legal multi-label text classification tasks, where legal concepts evolve over time. Existing models often overlook the temporal dimension in their training process, leading to suboptimal performance of those models over time, as they treat training data as a single homogeneous block. To address this, we introduce ChronosLex, an incremental training paradigm that trains models on chronological splits, preserving the temporal order of the data. However, this incremental approach raises concerns about overfitting to recent data, prompting an assessment of mitigation strategies using continual learning and temporal invariant methods. Our experimental results over six legal multi-label text classification datasets reveal that continual learning methods prove effective in preventing overfitting thereby enhancing temporal generalizability, while temporal invariant methods struggle to capture these dynamics of temporal shifts.",
+          "url": "https://aclanthology.org/2024.acl-long.166/",
+          "doi": "10.18653/v1/2024.acl-long.166",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.416",
+          "title": "Label Augmentation for Zero-Shot Hierarchical Text Classification",
+          "authors": [
+            "Lorenzo Paletto",
+            "Valerio Basile",
+            "Roberto Esposito"
+          ],
+          "year": 2024,
+          "abstract": "Hierarchical Text Classification poses the difficult challenge of classifying documents into multiple labels organized in a hierarchy. The vast majority of works aimed to address this problem relies on supervised methods which are difficult to implement due to the scarcity of labeled data in many real world applications. This paper focuses on strict Zero-Shot Classification, the setting in which the system lacks both labeled instances and training data.We propose a novel approach that uses a Large Language Model to augment the deepest layer of the labels hierarchy in order to enhance its specificity. We achieve this by generating semantically relevant labels as children connected to the existing branches, creating a deeper taxonomy that better overlaps with the input texts. We leverage the enriched hierarchy to perform Zero-Shot Hierarchical Classification by using the Upward score Propagation technique. We test our method on four public datasets, obtaining new state-of-the art results on three of them. We introduce two cosine similarity-based metrics to quantify the density and granularity of a label taxonomy and we show a strong correlation between the metric values and the classification performance of our method on the datasets.",
+          "url": "https://aclanthology.org/2024.acl-long.416/",
+          "doi": "10.18653/v1/2024.acl-long.416",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-srw.22",
+          "title": "Assessing In-context Learning and Fine-tuning for Topic Classification of German Web Data",
+          "authors": [
+            "Julian Schelb",
+            "Roberto Ulloa",
+            "Andreas Spitz"
+          ],
+          "year": 2024,
+          "abstract": "Researchers in the political and social sciences often rely on classification models to analyze trends in information consumption by examining browsing histories of millions of webpages. Automated scalable methods are necessary due to the impracticality of manual labeling. In this paper, we model the detection of topic-related content as a binary classification task and compare the accuracy of fine-tuned pre-trained encoder models against in-context learning strategies. Using only a few hundred annotated data points per topic, we detect content related to three German policies in a database of scraped webpages. We compare multilingual and monolingual models, as well as zero and few-shot approaches, and investigate the impact of negative sampling strategies and the combination of URL & content-based features. Our results show that a small sample of annotated data is sufficient to train an effective classifier. Fine-tuning encoder-based models yields better results than in-context learning. Classifiers using both URL & content-based features perform best, while using URLs alone provides adequate results when content is unavailable.",
+          "url": "https://aclanthology.org/2024.acl-srw.22/",
+          "doi": "10.18653/v1/2024.acl-srw.22",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.278",
+          "title": "Token-based Decision Criteria Are Suboptimal in In-context Learning",
+          "authors": [
+            "Hakaze Cho",
+            "Yoshihiro Sakai",
+            "Mariko Kato",
+            "Kenshiro Tanaka",
+            "Akira Ishii",
+            "Naoya Inoue"
+          ],
+          "year": 2025,
+          "abstract": "In-Context Learning (ICL) typically utilizes classification criteria from output probabilities of manually selected label tokens. However, we argue that such token-based classification criteria lead to suboptimal decision boundaries, despite delicate calibrations through translation and constrained rotation applied. To address this problem, we propose Hidden Calibration, which renounces token probabilities and uses the nearest centroid classifier on the LM’s last hidden states. In detail, we assign the label of the nearest centroid previously estimated from a calibration set to the test sample as the predicted label. Our experiments on 6 models and 10 classification datasets indicate that Hidden Calibration consistently outperforms current token-based baselines by about 20%~50%, achieving a strong state-of-the-art in ICL. Our further analysis demonstrates that Hidden Calibration finds better classification criteria with less inter-class overlap, and LMs provide linearly separable intra-class clusters with the help of demonstrations, which supports Hidden Calibration and gives new insights into the principle of ICL. Our official code implementation can be found at https://github.com/hc495/Hidden_Calibration.",
+          "url": "https://aclanthology.org/2025.naacl-long.278/",
+          "doi": "10.18653/v1/2025.naacl-long.278",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "balanced demonstrations prompt robustness",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T02:44:39.870091+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-srw.51",
+          "title": "Towards LLMs Robustness to Changes in Prompt Format Styles",
+          "authors": [
+            "Lilian Ngweta",
+            "Kiran Kate",
+            "Jason Tsay",
+            "Yara Rizk"
+          ],
+          "year": 2025,
+          "abstract": "Large language models (LLMs) have gained popularity in recent years for their utility in various applications. However, they are sensitive to non-semantic changes in prompt formats, where small changes in the prompt format can lead to significant performance fluctuations. In the literature, this problem is commonly referred to as prompt brittleness. Previous research on prompt engineering has focused mainly on developing techniques for identifying the optimal prompt for specific tasks. Some studies have also explored the issue of prompt brittleness and proposed methods to quantify performance variations; however, no simple solution has been found to address this challenge. We propose Mixture of Formats (MOF), a simple and efficient technique for addressing prompt brittleness in LLMs by diversifying the styles used in the prompt few-shot examples. MOF was inspired by computer vision techniques that utilize diverse style datasets to prevent models from associating specific styles with the target variable. Empirical results show that our proposed technique reduces style-induced prompt brittleness in various LLMs while also enhancing overall performance across prompt variations and different datasets.",
+          "url": "https://aclanthology.org/2025.naacl-srw.51/",
+          "doi": "10.18653/v1/2025.naacl-srw.51",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.33",
+          "title": "Parameter-free and Accessible Prompt Learning to Enhance Adversarial Robustness for Pre-trained Vision-Language Models",
+          "authors": [
+            "Xingran Zhou",
+            "Kun Yang",
+            "Changtao Miao",
+            "Bingyu Hu",
+            "Zhuoer Xu",
+            "Shiwen Cui",
+            "Changhua Meng",
+            "Dan Hong"
+          ],
+          "year": 2025,
+          "abstract": "Large pre-trained Vision-Language Models (VLMs) have revolutionized both computer vision and natural language processing. Despite their success, adversarial examples can still mislead VLMs into producing incorrect results. This work focuses on boosting the adversarial robustness of VLMs by searching for text prompts at the word level, rather than optimizing continuous textual embeddings. We introduce Parameter-Free Prompt Tuning (PFPT) to learn defense words that enhance resilience against adversarial attacks when appended to existing prompts, thereby offering ease of use due to the simplicity of this approach. These defense words are naturally present in the inherent vocabulary of VLMs, providing a human-readable property. PFPT employs a coarse-to-fine strategy with carefully designed optimization objectives to guide the word search. Extensive experiments demonstrate our method’s superiority over hand-engineered prompts and other state-of-the-art methods. PFPT significantly boosts accuracy and robustness, outperforming hand-engineered prompts with average gains of +4.9% and +5.8%, respectively (epsilon=1/255).",
+          "url": "https://aclanthology.org/2025.naacl-long.33/",
+          "doi": "10.18653/v1/2025.naacl-long.33",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.825",
+          "title": "Iterative Forward Tuning Boosts In-Context Learning in Language Models",
+          "authors": [
+            "Jiaxi Yang",
+            "Binyuan Hui",
+            "Min Yang",
+            "Bailin Wang",
+            "Bowen Li",
+            "Binhua Li",
+            "Fei Huang",
+            "Yongbin Li"
+          ],
+          "year": 2024,
+          "abstract": "Despite the advancements in in-context learning (ICL) for large language models (LLMs), current research centers on specific prompt engineering, such as demonstration selection, with the expectation that a single iteration of demonstrations processing can generalize effectively to a given test sample. However, this perspective overlooks the potential benefits derived from multiple iterations involving demonstrations, a practice aligning more closely with the iterative decision-making process exhibited by humans, who often learn through analogy. In this study, we introduce a novel two-stage framework to boost ICL in LLMs. Specifically, our framework delineates the ICL process into two distinct stages: Deep-Thinking and test stages. The Deep-Thinking stage incorporates a unique attention mechanism, i.e., iterative enhanced attention, which enables multiple rounds of information accumulation. This mechanism operates by manipulating the Key-Value matrices without training, fostering enhanced understanding capabilities in LLMs by thinking demonstrations multiple times. We evaluated Deep-Thinking across a range of benchmarks and LLMs, showing its superior performance over vanilla ICL methods and its effectiveness in challenging tasks where demonstration selection is infeasible.",
+          "url": "https://aclanthology.org/2024.acl-long.825/",
+          "doi": "10.18653/v1/2024.acl-long.825",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.518",
+          "title": "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection",
+          "authors": [
+            "Sepideh Mamooler",
+            "Syrielle Montariol",
+            "Alexander Mathis",
+            "Antoine Bosselut"
+          ],
+          "year": 2025,
+          "abstract": "In-context learning (ICL) enables Large Language Models (LLMs) to perform tasks using few demonstrations, facilitating task adaptation when labeled examples are hard to come by. However, ICL is sensitive to the choice of demonstrations, and it remains unclear which demonstration attributes enable in-context generalization. In this work, we conduct a perturbation study of in-context demonstrations for low-resource Named Entity Detection (NED). Our surprising finding is that in-context demonstrations with partially-correct annotated entity mentions can be as effective for task transfer as fully correct demonstrations. Based off our findings, we propose Pseudo-annotated In-Context Learning (PICLe), a framework for in-context learning with noisy, pseudo-annotated demonstrations. PICLe leverages LLMs to annotate large quantities of demonstrations in a zero-shot first pass. We then cluster these synthetic demonstrations, sample specific sets of in-context demonstrations from each cluster, and predict entity mentions using each set independently. Finally, we use self-verification to select the final set of entity mentions. We extensively evaluate PICLe on five biomedical NED datasets and show that, with zero human-annotation, PICLe outperforms ICL in low-resource settings where few gold examples can be used as in-context demonstrations.",
+          "url": "https://aclanthology.org/2025.naacl-long.518/",
+          "doi": "10.18653/v1/2025.naacl-long.518",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.sigdial-1.41",
+          "title": "A Dialogue Game for Eliciting Balanced Collaboration",
+          "authors": [
+            "Isidora Jeknić",
+            "David Schlangen",
+            "Alexander Koller"
+          ],
+          "year": 2024,
+          "abstract": "Collaboration is an integral part of human dialogue. Typical task-oriented dialogue games assign asymmetric roles to the participants, which limits their ability to elicit naturalistic role-taking in collaboration and its negotiation. We present a novel and simple online setup that favors balanced collaboration: a two-player 2D object placement game in which the players must negotiate the goal state themselves. We show empirically that human players exhibit a variety of role distributions, and that balanced collaboration improves task performance. We also present an LLM-based baseline agent which demonstrates that automatic playing of our game is an interesting challenge for artificial systems.",
+          "url": "https://aclanthology.org/2024.sigdial-1.41/",
+          "doi": "10.18653/v1/2024.sigdial-1.41",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:41.904Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "Investigating the Joint Impact of Few-Shot Example Order and Class Imbalance on Pretrained Language Model Classification Robustness We operationalize demonstration sensitivity by systematically varying example order permutations and class imbalance ratios in the prompt context. Using a fixed prompt",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-17T02:44:39.873866+00:00",
+      "papers": [
+        {
+          "paper_id": "2024.acl-long.155",
+          "title": "Enhancing In-Context Learning via Implicit Demonstration Augmentation",
+          "authors": [
+            "Xiaoling Zhou",
+            "Wei Ye",
+            "Yidong Wang",
+            "Chaoya Jiang",
+            "Zhemg Lee",
+            "Rui Xie",
+            "Shikun Zhang"
+          ],
+          "year": 2024,
+          "abstract": "The emergence of in-context learning (ICL) enables large pre-trained language models (PLMs) to make predictions for unseen inputs without updating parameters. Despite its potential, ICL’s effectiveness heavily relies on the quality, quantity, and permutation of demonstrations, commonly leading to suboptimal and unstable performance. In this paper, we tackle this challenge for the first time from the perspective of demonstration augmentation. Specifically, we start with enriching representations of demonstrations by leveraging their deep feature distribution. We then theoretically reveal that when the number of augmented copies approaches infinity, the augmentation is approximately equal to a novel logit calibration mechanism integrated with specific statistical properties. This insight results in a simple yet highly efficient method that significantly improves the average and worst-case accuracy across diverse PLMs and tasks. Moreover, our method effectively reduces performance variance among varying demonstrations, permutations, and templates, and displays the capability to address imbalanced class distributions.",
+          "url": "https://aclanthology.org/2024.acl-long.155/",
+          "doi": "10.18653/v1/2024.acl-long.155",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.73",
+          "title": "What Did I Do Wrong? Quantifying LLMs’ Sensitivity and Consistency to Prompt Engineering",
+          "authors": [
+            "Federico Errica",
+            "Davide Sanvito",
+            "Giuseppe Siracusano",
+            "Roberto Bifulco"
+          ],
+          "year": 2025,
+          "abstract": "Large Language Models (LLMs) changed the way we design and interact with software systems. Their ability to process and extract information from text has drastically improved productivity in a number of routine tasks. Developers that want to include these models in their software stack, however, face a dreadful challenge: debugging LLMs’ inconsistent behavior across minor variations of the prompt. We therefore introduce two metrics for classification tasks, namely sensitivity and consistency, which are complementary to task performance. First, sensitivity measures changes of predictions across rephrasings of the prompt, and does not require access to ground truth labels. Instead, consistency measures how predictions vary across rephrasings for elements of the same class. We perform an empirical comparison of these metrics on text classification tasks, using them as guideline for understanding failure modes of the LLM. Our hope is that sensitivity and consistency will be helpful to guide prompt engineering and obtain LLMs that balance robustness with performance.",
+          "url": "https://aclanthology.org/2025.naacl-long.73/",
+          "doi": "10.18653/v1/2025.naacl-long.73",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-srw.19",
+          "title": "Label-Aware Automatic Verbalizer for Few-Shot Text Classification in Mid-To-Low Resource Languages",
+          "authors": [
+            "Thanakorn Thaminkaew",
+            "Piyawat Lertvittayakumjorn",
+            "Peerapon Vateekul"
+          ],
+          "year": 2024,
+          "abstract": "Prompt-based learning has shown its effectiveness in few-shot text classification. A key factor in its success is a verbalizer, which translates output from a language model into a predicted class. Notably, the simplest and widely acknowledged verbalizer employs manual labels to represent the classes. However, manual selection may not yield the optimal words for a given language model, potentially leading to subpar classification performance, especially in mid-to-low resource languages with weaker language models. Therefore, we propose Label-Aware Automatic Verbalizer (LAAV), effectively augmenting manual labels for improved few-shot classification results. Specifically, we utilize the label name along with the conjunction “and” to induce the model to generate more effective words for the verbalizer. Experimental results on four mid-to-low resource Southeast Asian languages demonstrate that LAAV significantly outperforms existing verbalizers.",
+          "url": "https://aclanthology.org/2024.acl-srw.19/",
+          "doi": "10.18653/v1/2024.acl-srw.19",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.621",
+          "title": "ParaICL: Towards Parallel In-Context Learning",
+          "authors": [
+            "Xingxuan Li",
+            "Xuan-Phi Nguyen",
+            "Shafiq Joty",
+            "Lidong Bing"
+          ],
+          "year": 2025,
+          "abstract": "Large language models (LLMs) have become the norm in natural language processing (NLP), excelling in few-shot in-context learning (ICL) with their remarkable abilities. Nonetheless, the success of ICL largely hinges on the choice of few-shot demonstration examples, making the selection process increasingly crucial. Existing methods have delved into optimizing the quantity and semantic similarity of these examples to improve ICL performances. However, our preliminary experiments indicate that the effectiveness of ICL is limited by the length of the input context. Moreover, varying combinations of few-shot demonstration examples can significantly boost accuracy across different test samples. To address this, we propose a novel method named parallel in-context learning (ParaICL) that effectively utilizes all demonstration examples without exceeding the manageable input context length. ParaICL employs parallel batching to distribute demonstration examples into different batches according to the semantic similarities of the questions in the demonstrations to the test question. It then computes normalized batch semantic scores for each batch. A weighted average semantic objective, constrained by adaptive plausibility, is applied to select the most appropriate tokens. Through extensive experiments, we validate the effectiveness of ParaICL and conduct ablation studies to underscore its design rationale. We further demonstrate that ParaICL can seamlessly integrate with existing methods.",
+          "url": "https://aclanthology.org/2025.naacl-long.621/",
+          "doi": "10.18653/v1/2025.naacl-long.621",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.755",
+          "title": "Explanation-aware Soft Ensemble Empowers Large Language Model In-context Learning",
+          "authors": [
+            "Yue Yu",
+            "Jiaming Shen",
+            "Tianqi Liu",
+            "Zhen Qin",
+            "Jing Nathan Yan",
+            "Jialu Liu",
+            "Chao Zhang",
+            "Michael Bendersky"
+          ],
+          "year": 2024,
+          "abstract": "Large language models (LLMs) have shown remarkable capabilities in various natural language understanding tasks with a few demonstration examples via in-context learning. Common strategies to boost such “in-context” learning ability are to ensemble multiple model decoded results and require the model to generate an explanation along with the prediction. However, these models often treat different class predictions equally and neglect the potential discrepancy between the explanations and predictions. To fully unleash the power of explanations, we propose EASE, an Explanation-Aware Soft Ensemble framework to empower in-context learning with LLMs. We design two techniques, explanation-guided ensemble, and soft probability aggregation, to mitigate the effect of unreliable explanations and improve the consistency between explanations and final predictions. Experiments on seven natural language understanding tasks and four varying-size LLMs demonstrate the effectiveness of our proposed framework.",
+          "url": "https://aclanthology.org/2024.acl-long.755/",
+          "doi": "10.18653/v1/2024.acl-long.755",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    }
+  ],
+  "events": [
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-17T02:45:51.601941+00:00",
+      "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "HTTP 503",
+      "elapsed_seconds": 2.0183618019946152
+    },
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-17T02:46:06.602105+00:00",
+      "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+      "input_tokens": 13499,
+      "output_tokens": 391,
+      "thinking_tokens": 0,
+      "total_tokens": 13890,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.609772846000851
+    },
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-17T02:46:21.602335+00:00",
+      "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "HTTP 503",
+      "elapsed_seconds": 2.9557635960009065
+    },
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-17T02:46:36.602622+00:00",
+      "prompt_hash": "5c6fad943a3951c841b3f0630b12256ff2f55e94e9d5960cb9f9ce8d86d8cdaa",
+      "input_tokens": 13499,
+      "output_tokens": 483,
+      "thinking_tokens": 0,
+      "total_tokens": 13982,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.815563566997298
+    }
+  ],
+  "error": null,
+  "literature_context": {
+    "coverage": {
+      "protocol": "multi_query_shared_evidence_v1",
+      "selection_policy": "Shared evidence per seed/replicate; cited papers first, then interleaved multi-query hits.",
+      "query_count": 4,
+      "paper_count": 19,
+      "paper_limit": 24,
+      "search_failures": 0,
+      "missing_cited_ids": [],
+      "omitted_cited_ids": [],
+      "omitted_hit_count": 0,
+      "limitations": "Bounded abstract corpus and lexical search; incomplete retrieval does not establish novelty."
+    },
+    "fingerprint": "dacb6ce67000b499fd0086cf002b009756cbc11f9e5acee6aaec2f6382c5917a",
+    "queries": [
+      "prompt sensitivity class imbalance few-shot classification",
+      "in-context learning order effect text classification",
+      "balanced demonstrations prompt robustness",
+      "Investigating the Joint Impact of Few-Shot Example Order and Class Imbalance on Pretrained Language Model Classification Robustness We operationalize demonstration sensitivity by systematically varying example order permutations and class imbalance ratios in the prompt context. Using a fixed prompt "
+    ],
+    "papers": [
+      {
+        "paper_id": "2024.acl-srw.19",
+        "title": "Label-Aware Automatic Verbalizer for Few-Shot Text Classification in Mid-To-Low Resource Languages",
+        "authors": [
+          "Thanakorn Thaminkaew",
+          "Piyawat Lertvittayakumjorn",
+          "Peerapon Vateekul"
+        ],
+        "year": 2024,
+        "abstract": "Prompt-based learning has shown its effectiveness in few-shot text classification. A key factor in its success is a verbalizer, which translates output from a language model into a predicted class. Notably, the simplest and widely acknowledged verbalizer employs manual labels to represent the classes. However, manual selection may not yield the optimal words for a given language model, potentially leading to subpar classification performance, especially in mid-to-low resource languages with weaker language models. Therefore, we propose Label-Aware Automatic Verbalizer (LAAV), effectively augmenting manual labels for improved few-shot classification results. Specifically, we utilize the label name along with the conjunction “and” to induce the model to generate more effective words for the verbalizer. Experimental results on four mid-to-low resource Southeast Asian languages demonstrate that LAAV significantly outperforms existing verbalizers.",
+        "url": "https://aclanthology.org/2024.acl-srw.19/",
+        "doi": "10.18653/v1/2024.acl-srw.19",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.17",
+        "title": "PromptRefine: Enhancing Few-Shot Performance on Low-Resource Indic Languages with Example Selection from related Example Banks",
+        "authors": [
+          "Soumya Suvra Ghosal",
+          "Soumyabrata Pal",
+          "Koyel Mukherjee",
+          "Dinesh Manocha"
+        ],
+        "year": 2025,
+        "abstract": "Large Language Models (LLMs) have recently demonstrated impressive few-shot learning capabilities through in-context learning (ICL). However, ICL performance is highly dependent on the choice of few-shot demonstrations, making the selection of the most optimal examples a persistent research challenge. This issue is further amplified in low-resource Indic languages, where the scarcity of ground-truth data complicates the selection process. In this work, we propose PromptRefine, a novel Alternating Minimization approach for example selection that improves ICL performance on low-resource Indic languages. PromptRefine leverages auxiliary example banks from related high-resource Indic languages and employs multi-task learning techniques to align language-specific retrievers, enabling effective cross-language retrieval. Additionally, we incorporate diversity in the selected examples to enhance generalization and reduce bias. Through comprehensive evaluations on four text generation tasks—Cross-Lingual Question Answering, Multilingual Question Answering, Machine Translation, and Cross-Lingual Summarization using state-of-the-art LLMs such as LLAMA-3.1-8B, LLAMA-2-7B, Qwen-2-7B, and Qwen-2.5-7B, we demonstrate that PromptRefine significantly outperforms existing frameworks for retrieving examples.",
+        "url": "https://aclanthology.org/2025.naacl-long.17/",
+        "doi": "10.18653/v1/2025.naacl-long.17",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.73",
+        "title": "What Did I Do Wrong? Quantifying LLMs’ Sensitivity and Consistency to Prompt Engineering",
+        "authors": [
+          "Federico Errica",
+          "Davide Sanvito",
+          "Giuseppe Siracusano",
+          "Roberto Bifulco"
+        ],
+        "year": 2025,
+        "abstract": "Large Language Models (LLMs) changed the way we design and interact with software systems. Their ability to process and extract information from text has drastically improved productivity in a number of routine tasks. Developers that want to include these models in their software stack, however, face a dreadful challenge: debugging LLMs’ inconsistent behavior across minor variations of the prompt. We therefore introduce two metrics for classification tasks, namely sensitivity and consistency, which are complementary to task performance. First, sensitivity measures changes of predictions across rephrasings of the prompt, and does not require access to ground truth labels. Instead, consistency measures how predictions vary across rephrasings for elements of the same class. We perform an empirical comparison of these metrics on text classification tasks, using them as guideline for understanding failure modes of the LLM. Our hope is that sensitivity and consistency will be helpful to guide prompt engineering and obtain LLMs that balance robustness with performance.",
+        "url": "https://aclanthology.org/2025.naacl-long.73/",
+        "doi": "10.18653/v1/2025.naacl-long.73",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.586",
+        "title": "Is In-Context Learning a Type of Error-Driven Learning? Evidence from the Inverse Frequency Effect in Structural Priming",
+        "authors": [
+          "Zhenghao Zhou",
+          "Robert Frank",
+          "R. Thomas McCoy"
+        ],
+        "year": 2025,
+        "abstract": "Large language models (LLMs) have shown the emergent capability of in-context learning (ICL). One line of research has claimed that ICL is functionally equivalent to gradient descent, a type of error-driven learning mechanism. In this paper, we introduce a new way of diagnosing whether ICL is functionally performing error-driven learning. Our approach is based on the inverse frequency effect (IFE)—a phenomenon in which an agent’s behavior is influenced to a greater degree when presented with improbable examples as compared to more likely ones. The IFE has previously been identified in psycholinguistics where humans exhibit the IFE in the context of structural priming (the tendency for people to produce sentence structures they have encountered recently). In that context, the IFE has been used as evidence that human structural priming must involve error-driven learning mechanisms. In our experiments, we simulated structural priming with ICL and found that LLMs indeed display the IFE, with the effect being stronger in larger models. We conclude that at least in the case we studied, ICL is indeed a type of error-driven learning, supporting the hypothesis that an error signal is implicitly computed in the forward pass during ICL. Our results suggest that both humans and LLMs make use of error-driven processing mechanisms in on-line processing.",
+        "url": "https://aclanthology.org/2025.naacl-long.586/",
+        "doi": "10.18653/v1/2025.naacl-long.586",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-srw.51",
+        "title": "Towards LLMs Robustness to Changes in Prompt Format Styles",
+        "authors": [
+          "Lilian Ngweta",
+          "Kiran Kate",
+          "Jason Tsay",
+          "Yara Rizk"
+        ],
+        "year": 2025,
+        "abstract": "Large language models (LLMs) have gained popularity in recent years for their utility in various applications. However, they are sensitive to non-semantic changes in prompt formats, where small changes in the prompt format can lead to significant performance fluctuations. In the literature, this problem is commonly referred to as prompt brittleness. Previous research on prompt engineering has focused mainly on developing techniques for identifying the optimal prompt for specific tasks. Some studies have also explored the issue of prompt brittleness and proposed methods to quantify performance variations; however, no simple solution has been found to address this challenge. We propose Mixture of Formats (MOF), a simple and efficient technique for addressing prompt brittleness in LLMs by diversifying the styles used in the prompt few-shot examples. MOF was inspired by computer vision techniques that utilize diverse style datasets to prevent models from associating specific styles with the target variable. Empirical results show that our proposed technique reduces style-induced prompt brittleness in various LLMs while also enhancing overall performance across prompt variations and different datasets.",
+        "url": "https://aclanthology.org/2025.naacl-srw.51/",
+        "doi": "10.18653/v1/2025.naacl-srw.51",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.155",
+        "title": "Enhancing In-Context Learning via Implicit Demonstration Augmentation",
+        "authors": [
+          "Xiaoling Zhou",
+          "Wei Ye",
+          "Yidong Wang",
+          "Chaoya Jiang",
+          "Zhemg Lee",
+          "Rui Xie",
+          "Shikun Zhang"
+        ],
+        "year": 2024,
+        "abstract": "The emergence of in-context learning (ICL) enables large pre-trained language models (PLMs) to make predictions for unseen inputs without updating parameters. Despite its potential, ICL’s effectiveness heavily relies on the quality, quantity, and permutation of demonstrations, commonly leading to suboptimal and unstable performance. In this paper, we tackle this challenge for the first time from the perspective of demonstration augmentation. Specifically, we start with enriching representations of demonstrations by leveraging their deep feature distribution. We then theoretically reveal that when the number of augmented copies approaches infinity, the augmentation is approximately equal to a novel logit calibration mechanism integrated with specific statistical properties. This insight results in a simple yet highly efficient method that significantly improves the average and worst-case accuracy across diverse PLMs and tasks. Moreover, our method effectively reduces performance variance among varying demonstrations, permutations, and templates, and displays the capability to address imbalanced class distributions.",
+        "url": "https://aclanthology.org/2024.acl-long.155/",
+        "doi": "10.18653/v1/2024.acl-long.155",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.166",
+        "title": "ChronosLex: Time-aware Incremental Training for Temporal Generalization of Legal Classification Tasks",
+        "authors": [
+          "Santosh T.Y.S.S",
+          "Tuan-Quang Vuong",
+          "Matthias Grabmair"
+        ],
+        "year": 2024,
+        "abstract": "This study investigates the challenges posed by the dynamic nature of legal multi-label text classification tasks, where legal concepts evolve over time. Existing models often overlook the temporal dimension in their training process, leading to suboptimal performance of those models over time, as they treat training data as a single homogeneous block. To address this, we introduce ChronosLex, an incremental training paradigm that trains models on chronological splits, preserving the temporal order of the data. However, this incremental approach raises concerns about overfitting to recent data, prompting an assessment of mitigation strategies using continual learning and temporal invariant methods. Our experimental results over six legal multi-label text classification datasets reveal that continual learning methods prove effective in preventing overfitting thereby enhancing temporal generalizability, while temporal invariant methods struggle to capture these dynamics of temporal shifts.",
+        "url": "https://aclanthology.org/2024.acl-long.166/",
+        "doi": "10.18653/v1/2024.acl-long.166",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.33",
+        "title": "Parameter-free and Accessible Prompt Learning to Enhance Adversarial Robustness for Pre-trained Vision-Language Models",
+        "authors": [
+          "Xingran Zhou",
+          "Kun Yang",
+          "Changtao Miao",
+          "Bingyu Hu",
+          "Zhuoer Xu",
+          "Shiwen Cui",
+          "Changhua Meng",
+          "Dan Hong"
+        ],
+        "year": 2025,
+        "abstract": "Large pre-trained Vision-Language Models (VLMs) have revolutionized both computer vision and natural language processing. Despite their success, adversarial examples can still mislead VLMs into producing incorrect results. This work focuses on boosting the adversarial robustness of VLMs by searching for text prompts at the word level, rather than optimizing continuous textual embeddings. We introduce Parameter-Free Prompt Tuning (PFPT) to learn defense words that enhance resilience against adversarial attacks when appended to existing prompts, thereby offering ease of use due to the simplicity of this approach. These defense words are naturally present in the inherent vocabulary of VLMs, providing a human-readable property. PFPT employs a coarse-to-fine strategy with carefully designed optimization objectives to guide the word search. Extensive experiments demonstrate our method’s superiority over hand-engineered prompts and other state-of-the-art methods. PFPT significantly boosts accuracy and robustness, outperforming hand-engineered prompts with average gains of +4.9% and +5.8%, respectively (epsilon=1/255).",
+        "url": "https://aclanthology.org/2025.naacl-long.33/",
+        "doi": "10.18653/v1/2025.naacl-long.33",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.340",
+        "title": "Active Few-Shot Learning for Text Classification",
+        "authors": [
+          "Saeed Ahmadnia",
+          "Arash Yousefi Jordehi",
+          "Mahsa Hosseini Khasheh Heyran",
+          "Seyed Abolghasem Mirroshandel",
+          "Owen Rambow",
+          "Cornelia Caragea"
+        ],
+        "year": 2025,
+        "abstract": "The rise of Large Language Models (LLMs) has boosted the use of Few-Shot Learning (FSL) methods in natural language processing, achieving acceptable performance even when working with limited training data. The goal of FSL is to effectively utilize a small number of annotated samples in the learning process. However, the performance of FSL suffers when unsuitable support samples are chosen. This problem arises due to the heavy reliance on a limited number of support samples, which hampers consistent performance improvement even when more support samples are added. To address this challenge, we propose an active learning-based instance selection mechanism that identifies effective support instances from the unlabeled pool and can work with different LLMs. Our experiments on five tasks show that our method frequently improves the performance of FSL. We make our implementation available on GitHub.",
+        "url": "https://aclanthology.org/2025.naacl-long.340/",
+        "doi": "10.18653/v1/2025.naacl-long.340",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.416",
+        "title": "Label Augmentation for Zero-Shot Hierarchical Text Classification",
+        "authors": [
+          "Lorenzo Paletto",
+          "Valerio Basile",
+          "Roberto Esposito"
+        ],
+        "year": 2024,
+        "abstract": "Hierarchical Text Classification poses the difficult challenge of classifying documents into multiple labels organized in a hierarchy. The vast majority of works aimed to address this problem relies on supervised methods which are difficult to implement due to the scarcity of labeled data in many real world applications. This paper focuses on strict Zero-Shot Classification, the setting in which the system lacks both labeled instances and training data.We propose a novel approach that uses a Large Language Model to augment the deepest layer of the labels hierarchy in order to enhance its specificity. We achieve this by generating semantically relevant labels as children connected to the existing branches, creating a deeper taxonomy that better overlaps with the input texts. We leverage the enriched hierarchy to perform Zero-Shot Hierarchical Classification by using the Upward score Propagation technique. We test our method on four public datasets, obtaining new state-of-the art results on three of them. We introduce two cosine similarity-based metrics to quantify the density and granularity of a label taxonomy and we show a strong correlation between the metric values and the classification performance of our method on the datasets.",
+        "url": "https://aclanthology.org/2024.acl-long.416/",
+        "doi": "10.18653/v1/2024.acl-long.416",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.825",
+        "title": "Iterative Forward Tuning Boosts In-Context Learning in Language Models",
+        "authors": [
+          "Jiaxi Yang",
+          "Binyuan Hui",
+          "Min Yang",
+          "Bailin Wang",
+          "Bowen Li",
+          "Binhua Li",
+          "Fei Huang",
+          "Yongbin Li"
+        ],
+        "year": 2024,
+        "abstract": "Despite the advancements in in-context learning (ICL) for large language models (LLMs), current research centers on specific prompt engineering, such as demonstration selection, with the expectation that a single iteration of demonstrations processing can generalize effectively to a given test sample. However, this perspective overlooks the potential benefits derived from multiple iterations involving demonstrations, a practice aligning more closely with the iterative decision-making process exhibited by humans, who often learn through analogy. In this study, we introduce a novel two-stage framework to boost ICL in LLMs. Specifically, our framework delineates the ICL process into two distinct stages: Deep-Thinking and test stages. The Deep-Thinking stage incorporates a unique attention mechanism, i.e., iterative enhanced attention, which enables multiple rounds of information accumulation. This mechanism operates by manipulating the Key-Value matrices without training, fostering enhanced understanding capabilities in LLMs by thinking demonstrations multiple times. We evaluated Deep-Thinking across a range of benchmarks and LLMs, showing its superior performance over vanilla ICL methods and its effectiveness in challenging tasks where demonstration selection is infeasible.",
+        "url": "https://aclanthology.org/2024.acl-long.825/",
+        "doi": "10.18653/v1/2024.acl-long.825",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.373",
+        "title": "Leveraging Machine-Generated Rationales to Facilitate Social Meaning Detection in Conversations",
+        "authors": [
+          "Ritam Dutt",
+          "Zhen Wu",
+          "Jiaxin Shi",
+          "Divyanshu Sheth",
+          "Prakhar Gupta",
+          "Carolyn Rose"
+        ],
+        "year": 2024,
+        "abstract": "We present a generalizable classification approach that leverages Large Language Models (LLMs) to facilitate the detection of implicitly encoded social meaning in conversations. We design a multi-faceted prompt to extract a textual explanation of the reasoning that connects visible cues to underlying social meanings. These extracted explanations or rationales serve as augmentations to the conversational text to facilitate dialogue understanding and transfer. Our empirical results over 2,340 experimental settings demonstrate the significant positive impact of adding these rationales. Our findings hold true for in-domain classification, zero-shot, and few-shot domain transfer for two different social meaning detection tasks, each spanning two different corpora.",
+        "url": "https://aclanthology.org/2024.acl-long.373/",
+        "doi": "10.18653/v1/2024.acl-long.373",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-srw.22",
+        "title": "Assessing In-context Learning and Fine-tuning for Topic Classification of German Web Data",
+        "authors": [
+          "Julian Schelb",
+          "Roberto Ulloa",
+          "Andreas Spitz"
+        ],
+        "year": 2024,
+        "abstract": "Researchers in the political and social sciences often rely on classification models to analyze trends in information consumption by examining browsing histories of millions of webpages. Automated scalable methods are necessary due to the impracticality of manual labeling. In this paper, we model the detection of topic-related content as a binary classification task and compare the accuracy of fine-tuned pre-trained encoder models against in-context learning strategies. Using only a few hundred annotated data points per topic, we detect content related to three German policies in a database of scraped webpages. We compare multilingual and monolingual models, as well as zero and few-shot approaches, and investigate the impact of negative sampling strategies and the combination of URL & content-based features. Our results show that a small sample of annotated data is sufficient to train an effective classifier. Fine-tuning encoder-based models yields better results than in-context learning. Classifiers using both URL & content-based features perform best, while using URLs alone provides adequate results when content is unavailable.",
+        "url": "https://aclanthology.org/2024.acl-srw.22/",
+        "doi": "10.18653/v1/2024.acl-srw.22",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.518",
+        "title": "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection",
+        "authors": [
+          "Sepideh Mamooler",
+          "Syrielle Montariol",
+          "Alexander Mathis",
+          "Antoine Bosselut"
+        ],
+        "year": 2025,
+        "abstract": "In-context learning (ICL) enables Large Language Models (LLMs) to perform tasks using few demonstrations, facilitating task adaptation when labeled examples are hard to come by. However, ICL is sensitive to the choice of demonstrations, and it remains unclear which demonstration attributes enable in-context generalization. In this work, we conduct a perturbation study of in-context demonstrations for low-resource Named Entity Detection (NED). Our surprising finding is that in-context demonstrations with partially-correct annotated entity mentions can be as effective for task transfer as fully correct demonstrations. Based off our findings, we propose Pseudo-annotated In-Context Learning (PICLe), a framework for in-context learning with noisy, pseudo-annotated demonstrations. PICLe leverages LLMs to annotate large quantities of demonstrations in a zero-shot first pass. We then cluster these synthetic demonstrations, sample specific sets of in-context demonstrations from each cluster, and predict entity mentions using each set independently. Finally, we use self-verification to select the final set of entity mentions. We extensively evaluate PICLe on five biomedical NED datasets and show that, with zero human-annotation, PICLe outperforms ICL in low-resource settings where few gold examples can be used as in-context demonstrations.",
+        "url": "https://aclanthology.org/2025.naacl-long.518/",
+        "doi": "10.18653/v1/2025.naacl-long.518",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.621",
+        "title": "ParaICL: Towards Parallel In-Context Learning",
+        "authors": [
+          "Xingxuan Li",
+          "Xuan-Phi Nguyen",
+          "Shafiq Joty",
+          "Lidong Bing"
+        ],
+        "year": 2025,
+        "abstract": "Large language models (LLMs) have become the norm in natural language processing (NLP), excelling in few-shot in-context learning (ICL) with their remarkable abilities. Nonetheless, the success of ICL largely hinges on the choice of few-shot demonstration examples, making the selection process increasingly crucial. Existing methods have delved into optimizing the quantity and semantic similarity of these examples to improve ICL performances. However, our preliminary experiments indicate that the effectiveness of ICL is limited by the length of the input context. Moreover, varying combinations of few-shot demonstration examples can significantly boost accuracy across different test samples. To address this, we propose a novel method named parallel in-context learning (ParaICL) that effectively utilizes all demonstration examples without exceeding the manageable input context length. ParaICL employs parallel batching to distribute demonstration examples into different batches according to the semantic similarities of the questions in the demonstrations to the test question. It then computes normalized batch semantic scores for each batch. A weighted average semantic objective, constrained by adaptive plausibility, is applied to select the most appropriate tokens. Through extensive experiments, we validate the effectiveness of ParaICL and conduct ablation studies to underscore its design rationale. We further demonstrate that ParaICL can seamlessly integrate with existing methods.",
+        "url": "https://aclanthology.org/2025.naacl-long.621/",
+        "doi": "10.18653/v1/2025.naacl-long.621",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.35",
+        "title": "Leveraging Codebook Knowledge with NLI and ChatGPT for Zero-Shot Political Relation Classification",
+        "authors": [
+          "Yibo Hu",
+          "Erick Skorupa Parolin",
+          "Latifur Khan",
+          "Patrick Brandt",
+          "Javier Osorio",
+          "Vito D’Orazio"
+        ],
+        "year": 2024,
+        "abstract": "Is it possible accurately classify political relations within evolving event ontologies without extensive annotations? This study investigates zero-shot learning methods that use expert knowledge from existing annotation codebook, and evaluates the performance of advanced ChatGPT (GPT-3.5/4) and a natural language inference (NLI)-based model called ZSP. ChatGPT uses codebook’s labeled summaries as prompts, whereas ZSP breaks down the classification task into context, event mode, and class disambiguation to refine task-specific hypotheses. This decomposition enhances interpretability, efficiency, and adaptability to schema changes. The experiments reveal ChatGPT’s strengths and limitations, and crucially show ZSP’s outperformance of dictionary-based methods and its competitive edge over some supervised models. These findings affirm the value of ZSP for validating event records and advancing ontology development. Our study underscores the efficacy of leveraging transfer learning and existing domain expertise to enhance research efficiency and scalability.",
+        "url": "https://aclanthology.org/2024.acl-long.35/",
+        "doi": "10.18653/v1/2024.acl-long.35",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.278",
+        "title": "Token-based Decision Criteria Are Suboptimal in In-context Learning",
+        "authors": [
+          "Hakaze Cho",
+          "Yoshihiro Sakai",
+          "Mariko Kato",
+          "Kenshiro Tanaka",
+          "Akira Ishii",
+          "Naoya Inoue"
+        ],
+        "year": 2025,
+        "abstract": "In-Context Learning (ICL) typically utilizes classification criteria from output probabilities of manually selected label tokens. However, we argue that such token-based classification criteria lead to suboptimal decision boundaries, despite delicate calibrations through translation and constrained rotation applied. To address this problem, we propose Hidden Calibration, which renounces token probabilities and uses the nearest centroid classifier on the LM’s last hidden states. In detail, we assign the label of the nearest centroid previously estimated from a calibration set to the test sample as the predicted label. Our experiments on 6 models and 10 classification datasets indicate that Hidden Calibration consistently outperforms current token-based baselines by about 20%~50%, achieving a strong state-of-the-art in ICL. Our further analysis demonstrates that Hidden Calibration finds better classification criteria with less inter-class overlap, and LMs provide linearly separable intra-class clusters with the help of demonstrations, which supports Hidden Calibration and gives new insights into the principle of ICL. Our official code implementation can be found at https://github.com/hc495/Hidden_Calibration.",
+        "url": "https://aclanthology.org/2025.naacl-long.278/",
+        "doi": "10.18653/v1/2025.naacl-long.278",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.sigdial-1.41",
+        "title": "A Dialogue Game for Eliciting Balanced Collaboration",
+        "authors": [
+          "Isidora Jeknić",
+          "David Schlangen",
+          "Alexander Koller"
+        ],
+        "year": 2024,
+        "abstract": "Collaboration is an integral part of human dialogue. Typical task-oriented dialogue games assign asymmetric roles to the participants, which limits their ability to elicit naturalistic role-taking in collaboration and its negotiation. We present a novel and simple online setup that favors balanced collaboration: a two-player 2D object placement game in which the players must negotiate the goal state themselves. We show empirically that human players exhibit a variety of role distributions, and that balanced collaboration improves task performance. We also present an LLM-based baseline agent which demonstrates that automatic playing of our game is an interesting challenge for artificial systems.",
+        "url": "https://aclanthology.org/2024.sigdial-1.41/",
+        "doi": "10.18653/v1/2024.sigdial-1.41",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:41.904Z"
+      },
+      {
+        "paper_id": "2024.acl-long.755",
+        "title": "Explanation-aware Soft Ensemble Empowers Large Language Model In-context Learning",
+        "authors": [
+          "Yue Yu",
+          "Jiaming Shen",
+          "Tianqi Liu",
+          "Zhen Qin",
+          "Jing Nathan Yan",
+          "Jialu Liu",
+          "Chao Zhang",
+          "Michael Bendersky"
+        ],
+        "year": 2024,
+        "abstract": "Large language models (LLMs) have shown remarkable capabilities in various natural language understanding tasks with a few demonstration examples via in-context learning. Common strategies to boost such “in-context” learning ability are to ensemble multiple model decoded results and require the model to generate an explanation along with the prediction. However, these models often treat different class predictions equally and neglect the potential discrepancy between the explanations and predictions. To fully unleash the power of explanations, we propose EASE, an Explanation-Aware Soft Ensemble framework to empower in-context learning with LLMs. We design two techniques, explanation-guided ensemble, and soft probability aggregation, to mitigate the effect of unreliable explanations and improve the consistency between explanations and final predictions. Experiments on seven natural language understanding tasks and four varying-size LLMs demonstrate the effectiveness of our proposed framework.",
+        "url": "https://aclanthology.org/2024.acl-long.755/",
+        "doi": "10.18653/v1/2024.acl-long.755",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      }
+    ]
+  }
+}

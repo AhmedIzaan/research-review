@@ -1,0 +1,32 @@
+{
+  "saved_configurations": 12,
+  "distinct_seeds": 2,
+  "reviewer_failures": [
+    {
+      "seed_id": "2024.acl-long.18",
+      "configuration": "generic",
+      "round": 2,
+      "role": "generic",
+      "error": "Reviewer returned wrong role"
+    }
+  ],
+  "stopping_reasons": {
+    "iteration_limit": 8,
+    "all_reviewers_failed": 1,
+    "one_shot": 2,
+    "unchanged_proposal": 1
+  },
+  "unique_judgments_attempted": 16,
+  "unique_judgments_accepted": 16,
+  "unique_judgments_failed": 0,
+  "judgment_errors": [],
+  "all_saved_api_attempts": 141,
+  "api_error_counts": {
+    "NetworkOrTimeoutError": 2,
+    "HTTP 503": 4
+  },
+  "provider_reported_total_tokens_lower_bound": 815568,
+  "attempts_without_usage_metadata": 6,
+  "scientific_interpretation": "Small pilot: score coverage and execution failures must be examined separately; no population efficacy or significance conclusion.",
+  "latest_suite_wall_seconds": 2313.454072
+}

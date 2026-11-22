@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: missing and malformed scores stay unknown rather than becoming zero
+ok 1 - missing and malformed scores stay unknown rather than becoming zero
+  ---
+  duration_ms: 5.411698
+  type: 'test'
+  ...
+# Subtest: independent score changes never substitute reviewer scores
+ok 2 - independent score changes never substitute reviewer scores
+  ---
+  duration_ms: 1.542714
+  type: 'test'
+  ...
+# Subtest: diff preserves words and highlights additions and deletions
+ok 3 - diff preserves words and highlights additions and deletions
+  ---
+  duration_ms: 2.310224
+  type: 'test'
+  ...
+# Subtest: changed-field comparison uses the actual input to a round
+ok 4 - changed-field comparison uses the actual input to a round
+  ---
+  duration_ms: 1.13054
+  type: 'test'
+  ...
+# Subtest: unknown API usage and failed attempts stay visible
+ok 5 - unknown API usage and failed attempts stay visible
+  ---
+  duration_ms: 3.427966
+  type: 'test'
+  ...
+# Subtest: real saved trace navigates reviews, changes, final assessment, audit and judgment
+ok 6 - real saved trace navigates reviews, changes, final assessment, audit and judgment
+  ---
+  duration_ms: 68.557889
+  type: 'test'
+  ...
+# Subtest: live refresh preserves selected stage, reviewer and open evidence
+ok 7 - live refresh preserves selected stage, reviewer and open evidence
+  ---
+  duration_ms: 32.581281
+  type: 'test'
+  ...
+# Subtest: one-shot / historical run has honest empty assessment states
+ok 8 - one-shot / historical run has honest empty assessment states
+  ---
+  duration_ms: 32.756546
+  type: 'test'
+  ...
+# Subtest: full app bootstrap loads latest saved trace without starting model work
+ok 9 - full app bootstrap loads latest saved trace without starting model work
+  ---
+  duration_ms: 81.376836
+  type: 'test'
+  ...
+# Subtest: untrusted proposal text is rendered as text, not markup
+ok 10 - untrusted proposal text is rendered as text, not markup
+  ---
+  duration_ms: 10.111079
+  type: 'test'
+  ...
+# Subtest: reviewer tabs support arrow-key navigation and focus
+ok 11 - reviewer tabs support arrow-key navigation and focus
+  ---
+  duration_ms: 19.064012
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 328.172665

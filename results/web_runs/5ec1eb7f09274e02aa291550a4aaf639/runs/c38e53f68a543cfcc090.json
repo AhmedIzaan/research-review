@@ -1,0 +1,2047 @@
+{
+  "run_id": "c38e53f68a543cfcc090",
+  "seed_id": "topic:Does an abstention threshold calibrated on English factual question answering remain reliable on translated Urdu questions, and can a small separate Urdu calibration set reduce the resulting coverage and accuracy gap?",
+  "configuration": "full",
+  "replicate": 0,
+  "settings": {
+    "methodology_version": "specialized_review_v3_guarded",
+    "revision_policy": "guarded",
+    "judge_repeats": 2,
+    "final_review": true,
+    "audit_evidence": true,
+    "model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash-lite",
+    "temperature": 0.4,
+    "max_output_tokens": 4096,
+    "rounds": 3,
+    "max_attempts": 3,
+    "request_interval": 15.0,
+    "max_api_calls": 96,
+    "input_rate": 0.0,
+    "output_rate": 0.0,
+    "engine": "auto",
+    "retrieval_backend": "local",
+    "corpus_path": "data/corpus/papers.json",
+    "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+    "random_seed": 20261107,
+    "constraints": "University AI/NLP project: 6 weeks, 1 consumer GPU (12 GB) or API access, public lawful datasets, no LLM training.",
+    "resolved_engine": "python"
+  },
+  "literature": [
+    {
+      "paper_id": "2024.acl-long.365",
+      "title": "Narrowing the Knowledge Evaluation Gap: Open-Domain Question Answering with Multi-Granularity Answers",
+      "authors": [
+        "Gal Yona",
+        "Roee Aharoni",
+        "Mor Geva"
+      ],
+      "year": 2024,
+      "abstract": "Factual questions typically can be answered correctly at different levels of granularity. For example, both “August 4, 1961” and “1961” are correct answers to the question “When was Barack Obama born?”. Standard question answering (QA) evaluation protocols, however, do not explicitly take this into account and compare a predicted answer against answers of a single granularity level. In this work, we propose GRANOLA QA, a novel evaluation setting where a predicted answer is evaluated in terms of accuracy and informativeness against a set of multi-granularity answers. We present a simple methodology for enriching existing datasets with multi-granularity answers, and create GRANOLA-EQ, a multi-granularity version of the EntityQuestions dataset. We evaluate a range of decoding methods on GRANOLA-EQ, including a new algorithm, called Decoding with Response Aggregation (DRAG), that is geared towards aligning the response granularity with the model’s uncertainty. Our experiments show that large language models with standard decoding tend to generate specific answers, which are often incorrect. In contrast, when evaluated on multi-granularity answers, DRAG yields a nearly 20 point increase in accuracy on average, which further increases for rare entities. Overall, this reveals that standard evaluation and decoding schemes may significantly underestimate the knowledge encapsulated in LMs.",
+      "url": "https://aclanthology.org/2024.acl-long.365/",
+      "doi": "10.18653/v1/2024.acl-long.365",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.naacl-long.301",
+      "title": "Do RAG Systems Cover What Matters? Evaluating and Optimizing Responses with Sub-Question Coverage",
+      "authors": [
+        "Kaige Xie",
+        "Philippe Laban",
+        "Prafulla Kumar Choubey",
+        "Caiming Xiong",
+        "Chien-Sheng Wu"
+      ],
+      "year": 2025,
+      "abstract": "Evaluating retrieval-augmented generation (RAG) systems remains challenging, particularly for open-ended questions that lack definitive answers and require coverage of multiple sub-topics. In this paper, we introduce a novel evaluation framework based on sub-question coverage, which measures how well a RAG system addresses different facets of a question. We propose decomposing questions into sub-questions and classifying them into three types—core, background, and follow-up—to reflect their roles and importance. Using this categorization, we introduce a fine-grained evaluation protocol that provides insights into the retrieval and generation characteristics of RAG systems, including three commercial generative answer engines: You.com, Perplexity AI, and Bing Chat. Interestingly, we find that while all answer engines cover core sub-questions more often than background or follow-up ones, they still miss around 50% of core sub-questions, revealing clear opportunities for improvement. Further, sub-question coverage metrics prove effective for ranking responses, achieving 82% accuracy compared to human preference annotations. Lastly, we also demonstrate that leveraging core sub-questions enhances both retrieval and answer generation in a RAG system, resulting in a 74% win rate over the baseline that lacks sub-questions.",
+      "url": "https://aclanthology.org/2025.naacl-long.301/",
+      "doi": "10.18653/v1/2025.naacl-long.301",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2025.naacl-long.139",
+      "title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+      "authors": [
+        "David Ifeoluwa Adelani",
+        "Jessica Ojo",
+        "Israel Abebe Azime",
+        "Jian Yun Zhuang",
+        "Jesujoba Oluwadara Alabi",
+        "Xuanli He",
+        "Millicent Ochieng",
+        "Sara Hooker",
+        "Andiswa Bukula",
+        "En-Shiun Annie Lee",
+        "Chiamaka Ijeoma Chukwuneke",
+        "Happy Buzaaba",
+        "Blessing Kudzaishe Sibanda",
+        "Godson Koffi Kalipe",
+        "Jonathan Mukiibi",
+        "Salomon Kabongo Kabenamualu",
+        "Foutse Yuehgoh",
+        "Mmasibidi Setaka",
+        "Lolwethu Ndolela",
+        "Nkiruka Odu",
+        "Rooweither Mabuya",
+        "Salomey Osei",
+        "Shamsuddeen Hassan Muhammad",
+        "Sokhar Samb",
+        "Tadesse Kebede Guge",
+        "Tombekai Vangoni Sherman",
+        "Pontus Stenetorp"
+      ],
+      "year": 2025,
+      "abstract": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages. Additionally, many low-resource languages (e.g. African languages) are often evaluated only on basic text classification tasks due to the lack of appropriate or comprehensive benchmarks outside of high-resource languages. In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU). We use IrokoBench to evaluate zero-shot, few-shot, and translate-test settings(where test sets are translated into English) across 10 open and four proprietary LLMs. Our evaluation reveals a significant performance gap between high-resource languages (such as English and French) and low-resource African languages. We observe a significant performance gap between open and proprietary models, with the highest performing open model, Gemma 2 27B only at 63% of the best-performing proprietary model GPT-4o performance. Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B. These findings suggest that more efforts are needed to develop and adapt LLMs for African languages.",
+      "url": "https://aclanthology.org/2025.naacl-long.139/",
+      "doi": "10.18653/v1/2025.naacl-long.139",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2024.acl-demos.35",
+      "title": "CogMG: Collaborative Augmentation Between Large Language Model and Knowledge Graph",
+      "authors": [
+        "Tong Zhou",
+        "Yubo Chen",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "year": 2024,
+      "abstract": "Large language models have become integral to question-answering applications despite their propensity for generating hallucinations and factually inaccurate content. Querying knowledge graphs to reduce hallucinations in LLM meets the challenge of incomplete knowledge coverage in knowledge graphs. On the other hand, updating knowledge graphs by information extraction and knowledge graph completion faces the knowledge update misalignment issue. In this work, we introduce a collaborative augmentation framework, CogMG, leveraging knowledge graphs to address the limitations of LLMs in QA scenarios, explicitly targeting the problems of incomplete knowledge coverage and knowledge update misalignment. The LLMs identify and decompose required knowledge triples that are not present in the KG, enriching them and aligning updates with real-world demands. We demonstrate the efficacy of this approach through a supervised fine-tuned LLM within an agent framework, showing significant improvements in reducing hallucinations and enhancing factual accuracy in QA responses. Our code and video are publicly available.",
+      "url": "https://aclanthology.org/2024.acl-demos.35/",
+      "doi": "10.18653/v1/2024.acl-demos.35",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.naacl-long.453",
+      "title": "Dynamic Uncertainty Ranking: Enhancing Retrieval-Augmented In-Context Learning for Long-Tail Knowledge in LLMs",
+      "authors": [
+        "Shuyang Yu",
+        "Runxue Bao",
+        "Parminder Bhatia",
+        "Taha Kass-Hout",
+        "Jiayu Zhou",
+        "Cao Xiao"
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) can learn vast amounts of knowledge from diverse domains during pre-training. However, long-tail knowledge from specialized domains is often scarce and underrepresented, rarely appearing in the models’ memorization. Prior work has shown that in-context learning (ICL) with retriever augmentation can help LLMs better capture long-tail knowledge, reducing their reliance on pre-trained data. Despite these advances, we observe that LLM predictions for long-tail questions remain uncertain to variations in retrieved samples. To take advantage of the uncertainty in ICL for guiding LLM predictions toward correct answers on long-tail samples, we propose a reinforcement learning-based dynamic uncertainty ranking method for retrieval-augmented ICL that accounts for the varying impact of each retrieved sample on LLM predictions. Our approach prioritizes more informative and stable samples while demoting misleading ones, updating rankings based on the feedback from the LLM w.r.t. each retrieved sample. To enhance training efficiency and reduce query costs, we introduce a learnable dynamic ranking threshold, adjusted when the model encounters negative prediction shifts. Experimental results on various question-answering datasets from different domains show that our method outperforms the best baseline by 2.76%, with a notable 5.96% boost in accuracy on long-tail questions that elude zero-shot inference. Our code is available at https://github.com/Yu-shuyan/uncertian_ranker.",
+      "url": "https://aclanthology.org/2025.naacl-long.453/",
+      "doi": "10.18653/v1/2025.naacl-long.453",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2024.acl-long.745",
+      "title": "LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts",
+      "authors": [
+        "Helia Hashemi",
+        "Jason Eisner",
+        "Corby Rosset",
+        "Benjamin Van Durme",
+        "Chris Kedzie"
+      ],
+      "year": 2024,
+      "abstract": "This paper introduces a framework for the automated evaluation of natural language texts. A manually constructed rubric describes how to assess multiple dimensions of interest. To evaluate a text, a large language model (LLM) is prompted with each rubric question and produces a distribution over potential responses. The LLM predictions often fail to agree well with human judges—indeed, the humans do not fully agree with one another. However, the multiple LLM distributions can be combined to predict each human judge’s annotations on all questions, including a summary question that assesses overall quality or relevance. LLM-Rubric accomplishes this by training a small feed-forward neural network that includes both judge-specific and judge-independent parameters. When evaluating dialogue systems in a human-AI information-seeking task, we find that LLM-Rubric with 9 questions (assessing dimensions such as naturalness, conciseness, and citation quality) predicts human judges’ assessment of overall user satisfaction, on a scale of 1–4, with RMS error < 0.5, a 2× improvement over the uncalibrated baseline.",
+      "url": "https://aclanthology.org/2024.acl-long.745/",
+      "doi": "10.18653/v1/2024.acl-long.745",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.naacl-long.291",
+      "title": "Efficient One-shot Compression via Low-Rank Local Feature Distillation",
+      "authors": [
+        "Yaya Sy",
+        "Christophe Cerisara",
+        "Irina Illina"
+      ],
+      "year": 2025,
+      "abstract": "Current structured pruning approaches for large language models typically involve two steps: (1) compression using calibration data and (2) costly continued pretraining on billions of tokens to recover lost performance. This second step is necessary as the first significantly impacts model accuracy. Moreover, prior research suggests that pretrained Transformer weights are not necessarily low-rank, unlike their activations, making one-shot structured pruning challenging. Based on this observation, we propose Lillama, a compression method that locally distills activations with low-rank weights. Using SVD for initialization and a joint loss combining teacher and student activations, we accelerate convergence and reduce memory use with local gradient updates. Lillama compresses Mixtral-8x7B within minutes on a single A100 GPU, removing 10 billion parameters while retaining over 95% of its original performance. Phi-2 3B can be compressed by 40% with just 13 million calibration tokens, resulting in a small model that competes with recent models of similar size. The method generalizes well to non-transformer architectures, compressing Mamba-3B by 20% while maintaining 99% performance.",
+      "url": "https://aclanthology.org/2025.naacl-long.291/",
+      "doi": "10.18653/v1/2025.naacl-long.291",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    }
+  ],
+  "initial_idea": {
+    "title": "Cross-Lingual Transferability of Abstention Thresholds in Factual Question Answering: A Case Study on Urdu",
+    "research_problem": "Investigating whether abstention thresholds calibrated on English factual question answering models remain reliable when deployed on translated Urdu questions, and whether a small separate Urdu calibration set can mitigate cross-lingual reliability gaps in coverage and accuracy.",
+    "research_gap": "Bounded search findings indicate that while calibration and multi-granularity evaluation have been studied extensively for high-resource languages, the cross-lingual transfer of uncertainty-based abstention mechanisms to low-resource languages like Urdu remains unexplored, particularly under translation artifacts and morphological differences.",
+    "methodology": "We employ an open-source language model accessed via API or running locally under hardware constraints. We evaluate zero-shot factual question answering on an English dataset and its translated Urdu counterpart. We measure model confidence using verbalized probabilities and entropy over generated tokens. We establish an English-calibrated abstention threshold to maximize a target precision-recall trade-off. We then evaluate its zero-shot transfer performance on Urdu. Finally, we implement a small-scale post-hoc threshold adjustment using a minimal, held-out Urdu validation set to re-calibrate the abstention cutoff.",
+    "expected_contribution": "We expect to demonstrate that direct transfer of English-calibrated abstention thresholds leads to degraded selective prediction performance in Urdu due to calibration shift. We hypothesize that a minimal, language-specific calibration subset restores selective accuracy and balances the coverage-accuracy frontier.",
+    "experimental_setup": "We use a subset of English open-domain QA datasets and translate them into Urdu using a standard public translation pipeline. We evaluate open-weights LLMs that support Urdu. We compare uncalibrated English thresholds against re-calibrated thresholds using a 200-sample Urdu development set, measuring selective accuracy and risk-coverage curves.",
+    "evaluation_strategy": "We evaluate performance using area under the risk-coverage curve (AURCC), selective accuracy at fixed coverage levels (e.g., 80% coverage), and Expected Calibration Error (ECE) on both English and Urdu evaluation splits.",
+    "feasibility_assumptions": [
+      "Publicly available translation pipelines provide sufficiently fluent Urdu questions for semantic evaluation.",
+      "A 12GB consumer GPU or standard API access is adequate for running inference and computing token-level uncertainty metrics over evaluation splits.",
+      "A small development set of 200 translated instances is sufficient for robust threshold re-calibration."
+    ],
+    "references": [
+      "2024.acl-long.365",
+      "2025.naacl-long.139",
+      "2025.naacl-long.453"
+    ],
+    "search_queries": [
+      "cross lingual uncertainty calibration question answering",
+      "abstention threshold transfer low resource languages",
+      "selective prediction language models Urdu QA"
+    ],
+    "assumption_checks": [
+      {
+        "assumption": "English-calibrated uncertainty thresholds transfer directly to Urdu without severe over-abstention.",
+        "validation_step": "Apply the English-derived threshold to the translated Urdu zero-shot set and measure absolute coverage drop.",
+        "acceptance_criterion": "Coverage does not deviate by more than 15% from the target operational level.",
+        "fallback": "If coverage drops precipitously, abandon direct transfer and mandate immediate quantile-based threshold resetting on the small Urdu validation split."
+      },
+      {
+        "assumption": "A 200-sample Urdu calibration set provides stable threshold estimation without overfitting.",
+        "validation_step": "Perform 5-fold cross-validation on the Urdu development split to measure variance in the optimal threshold.",
+        "acceptance_criterion": "Standard deviation of the selected threshold across folds remains below 5% of the total uncertainty range.",
+        "fallback": "If variance is high, pool uncertainty estimates using nearest-neighbor similarity features from the English training distribution."
+      }
+    ],
+    "prior_work_comparison": [
+      {
+        "paper_id": "2025.naacl-long.453",
+        "shared_mechanism": "Utilizes uncertainty metrics derived from language model generations to guide prediction and filtering.",
+        "proposed_difference": "Focuses on cross-lingual transfer and post-hoc threshold adjustment for low-resource languages rather than reinforcement learning-based retrieval ranking in English.",
+        "verification_needed": "Verify whether uncertainty score distributions maintain rank-order correlation across languages."
+      },
+      {
+        "paper_id": "2024.acl-long.365",
+        "shared_mechanism": "Evaluates model knowledge limits and uncertainty alignment in open-domain question answering.",
+        "proposed_difference": "Addresses cross-lingual calibration shifts in abstention decisions rather than multi-granularity response aggregation.",
+        "verification_needed": "Confirm that multi-granularity correctness scoring does not interact adversely with cross-lingual token uncertainty."
+      }
+    ],
+    "core_hypothesis": "Uncertainty-based abstention thresholds calibrated on English factual QA exhibit systematic miscalibration when transferred to Urdu due to translation artifacts and language-specific entropy shifts, which can be corrected using a minimal target-language calibration set.",
+    "distinctive_mechanism": "A targeted post-hoc threshold re-calibration technique operating on a small, low-resource validation set to align the risk-coverage frontier across linguistic boundaries.",
+    "minimum_test": "Evaluate an open-source LLM on 500 English QA pairs and their Urdu translations, comparing the selective accuracy of an English-optimized abstention threshold against a re-calibrated threshold using a 200-sample Urdu dev set."
+  },
+  "final_idea": {
+    "title": "Cross-Lingual Transferability of Abstention Thresholds in Factual Question Answering: A Case Study on Urdu",
+    "research_problem": "Investigating whether abstention thresholds calibrated on English factual question answering models remain reliable when deployed on translated Urdu questions, and whether a small separate Urdu calibration set can mitigate cross-lingual reliability gaps in coverage and accuracy.",
+    "research_gap": "Bounded search findings indicate that while calibration and multi-granularity evaluation have been studied extensively for high-resource languages, the cross-lingual transfer of uncertainty-based abstention mechanisms to low-resource languages like Urdu remains unexplored, particularly under translation artifacts and morphological differences.",
+    "methodology": "We employ an open-source language model accessed via API or running locally under hardware constraints. We evaluate zero-shot factual question answering on an English dataset and its translated Urdu counterpart. We measure model confidence using verbalized probabilities and entropy over generated tokens. We establish an English-calibrated abstention threshold to maximize a target precision-recall trade-off. We then evaluate its zero-shot transfer performance on Urdu. Finally, we implement a small-scale post-hoc threshold adjustment using a minimal, held-out Urdu validation set to re-calibrate the abstention cutoff.",
+    "expected_contribution": "We expect to demonstrate that direct transfer of English-calibrated abstention thresholds leads to degraded selective prediction performance in Urdu due to calibration shift. We hypothesize that a minimal, language-specific calibration subset restores selective accuracy and balances the coverage-accuracy frontier.",
+    "experimental_setup": "We use a subset of English open-domain QA datasets and translate them into Urdu using a standard public translation pipeline. We evaluate open-weights LLMs that support Urdu. We compare uncalibrated English thresholds against re-calibrated thresholds using a 200-sample Urdu development set, measuring selective accuracy and risk-coverage curves.",
+    "evaluation_strategy": "We evaluate performance using area under the risk-coverage curve (AURCC), selective accuracy at fixed coverage levels (e.g., 80% coverage), and Expected Calibration Error (ECE) on both English and Urdu evaluation splits.",
+    "feasibility_assumptions": [
+      "Publicly available translation pipelines provide sufficiently fluent Urdu questions for semantic evaluation.",
+      "A 12GB consumer GPU or standard API access is adequate for running inference and computing token-level uncertainty metrics over evaluation splits.",
+      "A small development set of 200 translated instances is sufficient for robust threshold re-calibration."
+    ],
+    "references": [
+      "2024.acl-long.365",
+      "2025.naacl-long.139",
+      "2025.naacl-long.453"
+    ],
+    "search_queries": [
+      "cross lingual uncertainty calibration question answering",
+      "abstention threshold transfer low resource languages",
+      "selective prediction language models Urdu QA"
+    ],
+    "assumption_checks": [
+      {
+        "assumption": "English-calibrated uncertainty thresholds transfer directly to Urdu without severe over-abstention.",
+        "validation_step": "Apply the English-derived threshold to the translated Urdu zero-shot set and measure absolute coverage drop.",
+        "acceptance_criterion": "Coverage does not deviate by more than 15% from the target operational level.",
+        "fallback": "If coverage drops precipitously, abandon direct transfer and mandate immediate quantile-based threshold resetting on the small Urdu validation split."
+      },
+      {
+        "assumption": "A 200-sample Urdu calibration set provides stable threshold estimation without overfitting.",
+        "validation_step": "Perform 5-fold cross-validation on the Urdu development split to measure variance in the optimal threshold.",
+        "acceptance_criterion": "Standard deviation of the selected threshold across folds remains below 5% of the total uncertainty range.",
+        "fallback": "If variance is high, pool uncertainty estimates using nearest-neighbor similarity features from the English training distribution."
+      }
+    ],
+    "prior_work_comparison": [
+      {
+        "paper_id": "2025.naacl-long.453",
+        "shared_mechanism": "Utilizes uncertainty metrics derived from language model generations to guide prediction and filtering.",
+        "proposed_difference": "Focuses on cross-lingual transfer and post-hoc threshold adjustment for low-resource languages rather than reinforcement learning-based retrieval ranking in English.",
+        "verification_needed": "Verify whether uncertainty score distributions maintain rank-order correlation across languages."
+      },
+      {
+        "paper_id": "2024.acl-long.365",
+        "shared_mechanism": "Evaluates model knowledge limits and uncertainty alignment in open-domain question answering.",
+        "proposed_difference": "Addresses cross-lingual calibration shifts in abstention decisions rather than multi-granularity response aggregation.",
+        "verification_needed": "Confirm that multi-granularity correctness scoring does not interact adversely with cross-lingual token uncertainty."
+      }
+    ],
+    "core_hypothesis": "Uncertainty-based abstention thresholds calibrated on English factual QA exhibit systematic miscalibration when transferred to Urdu due to translation artifacts and language-specific entropy shifts, which can be corrected using a minimal target-language calibration set.",
+    "distinctive_mechanism": "A targeted post-hoc threshold re-calibration technique operating on a small, low-resource validation set to align the risk-coverage frontier across linguistic boundaries.",
+    "minimum_test": "Evaluate an open-source LLM on 500 English QA pairs and their Urdu translations, comparing the selective accuracy of an English-optimized abstention threshold against a re-calibrated threshold using a 200-sample Urdu dev set."
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "input_idea": {
+        "title": "Cross-Lingual Transferability of Abstention Thresholds in Factual Question Answering: A Case Study on Urdu",
+        "research_problem": "Investigating whether abstention thresholds calibrated on English factual question answering models remain reliable when deployed on translated Urdu questions, and whether a small separate Urdu calibration set can mitigate cross-lingual reliability gaps in coverage and accuracy.",
+        "research_gap": "Bounded search findings indicate that while calibration and multi-granularity evaluation have been studied extensively for high-resource languages, the cross-lingual transfer of uncertainty-based abstention mechanisms to low-resource languages like Urdu remains unexplored, particularly under translation artifacts and morphological differences.",
+        "methodology": "We employ an open-source language model accessed via API or running locally under hardware constraints. We evaluate zero-shot factual question answering on an English dataset and its translated Urdu counterpart. We measure model confidence using verbalized probabilities and entropy over generated tokens. We establish an English-calibrated abstention threshold to maximize a target precision-recall trade-off. We then evaluate its zero-shot transfer performance on Urdu. Finally, we implement a small-scale post-hoc threshold adjustment using a minimal, held-out Urdu validation set to re-calibrate the abstention cutoff.",
+        "expected_contribution": "We expect to demonstrate that direct transfer of English-calibrated abstention thresholds leads to degraded selective prediction performance in Urdu due to calibration shift. We hypothesize that a minimal, language-specific calibration subset restores selective accuracy and balances the coverage-accuracy frontier.",
+        "experimental_setup": "We use a subset of English open-domain QA datasets and translate them into Urdu using a standard public translation pipeline. We evaluate open-weights LLMs that support Urdu. We compare uncalibrated English thresholds against re-calibrated thresholds using a 200-sample Urdu development set, measuring selective accuracy and risk-coverage curves.",
+        "evaluation_strategy": "We evaluate performance using area under the risk-coverage curve (AURCC), selective accuracy at fixed coverage levels (e.g., 80% coverage), and Expected Calibration Error (ECE) on both English and Urdu evaluation splits.",
+        "feasibility_assumptions": [
+          "Publicly available translation pipelines provide sufficiently fluent Urdu questions for semantic evaluation.",
+          "A 12GB consumer GPU or standard API access is adequate for running inference and computing token-level uncertainty metrics over evaluation splits.",
+          "A small development set of 200 translated instances is sufficient for robust threshold re-calibration."
+        ],
+        "references": [
+          "2024.acl-long.365",
+          "2025.naacl-long.139",
+          "2025.naacl-long.453"
+        ],
+        "search_queries": [
+          "cross lingual uncertainty calibration question answering",
+          "abstention threshold transfer low resource languages",
+          "selective prediction language models Urdu QA"
+        ],
+        "assumption_checks": [
+          {
+            "assumption": "English-calibrated uncertainty thresholds transfer directly to Urdu without severe over-abstention.",
+            "validation_step": "Apply the English-derived threshold to the translated Urdu zero-shot set and measure absolute coverage drop.",
+            "acceptance_criterion": "Coverage does not deviate by more than 15% from the target operational level.",
+            "fallback": "If coverage drops precipitously, abandon direct transfer and mandate immediate quantile-based threshold resetting on the small Urdu validation split."
+          },
+          {
+            "assumption": "A 200-sample Urdu calibration set provides stable threshold estimation without overfitting.",
+            "validation_step": "Perform 5-fold cross-validation on the Urdu development split to measure variance in the optimal threshold.",
+            "acceptance_criterion": "Standard deviation of the selected threshold across folds remains below 5% of the total uncertainty range.",
+            "fallback": "If variance is high, pool uncertainty estimates using nearest-neighbor similarity features from the English training distribution."
+          }
+        ],
+        "prior_work_comparison": [
+          {
+            "paper_id": "2025.naacl-long.453",
+            "shared_mechanism": "Utilizes uncertainty metrics derived from language model generations to guide prediction and filtering.",
+            "proposed_difference": "Focuses on cross-lingual transfer and post-hoc threshold adjustment for low-resource languages rather than reinforcement learning-based retrieval ranking in English.",
+            "verification_needed": "Verify whether uncertainty score distributions maintain rank-order correlation across languages."
+          },
+          {
+            "paper_id": "2024.acl-long.365",
+            "shared_mechanism": "Evaluates model knowledge limits and uncertainty alignment in open-domain question answering.",
+            "proposed_difference": "Addresses cross-lingual calibration shifts in abstention decisions rather than multi-granularity response aggregation.",
+            "verification_needed": "Confirm that multi-granularity correctness scoring does not interact adversely with cross-lingual token uncertainty."
+          }
+        ],
+        "core_hypothesis": "Uncertainty-based abstention thresholds calibrated on English factual QA exhibit systematic miscalibration when transferred to Urdu due to translation artifacts and language-specific entropy shifts, which can be corrected using a minimal target-language calibration set.",
+        "distinctive_mechanism": "A targeted post-hoc threshold re-calibration technique operating on a small, low-resource validation set to align the risk-coverage frontier across linguistic boundaries.",
+        "minimum_test": "Evaluate an open-source LLM on 500 English QA pairs and their Urdu translations, comparing the selective accuracy of an English-optimized abstention threshold against a re-calibrated threshold using a 200-sample Urdu dev set."
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal investigates the cross-lingual transferability of uncertainty-based abstention thresholds from English to Urdu factual QA and the effect of post-hoc re-calibration using a small validation set. While uncertainty calibration, selective prediction, and cross-lingual transfer have each been explored independently in prior work, combining them specifically for threshold transfer in low-resource QA under translation artifacts presents a focused, incremental application.",
+            "problems": [
+              "The core idea of transferring uncertainty thresholds and re-calibrating them on a small target-language set is an incremental adaptation of standard post-hoc calibration techniques rather than a fundamentally new algorithmic mechanism.",
+              "Dependency on machine-translated evaluation sets may conflate translation artifacts and syntactic noise with true cross-lingual epistemic uncertainty shifts."
+            ],
+            "improvements": [
+              "Incorporate native low-resource QA datasets alongside machine-translated data to verify whether calibration shift persists independently of translation pipeline artifacts.",
+              "Compare the proposed simple threshold adjustment against alternative lightweight domain adaptation or prompting strategies for calibration."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.344",
+                "claim": "Multilingual embeddings and cross-lingual transfer exhibit alignment gaps across languages.",
+                "supporting_excerpt": "Despite their remarkable ability to capture linguistic nuances across diverse languages, questions persist regarding the degree of alignment between languages in multilingual embeddings.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2024.acl-long.824",
+                "claim": "Quantifying and calibrating model confidence is crucial for deploying language models reliably.",
+                "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The primary limitation is that findings derived from machine-translated Urdu datasets may heavily reflect the idiosyncrasies of the specific translation pipeline rather than intrinsic cross-lingual uncertainty behavior.",
+            "tradeoffs": [
+              "Using a very small 200-sample calibration set ensures feasibility within resource constraints but risks unstable threshold estimation."
+            ],
+            "falsification_test": "If an English-calibrated threshold transfers to the translated Urdu set with negligible degradation in the risk-coverage curve without requiring post-hoc re-calibration, the core premise of a severe cross-lingual calibration shift caused by language divergence is falsified."
+          },
+          "search": [
+            {
+              "query": "cross lingual uncertainty calibration question answering",
+              "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+              "retrieved_at": "2026-11-15T11:53:55.353647+00:00",
+              "papers": [
+                {
+                  "paper_id": "2025.naacl-short.12",
+                  "title": "Improving Vietnamese-English Cross-Lingual Retrieval for Legal and General Domains",
+                  "authors": [
+                    "Toan Ngoc Nguyen",
+                    "Nam Le Hai",
+                    "Nguyen Doan Hieu",
+                    "Dai An Nguyen",
+                    "Linh Ngo Van",
+                    "Thien Huu Nguyen",
+                    "Sang Dinh"
+                  ],
+                  "year": 2025,
+                  "abstract": "Document retrieval plays a crucial role in numerous question-answering systems, yet research has concentrated on the general knowledge domain and resource-rich languages like English. In contrast, it remains largely underexplored in low-resource languages and cross-lingual scenarios within specialized domain knowledge such as legal. We present a novel dataset designed for cross-lingual retrieval between Vietnamese and English, which not only covers the general domain but also extends to the legal field. Additionally, we propose auxiliary loss function and symmetrical training strategy that significantly enhance the performance of state-of-the-art models on these retrieval tasks. Our contributions offer a significant resource and methodology aimed at improving cross-lingual retrieval in both legal and general QA settings, facilitating further advancements in document retrieval research across multiple languages and a broader spectrum of specialized domains. All the resources related to our work can be accessed at huggingface.co/datasets/bkai-foundation-models/crosslingual.",
+                  "url": "https://aclanthology.org/2025.naacl-short.12/",
+                  "doi": "10.18653/v1/2025.naacl-short.12",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.344",
+                  "title": "Exploring Alignment in Shared Cross-lingual Spaces",
+                  "authors": [
+                    "Basel Mousi",
+                    "Nadir Durrani",
+                    "Fahim Dalvi",
+                    "Majd Hawasly",
+                    "Ahmed Abdelali"
+                  ],
+                  "year": 2024,
+                  "abstract": "Despite their remarkable ability to capture linguistic nuances across diverse languages, questions persist regarding the degree of alignment between languages in multilingual embeddings. Drawing inspiration from research on high-dimensional representations in neural language models, we employ clustering to uncover latent concepts within multilingual models. Our analysis focuses on quantifying the alignment and overlap of these concepts across various languages within the latent space. To this end, we introduce two metrics CALIGN and COLAP aimed at quantifying these aspects, enabling a deeper exploration of multilingual embeddings. Our study encompasses three multilingual models (mT5, mBERT, and XLM-R) and three downstream tasks (Machine Translation, Named Entity Recognition, and Sentiment Analysis). Key findings from our analysis include: i) deeper layers in the network demonstrate increased cross-lingual alignment due to the presence of language-agnostic concepts, ii) fine-tuning of the models enhances alignment within the latent space, and iii) such task-specific calibration helps in explaining the emergence of zero-shot capabilities in the models.",
+                  "url": "https://aclanthology.org/2024.acl-long.344/",
+                  "doi": "10.18653/v1/2024.acl-long.344",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.17",
+                  "title": "PromptRefine: Enhancing Few-Shot Performance on Low-Resource Indic Languages with Example Selection from related Example Banks",
+                  "authors": [
+                    "Soumya Suvra Ghosal",
+                    "Soumyabrata Pal",
+                    "Koyel Mukherjee",
+                    "Dinesh Manocha"
+                  ],
+                  "year": 2025,
+                  "abstract": "Large Language Models (LLMs) have recently demonstrated impressive few-shot learning capabilities through in-context learning (ICL). However, ICL performance is highly dependent on the choice of few-shot demonstrations, making the selection of the most optimal examples a persistent research challenge. This issue is further amplified in low-resource Indic languages, where the scarcity of ground-truth data complicates the selection process. In this work, we propose PromptRefine, a novel Alternating Minimization approach for example selection that improves ICL performance on low-resource Indic languages. PromptRefine leverages auxiliary example banks from related high-resource Indic languages and employs multi-task learning techniques to align language-specific retrievers, enabling effective cross-language retrieval. Additionally, we incorporate diversity in the selected examples to enhance generalization and reduce bias. Through comprehensive evaluations on four text generation tasks—Cross-Lingual Question Answering, Multilingual Question Answering, Machine Translation, and Cross-Lingual Summarization using state-of-the-art LLMs such as LLAMA-3.1-8B, LLAMA-2-7B, Qwen-2-7B, and Qwen-2.5-7B, we demonstrate that PromptRefine significantly outperforms existing frameworks for retrieving examples.",
+                  "url": "https://aclanthology.org/2025.naacl-long.17/",
+                  "doi": "10.18653/v1/2025.naacl-long.17",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.824",
+                  "title": "Calibrating Large Language Models Using Their Generations Only",
+                  "authors": [
+                    "Dennis Ulmer",
+                    "Martin Gubri",
+                    "Hwaran Lee",
+                    "Sangdoo Yun",
+                    "Seong Oh"
+                  ],
+                  "year": 2024,
+                  "abstract": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important. However, finding effective ways to calibrate LLMs—especially when the only interface to the models is their generated text—remains a challenge. We propose APRICOT (Auxiliary prediction of confidence targets): A method to set confidence targets and train an additional model that predicts an LLM’s confidence based on its textual input and output alone. This approach has several advantages: It is conceptually simple, does not require access to the target model beyond its output, does not interfere with the language generation, and has a multitude of potential usages, for instance by verbalizing the predicted confidence or using it to re-prompting the LLM to accurately reflecting its uncertainty. We show how our approach performs competitively in terms of calibration error for white-box and black-box LLMs on closed-book question-answering to detect incorrect LLM answers.",
+                  "url": "https://aclanthology.org/2024.acl-long.824/",
+                  "doi": "10.18653/v1/2024.acl-long.824",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-short.8",
+                  "title": "Cross-lingual Transfer of Reward Models in Multilingual Alignment",
+                  "authors": [
+                    "Jiwoo Hong",
+                    "Noah Lee",
+                    "Rodrigo Martínez-Castaño",
+                    "César Rodríguez",
+                    "James Thorne"
+                  ],
+                  "year": 2025,
+                  "abstract": "Reinforcement learning with human feedback (RLHF) is shown to largely benefit from precise reward models (RMs). However, recent studies in reward modeling schemes are skewed towards English, limiting the applicability of RLHF in multilingual alignments. In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English. Our experimental results demonstrate the strong cross-lingual transfer of English RMs, exceeding target language RMs by 3~4% average increase in Multilingual RewardBench. Furthermore, we analyze the cross-lingual transfer of RMs through the representation shifts. Finally, we perform multilingual alignment to exemplify how cross-lingual transfer in RM propagates to enhanced multilingual instruction-following capability.",
+                  "url": "https://aclanthology.org/2025.naacl-short.8/",
+                  "doi": "10.18653/v1/2025.naacl-short.8",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                }
+              ],
+              "status": "ok",
+              "error": null,
+              "cache_hit": false
+            },
+            {
+              "query": "abstention threshold transfer low resource languages",
+              "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+              "retrieved_at": "2026-11-15T11:53:55.356223+00:00",
+              "papers": [
+                {
+                  "paper_id": "2025.naacl-srw.21",
+                  "title": "How many words does it take to understand a low-resource language?",
+                  "authors": [
+                    "Emily Chang",
+                    "Nada Basit"
+                  ],
+                  "year": 2025,
+                  "abstract": "When developing language technology, researchers have routinely turned to transfer learning to resolve the data scarcity conundrum presented in low-resource languages. As far as we know, this study is the first to evaluate the amount of documentation needed for transfer learning, specifically the smallest vocabulary size needed to create a sentence embedding space. In adopting widely spoken languages as a proxy for low-resource languages, our experiments show that the relationship between a sentence embedding’s vocabulary size and performance is logarithmic with performance leveling at a vocabulary size of 25,000. It should be noted that this relationship cannot be replicated across all languages and this level of documentation does not exist for many low-resource languages. We do observe, however, that performance accelerates at a vocabulary size of \\le 1000, a quantity that is present in most low-resource language documentation. These results can aid researchers in understanding whether a low-resource language has enough documentation necessary to support the creation of a sentence embedding and language model.",
+                  "url": "https://aclanthology.org/2025.naacl-srw.21/",
+                  "doi": "10.18653/v1/2025.naacl-srw.21",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.174",
+                  "title": "UniBridge: A Unified Approach to Cross-Lingual Transfer Learning for Low-Resource Languages",
+                  "authors": [
+                    "Trinh Pham",
+                    "Khoi Le",
+                    "Anh Tuan Luu"
+                  ],
+                  "year": 2024,
+                  "abstract": "In this paper, we introduce UniBridge (Cross-Lingual Transfer Learning with Optimized Embeddings and Vocabulary), a comprehensive approach developed to improve the effectiveness of Cross-Lingual Transfer Learning, particularly in languages with limited resources. Our approach tackles two essential elements of a language model: the initialization of embeddings and the optimal vocabulary size. Specifically, we propose a novel embedding initialization method that leverages both lexical and semantic alignment for a language. In addition, we present a method for systematically searching for the optimal vocabulary size, ensuring a balance between model complexity and linguistic coverage. Our experiments across multilingual datasets show that our approach greatly improves the F1-Score in several languages. UniBridge is a robust and adaptable solution for cross-lingual systems in various languages, highlighting the significance of initializing embeddings and choosing the right vocabulary size in cross-lingual environments.",
+                  "url": "https://aclanthology.org/2024.acl-long.174/",
+                  "doi": "10.18653/v1/2024.acl-long.174",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.517",
+                  "title": "Soft Language Prompts for Language Transfer",
+                  "authors": [
+                    "Ivan Vykopal",
+                    "Simon Ostermann",
+                    "Marian Simko"
+                  ],
+                  "year": 2025,
+                  "abstract": "Cross-lingual knowledge transfer, especially between high- and low-resource languages, remains challenging in natural language processing (NLP). This study offers insights for improving cross-lingual NLP applications through the combination of parameter-efficient fine-tuning methods. We systematically explore strategies for enhancing cross-lingual transfer through the incorporation of language-specific and task-specific adapters and soft prompts. We present a detailed investigation of various combinations of these methods, exploring their efficiency across 16 languages, focusing on 10 mid- and low-resource languages. We further present to our knowledge the first use of soft prompts for language transfer, a technique we call soft language prompts. Our findings demonstrate that in contrast to claims of previous work, a combination of language and task adapters does not always work best; instead, combining a soft language prompt with a task adapter outperforms most configurations in many cases.",
+                  "url": "https://aclanthology.org/2025.naacl-long.517/",
+                  "doi": "10.18653/v1/2025.naacl-long.517",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.396",
+                  "title": "A Survey of NLP Progress in Sino-Tibetan Low-Resource Languages",
+                  "authors": [
+                    "Shuheng Liu",
+                    "Michael Best"
+                  ],
+                  "year": 2025,
+                  "abstract": "Despite the increasing effort in including more low-resource languages in NLP/CL development, most of the world’s languages are still absent. In this paper, we take the example of the Sino-Tibetan language family which consists of hundreds of low-resource languages, and we look at the representation of these low-resource languages in papers archived on ACL Anthology. Our findings indicate that while more techniques and discussions on more languages are present in more publication venues over the years, the overall focus on this language family has been minimal. The lack of attention might be owing to the small number of native speakers and governmental support of these languages. The current development of large language models, albeit successful in a few quintessential rich-resource languages, are still trailing when tackling these low-resource languages. Our paper calls for the attention in NLP/CL research on the inclusion of low-resource languages, especially as increasing resources are poured into the development of data-driven language models.",
+                  "url": "https://aclanthology.org/2025.naacl-long.396/",
+                  "doi": "10.18653/v1/2025.naacl-long.396",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-short.58",
+                  "title": "How Good is Zero-Shot MT Evaluation for Low Resource Indian Languages?",
+                  "authors": [
+                    "Anushka Singh",
+                    "Ananya Sai",
+                    "Raj Dabre",
+                    "Ratish Puduppully",
+                    "Anoop Kunchukuttan",
+                    "Mitesh Khapra"
+                  ],
+                  "year": 2024,
+                  "abstract": "While machine translation evaluation has been studied primarily for high-resource languages, there has been a recent interest in evaluation for low-resource languages due to the increasing availability of data and models. In this paper, we focus on a zero-shot evaluation setting focusing on low-resource Indian languages, namely Assamese, Kannada, Maithili, and Punjabi. We collect sufficient Multi-Dimensional Quality Metrics (MQM) and Direct Assessment (DA) annotations to create test sets and meta-evaluate a plethora of automatic evaluation metrics. We observe that even for learned metrics, which are known to exhibit zero-shot performance, the Kendall Tau and Pearson correlations with human annotations are only as high as 0.32 and 0.45. Synthetic data approaches show mixed results and overall do not help close the gap by much for these languages. This indicates that there is still a long way to go for low-resource evaluation.",
+                  "url": "https://aclanthology.org/2024.acl-short.58/",
+                  "doi": "10.18653/v1/2024.acl-short.58",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                }
+              ],
+              "status": "ok",
+              "error": null,
+              "cache_hit": false
+            },
+            {
+              "query": "selective prediction language models Urdu QA",
+              "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+              "retrieved_at": "2026-11-15T11:53:55.366272+00:00",
+              "papers": [
+                {
+                  "paper_id": "2025.naacl-short.9",
+                  "title": "Inference-Time Selective Debiasing to Enhance Fairness in Text Classification Models",
+                  "authors": [
+                    "Gleb Kuzmin",
+                    "Neemesh Yadav",
+                    "Ivan Smirnov",
+                    "Timothy Baldwin",
+                    "Artem Shelmanov"
+                  ],
+                  "year": 2025,
+                  "abstract": "We propose selective debiasing – an inference-time safety mechanism designed to enhance the overall model quality in terms of prediction performance and fairness, especially in scenarios where retraining the model is impractical. The method draws inspiration from selective classification, where at inference time, predictions with low quality, as indicated by their uncertainty scores, are discarded. In our approach, we identify the potentially biased model predictions and, instead of discarding them, we remove bias from these predictions using LEACE – a post-processing debiasing method. To select problematic predictions, we propose a bias quantification approach based on KL divergence, which achieves better results than standard uncertainty quantification methods. Experiments on text classification datasets with encoder-based classification models demonstrate that selective debiasing helps to reduce the performance gap between post-processing methods and debiasing techniques from the at-training and pre-processing categories.",
+                  "url": "https://aclanthology.org/2025.naacl-short.9/",
+                  "doi": "10.18653/v1/2025.naacl-short.9",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.103",
+                  "title": "Does DetectGPT Fully Utilize Perturbation? Bridging Selective Perturbation to Fine-tuned Contrastive Learning Detector would be Better",
+                  "authors": [
+                    "Shengchao Liu",
+                    "Xiaoming Liu",
+                    "Yichen Wang",
+                    "Zehua Cheng",
+                    "Chengzhengxu Li",
+                    "Zhaohan Zhang",
+                    "Yu Lan",
+                    "Chao Shen"
+                  ],
+                  "year": 2024,
+                  "abstract": "The burgeoning generative capabilities of large language models (LLMs) have raised growing concerns about abuse, demanding automatic machine-generated text detectors. DetectGPT, a zero-shot metric-based detector, first introduces perturbation and shows great performance improvement. However, in DetectGPT, the random perturbation strategy could introduce noise, and logit regression depends on the threshold, harming the generalizability and applicability of individual or small-batch inputs. Hence, we propose a novel fine-tuned detector, PECOLA, bridging metric-based and fine-tuned methods by contrastive learning on selective perturbation. Selective strategy retains important tokens during perturbation and weights for multi-pair contrastive learning. The experiments show that PECOLA outperforms the state-of-the-art (SOTA) by 1.20% in accuracy on average on four public datasets. And we further analyze the effectiveness, robustness, and generalization of the method.",
+                  "url": "https://aclanthology.org/2024.acl-long.103/",
+                  "doi": "10.18653/v1/2024.acl-long.103",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.195",
+                  "title": "Mamba-Shedder: Post-Transformer Compression for Efficient Selective Structured State Space Models",
+                  "authors": [
+                    "Juan Pablo Munoz",
+                    "Jinjie Yuan",
+                    "Nilesh Jain"
+                  ],
+                  "year": 2025,
+                  "abstract": "Large pre-trained models have achieved outstanding results in sequence modeling. The Transformer block and its attention mechanism have been the main drivers of the success of these models. Recently, alternative architectures, such as Selective Structured State Space Models (SSMs), have been proposed to address the inefficiencies of Transformers. This paper explores the compression of SSM-based models, particularly Mamba and its hybrids. We study the sensitivity of these models to the removal of selected components at different granularities to reduce the model size and computational overhead, thus improving their efficiency while maintaining accuracy. The proposed solutions, collectively referred to as Mamba-Shedder, achieve a speedup of up to 1.4x during inference, demonstrating that model efficiency can be improved by eliminating several redundancies with minimal impact on the overall model performance. The code is available at https://github.com/IntelLabs/Hardware-Aware-Automated-Machine-Learning.",
+                  "url": "https://aclanthology.org/2025.naacl-long.195/",
+                  "doi": "10.18653/v1/2025.naacl-long.195",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.480",
+                  "title": "Not All Adapters Matter: Selective Adapter Freezing for Memory-Efficient Fine-Tuning of Language Models",
+                  "authors": [
+                    "Hyegang Son",
+                    "Yonglak Son",
+                    "Changhoon Kim",
+                    "Young Geun Kim"
+                  ],
+                  "year": 2025,
+                  "abstract": "Transformer-based large-scale pre-trained models achieve great success. Fine-tuning is the standard practice for leveraging these models in downstream tasks. Among the fine-tuning methods, adapter-tuning provides a parameter-efficient fine-tuning by introducing lightweight trainable modules while keeping most pre-trained parameters frozen. However, existing adapter-tuning methods still impose substantial resource usage. Through our investigation, we show that each adapter unequally contributes to both task performance and resource usage. Motivated by this insight, we propose Selective Adapter FrEezing (SAFE), which gradually freezes less important adapters early to reduce unnecessary resource usage while maintaining performance. In our experiments, SAFE reduces memory usage, computation amount, and training time by 42.85%, 34.59%, and 11.82%, respectively, while achieving comparable or better task performance compared to the baseline. We also demonstrate that SAFE induces regularization effect, thereby smoothing the loss landscape, which enables the model to generalize better by avoiding sharp minima.",
+                  "url": "https://aclanthology.org/2025.naacl-long.480/",
+                  "doi": "10.18653/v1/2025.naacl-long.480",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.628",
+                  "title": "CoRAC: Integrating Selective API Document Retrieval with Question Semantic Intent for Code Question Answering",
+                  "authors": [
+                    "YunSeok Choi",
+                    "CheolWon Na",
+                    "Jee-Hyong Lee"
+                  ],
+                  "year": 2025,
+                  "abstract": "Automatic code question answering aims to generate precise answers to questions about code by analyzing code snippets. To provide an appropriate answer, it is necessary to accurately understand the relevant part of the code and correctly interpret the intent of the question. However, in real-world scenarios, the questioner often provides only a portion of the code along with the question, making it challenging to find an answer. The responder should be capable of providing a suitable answer using such limited information. We propose a knowledge-based framework, CoRAC, an automatic code question responder that enhances understanding through selective API document retrieval and question semantic intent clustering. We evaluate our method on three real-world benchmark datasets and demonstrate its effectiveness through various experiments. We also show that our method can generate high-quality answers compared to large language models, such as ChatGPT.",
+                  "url": "https://aclanthology.org/2025.naacl-long.628/",
+                  "doi": "10.18653/v1/2025.naacl-long.628",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                }
+              ],
+              "status": "ok",
+              "error": null,
+              "cache_hit": false
+            }
+          ],
+          "error": null,
+          "evidence_status": "verified_excerpt",
+          "reviewer_id": "novelty_1"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 4,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal presents a well-scoped study on the cross-lingual transferability of uncertainty-based abstention thresholds for Urdu QA. The methodology relies on off-the-shelf open weights models, translation pipelines, and lightweight post-hoc threshold adjustment on a small dev set of 200 samples, all of which fit comfortably within the 6-week timeline and 12GB GPU hardware constraints without requiring full model training.",
+            "problems": [
+              "Machine translation artifacts from English to Urdu may introduce unnatural phrasing or factual distortions that skew token-level entropy and verbalized confidence metrics independently of the underlying model's intrinsic knowledge limits.",
+              "A 200-sample validation set for threshold re-calibration may suffer from high variance depending on the coverage target and the specific QA subset chosen."
+            ],
+            "improvements": [
+              "Incorporate a small human-verified subset of Urdu questions or existing human-translated benchmarks (e.g., matching low-resource evaluation standards) to verify that translation artifacts do not completely dominate uncertainty estimation.",
+              "Perform bootstrapping or k-fold cross-validation on the 200-sample calibration set to measure threshold stability more rigorously."
+            ],
+            "evidence": [],
+            "uncertainty": "The primary uncertainty lies in whether automated translations into Urdu distort token entropy enough to decouple uncertainty scores from true correctness, which could limit the effectiveness of post-hoc threshold adjustments.",
+            "tradeoffs": [
+              "Relying on machine-translated evaluation data rather than natively authored Urdu benchmarks speeds up implementation within the 6-week window but risks conflating translation noise with genuine cross-lingual calibration shift."
+            ],
+            "falsification_test": "If the English-derived abstention threshold achieves statistically identical risk-coverage performance on translated Urdu data compared to the re-calibrated threshold, the core hypothesis that language-specific calibration shift requires targeted correction is falsified."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required",
+          "reviewer_id": "feasibility_2"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal clearly defines the research problem, operational metrics (such as AURCC and selective accuracy), and the experimental steps required to evaluate the cross-lingual transfer of abstention thresholds in Urdu factual question answering. The research plan is concrete, well-scoped for a 6-week timeline, and establishes clear validation checks and fallback options.",
+            "problems": [
+              "The translation quality of the benchmark dataset could introduce confounding artifacts that conflate translation noise with genuine cross-lingual calibration shift.",
+              "The operational definition of token-level uncertainty metrics needs to explicitly specify how multi-token generated answers are aggregated into a single sequence-level confidence score."
+            ],
+            "improvements": [
+              "Include a small human-evaluated sample or a semantic similarity metric (e.g., embedding distance) on the translation pipeline to quantify translation noise before running the abstention experiments.",
+              "Specify the exact sequence-level aggregation function (e.g., geometric mean or minimum token probability) used to convert token-level entropy or verbalized probabilities into an abstention score."
+            ],
+            "evidence": [],
+            "uncertainty": "The proposal assumes that machine-translated Urdu questions maintain semantic and structural equivalence sufficient for reliable uncertainty calibration, but translation artifacts could unpredictably alter model entropy and confound the results.",
+            "tradeoffs": [
+              "Relying on machine-translated evaluation sets instead of native human-curated low-resource benchmarks preserves resource scope but risks introducing translation artifacts."
+            ],
+            "falsification_test": "If an English-calibrated threshold achieves near-identical selective accuracy and risk-coverage curves on translated Urdu without requiring any post-hoc re-calibration, the core hypothesis that language-specific calibration shifts dominate cross-lingual transfer would be falsified."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required",
+          "reviewer_id": "clarity_3"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal aims to investigate cross-lingual transfer of abstention thresholds from English to Urdu factual QA and to re-calibrate them using a small validation set. However, a major vulnerability of this study lies in its unexamined reliance on machine-translated test sets. Translation artifacts, morphological divergence, and lexical shifts alter token-level entropy and verbalized probabilities independently of the model's actual factual knowledge boundaries. Consequently, the observed calibration shift may merely reflect translation noise rather than a fundamental property of cross-lingual uncertainty transfer.",
+            "problems": [
+              "Confounding between true model epistemic uncertainty and machine translation artifacts introduced during the dataset generation pipeline.",
+              "A 200-sample Urdu calibration set is susceptible to high variance and overfitting when estimating precise risk-coverage cutoffs across complex token probability distributions.",
+              "Failure to control for length and tokenization differences between English and Urdu, which systematically skew entropy-based confidence measures."
+            ],
+            "improvements": [
+              "Incorporate a human-curated native Urdu QA evaluation benchmark alongside the translated set to isolate true cross-lingual transfer gaps from machine translation noise.",
+              "Evaluate length-normalized entropy and token-conditional probability metrics to mitigate tokenization bias between English and morphologically rich Urdu.",
+              "Perform stability analysis on the 200-sample calibration set using bootstrapping to report confidence intervals for the selected thresholds."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-long.139",
+                "claim": "Human-translated benchmark datasets are essential for reliable evaluation in non-English languages.",
+                "supporting_excerpt": "In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU).",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.naacl-long.139",
+                "claim": "Capabilities of LLMs are often limited outside of high-resource languages.",
+                "supporting_excerpt": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The primary uncertainty is whether machine translation artifacts completely dominate the token-level uncertainty metrics, rendering any cross-lingual calibration adjustment an artifact-fitting procedure rather than an epistemic alignment.",
+            "tradeoffs": [
+              "Using automated machine translation enables scale across open-domain datasets but introduces confounding translation noise that distorts uncertainty calibration."
+            ],
+            "falsification_test": "Evaluate the re-calibrated abstention threshold on a natively authored Urdu factual QA dataset versus a machine-translated English dataset of identical domain. If the optimal threshold derived from the 200-sample development set fails to generalize to native Urdu questions while succeeding on machine-translated ones, it proves that the method is fitting translation artifacts rather than true cross-lingual uncertainty shifts."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "verified_excerpt",
+          "reviewer_id": "contrarian_4"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal investigates the cross-lingual transferability of uncertainty-based abstention thresholds from English to Urdu factual QA and the effect of post-hoc re-calibration using a small validation set. While uncertainty calibration, selective prediction, and cross-lingual transfer have each been explored independently in prior work, combining them specifically for threshold transfer in low-resource QA under translation artifacts presents a focused, incremental application.",
+            "problems": [
+              "The core idea of transferring uncertainty thresholds and re-calibrating them on a small target-language set is an incremental adaptation of standard post-hoc calibration techniques rather than a fundamentally new algorithmic mechanism.",
+              "Dependency on machine-translated evaluation sets may conflate translation artifacts and syntactic noise with true cross-lingual epistemic uncertainty shifts."
+            ],
+            "improvements": [
+              "Incorporate native low-resource QA datasets alongside machine-translated data to verify whether calibration shift persists independently of translation pipeline artifacts.",
+              "Compare the proposed simple threshold adjustment against alternative lightweight domain adaptation or prompting strategies for calibration."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.344",
+                "claim": "Multilingual embeddings and cross-lingual transfer exhibit alignment gaps across languages.",
+                "supporting_excerpt": "Despite their remarkable ability to capture linguistic nuances across diverse languages, questions persist regarding the degree of alignment between languages in multilingual embeddings.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2024.acl-long.824",
+                "claim": "Quantifying and calibrating model confidence is crucial for deploying language models reliably.",
+                "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The primary limitation is that findings derived from machine-translated Urdu datasets may heavily reflect the idiosyncrasies of the specific translation pipeline rather than intrinsic cross-lingual uncertainty behavior.",
+            "tradeoffs": [
+              "Using a very small 200-sample calibration set ensures feasibility within resource constraints but risks unstable threshold estimation."
+            ],
+            "falsification_test": "If an English-calibrated threshold transfers to the translated Urdu set with negligible degradation in the risk-coverage curve without requiring post-hoc re-calibration, the core premise of a severe cross-lingual calibration shift caused by language divergence is falsified.",
+            "reviewer_id": "novelty_1"
+          },
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 4,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal presents a well-scoped study on the cross-lingual transferability of uncertainty-based abstention thresholds for Urdu QA. The methodology relies on off-the-shelf open weights models, translation pipelines, and lightweight post-hoc threshold adjustment on a small dev set of 200 samples, all of which fit comfortably within the 6-week timeline and 12GB GPU hardware constraints without requiring full model training.",
+            "problems": [
+              "Machine translation artifacts from English to Urdu may introduce unnatural phrasing or factual distortions that skew token-level entropy and verbalized confidence metrics independently of the underlying model's intrinsic knowledge limits.",
+              "A 200-sample validation set for threshold re-calibration may suffer from high variance depending on the coverage target and the specific QA subset chosen."
+            ],
+            "improvements": [
+              "Incorporate a small human-verified subset of Urdu questions or existing human-translated benchmarks (e.g., matching low-resource evaluation standards) to verify that translation artifacts do not completely dominate uncertainty estimation.",
+              "Perform bootstrapping or k-fold cross-validation on the 200-sample calibration set to measure threshold stability more rigorously."
+            ],
+            "evidence": [],
+            "uncertainty": "The primary uncertainty lies in whether automated translations into Urdu distort token entropy enough to decouple uncertainty scores from true correctness, which could limit the effectiveness of post-hoc threshold adjustments.",
+            "tradeoffs": [
+              "Relying on machine-translated evaluation data rather than natively authored Urdu benchmarks speeds up implementation within the 6-week window but risks conflating translation noise with genuine cross-lingual calibration shift."
+            ],
+            "falsification_test": "If the English-derived abstention threshold achieves statistically identical risk-coverage performance on translated Urdu data compared to the re-calibrated threshold, the core hypothesis that language-specific calibration shift requires targeted correction is falsified.",
+            "reviewer_id": "feasibility_2"
+          },
+          {
+            "role": "clarity",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal clearly defines the research problem, operational metrics (such as AURCC and selective accuracy), and the experimental steps required to evaluate the cross-lingual transfer of abstention thresholds in Urdu factual question answering. The research plan is concrete, well-scoped for a 6-week timeline, and establishes clear validation checks and fallback options.",
+            "problems": [
+              "The translation quality of the benchmark dataset could introduce confounding artifacts that conflate translation noise with genuine cross-lingual calibration shift.",
+              "The operational definition of token-level uncertainty metrics needs to explicitly specify how multi-token generated answers are aggregated into a single sequence-level confidence score."
+            ],
+            "improvements": [
+              "Include a small human-evaluated sample or a semantic similarity metric (e.g., embedding distance) on the translation pipeline to quantify translation noise before running the abstention experiments.",
+              "Specify the exact sequence-level aggregation function (e.g., geometric mean or minimum token probability) used to convert token-level entropy or verbalized probabilities into an abstention score."
+            ],
+            "evidence": [],
+            "uncertainty": "The proposal assumes that machine-translated Urdu questions maintain semantic and structural equivalence sufficient for reliable uncertainty calibration, but translation artifacts could unpredictably alter model entropy and confound the results.",
+            "tradeoffs": [
+              "Relying on machine-translated evaluation sets instead of native human-curated low-resource benchmarks preserves resource scope but risks introducing translation artifacts."
+            ],
+            "falsification_test": "If an English-calibrated threshold achieves near-identical selective accuracy and risk-coverage curves on translated Urdu without requiring any post-hoc re-calibration, the core hypothesis that language-specific calibration shifts dominate cross-lingual transfer would be falsified.",
+            "reviewer_id": "clarity_3"
+          },
+          {
+            "role": "contrarian",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal aims to investigate cross-lingual transfer of abstention thresholds from English to Urdu factual QA and to re-calibrate them using a small validation set. However, a major vulnerability of this study lies in its unexamined reliance on machine-translated test sets. Translation artifacts, morphological divergence, and lexical shifts alter token-level entropy and verbalized probabilities independently of the model's actual factual knowledge boundaries. Consequently, the observed calibration shift may merely reflect translation noise rather than a fundamental property of cross-lingual uncertainty transfer.",
+            "problems": [
+              "Confounding between true model epistemic uncertainty and machine translation artifacts introduced during the dataset generation pipeline.",
+              "A 200-sample Urdu calibration set is susceptible to high variance and overfitting when estimating precise risk-coverage cutoffs across complex token probability distributions.",
+              "Failure to control for length and tokenization differences between English and Urdu, which systematically skew entropy-based confidence measures."
+            ],
+            "improvements": [
+              "Incorporate a human-curated native Urdu QA evaluation benchmark alongside the translated set to isolate true cross-lingual transfer gaps from machine translation noise.",
+              "Evaluate length-normalized entropy and token-conditional probability metrics to mitigate tokenization bias between English and morphologically rich Urdu.",
+              "Perform stability analysis on the 200-sample calibration set using bootstrapping to report confidence intervals for the selected thresholds."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-long.139",
+                "claim": "Human-translated benchmark datasets are essential for reliable evaluation in non-English languages.",
+                "supporting_excerpt": "In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU).",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.naacl-long.139",
+                "claim": "Capabilities of LLMs are often limited outside of high-resource languages.",
+                "supporting_excerpt": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The primary uncertainty is whether machine translation artifacts completely dominate the token-level uncertainty metrics, rendering any cross-lingual calibration adjustment an artifact-fitting procedure rather than an epistemic alignment.",
+            "tradeoffs": [
+              "Using automated machine translation enables scale across open-domain datasets but introduces confounding translation noise that distorts uncertainty calibration."
+            ],
+            "falsification_test": "Evaluate the re-calibrated abstention threshold on a natively authored Urdu factual QA dataset versus a machine-translated English dataset of identical domain. If the optimal threshold derived from the 200-sample development set fails to generalize to native Urdu questions while succeeding on machine-translated ones, it proves that the method is fitting translation artifacts rather than true cross-lingual uncertainty shifts.",
+            "reviewer_id": "contrarian_4"
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "novelty_1": 3
+          },
+          "feasibility": {
+            "feasibility_2": 4
+          },
+          "clarity": {
+            "clarity_3": 4
+          },
+          "importance": {
+            "clarity_3": 4
+          }
+        },
+        "score_disagreements": [],
+        "qualitative_tradeoffs": [
+          {
+            "role": "novelty",
+            "tension": "Using a very small 200-sample calibration set ensures feasibility within resource constraints but risks unstable threshold estimation."
+          },
+          {
+            "role": "feasibility",
+            "tension": "Relying on machine-translated evaluation data rather than natively authored Urdu benchmarks speeds up implementation within the 6-week window but risks conflating translation noise with genuine cross-lingual calibration shift."
+          },
+          {
+            "role": "clarity",
+            "tension": "Relying on machine-translated evaluation sets instead of native human-curated low-resource benchmarks preserves resource scope but risks introducing translation artifacts."
+          },
+          {
+            "role": "contrarian",
+            "tension": "Using automated machine translation enables scale across open-domain datasets but introduces confounding translation noise that distorts uncertainty calibration."
+          }
+        ],
+        "score_policy": "Only designated role scores are aggregated. Distinct scores do not imply distinct model beliefs.",
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "novelty": "verified_excerpt",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "verified_excerpt"
+        }
+      },
+      "revised_idea": null,
+      "revision_error": null,
+      "candidate_idea": {
+        "title": "Cross-Lingual Transferability of Abstention Thresholds in Factual Question Answering: A Case Study on Urdu",
+        "research_problem": "Investigating whether abstention thresholds calibrated on English factual question answering models remain reliable when deployed on translated and native Urdu questions, and whether a small separate Urdu calibration set can mitigate cross-lingual reliability gaps in coverage and accuracy.",
+        "research_gap": "Bounded search findings indicate that while calibration and multi-granularity evaluation have been studied extensively for high-resource languages, the cross-lingual transfer of uncertainty-based abstention mechanisms to low-resource languages like Urdu remains underexplored, particularly under translation artifacts, morphological differences, and tokenization gaps.",
+        "methodology": "We employ an open-source language model accessed locally under hardware constraints. We evaluate zero-shot factual question answering on an English dataset alongside its translated Urdu counterpart and a supplementary human-curated native Urdu subset to isolate translation noise. We measure model confidence using sequence-aggregated token entropy and verbalized probabilities. We establish an English-calibrated abstention threshold to maximize a target precision-recall trade-off. We then evaluate its zero-shot transfer performance on Urdu and implement a post-hoc quantile-based threshold adjustment using a minimal, held-out Urdu validation set.",
+        "expected_contribution": "We expect to demonstrate that direct transfer of English-calibrated abstention thresholds leads to degraded selective prediction performance in Urdu due to calibration shift and translation artifacts. We hypothesize that a minimal, language-specific calibration subset restores selective accuracy and balances the coverage-accuracy frontier.",
+        "experimental_setup": "We use a subset of English open-domain QA datasets translated into Urdu using a standard public pipeline, alongside a small native Urdu validation subset. We evaluate open-weights LLMs that support Urdu. We compare uncalibrated English thresholds against re-calibrated thresholds using a 200-sample Urdu development set, measuring selective accuracy and risk-coverage curves.",
+        "evaluation_strategy": "We evaluate performance using area under the risk-coverage curve (AURCC), selective accuracy at fixed coverage levels (e.g., 80% coverage), and Expected Calibration Error (ECE) on both English and Urdu evaluation splits, incorporating bootstrapping to report confidence intervals.",
+        "feasibility_assumptions": [
+          "Publicly available translation pipelines provide sufficiently fluent Urdu questions for semantic evaluation when combined with native test subsets.",
+          "A 12GB consumer GPU is adequate for running inference and computing token-level uncertainty metrics over evaluation splits without full model training.",
+          "A small development set of 200 translated instances is sufficient for robust threshold re-calibration when coupled with stability checks."
+        ],
+        "references": [
+          "2024.acl-long.365",
+          "2025.naacl-long.139",
+          "2025.naacl-long.453",
+          "2024.acl-long.344",
+          "2025.naacl-short.9"
+        ],
+        "search_queries": [
+          "cross lingual uncertainty calibration question answering",
+          "abstention threshold transfer low resource languages",
+          "selective prediction language models Urdu QA"
+        ],
+        "assumption_checks": [
+          {
+            "assumption": "English-calibrated uncertainty thresholds transfer directly to Urdu without severe over-abstention.",
+            "validation_step": "Apply the English-derived threshold to the translated Urdu zero-shot set and measure absolute coverage drop.",
+            "acceptance_criterion": "Coverage does not deviate by more than 15% from the target operational level.",
+            "fallback": "If coverage drops precipitously, abandon direct transfer and mandate immediate quantile-based threshold resetting on the small Urdu validation split."
+          },
+          {
+            "assumption": "A 200-sample Urdu calibration set provides stable threshold estimation without overfitting.",
+            "validation_step": "Perform 5-fold cross-validation on the Urdu development split to measure variance and empirical standard deviation in the optimal threshold.",
+            "acceptance_criterion": "Standard deviation of the selected threshold across folds remains below 5% of the total uncertainty range.",
+            "fallback": "If variance is high, pool uncertainty estimates using nearest-neighbor similarity features from the English training distribution."
+          }
+        ],
+        "prior_work_comparison": [
+          {
+            "paper_id": "2025.naacl-long.453",
+            "shared_mechanism": "Utilizes uncertainty metrics derived from language model generations to guide prediction and filtering.",
+            "proposed_difference": "Focuses on cross-lingual transfer and post-hoc threshold adjustment for low-resource languages rather than reinforcement learning-based retrieval ranking in English.",
+            "verification_needed": "Verify whether uncertainty score distributions maintain rank-order correlation across languages."
+          },
+          {
+            "paper_id": "2024.acl-long.365",
+            "shared_mechanism": "Evaluates model knowledge limits and uncertainty alignment in open-domain question answering.",
+            "proposed_difference": "Addresses cross-lingual calibration shifts in abstention decisions rather than multi-granularity response aggregation.",
+            "verification_needed": "Confirm that multi-granularity correctness scoring does not interact adversely with cross-lingual token uncertainty."
+          },
+          {
+            "paper_id": "2025.naacl-short.9",
+            "shared_mechanism": "Employs inference-time selective classification and filtering based on uncertainty quantification scores.",
+            "proposed_difference": "Targets cross-lingual linguistic divergence and translation artifact mitigation instead of inference-time fairness debiasing.",
+            "verification_needed": "Test whether uncertainty score calibration effectively separates epistemic errors from translation noise."
+          }
+        ],
+        "core_hypothesis": "Uncertainty-based abstention thresholds calibrated on English factual QA exhibit systematic miscalibration when transferred to Urdu due to translation artifacts and language-specific entropy shifts, which can be corrected using a minimal target-language calibration set.",
+        "distinctive_mechanism": "A targeted post-hoc threshold re-calibration technique operating on a small, low-resource validation set to align the risk-coverage frontier across linguistic boundaries.",
+        "minimum_test": "Evaluate an open-source LLM on 500 English QA pairs, their machine translations in Urdu, and a small native Urdu subset, comparing the selective accuracy of an English-optimized abstention threshold against a re-calibrated threshold using a 200-sample Urdu dev set."
+      },
+      "revision_check": {
+        "mechanism_status": "meaningful_pivot",
+        "pivot_reason": "The candidate revision incorporates a supplementary native Urdu evaluation subset and quantile-based threshold adjustments to explicitly isolate translation pipeline artifacts from intrinsic cross-lingual uncertainty calibration shifts.",
+        "novelty": "improved",
+        "feasibility": "unchanged",
+        "clarity": "improved",
+        "importance": "improved",
+        "evidence_grounding": "improved",
+        "explanation": "The proposed revision successfully addresses critical reviewer concerns regarding translation artifact confounding by introducing native Urdu subsets alongside machine-translated benchmarks. The methodology uses standard inference-only uncertainty estimation on consumer hardware, preserving feasibility while improving scientific rigor.",
+        "critical_issues": [
+          "Machine translation noise can distort token entropy independently of model epistemic uncertainty.",
+          "Small calibration subsets (200 samples) risk high variance when estimating risk-coverage cutoffs."
+        ],
+        "improvements": [
+          "Added a human-curated native Urdu test subset to distinguish translation errors from cross-lingual calibration shifts.",
+          "Integrated quantile-based threshold resetting and bootstrapping to stabilize validation."
+        ],
+        "unresolved_issues": [
+          "Empirical verification is still required to confirm whether sequence-level uncertainty aggregations maintain rank-order correlation across typologically divergent languages."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-short.9",
+            "claim": "Inference-time selective classification and post-processing calibration help bridge performance gaps in low-resource settings.",
+            "supporting_excerpt": "Experiments on text classification datasets with encoder-based classification models demonstrate that selective debiasing helps to reduce the performance gap between post-processing methods and debiasing techniques from the at-training and pre-processing categories.",
+            "relation": "context"
+          },
+          {
+            "paper_id": "2025.naacl-short.9",
+            "claim": "Uncertainty quantification methods require robust divergence metrics to accurately identify problematic predictions.",
+            "supporting_excerpt": "To select problematic predictions, we propose a bias quantification approach based on KL divergence, which achieves better results than standard uncertainty quantification methods.",
+            "relation": "context"
+          }
+        ],
+        "uncertainty": "The primary uncertainty is whether token entropy and verbalized confidence metrics maintain sufficient stability across morphologically rich low-resource languages without overfitting the small validation split."
+      },
+      "selection": "rejected",
+      "selection_reason": "Critical issues remain: Machine translation noise can distort token entropy independently of model epistemic uncertainty.; Small calibration subsets (200 samples) risk high variance when estimating risk-coverage cutoffs."
+    }
+  ],
+  "stop_reason": "revision_guard_rejected",
+  "elapsed_seconds": 192.43461317699985,
+  "api_events": [
+    {
+      "label": "novelty_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:54:04.753466+00:00",
+      "prompt_hash": "4bbc509177b11d5ad0a7aa8d1a7e1ab9fbd2ebc29a4a0cf0918149eb41cc5e4d",
+      "input_tokens": 14930,
+      "output_tokens": 537,
+      "thinking_tokens": 0,
+      "total_tokens": 15467,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.5856382329984626
+    },
+    {
+      "label": "feasibility_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:54:19.753602+00:00",
+      "prompt_hash": "82074d663ac92712eaf9b08ced06fa162e5b3b1af085639585e39e679a9e6923",
+      "input_tokens": 6569,
+      "output_tokens": 454,
+      "thinking_tokens": 0,
+      "total_tokens": 7023,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.0658019140009856
+    },
+    {
+      "label": "clarity_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:54:34.753790+00:00",
+      "prompt_hash": "d44fc3bf0938f16c69b72de7fa2197268db5806f869f9f09399db89be475f8f7",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "HTTP 503",
+      "elapsed_seconds": 2.7866117649991793
+    },
+    {
+      "label": "clarity_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-15T11:54:49.754057+00:00",
+      "prompt_hash": "d44fc3bf0938f16c69b72de7fa2197268db5806f869f9f09399db89be475f8f7",
+      "input_tokens": 6534,
+      "output_tokens": 424,
+      "thinking_tokens": 0,
+      "total_tokens": 6958,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 2.8194585549990734
+    },
+    {
+      "label": "contrarian_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:55:04.754319+00:00",
+      "prompt_hash": "4abe1bc5e3468be0e247256a9a4543de4e998a060c888fe204a08afbf60b021e",
+      "input_tokens": 6535,
+      "output_tokens": 639,
+      "thinking_tokens": 0,
+      "total_tokens": 7174,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.722835581000254
+    },
+    {
+      "label": "revision_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:55:19.754586+00:00",
+      "prompt_hash": "1643b7d4cf60bed5662afc3655919061937f3d4e4809801d28e151a8d2857b82",
+      "input_tokens": 12701,
+      "output_tokens": 1432,
+      "thinking_tokens": 0,
+      "total_tokens": 14133,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 5.439350643999205
+    },
+    {
+      "label": "revision_guard_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:55:34.754840+00:00",
+      "prompt_hash": "f4be580829186b6b0ef9b80faad0665dd49e043228273baa47dfc63b50995a71",
+      "input_tokens": 18341,
+      "output_tokens": 467,
+      "thinking_tokens": 0,
+      "total_tokens": 18808,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.2403218939998624
+    },
+    {
+      "label": "novelty_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:55:49.755077+00:00",
+      "prompt_hash": "a680113fe2cb9dcfcd2fc6cc2ea6f78f7ac9f6de6a62855c5f9be21690c39d79",
+      "input_tokens": 17569,
+      "output_tokens": 691,
+      "thinking_tokens": 0,
+      "total_tokens": 18260,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.598129318001156
+    },
+    {
+      "label": "feasibility_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:56:04.755315+00:00",
+      "prompt_hash": "1b2d1ac193e94a0dc2a22df6b361f483595c351820ef23ccaaf23b71e67490dd",
+      "input_tokens": 14950,
+      "output_tokens": 589,
+      "thinking_tokens": 0,
+      "total_tokens": 15539,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.18702860600024
+    },
+    {
+      "label": "clarity_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:56:19.755468+00:00",
+      "prompt_hash": "e598de7e427a0260ed6106deb169bae56ec5e26cf638103cb54b704229868990",
+      "input_tokens": 14915,
+      "output_tokens": 416,
+      "thinking_tokens": 0,
+      "total_tokens": 15331,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.263794103000691
+    },
+    {
+      "label": "contrarian_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:56:34.755710+00:00",
+      "prompt_hash": "2d7e3e91c9a8982f6408cf0c4f0449110f39f5ae68afe4098e98bd6c991c8fd1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "HTTP 503",
+      "elapsed_seconds": 2.2690544220004085
+    },
+    {
+      "label": "contrarian_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-15T11:56:49.755977+00:00",
+      "prompt_hash": "2d7e3e91c9a8982f6408cf0c4f0449110f39f5ae68afe4098e98bd6c991c8fd1",
+      "input_tokens": 14916,
+      "output_tokens": 656,
+      "thinking_tokens": 0,
+      "total_tokens": 15572,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.267662725000264
+    },
+    {
+      "label": "evidence_support_audit",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T11:57:04.756220+00:00",
+      "prompt_hash": "8843f58cbaf7176a1758c305c062844b5b3c9ead42f429de1f93e5fd960a49a7",
+      "input_tokens": 2592,
+      "output_tokens": 581,
+      "thinking_tokens": 0,
+      "total_tokens": 3173,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 2.9909136930000386
+    }
+  ],
+  "provenance": "live_gemini",
+  "final_reviews": [
+    {
+      "role": "novelty",
+      "review": {
+        "role": "novelty",
+        "novelty": 3,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposal investigates the cross-lingual transferability of uncertainty-based abstention thresholds from English to Urdu factual QA and proposes a post-hoc threshold re-calibration using a small validation set. While selective classification and confidence calibration are widely studied in English, and cross-lingual transfer has been explored for generation and alignment tasks, examining abstention threshold shifts under translation artifacts in low-resource settings like Urdu is moderately original. However, the core methodology relies heavily on standard threshold tuning and existing uncertainty metrics, positioning it as an incremental application rather than a foundational algorithmic contribution.",
+        "problems": [
+          "The proposed method relies directly on standard uncertainty metrics (verbalized probabilities and entropy) without introducing novel confidence estimation techniques tailored to translation artifacts.",
+          "The reliance on translated evaluation sets may conflate translation noise with genuine cross-lingual calibration shifts.",
+          "The scope is restricted to a single target language (Urdu), limiting the generalizability of the findings across typologically diverse low-resource languages."
+        ],
+        "improvements": [
+          "Expand the evaluation to include multiple typologically diverse low-resource languages to demonstrate broader generalizability of the cross-lingual abstention gap.",
+          "Introduce a specialized uncertainty score or a robust aggregation mechanism that explicitly accounts for translation uncertainty rather than relying solely on standard token entropy.",
+          "Compare the post-hoc re-calibration baseline against existing domain-adaptation or few-shot threshold learning baselines."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.824",
+            "claim": "Quantifying model confidence and uncertainty is critical for trustworthy user-facing applications.",
+            "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+            "relation": "context"
+          },
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "Capabilities of large language models remain largely limited to high-resource languages.",
+            "supporting_excerpt": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages.",
+            "relation": "context"
+          },
+          {
+            "paper_id": "2025.naacl-short.8",
+            "claim": "Cross-lingual transfer of evaluation and scoring mechanisms from English to other languages is an active area of study.",
+            "supporting_excerpt": "In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English.",
+            "relation": "overlaps"
+          }
+        ],
+        "uncertainty": "The primary limitation is that translation artifacts from automated pipelines may artificially inflate entropy and skew uncertainty metrics independently of the underlying model's true factual reliability in Urdu.",
+        "tradeoffs": [
+          "Restricting the scope to Urdu fits the constrained compute resources (12GB GPU / API) but limits the broader claims regarding low-resource cross-lingual transferability."
+        ],
+        "falsification_test": "If an English-calibrated abstention threshold transferred to Urdu maintains zero-shot selective accuracy within 2% of the oracle Urdu-calibrated threshold across multiple datasets, the hypothesis that systematic calibration shift occurs due to language differences is falsified."
+      },
+      "search": [
+        {
+          "query": "cross lingual uncertainty calibration question answering",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-15T11:55:38.041388+00:00",
+          "papers": [
+            {
+              "paper_id": "2025.naacl-short.12",
+              "title": "Improving Vietnamese-English Cross-Lingual Retrieval for Legal and General Domains",
+              "authors": [
+                "Toan Ngoc Nguyen",
+                "Nam Le Hai",
+                "Nguyen Doan Hieu",
+                "Dai An Nguyen",
+                "Linh Ngo Van",
+                "Thien Huu Nguyen",
+                "Sang Dinh"
+              ],
+              "year": 2025,
+              "abstract": "Document retrieval plays a crucial role in numerous question-answering systems, yet research has concentrated on the general knowledge domain and resource-rich languages like English. In contrast, it remains largely underexplored in low-resource languages and cross-lingual scenarios within specialized domain knowledge such as legal. We present a novel dataset designed for cross-lingual retrieval between Vietnamese and English, which not only covers the general domain but also extends to the legal field. Additionally, we propose auxiliary loss function and symmetrical training strategy that significantly enhance the performance of state-of-the-art models on these retrieval tasks. Our contributions offer a significant resource and methodology aimed at improving cross-lingual retrieval in both legal and general QA settings, facilitating further advancements in document retrieval research across multiple languages and a broader spectrum of specialized domains. All the resources related to our work can be accessed at huggingface.co/datasets/bkai-foundation-models/crosslingual.",
+              "url": "https://aclanthology.org/2025.naacl-short.12/",
+              "doi": "10.18653/v1/2025.naacl-short.12",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-long.344",
+              "title": "Exploring Alignment in Shared Cross-lingual Spaces",
+              "authors": [
+                "Basel Mousi",
+                "Nadir Durrani",
+                "Fahim Dalvi",
+                "Majd Hawasly",
+                "Ahmed Abdelali"
+              ],
+              "year": 2024,
+              "abstract": "Despite their remarkable ability to capture linguistic nuances across diverse languages, questions persist regarding the degree of alignment between languages in multilingual embeddings. Drawing inspiration from research on high-dimensional representations in neural language models, we employ clustering to uncover latent concepts within multilingual models. Our analysis focuses on quantifying the alignment and overlap of these concepts across various languages within the latent space. To this end, we introduce two metrics CALIGN and COLAP aimed at quantifying these aspects, enabling a deeper exploration of multilingual embeddings. Our study encompasses three multilingual models (mT5, mBERT, and XLM-R) and three downstream tasks (Machine Translation, Named Entity Recognition, and Sentiment Analysis). Key findings from our analysis include: i) deeper layers in the network demonstrate increased cross-lingual alignment due to the presence of language-agnostic concepts, ii) fine-tuning of the models enhances alignment within the latent space, and iii) such task-specific calibration helps in explaining the emergence of zero-shot capabilities in the models.",
+              "url": "https://aclanthology.org/2024.acl-long.344/",
+              "doi": "10.18653/v1/2024.acl-long.344",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.17",
+              "title": "PromptRefine: Enhancing Few-Shot Performance on Low-Resource Indic Languages with Example Selection from related Example Banks",
+              "authors": [
+                "Soumya Suvra Ghosal",
+                "Soumyabrata Pal",
+                "Koyel Mukherjee",
+                "Dinesh Manocha"
+              ],
+              "year": 2025,
+              "abstract": "Large Language Models (LLMs) have recently demonstrated impressive few-shot learning capabilities through in-context learning (ICL). However, ICL performance is highly dependent on the choice of few-shot demonstrations, making the selection of the most optimal examples a persistent research challenge. This issue is further amplified in low-resource Indic languages, where the scarcity of ground-truth data complicates the selection process. In this work, we propose PromptRefine, a novel Alternating Minimization approach for example selection that improves ICL performance on low-resource Indic languages. PromptRefine leverages auxiliary example banks from related high-resource Indic languages and employs multi-task learning techniques to align language-specific retrievers, enabling effective cross-language retrieval. Additionally, we incorporate diversity in the selected examples to enhance generalization and reduce bias. Through comprehensive evaluations on four text generation tasks—Cross-Lingual Question Answering, Multilingual Question Answering, Machine Translation, and Cross-Lingual Summarization using state-of-the-art LLMs such as LLAMA-3.1-8B, LLAMA-2-7B, Qwen-2-7B, and Qwen-2.5-7B, we demonstrate that PromptRefine significantly outperforms existing frameworks for retrieving examples.",
+              "url": "https://aclanthology.org/2025.naacl-long.17/",
+              "doi": "10.18653/v1/2025.naacl-long.17",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-long.824",
+              "title": "Calibrating Large Language Models Using Their Generations Only",
+              "authors": [
+                "Dennis Ulmer",
+                "Martin Gubri",
+                "Hwaran Lee",
+                "Sangdoo Yun",
+                "Seong Oh"
+              ],
+              "year": 2024,
+              "abstract": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important. However, finding effective ways to calibrate LLMs—especially when the only interface to the models is their generated text—remains a challenge. We propose APRICOT (Auxiliary prediction of confidence targets): A method to set confidence targets and train an additional model that predicts an LLM’s confidence based on its textual input and output alone. This approach has several advantages: It is conceptually simple, does not require access to the target model beyond its output, does not interfere with the language generation, and has a multitude of potential usages, for instance by verbalizing the predicted confidence or using it to re-prompting the LLM to accurately reflecting its uncertainty. We show how our approach performs competitively in terms of calibration error for white-box and black-box LLMs on closed-book question-answering to detect incorrect LLM answers.",
+              "url": "https://aclanthology.org/2024.acl-long.824/",
+              "doi": "10.18653/v1/2024.acl-long.824",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-short.8",
+              "title": "Cross-lingual Transfer of Reward Models in Multilingual Alignment",
+              "authors": [
+                "Jiwoo Hong",
+                "Noah Lee",
+                "Rodrigo Martínez-Castaño",
+                "César Rodríguez",
+                "James Thorne"
+              ],
+              "year": 2025,
+              "abstract": "Reinforcement learning with human feedback (RLHF) is shown to largely benefit from precise reward models (RMs). However, recent studies in reward modeling schemes are skewed towards English, limiting the applicability of RLHF in multilingual alignments. In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English. Our experimental results demonstrate the strong cross-lingual transfer of English RMs, exceeding target language RMs by 3~4% average increase in Multilingual RewardBench. Furthermore, we analyze the cross-lingual transfer of RMs through the representation shifts. Finally, we perform multilingual alignment to exemplify how cross-lingual transfer in RM propagates to enhanced multilingual instruction-following capability.",
+              "url": "https://aclanthology.org/2025.naacl-short.8/",
+              "doi": "10.18653/v1/2025.naacl-short.8",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        },
+        {
+          "query": "abstention threshold transfer low resource languages",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-15T11:55:38.043357+00:00",
+          "papers": [
+            {
+              "paper_id": "2025.naacl-srw.21",
+              "title": "How many words does it take to understand a low-resource language?",
+              "authors": [
+                "Emily Chang",
+                "Nada Basit"
+              ],
+              "year": 2025,
+              "abstract": "When developing language technology, researchers have routinely turned to transfer learning to resolve the data scarcity conundrum presented in low-resource languages. As far as we know, this study is the first to evaluate the amount of documentation needed for transfer learning, specifically the smallest vocabulary size needed to create a sentence embedding space. In adopting widely spoken languages as a proxy for low-resource languages, our experiments show that the relationship between a sentence embedding’s vocabulary size and performance is logarithmic with performance leveling at a vocabulary size of 25,000. It should be noted that this relationship cannot be replicated across all languages and this level of documentation does not exist for many low-resource languages. We do observe, however, that performance accelerates at a vocabulary size of \\le 1000, a quantity that is present in most low-resource language documentation. These results can aid researchers in understanding whether a low-resource language has enough documentation necessary to support the creation of a sentence embedding and language model.",
+              "url": "https://aclanthology.org/2025.naacl-srw.21/",
+              "doi": "10.18653/v1/2025.naacl-srw.21",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-long.174",
+              "title": "UniBridge: A Unified Approach to Cross-Lingual Transfer Learning for Low-Resource Languages",
+              "authors": [
+                "Trinh Pham",
+                "Khoi Le",
+                "Anh Tuan Luu"
+              ],
+              "year": 2024,
+              "abstract": "In this paper, we introduce UniBridge (Cross-Lingual Transfer Learning with Optimized Embeddings and Vocabulary), a comprehensive approach developed to improve the effectiveness of Cross-Lingual Transfer Learning, particularly in languages with limited resources. Our approach tackles two essential elements of a language model: the initialization of embeddings and the optimal vocabulary size. Specifically, we propose a novel embedding initialization method that leverages both lexical and semantic alignment for a language. In addition, we present a method for systematically searching for the optimal vocabulary size, ensuring a balance between model complexity and linguistic coverage. Our experiments across multilingual datasets show that our approach greatly improves the F1-Score in several languages. UniBridge is a robust and adaptable solution for cross-lingual systems in various languages, highlighting the significance of initializing embeddings and choosing the right vocabulary size in cross-lingual environments.",
+              "url": "https://aclanthology.org/2024.acl-long.174/",
+              "doi": "10.18653/v1/2024.acl-long.174",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.517",
+              "title": "Soft Language Prompts for Language Transfer",
+              "authors": [
+                "Ivan Vykopal",
+                "Simon Ostermann",
+                "Marian Simko"
+              ],
+              "year": 2025,
+              "abstract": "Cross-lingual knowledge transfer, especially between high- and low-resource languages, remains challenging in natural language processing (NLP). This study offers insights for improving cross-lingual NLP applications through the combination of parameter-efficient fine-tuning methods. We systematically explore strategies for enhancing cross-lingual transfer through the incorporation of language-specific and task-specific adapters and soft prompts. We present a detailed investigation of various combinations of these methods, exploring their efficiency across 16 languages, focusing on 10 mid- and low-resource languages. We further present to our knowledge the first use of soft prompts for language transfer, a technique we call soft language prompts. Our findings demonstrate that in contrast to claims of previous work, a combination of language and task adapters does not always work best; instead, combining a soft language prompt with a task adapter outperforms most configurations in many cases.",
+              "url": "https://aclanthology.org/2025.naacl-long.517/",
+              "doi": "10.18653/v1/2025.naacl-long.517",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.396",
+              "title": "A Survey of NLP Progress in Sino-Tibetan Low-Resource Languages",
+              "authors": [
+                "Shuheng Liu",
+                "Michael Best"
+              ],
+              "year": 2025,
+              "abstract": "Despite the increasing effort in including more low-resource languages in NLP/CL development, most of the world’s languages are still absent. In this paper, we take the example of the Sino-Tibetan language family which consists of hundreds of low-resource languages, and we look at the representation of these low-resource languages in papers archived on ACL Anthology. Our findings indicate that while more techniques and discussions on more languages are present in more publication venues over the years, the overall focus on this language family has been minimal. The lack of attention might be owing to the small number of native speakers and governmental support of these languages. The current development of large language models, albeit successful in a few quintessential rich-resource languages, are still trailing when tackling these low-resource languages. Our paper calls for the attention in NLP/CL research on the inclusion of low-resource languages, especially as increasing resources are poured into the development of data-driven language models.",
+              "url": "https://aclanthology.org/2025.naacl-long.396/",
+              "doi": "10.18653/v1/2025.naacl-long.396",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-short.58",
+              "title": "How Good is Zero-Shot MT Evaluation for Low Resource Indian Languages?",
+              "authors": [
+                "Anushka Singh",
+                "Ananya Sai",
+                "Raj Dabre",
+                "Ratish Puduppully",
+                "Anoop Kunchukuttan",
+                "Mitesh Khapra"
+              ],
+              "year": 2024,
+              "abstract": "While machine translation evaluation has been studied primarily for high-resource languages, there has been a recent interest in evaluation for low-resource languages due to the increasing availability of data and models. In this paper, we focus on a zero-shot evaluation setting focusing on low-resource Indian languages, namely Assamese, Kannada, Maithili, and Punjabi. We collect sufficient Multi-Dimensional Quality Metrics (MQM) and Direct Assessment (DA) annotations to create test sets and meta-evaluate a plethora of automatic evaluation metrics. We observe that even for learned metrics, which are known to exhibit zero-shot performance, the Kendall Tau and Pearson correlations with human annotations are only as high as 0.32 and 0.45. Synthetic data approaches show mixed results and overall do not help close the gap by much for these languages. This indicates that there is still a long way to go for low-resource evaluation.",
+              "url": "https://aclanthology.org/2024.acl-short.58/",
+              "doi": "10.18653/v1/2024.acl-short.58",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        },
+        {
+          "query": "selective prediction language models Urdu QA",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-15T11:55:38.047905+00:00",
+          "papers": [
+            {
+              "paper_id": "2025.naacl-short.9",
+              "title": "Inference-Time Selective Debiasing to Enhance Fairness in Text Classification Models",
+              "authors": [
+                "Gleb Kuzmin",
+                "Neemesh Yadav",
+                "Ivan Smirnov",
+                "Timothy Baldwin",
+                "Artem Shelmanov"
+              ],
+              "year": 2025,
+              "abstract": "We propose selective debiasing – an inference-time safety mechanism designed to enhance the overall model quality in terms of prediction performance and fairness, especially in scenarios where retraining the model is impractical. The method draws inspiration from selective classification, where at inference time, predictions with low quality, as indicated by their uncertainty scores, are discarded. In our approach, we identify the potentially biased model predictions and, instead of discarding them, we remove bias from these predictions using LEACE – a post-processing debiasing method. To select problematic predictions, we propose a bias quantification approach based on KL divergence, which achieves better results than standard uncertainty quantification methods. Experiments on text classification datasets with encoder-based classification models demonstrate that selective debiasing helps to reduce the performance gap between post-processing methods and debiasing techniques from the at-training and pre-processing categories.",
+              "url": "https://aclanthology.org/2025.naacl-short.9/",
+              "doi": "10.18653/v1/2025.naacl-short.9",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-long.103",
+              "title": "Does DetectGPT Fully Utilize Perturbation? Bridging Selective Perturbation to Fine-tuned Contrastive Learning Detector would be Better",
+              "authors": [
+                "Shengchao Liu",
+                "Xiaoming Liu",
+                "Yichen Wang",
+                "Zehua Cheng",
+                "Chengzhengxu Li",
+                "Zhaohan Zhang",
+                "Yu Lan",
+                "Chao Shen"
+              ],
+              "year": 2024,
+              "abstract": "The burgeoning generative capabilities of large language models (LLMs) have raised growing concerns about abuse, demanding automatic machine-generated text detectors. DetectGPT, a zero-shot metric-based detector, first introduces perturbation and shows great performance improvement. However, in DetectGPT, the random perturbation strategy could introduce noise, and logit regression depends on the threshold, harming the generalizability and applicability of individual or small-batch inputs. Hence, we propose a novel fine-tuned detector, PECOLA, bridging metric-based and fine-tuned methods by contrastive learning on selective perturbation. Selective strategy retains important tokens during perturbation and weights for multi-pair contrastive learning. The experiments show that PECOLA outperforms the state-of-the-art (SOTA) by 1.20% in accuracy on average on four public datasets. And we further analyze the effectiveness, robustness, and generalization of the method.",
+              "url": "https://aclanthology.org/2024.acl-long.103/",
+              "doi": "10.18653/v1/2024.acl-long.103",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.195",
+              "title": "Mamba-Shedder: Post-Transformer Compression for Efficient Selective Structured State Space Models",
+              "authors": [
+                "Juan Pablo Munoz",
+                "Jinjie Yuan",
+                "Nilesh Jain"
+              ],
+              "year": 2025,
+              "abstract": "Large pre-trained models have achieved outstanding results in sequence modeling. The Transformer block and its attention mechanism have been the main drivers of the success of these models. Recently, alternative architectures, such as Selective Structured State Space Models (SSMs), have been proposed to address the inefficiencies of Transformers. This paper explores the compression of SSM-based models, particularly Mamba and its hybrids. We study the sensitivity of these models to the removal of selected components at different granularities to reduce the model size and computational overhead, thus improving their efficiency while maintaining accuracy. The proposed solutions, collectively referred to as Mamba-Shedder, achieve a speedup of up to 1.4x during inference, demonstrating that model efficiency can be improved by eliminating several redundancies with minimal impact on the overall model performance. The code is available at https://github.com/IntelLabs/Hardware-Aware-Automated-Machine-Learning.",
+              "url": "https://aclanthology.org/2025.naacl-long.195/",
+              "doi": "10.18653/v1/2025.naacl-long.195",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.480",
+              "title": "Not All Adapters Matter: Selective Adapter Freezing for Memory-Efficient Fine-Tuning of Language Models",
+              "authors": [
+                "Hyegang Son",
+                "Yonglak Son",
+                "Changhoon Kim",
+                "Young Geun Kim"
+              ],
+              "year": 2025,
+              "abstract": "Transformer-based large-scale pre-trained models achieve great success. Fine-tuning is the standard practice for leveraging these models in downstream tasks. Among the fine-tuning methods, adapter-tuning provides a parameter-efficient fine-tuning by introducing lightweight trainable modules while keeping most pre-trained parameters frozen. However, existing adapter-tuning methods still impose substantial resource usage. Through our investigation, we show that each adapter unequally contributes to both task performance and resource usage. Motivated by this insight, we propose Selective Adapter FrEezing (SAFE), which gradually freezes less important adapters early to reduce unnecessary resource usage while maintaining performance. In our experiments, SAFE reduces memory usage, computation amount, and training time by 42.85%, 34.59%, and 11.82%, respectively, while achieving comparable or better task performance compared to the baseline. We also demonstrate that SAFE induces regularization effect, thereby smoothing the loss landscape, which enables the model to generalize better by avoiding sharp minima.",
+              "url": "https://aclanthology.org/2025.naacl-long.480/",
+              "doi": "10.18653/v1/2025.naacl-long.480",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.628",
+              "title": "CoRAC: Integrating Selective API Document Retrieval with Question Semantic Intent for Code Question Answering",
+              "authors": [
+                "YunSeok Choi",
+                "CheolWon Na",
+                "Jee-Hyong Lee"
+              ],
+              "year": 2025,
+              "abstract": "Automatic code question answering aims to generate precise answers to questions about code by analyzing code snippets. To provide an appropriate answer, it is necessary to accurately understand the relevant part of the code and correctly interpret the intent of the question. However, in real-world scenarios, the questioner often provides only a portion of the code along with the question, making it challenging to find an answer. The responder should be capable of providing a suitable answer using such limited information. We propose a knowledge-based framework, CoRAC, an automatic code question responder that enhances understanding through selective API document retrieval and question semantic intent clustering. We evaluate our method on three real-world benchmark datasets and demonstrate its effectiveness through various experiments. We also show that our method can generate high-quality answers compared to large language models, such as ChatGPT.",
+              "url": "https://aclanthology.org/2025.naacl-long.628/",
+              "doi": "10.18653/v1/2025.naacl-long.628",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        },
+        {
+          "query": "Cross-Lingual Transferability of Abstention Thresholds in Factual Question Answering: A Case Study on Urdu We employ an open-source language model accessed via API or running locally under hardware constraints. We evaluate zero-shot factual question answering on an English dataset and",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-15T11:55:38.052486+00:00",
+          "papers": [
+            {
+              "paper_id": "2024.acl-short.59",
+              "title": "Zero-Shot Cross-Lingual Reranking with Large Language Models for Low-Resource Languages",
+              "authors": [
+                "Mofetoluwa Adeyemi",
+                "Akintunde Oladipo",
+                "Ronak Pradeep",
+                "Jimmy Lin"
+              ],
+              "year": 2024,
+              "abstract": "Large language models (LLMs) as listwise rerankers have shown impressive zero-shot capabilities in various passage ranking tasks. Despite their success, there is still a gap in existing literature on their effectiveness in reranking low-resource languages. To address this, we investigate how LLMs function as listwise rerankers in cross-lingual information retrieval (CLIR) systems with queries in English and passages in four African languages: Hausa, Somali, Swahili, and Yoruba. We analyze and compare the effectiveness of monolingual reranking using either query or document translations. We also evaluate the effectiveness of LLMs when leveraging their own generated translations. To grasp the general picture, we examine the effectiveness of multiple LLMs — the proprietary models RankGPT-4 and RankGPT-3.5, along with the open-source model RankZephyr. While the document translation setting, i.e., both queries and documents are in English, leads to the best reranking effectiveness, our results indicate that for specific LLMs, reranking in the African language setting achieves competitive effectiveness with the cross-lingual setting, and even performs better when using the LLM’s own translations.",
+              "url": "https://aclanthology.org/2024.acl-short.59/",
+              "doi": "10.18653/v1/2024.acl-short.59",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-short.12",
+              "title": "Improving Vietnamese-English Cross-Lingual Retrieval for Legal and General Domains",
+              "authors": [
+                "Toan Ngoc Nguyen",
+                "Nam Le Hai",
+                "Nguyen Doan Hieu",
+                "Dai An Nguyen",
+                "Linh Ngo Van",
+                "Thien Huu Nguyen",
+                "Sang Dinh"
+              ],
+              "year": 2025,
+              "abstract": "Document retrieval plays a crucial role in numerous question-answering systems, yet research has concentrated on the general knowledge domain and resource-rich languages like English. In contrast, it remains largely underexplored in low-resource languages and cross-lingual scenarios within specialized domain knowledge such as legal. We present a novel dataset designed for cross-lingual retrieval between Vietnamese and English, which not only covers the general domain but also extends to the legal field. Additionally, we propose auxiliary loss function and symmetrical training strategy that significantly enhance the performance of state-of-the-art models on these retrieval tasks. Our contributions offer a significant resource and methodology aimed at improving cross-lingual retrieval in both legal and general QA settings, facilitating further advancements in document retrieval research across multiple languages and a broader spectrum of specialized domains. All the resources related to our work can be accessed at huggingface.co/datasets/bkai-foundation-models/crosslingual.",
+              "url": "https://aclanthology.org/2025.naacl-short.12/",
+              "doi": "10.18653/v1/2025.naacl-short.12",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-long.533",
+              "title": "To Generate or to Retrieve? On the Effectiveness of Artificial Contexts for Medical Open-Domain Question Answering",
+              "authors": [
+                "Giacomo Frisoni",
+                "Alessio Cocchieri",
+                "Alex Presepi",
+                "Gianluca Moro",
+                "Zaiqiao Meng"
+              ],
+              "year": 2024,
+              "abstract": "Medical open-domain question answering demands substantial access to specialized knowledge. Recent efforts have sought to decouple knowledge from model parameters, counteracting architectural scaling and allowing for training on common low-resource hardware. The retrieve-then-read paradigm has become ubiquitous, with model predictions grounded on relevant knowledge pieces from external repositories such as PubMed, textbooks, and UMLS. An alternative path, still under-explored but made possible by the advent of domain-specific large language models, entails constructing artificial contexts through prompting. As a result, “to generate or to retrieve” is the modern equivalent of Hamlet’s dilemma. This paper presents MedGENIE, the first generate-then-read framework for multiple-choice question answering in medicine. We conduct extensive experiments on MedQA-USMLE, MedMCQA, and MMLU, incorporating a practical perspective by assuming a maximum of 24GB VRAM. MedGENIE sets a new state-of-the-art in the open-book setting of each testbed, allowing a small-scale reader to outcompete zero-shot closed-book 175B baselines while using up to 706x fewer parameters. Our findings reveal that generated passages are more effective than retrieved ones in attaining higher accuracy.",
+              "url": "https://aclanthology.org/2024.acl-long.533/",
+              "doi": "10.18653/v1/2024.acl-long.533",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-short.23",
+              "title": "CoRAG: Collaborative Retrieval-Augmented Generation",
+              "authors": [
+                "Aashiq Muhamed",
+                "Mona T. Diab",
+                "Virginia Smith"
+              ],
+              "year": 2025,
+              "abstract": "Retrieval-Augmented Generation (RAG) models excel in knowledge-intensive tasks, especially under few-shot learning constraints. We introduce CoRAG, a framework extending RAG to collaborative settings, where clients jointly train a shared model using a collaborative passage store. To evaluate CoRAG, we introduce CRAB, a benchmark for collaborative homogeneous open-domain question answering. Our experiments demonstrate that CoRAG consistently outperforms both parametric collaborative learning methods and locally trained RAG models in low-resource scenarios. Further analysis reveals the critical importance of relevant passages within the shared store, the surprising benefits of incorporating irrelevant passages, and the potential for hard negatives to negatively impact performance. This introduces a novel consideration in collaborative RAG: the trade-off between leveraging a collectively enriched knowledge base and the potential risk of incorporating detrimental passages from other clients. Our findings underscore the viability of CoRAG, while also highlighting key design challenges and promising avenues for future research.",
+              "url": "https://aclanthology.org/2025.naacl-short.23/",
+              "doi": "10.18653/v1/2025.naacl-short.23",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.sigdial-1.49",
+              "title": "Cross-lingual Transfer and Multilingual Learning for Detecting Harmful Behaviour in African Under-Resourced Language Dialogue",
+              "authors": [
+                "Tunde Oluwaseyi Ajayi",
+                "Mihael Arcan",
+                "Paul Buitelaar"
+              ],
+              "year": 2024,
+              "abstract": "Most harmful dialogue detection models are developed for high-resourced languages. Consequently, users who speak under-resourced languages cannot fully benefit from these models in terms of usage, development, detection and mitigation of harmful dialogue utterances. Our work aims at detecting harmful utterances in under-resourced African languages. We leverage transfer learning using pretrained models trained with multilingual embeddings to develop a cross-lingual model capable of detecting harmful content across various African languages. We first fine-tune a harmful dialogue detection model on a selected African dialogue dataset. Additionally, we fine-tune a model on a combined dataset in some African languages to develop a multilingual harmful dialogue detection model. We then evaluate the cross-lingual model’s ability to generalise to an unseen African language by performing harmful dialogue detection in an under-resourced language not present during pretraining or fine-tuning. We evaluate our models on the test datasets. We show that our best performing models achieve impressive results in terms of F1 score. Finally, we discuss the results and limitations of our work.",
+              "url": "https://aclanthology.org/2024.sigdial-1.49/",
+              "doi": "10.18653/v1/2024.sigdial-1.49",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:41.904Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        }
+      ],
+      "error": null,
+      "evidence_status": "verified_excerpt",
+      "reviewer_id": "novelty_1"
+    },
+    {
+      "role": "feasibility",
+      "review": {
+        "role": "feasibility",
+        "novelty": null,
+        "feasibility": 4,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposal addresses a practical and feasible research direction: studying the cross-lingual transfer of uncertainty-based abstention thresholds from English to Urdu factual QA. The experimental scope is tightly controlled, utilizing zero-shot evaluation, public translation pipelines, and post-hoc threshold adjustment on a small 200-sample development split. Resource constraints (12GB consumer GPU or API access, no LLM training) are respected since the methodology relies entirely on inference, black-box or open-weights evaluation, and threshold calibration without gradient-based fine-tuning.",
+        "problems": [
+          "Machine translation pipelines may introduce noise or artifacts into Urdu questions that confound semantic uncertainty metrics.",
+          "A 200-sample development set might lead to high variance or overfitting when estimating percentile-based abstention thresholds."
+        ],
+        "improvements": [
+          "Incorporate a human-verified subset or multiple machine translation variations to quantify the impact of translation artifacts on calibration shift.",
+          "Perform bootstrapping or k-fold cross-validation on the development set to ensure stability of the re-calibrated threshold."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "Machine translating evaluation data can help mitigate cross-lingual gaps for models sensitive to translation differences.",
+            "supporting_excerpt": "Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-long.824",
+            "claim": "Quantifying model confidence and uncertainty is crucial for building trust and reliability in user-facing LLM deployments.",
+            "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The primary uncertainty lies in whether standard token-level entropy and verbalized probabilities maintain sufficient rank-order correlation across languages to allow reliable zero-shot abstention transfer prior to re-calibration.",
+        "tradeoffs": [
+          "Relying on machine-translated evaluation data lowers human annotation cost but introduces potential translation artifacts that may distort uncertainty estimates."
+        ],
+        "falsification_test": "If the direct transfer of English calibration thresholds to Urdu results in a zero-shot selective accuracy equivalent to random guessing or if the 200-sample dev set exhibits catastrophic overfitting (exceeding a 15% variance across cross-validation folds), the core hypothesis that simple post-hoc thresholding bridges the cross-lingual reliability gap is falsified."
+      },
+      "search": [],
+      "error": null,
+      "evidence_status": "verified_excerpt",
+      "reviewer_id": "feasibility_2"
+    },
+    {
+      "role": "clarity",
+      "review": {
+        "role": "clarity",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": 4,
+        "importance": 4,
+        "explanation": "The research problem is well-motivated and clearly targets the cross-lingual transfer of uncertainty-based abstention thresholds for low-resource languages. The evaluation metrics (AURCC, selective accuracy, ECE) and experimental procedures are defined with sufficient detail to operationalize the core claims.",
+        "problems": [
+          "The translation artifact confounder is mentioned conceptually, but the proposal lacks a specific control to isolate whether performance degradation stems from translation noise or intrinsic cross-lingual representation drift.",
+          "The operational definition of the verbalized probability and token entropy metrics needs to specify how multi-token answers are aggregated into a single sequence-level confidence score."
+        ],
+        "improvements": [
+          "Include a native Urdu QA evaluation split alongside the translated English dataset to disentangle translation artifacts from true cross-lingual calibration shifts.",
+          "Explicitly state the exact aggregation function (e.g., mean token probability, minimum token probability, length-normalized entropy) used to compute sequence-level confidence."
+        ],
+        "evidence": [],
+        "uncertainty": "The proposal clearly outlines the experimental design and evaluation metrics, but leaves certain sequence-level aggregation details for uncertainty metrics unspecified, which could affect reproducibility.",
+        "tradeoffs": [
+          "Relying on machine-translated evaluation datasets is cost-effective under a 6-week academic timeline, but introduces translation artifacts that may confound true cross-lingual calibration shifts."
+        ],
+        "falsification_test": "If re-calibrating the abstention threshold on the 200-sample Urdu dev set yields no statistically significant improvement in AURCC compared to the direct English-transferred threshold, the hypothesis that local calibration mitigates cross-lingual reliability gaps would be falsified."
+      },
+      "search": [],
+      "error": null,
+      "evidence_status": "not_required",
+      "reviewer_id": "clarity_3"
+    },
+    {
+      "role": "contrarian",
+      "review": {
+        "role": "contrarian",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The central mechanism assumes that English-calibrated abstention thresholds systematically miscalibrate when transferred to Urdu due to language-specific entropy shifts and translation artifacts, and that a small 200-sample validation set can rectify this. However, the strongest simpler explanation is that translation pipelines introduce syntactic and semantic noise that alters token generation lengths and output predictability uniformly, meaning any calibration adjustment is simply overfitting to noisy translation artifacts rather than addressing true cross-lingual epistemic uncertainty.",
+        "problems": [
+          "The 200-sample development set is far too small for robust post-hoc threshold re-calibration and risks severe variance and threshold overfitting.",
+          "Machine translation pipelines inherently distort the surface form, length, and perplexity profiles of questions, confounding genuine model uncertainty with translation-induced noise.",
+          "Verbalized probabilities and token-level entropy in multilingual or translated contexts often fail to reflect true semantic confidence, acting as weak proxies for factual correctness."
+        ],
+        "improvements": [
+          "Expand the validation calibration set size or employ stratified k-fold cross-validation to guarantee that the re-calibrated threshold generalizes beyond the 200-sample sample draw.",
+          "Incorporate a native Urdu evaluation split that was originally authored in Urdu rather than machine-translated from English to isolate true cross-lingual transfer from translation artifacts.",
+          "Evaluate semantic-based uncertainty metrics or generation consistency over semantic equivalence sets rather than raw token entropy."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2024.acl-short.58",
+            "claim": "Synthetic data and translation approaches show mixed results and do not fully close evaluation gaps.",
+            "supporting_excerpt": "Synthetic data approaches show mixed results and overall do not help close the gap by much for these languages.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-short.58",
+            "claim": "Zero-shot evaluation metrics often exhibit low correlation with human assessments in low-resource language settings.",
+            "supporting_excerpt": "We observe that even for learned metrics, which are known to exhibit zero-shot performance, the Kendall Tau and Pearson correlations with human annotations are only as high as 0.32 and 0.45.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The primary limitation lies in whether machine-translated question answering datasets accurately simulate low-resource deployment conditions without introducing confounding translation artifacts.",
+        "tradeoffs": [
+          "Relying on machine-translated datasets enables scale but introduces artificial noise that undermines uncertainty calibration."
+        ],
+        "falsification_test": "Compare the performance of the re-calibrated threshold on machine-translated Urdu questions against a natively authored Urdu question answering test set of identical size. If the optimal threshold derived from the 200-sample translated dev set fails to generalize to native Urdu questions and performs no better than uncalibrated English thresholds, the hypothesis that translation artifacts are the primary driver of calibration shift is falsified in favor of native linguistic distribution divergence."
+      },
+      "search": [],
+      "error": null,
+      "evidence_status": "verified_excerpt",
+      "reviewer_id": "contrarian_4"
+    }
+  ],
+  "final_aggregation": {
+    "independent_reviews": [
+      {
+        "role": "novelty",
+        "novelty": 3,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposal investigates the cross-lingual transferability of uncertainty-based abstention thresholds from English to Urdu factual QA and proposes a post-hoc threshold re-calibration using a small validation set. While selective classification and confidence calibration are widely studied in English, and cross-lingual transfer has been explored for generation and alignment tasks, examining abstention threshold shifts under translation artifacts in low-resource settings like Urdu is moderately original. However, the core methodology relies heavily on standard threshold tuning and existing uncertainty metrics, positioning it as an incremental application rather than a foundational algorithmic contribution.",
+        "problems": [
+          "The proposed method relies directly on standard uncertainty metrics (verbalized probabilities and entropy) without introducing novel confidence estimation techniques tailored to translation artifacts.",
+          "The reliance on translated evaluation sets may conflate translation noise with genuine cross-lingual calibration shifts.",
+          "The scope is restricted to a single target language (Urdu), limiting the generalizability of the findings across typologically diverse low-resource languages."
+        ],
+        "improvements": [
+          "Expand the evaluation to include multiple typologically diverse low-resource languages to demonstrate broader generalizability of the cross-lingual abstention gap.",
+          "Introduce a specialized uncertainty score or a robust aggregation mechanism that explicitly accounts for translation uncertainty rather than relying solely on standard token entropy.",
+          "Compare the post-hoc re-calibration baseline against existing domain-adaptation or few-shot threshold learning baselines."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.824",
+            "claim": "Quantifying model confidence and uncertainty is critical for trustworthy user-facing applications.",
+            "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+            "relation": "context"
+          },
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "Capabilities of large language models remain largely limited to high-resource languages.",
+            "supporting_excerpt": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages.",
+            "relation": "context"
+          },
+          {
+            "paper_id": "2025.naacl-short.8",
+            "claim": "Cross-lingual transfer of evaluation and scoring mechanisms from English to other languages is an active area of study.",
+            "supporting_excerpt": "In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English.",
+            "relation": "overlaps"
+          }
+        ],
+        "uncertainty": "The primary limitation is that translation artifacts from automated pipelines may artificially inflate entropy and skew uncertainty metrics independently of the underlying model's true factual reliability in Urdu.",
+        "tradeoffs": [
+          "Restricting the scope to Urdu fits the constrained compute resources (12GB GPU / API) but limits the broader claims regarding low-resource cross-lingual transferability."
+        ],
+        "falsification_test": "If an English-calibrated abstention threshold transferred to Urdu maintains zero-shot selective accuracy within 2% of the oracle Urdu-calibrated threshold across multiple datasets, the hypothesis that systematic calibration shift occurs due to language differences is falsified.",
+        "reviewer_id": "novelty_1"
+      },
+      {
+        "role": "feasibility",
+        "novelty": null,
+        "feasibility": 4,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposal addresses a practical and feasible research direction: studying the cross-lingual transfer of uncertainty-based abstention thresholds from English to Urdu factual QA. The experimental scope is tightly controlled, utilizing zero-shot evaluation, public translation pipelines, and post-hoc threshold adjustment on a small 200-sample development split. Resource constraints (12GB consumer GPU or API access, no LLM training) are respected since the methodology relies entirely on inference, black-box or open-weights evaluation, and threshold calibration without gradient-based fine-tuning.",
+        "problems": [
+          "Machine translation pipelines may introduce noise or artifacts into Urdu questions that confound semantic uncertainty metrics.",
+          "A 200-sample development set might lead to high variance or overfitting when estimating percentile-based abstention thresholds."
+        ],
+        "improvements": [
+          "Incorporate a human-verified subset or multiple machine translation variations to quantify the impact of translation artifacts on calibration shift.",
+          "Perform bootstrapping or k-fold cross-validation on the development set to ensure stability of the re-calibrated threshold."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "Machine translating evaluation data can help mitigate cross-lingual gaps for models sensitive to translation differences.",
+            "supporting_excerpt": "Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-long.824",
+            "claim": "Quantifying model confidence and uncertainty is crucial for building trust and reliability in user-facing LLM deployments.",
+            "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The primary uncertainty lies in whether standard token-level entropy and verbalized probabilities maintain sufficient rank-order correlation across languages to allow reliable zero-shot abstention transfer prior to re-calibration.",
+        "tradeoffs": [
+          "Relying on machine-translated evaluation data lowers human annotation cost but introduces potential translation artifacts that may distort uncertainty estimates."
+        ],
+        "falsification_test": "If the direct transfer of English calibration thresholds to Urdu results in a zero-shot selective accuracy equivalent to random guessing or if the 200-sample dev set exhibits catastrophic overfitting (exceeding a 15% variance across cross-validation folds), the core hypothesis that simple post-hoc thresholding bridges the cross-lingual reliability gap is falsified.",
+        "reviewer_id": "feasibility_2"
+      },
+      {
+        "role": "clarity",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": 4,
+        "importance": 4,
+        "explanation": "The research problem is well-motivated and clearly targets the cross-lingual transfer of uncertainty-based abstention thresholds for low-resource languages. The evaluation metrics (AURCC, selective accuracy, ECE) and experimental procedures are defined with sufficient detail to operationalize the core claims.",
+        "problems": [
+          "The translation artifact confounder is mentioned conceptually, but the proposal lacks a specific control to isolate whether performance degradation stems from translation noise or intrinsic cross-lingual representation drift.",
+          "The operational definition of the verbalized probability and token entropy metrics needs to specify how multi-token answers are aggregated into a single sequence-level confidence score."
+        ],
+        "improvements": [
+          "Include a native Urdu QA evaluation split alongside the translated English dataset to disentangle translation artifacts from true cross-lingual calibration shifts.",
+          "Explicitly state the exact aggregation function (e.g., mean token probability, minimum token probability, length-normalized entropy) used to compute sequence-level confidence."
+        ],
+        "evidence": [],
+        "uncertainty": "The proposal clearly outlines the experimental design and evaluation metrics, but leaves certain sequence-level aggregation details for uncertainty metrics unspecified, which could affect reproducibility.",
+        "tradeoffs": [
+          "Relying on machine-translated evaluation datasets is cost-effective under a 6-week academic timeline, but introduces translation artifacts that may confound true cross-lingual calibration shifts."
+        ],
+        "falsification_test": "If re-calibrating the abstention threshold on the 200-sample Urdu dev set yields no statistically significant improvement in AURCC compared to the direct English-transferred threshold, the hypothesis that local calibration mitigates cross-lingual reliability gaps would be falsified.",
+        "reviewer_id": "clarity_3"
+      },
+      {
+        "role": "contrarian",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The central mechanism assumes that English-calibrated abstention thresholds systematically miscalibrate when transferred to Urdu due to language-specific entropy shifts and translation artifacts, and that a small 200-sample validation set can rectify this. However, the strongest simpler explanation is that translation pipelines introduce syntactic and semantic noise that alters token generation lengths and output predictability uniformly, meaning any calibration adjustment is simply overfitting to noisy translation artifacts rather than addressing true cross-lingual epistemic uncertainty.",
+        "problems": [
+          "The 200-sample development set is far too small for robust post-hoc threshold re-calibration and risks severe variance and threshold overfitting.",
+          "Machine translation pipelines inherently distort the surface form, length, and perplexity profiles of questions, confounding genuine model uncertainty with translation-induced noise.",
+          "Verbalized probabilities and token-level entropy in multilingual or translated contexts often fail to reflect true semantic confidence, acting as weak proxies for factual correctness."
+        ],
+        "improvements": [
+          "Expand the validation calibration set size or employ stratified k-fold cross-validation to guarantee that the re-calibrated threshold generalizes beyond the 200-sample sample draw.",
+          "Incorporate a native Urdu evaluation split that was originally authored in Urdu rather than machine-translated from English to isolate true cross-lingual transfer from translation artifacts.",
+          "Evaluate semantic-based uncertainty metrics or generation consistency over semantic equivalence sets rather than raw token entropy."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2024.acl-short.58",
+            "claim": "Synthetic data and translation approaches show mixed results and do not fully close evaluation gaps.",
+            "supporting_excerpt": "Synthetic data approaches show mixed results and overall do not help close the gap by much for these languages.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-short.58",
+            "claim": "Zero-shot evaluation metrics often exhibit low correlation with human assessments in low-resource language settings.",
+            "supporting_excerpt": "We observe that even for learned metrics, which are known to exhibit zero-shot performance, the Kendall Tau and Pearson correlations with human annotations are only as high as 0.32 and 0.45.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The primary limitation lies in whether machine-translated question answering datasets accurately simulate low-resource deployment conditions without introducing confounding translation artifacts.",
+        "tradeoffs": [
+          "Relying on machine-translated datasets enables scale but introduces artificial noise that undermines uncertainty calibration."
+        ],
+        "falsification_test": "Compare the performance of the re-calibrated threshold on machine-translated Urdu questions against a natively authored Urdu question answering test set of identical size. If the optimal threshold derived from the 200-sample translated dev set fails to generalize to native Urdu questions and performs no better than uncalibrated English thresholds, the hypothesis that translation artifacts are the primary driver of calibration shift is falsified in favor of native linguistic distribution divergence.",
+        "reviewer_id": "contrarian_4"
+      }
+    ],
+    "scores_by_role": {
+      "novelty": {
+        "novelty_1": 3
+      },
+      "feasibility": {
+        "feasibility_2": 4
+      },
+      "clarity": {
+        "clarity_3": 4
+      },
+      "importance": {
+        "clarity_3": 4
+      }
+    },
+    "score_disagreements": [],
+    "qualitative_tradeoffs": [
+      {
+        "role": "novelty",
+        "tension": "Restricting the scope to Urdu fits the constrained compute resources (12GB GPU / API) but limits the broader claims regarding low-resource cross-lingual transferability."
+      },
+      {
+        "role": "feasibility",
+        "tension": "Relying on machine-translated evaluation data lowers human annotation cost but introduces potential translation artifacts that may distort uncertainty estimates."
+      },
+      {
+        "role": "clarity",
+        "tension": "Relying on machine-translated evaluation datasets is cost-effective under a 6-week academic timeline, but introduces translation artifacts that may confound true cross-lingual calibration shifts."
+      },
+      {
+        "role": "contrarian",
+        "tension": "Relying on machine-translated datasets enables scale but introduces artificial noise that undermines uncertainty calibration."
+      }
+    ],
+    "score_policy": "Only designated role scores are aggregated. Distinct scores do not imply distinct model beliefs.",
+    "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+    "failures": [],
+    "evidence_status": {
+      "novelty": "verified_excerpt",
+      "feasibility": "verified_excerpt",
+      "clarity": "not_required",
+      "contrarian": "verified_excerpt"
+    }
+  },
+  "final_review_status": "completed",
+  "evidence_audit": {
+    "assessments": [
+      {
+        "citation_id": "c_8b4e41494f038f2aa81e",
+        "verdict": "supported",
+        "explanation": "The cited excerpt directly states that accurately quantifying a model's confidence is important for building trust and safety in user-facing applications."
+      },
+      {
+        "citation_id": "c_5eafef0ddba941a06ab7",
+        "verdict": "supported",
+        "explanation": "The excerpt explicitly mentions that the remarkable capabilities of LLMs remain limited to a few high-resource languages."
+      },
+      {
+        "citation_id": "c_48d81ad9647572d2c7b5",
+        "verdict": "supported",
+        "explanation": "The excerpt indicates that the work investigates the cross-lingual transfer of reward models primarily trained in English to diverse languages, matching the claim."
+      },
+      {
+        "citation_id": "c_c69df856f6b0d1e7d80b",
+        "verdict": "supported",
+        "explanation": "The excerpt states that machine translating the test set to English before evaluation helped close the gap for English-centric models, supporting the claim."
+      },
+      {
+        "citation_id": "c_d3f1c2ad1ae74c95480d",
+        "verdict": "supported",
+        "explanation": "The excerpt explicitly supports the claim that quantifying model confidence is crucial for building trust and maintaining safety in user-facing LLM deployments."
+      },
+      {
+        "citation_id": "c_28d7ac7cf6c5f0e3c6b4",
+        "verdict": "supported",
+        "explanation": "The excerpt directly matches the claim that synthetic data approaches show mixed results and do not help close the gap by much."
+      },
+      {
+        "citation_id": "c_4719ea1eae403b44fca6",
+        "verdict": "supported",
+        "explanation": "The excerpt supports the claim by providing specific low correlation values for learned metrics in zero-shot low-resource settings."
+      }
+    ],
+    "limitations": "The evaluation relies solely on the provided abstracts and extracts without access to the full source papers or cross-validation from external benchmarks. The same-model evaluation context might be prone to intrinsic semantic alignment biases."
+  },
+  "evidence_audit_error": null,
+  "evidence_audit_citations": {
+    "c_8b4e41494f038f2aa81e": {
+      "citation_id": "c_8b4e41494f038f2aa81e",
+      "paper_id": "2024.acl-long.824",
+      "claim": "Quantifying model confidence and uncertainty is critical for trustworthy user-facing applications.",
+      "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+      "relation": "context"
+    },
+    "c_5eafef0ddba941a06ab7": {
+      "citation_id": "c_5eafef0ddba941a06ab7",
+      "paper_id": "2025.naacl-long.139",
+      "claim": "Capabilities of large language models remain largely limited to high-resource languages.",
+      "supporting_excerpt": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages.",
+      "relation": "context"
+    },
+    "c_48d81ad9647572d2c7b5": {
+      "citation_id": "c_48d81ad9647572d2c7b5",
+      "paper_id": "2025.naacl-short.8",
+      "claim": "Cross-lingual transfer of evaluation and scoring mechanisms from English to other languages is an active area of study.",
+      "supporting_excerpt": "In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English.",
+      "relation": "overlaps"
+    },
+    "c_c69df856f6b0d1e7d80b": {
+      "citation_id": "c_c69df856f6b0d1e7d80b",
+      "paper_id": "2025.naacl-long.139",
+      "claim": "Machine translating evaluation data can help mitigate cross-lingual gaps for models sensitive to translation differences.",
+      "supporting_excerpt": "Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B.",
+      "relation": "supports"
+    },
+    "c_d3f1c2ad1ae74c95480d": {
+      "citation_id": "c_d3f1c2ad1ae74c95480d",
+      "paper_id": "2024.acl-long.824",
+      "claim": "Quantifying model confidence and uncertainty is crucial for building trust and reliability in user-facing LLM deployments.",
+      "supporting_excerpt": "As large language models (LLMs) are increasingly deployed in user-facing applications, building trust and maintaining safety by accurately quantifying a model’s confidence in its prediction becomes even more important.",
+      "relation": "supports"
+    },
+    "c_28d7ac7cf6c5f0e3c6b4": {
+      "citation_id": "c_28d7ac7cf6c5f0e3c6b4",
+      "paper_id": "2024.acl-short.58",
+      "claim": "Synthetic data and translation approaches show mixed results and do not fully close evaluation gaps.",
+      "supporting_excerpt": "Synthetic data approaches show mixed results and overall do not help close the gap by much for these languages.",
+      "relation": "supports"
+    },
+    "c_4719ea1eae403b44fca6": {
+      "citation_id": "c_4719ea1eae403b44fca6",
+      "paper_id": "2024.acl-short.58",
+      "claim": "Zero-shot evaluation metrics often exhibit low correlation with human assessments in low-resource language settings.",
+      "supporting_excerpt": "We observe that even for learned metrics, which are known to exhibit zero-shot performance, the Kendall Tau and Pearson correlations with human annotations are only as high as 0.32 and 0.45.",
+      "relation": "supports"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+metric,comparison,n_seeds,mean_paired_difference,median_paired_difference,positive,negative,ties,wilcoxon_p,holm_adjusted_p,rank_biserial,inference_status
+novelty,full vs generic,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+novelty,full vs no_contrarian,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+novelty,full vs no_feasibility,0,nan,nan,0,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+novelty,full vs one_shot,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+feasibility,full vs generic,1,0.0,0.0,0,0,1,,,,descriptive only: fewer than 10 nonzero paired seed differences
+feasibility,full vs no_contrarian,1,0.0,0.0,0,0,1,,,,descriptive only: fewer than 10 nonzero paired seed differences
+feasibility,full vs no_feasibility,0,nan,nan,0,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+feasibility,full vs one_shot,1,0.0,0.0,0,0,1,,,,descriptive only: fewer than 10 nonzero paired seed differences
+clarity,full vs generic,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+clarity,full vs no_contrarian,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+clarity,full vs no_feasibility,0,nan,nan,0,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+clarity,full vs one_shot,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+importance,full vs generic,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+importance,full vs no_contrarian,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+importance,full vs no_feasibility,0,nan,nan,0,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+importance,full vs one_shot,1,1.0,1.0,1,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+evidence_grounding,full vs generic,1,0.0,0.0,0,0,1,,,,descriptive only: fewer than 10 nonzero paired seed differences
+evidence_grounding,full vs no_contrarian,1,0.0,0.0,0,0,1,,,,descriptive only: fewer than 10 nonzero paired seed differences
+evidence_grounding,full vs no_feasibility,0,nan,nan,0,0,0,,,,descriptive only: fewer than 10 nonzero paired seed differences
+evidence_grounding,full vs one_shot,1,0.0,0.0,0,0,1,,,,descriptive only: fewer than 10 nonzero paired seed differences

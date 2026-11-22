@@ -1,0 +1,175 @@
+{
+  "blind_id": "abe4f46c2533f2f9e6885513",
+  "spec_hash": "a3cbf57be55f7f0039045459853a304e9829acc02b55cedd01e7f97a258637a6",
+  "judgment": null,
+  "search": [
+    {
+      "query": "scientific idea generation novelty bias",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-08T11:44:32.978484+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.sdp-1.9",
+          "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+          "authors": [
+            "Simra Shahid",
+            "Marissa Radensky",
+            "Raymond Fok",
+            "Pao Siangliulue",
+            "Daniel S Weld",
+            "Tom Hope"
+          ],
+          "year": 2025,
+          "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+          "url": "https://aclanthology.org/2025.sdp-1.9/",
+          "doi": "10.18653/v1/2025.sdp-1.9",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:41.753Z"
+        },
+        {
+          "paper_id": "2026.findings-emnlp.574",
+          "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+          "authors": [
+            "Tim Schopf",
+            "Tobias Schreieder",
+            "Akiko Aizawa"
+          ],
+          "year": 2026,
+          "abstract": "Automated novelty judgment can accelerate scientific discovery by enabling efficient evaluation, refinement, and comparison of research ideas. While large language models are increasingly adopted for this task, we investigate a previously overlooked limitation in their judgment capabilities: despite generating reasoning rationales that closely mirror those of human experts, their final novelty judgments often diverge substantially. We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response. Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+          "url": "https://aclanthology.org/2026.findings-emnlp.574/",
+          "doi": "10.18653/2026.findings-emnlp.574",
+          "source": "ACL Anthology; imported saved primary-source capture",
+          "retrieved_at": "2026-11-07"
+        },
+        {
+          "paper_id": "2026.lrec-1.370",
+          "title": "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+          "authors": [
+            "Tim Schopf",
+            "Michael Färber"
+          ],
+          "year": 2026,
+          "abstract": "Judging the novelty of research ideas is crucial for advancing science, enabling the identification of unexplored directions, and ensuring contributions meaningfully extend existing knowledge rather than reiterate minor variations. However, given the exponential growth of scientific literature, manually judging the novelty of research ideas through literature reviews is labor-intensive, subjective, and infeasible at scale. Therefore, recent efforts have proposed automated approaches for research idea novelty judgment. Yet, evaluation of these approaches remains largely inconsistent and is typically based on non-standardized human evaluations, hindering large-scale, comparable evaluations. To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments. It comprises 1,381 research ideas derived from and judged by human experts as well as nine automated evaluation metrics designed to assess both rubric-based novelty scores and textual justifications of novelty judgments. Using this benchmark, we evaluate several state-of-the-art large language models (LLMs) on their ability to judge the novelty of research ideas. Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models. Data and code available at: https://github.com/TimSchopf/RINoBench. Keywords: research idea novelty judgment, evaluation benchmark, scientific discovery, llm-as-a-judge",
+          "url": "https://aclanthology.org/2026.lrec-1.370/",
+          "doi": "10.63317/4c3gy3f7epnj",
+          "source": "ACL Anthology; imported saved primary-source capture",
+          "retrieved_at": "2026-11-07"
+        },
+        {
+          "paper_id": "2024.acl-long.18",
+          "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+          "authors": [
+            "Qingyun Wang",
+            "Doug Downey",
+            "Heng Ji",
+            "Tom Hope"
+          ],
+          "year": 2024,
+          "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction—severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature. Code, data, and resources are publicly available for research purposes: https://github.com/eaglew/clbd.",
+          "url": "https://aclanthology.org/2024.acl-long.18/",
+          "doi": "10.18653/v1/2024.acl-long.18",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.acl-long.1368",
+          "title": "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
+          "authors": [
+            "Haoyang Su",
+            "Renqi Chen",
+            "Shixiang Tang",
+            "Zhenfei Yin",
+            "Xinzhe Zheng",
+            "Jinzhe Li",
+            "Biqing Qi",
+            "Qi Wu",
+            "Hui Li",
+            "Wanli Ouyang",
+            "Philip Torr",
+            "Bowen Zhou",
+            "Nanqing Dong"
+          ],
+          "year": 2025,
+          "abstract": "The rapid advancement of scientific progress requires innovative tools that can accelerate knowledge discovery. Although recent AI methods, particularly large language models (LLMs), have shown promise in tasks such as hypothesis generation and experimental design, they fall short of replicating the collaborative nature of real-world scientific practices, where diverse experts work together in teams to tackle complex problems. To address the limitations, we propose an LLM-based multi-agent system, i.e., Virtual Scientists (VIRSCI), designed to mimic the teamwork inherent in scientific research. VIRSCI organizes a team of agents to collaboratively generate, evaluate, and refine research ideas. Through comprehensive experiments, we demonstrate that this multiagent approach outperforms the state-of-theart method in producing novel scientific ideas. We further investigate the collaboration mechanisms that contribute to its tendency to produce ideas with higher novelty, offering valuable insights to guide future research and illuminating pathways toward building a robust system for autonomous scientific discovery. The code is available at https://github.com/open-sci encelab/Virtual-Scientists.",
+          "url": "https://aclanthology.org/2025.acl-long.1368/",
+          "doi": "10.18653/v1/2025.acl-long.1368",
+          "source": "ACL Anthology; imported saved primary-source capture",
+          "retrieved_at": "2026-11-07"
+        },
+        {
+          "paper_id": "2026.emnlp-main.167",
+          "title": "LDC: Learning to Generate Research Idea with Dynamic Control",
+          "authors": [
+            "Ruochen Li",
+            "Liqiang Jing",
+            "Chi Han",
+            "Jiawei Zhou",
+            "Xinya Du"
+          ],
+          "year": 2026,
+          "abstract": "Recent advancements in large language models (LLMs) have demonstrated their potential in automating the scientific research ideation. Existing approaches primarily focus on prompting techniques, often producing ideas misaligned with expert standards – novelty, feasibility, and effectiveness, which are widely recognized by the research community as the three key subdimensions of high-quality ideas. Also, balancing these dimensions remains challenging due to their inherent trade-offs. To address these limitations, we propose the first framework that employs a two-stage approach combining Supervised Fine-Tuning (SFT) and controllable Reinforcement Learning (RL) for the task. In the SFT stage, the model learns foundational patterns from pairs of research papers and their corresponding follow-up ideas. In the RL stage, multi-dimensional reward models guided by fine-grained feedback evaluate and optimize the model across key dimensions. During inference, dimensional controllers coordinated by a sentence-level decoder enable dynamic context-aware steering of the idea generation process. Our framework provides a balanced approach to research idea generation, achieving high-quality outcomes in the experiment by dynamically navigating the trade-offs among novelty, feasibility, and effectiveness.",
+          "url": "https://aclanthology.org/2026.emnlp-main.167/",
+          "doi": "10.18653/2026.emnlp-main.167",
+          "source": "ACL Anthology; imported saved primary-source capture",
+          "retrieved_at": "2026-11-07"
+        },
+        {
+          "paper_id": "2025.emnlp-main.1704",
+          "title": "Can Large Language Models Unlock Novel Scientific Research Ideas?",
+          "authors": [
+            "Sandeep Kumar",
+            "Tirthankar Ghosal",
+            "Vinayak Goyal",
+            "Asif Ekbal"
+          ],
+          "year": 2025,
+          "abstract": "The widespread adoption of Large Language Models (LLMs) and publicly available ChatGPT have marked a significant turning point in the integration of Artificial Intelligence (AI) into people’s everyday lives. This study examines the ability of Large Language Models (LLMs) to generate future research ideas from scientific papers. Unlike tasks such as summarization or translation, idea generation lacks a clearly defined reference set or structure, making manual evaluation the default standard. However, human evaluation in this setting is extremely challenging — it requires substantial domain expertise, contextual understanding of the paper, and awareness of the current research landscape. This makes it time-consuming, costly, and fundamentally non-scalable, particularly as new LLMs are being released at a rapid pace. Currently, there is no automated evaluation metric specifically designed for this task. To address this gap, we propose two automated evaluation metrics: Idea Alignment Score (IAScore) and Idea Distinctness Index. We further conducted human evaluation to assess the novelty, relevance, and feasibility of the generated future research ideas. This investigation offers insights into the evolving role of LLMs in idea generation, highlighting both its capability and limitations. Our work contributes to the ongoing efforts in evaluating and utilizing language models for generating future research ideas. We make our datasets and codes publicly available1. “Innovation is seeing what everybody has seen and thinking what nobody has thought” —Dr. Albert Szent-Györgyi",
+          "url": "https://aclanthology.org/2025.emnlp-main.1704/",
+          "doi": "10.18653/v1/2025.emnlp-main.1704",
+          "source": "ACL Anthology; imported saved primary-source capture",
+          "retrieved_at": "2026-11-07"
+        },
+        {
+          "paper_id": "2025.sigdial-1.26",
+          "title": "Exploring the Design of Multi-Agent LLM Dialogues for Research Ideation",
+          "authors": [
+            "Keisuke Ueda",
+            "Wataru Hirota",
+            "Takuto Asakura",
+            "Takahiro Omi",
+            "Kosuke Takahashi",
+            "Kosuke Arima",
+            "Tatsuya Ishigaki"
+          ],
+          "year": 2025,
+          "abstract": "Large language models (LLMs) are increasingly used to support creative tasks such as research idea generation. While recent work has shown that structured dialogues between LLMs can improve the novelty and feasibility of generated ideas, the optimal design of such interactions remains unclear. In this study, we conduct a comprehensive analysis of multi-agent LLM dialogues for scientific ideation. We compare different configurations of agent roles, number of agents, and dialogue depth to understand how these factors influence the novelty and feasibility of generated ideas. Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement. Our results show that enlarging the agent cohort, deepening the interaction depth, and broadening agent persona heterogeneity each enrich the diversity of generated ideas. Moreover, specifically increasing critic-side diversity within the ideation–critique–revision loop further boosts the feasibility of the final proposals. Our findings offer practical guidelines for building effective multi-agent LLM systems for scientific ideation.",
+          "url": "https://aclanthology.org/2025.sigdial-1.26/",
+          "doi": "10.18653/v1/2025.sigdial-1.26",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.064Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": true
+    }
+  ],
+  "events": [
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:47:47.983312+00:00",
+      "prompt_hash": "b77bfe8558c980d965d6f6b3bcccc0bd181b3d5c5ce82e4384f29df153fcab23",
+      "input_tokens": 4423,
+      "output_tokens": 873,
+      "thinking_tokens": 0,
+      "total_tokens": 5296,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.1835748680023244
+    }
+  ],
+  "error": "Evidence excerpt does not match retrieved abstract"
+}

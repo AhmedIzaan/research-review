@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-13T11:38:24.247035+00:00",
+  "methodology_version": "specialized_review_v2",
+  "test_report": "results/review_improvements_pytest.xml",
+  "passed": 98,
+  "skipped": 1,
+  "failures": 0,
+  "errors": 0,
+  "javascript_syntax": "passed: node --check frontend/app.js",
+  "html_targets": "passed: 72 unique IDs and all literal JavaScript targets present",
+  "protected_pilot_files_unchanged": 331,
+  "original_user_export_matches_saved_run": true,
+  "default_full_one_round_calls_before_retries": 13,
+  "new_live_experiments": "Not executed. User will test the upgraded system; no improvement findings are fabricated.",
+  "browser_verification": "Unavailable in this restricted shell; browser startup was blocked during initial app development."
+}

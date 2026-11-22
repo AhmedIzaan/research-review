@@ -1,0 +1,1585 @@
+{
+  "run_id": "d893d2b4f969f4cedcbf",
+  "seed_id": "2024.acl-long.18",
+  "configuration": "no_novelty_retrieval",
+  "replicate": 0,
+  "settings": {
+    "model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash-lite",
+    "temperature": 0.4,
+    "max_output_tokens": 4096,
+    "rounds": 3,
+    "max_attempts": 3,
+    "request_interval": 15.0,
+    "max_api_calls": 160,
+    "input_rate": 0.0,
+    "output_rate": 0.0,
+    "engine": "auto",
+    "retrieval_backend": "local",
+    "corpus_path": "data/corpus/papers.json",
+    "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+    "random_seed": 20261107,
+    "constraints": "University AI/NLP project: 6 weeks, 1 consumer GPU (12 GB) or API access, public lawful datasets, no LLM training.",
+    "resolved_engine": "python"
+  },
+  "literature": [
+    {
+      "paper_id": "2024.acl-long.18",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "authors": [
+        "Qingyun Wang",
+        "Doug Downey",
+        "Heng Ji",
+        "Tom Hope"
+      ],
+      "year": 2024,
+      "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction— severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SCIMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature1.",
+      "url": "https://aclanthology.org/2024.acl-long.18/",
+      "doi": "10.18653/v1/2024.acl-long.18",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sdp-1.9",
+      "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+      "authors": [
+        "Simra Shahid",
+        "Marissa Radensky",
+        "Raymond Fok",
+        "Pao Siangliulue",
+        "Daniel S Weld",
+        "Tom Hope"
+      ],
+      "year": 2025,
+      "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+      "url": "https://aclanthology.org/2025.sdp-1.9/",
+      "doi": "10.18653/v1/2025.sdp-1.9",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    },
+    {
+      "paper_id": "2026.lrec-1.370",
+      "title": "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+      "authors": [
+        "Tim Schopf",
+        "Michael Färber"
+      ],
+      "year": 2026,
+      "abstract": "Judging the novelty of research ideas is crucial for advancing science, enabling the identification of unexplored directions, and ensuring contributions meaningfully extend existing knowledge rather than reiterate minor variations. However, given the exponential growth of scientific literature, manually judging the novelty of research ideas through literature reviews is labor-intensive, subjective, and infeasible at scale. Therefore, recent efforts have proposed automated approaches for research idea novelty judgment. Yet, evaluation of these approaches remains largely inconsistent and is typically based on non-standardized human evaluations, hindering large-scale, comparable evaluations. To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments. It comprises 1,381 research ideas derived from and judged by human experts as well as nine automated evaluation metrics designed to assess both rubric-based novelty scores and textual justifications of novelty judgments. Using this benchmark, we evaluate several state-of-the-art large language models (LLMs) on their ability to judge the novelty of research ideas. Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models. Data and code available at: https://github.com/TimSchopf/RINoBench. Keywords: research idea novelty judgment, evaluation benchmark, scientific discovery, llm-as-a-judge",
+      "url": "https://aclanthology.org/2026.lrec-1.370/",
+      "doi": "10.63317/4c3gy3f7epnj",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2026.findings-emnlp.574",
+      "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+      "authors": [
+        "Tim Schopf",
+        "Tobias Schreieder",
+        "Akiko Aizawa"
+      ],
+      "year": 2026,
+      "abstract": "Automated novelty judgment can accelerate scientific discovery by enabling efficient evaluation, refinement, and comparison of research ideas. While large language models are increasingly adopted for this task, we investigate a previously overlooked limitation in their judgment capabilities: despite generating reasoning rationales that closely mirror those of human experts, their final novelty judgments often diverge substantially. We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response. Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+      "url": "https://aclanthology.org/2026.findings-emnlp.574/",
+      "doi": "10.18653/2026.findings-emnlp.574",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sigdial-1.26",
+      "title": "Exploring the Design of Multi-Agent LLM Dialogues for Research Ideation",
+      "authors": [
+        "Keisuke Ueda",
+        "Wataru Hirota",
+        "Takuto Asakura",
+        "Takahiro Omi",
+        "Kosuke Takahashi",
+        "Kosuke Arima",
+        "Tatsuya Ishigaki"
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are increasingly used to support creative tasks such as research idea generation. While recent work has shown that structured dialogues between LLMs can improve the novelty and feasibility of generated ideas, the optimal design of such interactions remains unclear. In this study, we conduct a comprehensive analysis of multi-agent LLM dialogues for scientific ideation. We compare different configurations of agent roles, number of agents, and dialogue depth to understand how these factors influence the novelty and feasibility of generated ideas. Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement. Our results show that enlarging the agent cohort, deepening the interaction depth, and broadening agent persona heterogeneity each enrich the diversity of generated ideas. Moreover, specifically increasing critic-side diversity within the ideation–critique–revision loop further boosts the feasibility of the final proposals. Our findings offer practical guidelines for building effective multi-agent LLM systems for scientific ideation.",
+      "url": "https://aclanthology.org/2025.sigdial-1.26/",
+      "doi": "10.18653/v1/2025.sigdial-1.26",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.064Z"
+    }
+  ],
+  "initial_idea": {
+    "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+    "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic bias of language models toward generating ideas of mediocre novelty?",
+    "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation and retrieval-based novelty checking independently, but lacks an integrated framework where hidden-state novelty probing is used inside an ideation-critique-revision loop to dynamically steer agents away from medium-novelty biases during generation.",
+    "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space novelty probing. Specifically, we instantiate a generator agent and a critic agent. During the critique and revision steps, we use a lightweight probe on the critic's hidden states to detect latent novelty assessments before final text generation. If the probed latent representation indicates a medium-novelty or unoriginal trajectory, we intervene by conditioning the subsequent revision step on explicit structural contrastive prompts derived from retrieved literature snippets, pushing the framework to produce higher technical depth.",
+    "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space novelty probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck without requiring model weight training.",
+    "experimental_setup": "We utilize the RINoBench benchmark and an open-source multi-agent orchestration framework. Using a frozen 8B/70B open-weights LLM running via API/quantized local consumer GPU, we run multi-agent ideation sessions across computer science domains. We compare baseline multi-agent setups against our latent-probed revision loop.",
+    "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics, measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker, and human expert evaluation alignment for novelty and feasibility.",
+    "feasibility_assumptions": [
+      "Access to frozen open-source large language models via API or local quantization on a single consumer GPU.",
+      "Availability of public benchmark datasets like RINoBench and public scientific literature indices for retrieval."
+    ],
+    "references": [
+      "2024.acl-long.18",
+      "2025.sdp-1.9",
+      "2026.lrec-1.370",
+      "2026.findings-emnlp.574",
+      "2025.sigdial-1.26"
+    ],
+    "search_queries": [
+      "scientific idea generation multi-agent LLM",
+      "latent novelty probing language models",
+      "automated research idea novelty benchmark"
+    ]
+  },
+  "final_idea": {
+    "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+    "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic medium-novelty bias of language models?",
+    "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation [2025.sigdial-1.26] and retrieval-based novelty checking independently [2025.sdp-1.9], and recent methods apply hidden-state probes strictly for novelty judgment tasks rather than generative steering [2026.findings-emnlp.574]. There lacks an integrated framework where latent-space probing of critic internal states is adapted to dynamically steer multi-agent generation loops away from medium-novelty biases during iterative refinement, without assuming unrealistic VRAM budgets or conflating judgment classification directly with causal token-level steering vectors.",
+    "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space probing and rigorous prompt-based fallback mechanisms. We instantiate a generator agent and a critic agent using open-weights models (e.g., Llama-3-8B-Instruct) quantized to fit a single 12GB consumer GPU. To resolve the conflation between judgment representation and generative steering, we first evaluate a strong text-based contrastive prompting baseline powered by a retrieve-then-rerank novelty checker [2025.sdp-1.9]. Next, we adapt a lightweight linear probe trained on pre-extracted hidden states in an offline script to detect latent medium-novelty states. When a medium-novelty state is detected, rather than performing unstable activation patching on quantized weights, we trigger structured prompt modifications and structural contrastive interventions during the revision step.",
+    "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck within consumer-hardware resource constraints.",
+    "experimental_setup": "We utilize the RINoBench benchmark [2026.lrec-1.370] and an open-source multi-agent orchestration framework running an 8B open-weights LLM via local 4-bit/8-bit quantization on a single 12GB consumer GPU. To bound inference latency and VRAM consumption while resolving hardware bottlenecks, we restrict the evaluation to single-turn critic probing configurations rather than unbounded multi-turn loops. We compare baseline multi-agent setups, text-based contrastive prompt ablations, random-trigger baselines, and our offline-probed prompt intervention loop across computer science domains.",
+    "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics [2026.lrec-1.370], measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker [2025.sdp-1.9], and human expert evaluation alignment for novelty and feasibility.",
+    "feasibility_assumptions": [
+      "Access to frozen open-source 8B parameter models running locally via standard Hugging Face libraries with 4-bit/8-bit quantization on a single 12GB consumer GPU.",
+      "Availability of public benchmark datasets like RINoBench [2026.lrec-1.370] and public scientific literature indices for retrieval.",
+      "Training a lightweight linear probe using a pre-extracted supervised dataset of annotated hidden states via an offline script within the 6-week project window."
+    ],
+    "references": [
+      "2024.acl-long.18",
+      "2025.sdp-1.9",
+      "2026.lrec-1.370",
+      "2026.findings-emnlp.574",
+      "2025.sigdial-1.26"
+    ],
+    "search_queries": [
+      "scientific idea generation multi-agent LLM",
+      "latent novelty probing language models",
+      "automated research idea novelty benchmark"
+    ]
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "input_idea": {
+        "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+        "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic bias of language models toward generating ideas of mediocre novelty?",
+        "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation and retrieval-based novelty checking independently, but lacks an integrated framework where hidden-state novelty probing is used inside an ideation-critique-revision loop to dynamically steer agents away from medium-novelty biases during generation.",
+        "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space novelty probing. Specifically, we instantiate a generator agent and a critic agent. During the critique and revision steps, we use a lightweight probe on the critic's hidden states to detect latent novelty assessments before final text generation. If the probed latent representation indicates a medium-novelty or unoriginal trajectory, we intervene by conditioning the subsequent revision step on explicit structural contrastive prompts derived from retrieved literature snippets, pushing the framework to produce higher technical depth.",
+        "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space novelty probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck without requiring model weight training.",
+        "experimental_setup": "We utilize the RINoBench benchmark and an open-source multi-agent orchestration framework. Using a frozen 8B/70B open-weights LLM running via API/quantized local consumer GPU, we run multi-agent ideation sessions across computer science domains. We compare baseline multi-agent setups against our latent-probed revision loop.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics, measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker, and human expert evaluation alignment for novelty and feasibility.",
+        "feasibility_assumptions": [
+          "Access to frozen open-source large language models via API or local quantization on a single consumer GPU.",
+          "Availability of public benchmark datasets like RINoBench and public scientific literature indices for retrieval."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation multi-agent LLM",
+          "latent novelty probing language models",
+          "automated research idea novelty benchmark"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a clever synthesis between multi-agent scientific ideation and latent-state novelty probing (adapting concepts similar to Think-Probe-Respond originally meant for novelty judgment). While multi-agent ideation and literature-grounded generation have been explored previously, adapting hidden-state probes during agent critique steps to steer generation away from medium-novelty biases provides a meaningful incremental contribution. However, the conceptual leap is somewhat derivative of recent work applying probing techniques to LLM internal states for novelty tasks.",
+            "problems": [
+              "Training or tuning a lightweight probe for latent hidden states requires access to internal model representations, which are often inaccessible or restricted when using closed commercial APIs.",
+              "The proposal assumes that a probe trained to detect novelty judgments can directly function as an active generation steering mechanism without extensive reward modeling or reinforcement learning.",
+              "Mapping latent probe signals back into explicit contrastive prompts during an agent loop introduces latency and coordination overhead."
+            ],
+            "improvements": [
+              "Clarify whether the latent probe is trained using proprietary hidden states of open-weights models and detail how inference-time interventions are executed without modifying model weights.",
+              "Define a concrete baseline that uses explicit token-level critique metrics rather than hidden-state probing to isolate the exact performance gain attributable to latent-space intervention.",
+              "Incorporate explicit validation experiments showing that the lightweight probe transfers well across different scientific sub-domains within RINoBench."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Prior frameworks like SCIMON use retrieval of inspirations and iteratively update idea suggestions until sufficient novelty is achieved.",
+                "supporting_excerpt": "We present SCIMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent setups involving generators and critics enable iterative improvement of ideas.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states during reasoning and using them to condition responses has been explored for judgment tasks.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The search scope was limited to the provided literature context, making it possible that other concurrent preprints have already combined latent probing with multi-agent generation loops."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "disabled"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a clever and well-motivated integration of latent-space novelty probing inside a multi-agent ideation-critique-revision loop. While conceptually sound and supported by recent literature on hidden-state probing and benchmarking, the constraints of a 6-week university project using a single consumer GPU (or standard API) present notable implementation hurdles regarding hidden-state extraction from quantized models or black-box APIs.",
+            "problems": [
+              "Extracting hidden states to train or apply a lightweight novelty probe is extremely difficult or impossible when using proprietary LLM APIs (e.g., OpenAI or Anthropic), which do not expose internal activations.",
+              "Running local 70B open-weights models on a single consumer GPU (12 GB VRAM) requires aggressive quantization and high memory management overhead, limiting concurrent multi-agent dialogue loops and fast hidden-state probing.",
+              "Collecting and training a reliable probing classifier on hidden states requires generating a substantial calibration dataset of intermediate reasoning trajectories within a tight 6-week timeline."
+            ],
+            "improvements": [
+              "Restrict the scope entirely to open-weights models that can run locally via standard Hugging Face libraries (e.g., 8B parameter models) to ensure full access to hidden states.",
+              "Substitute the hidden-state probe with a logit-based or token-level probing approach if API usage is required, or use white-box lightweight proxy models for the critique phase.",
+              "Utilize pre-trained probes or zero-shot activation steering techniques rather than training a separate linear probe from scratch to save time and compute."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent judgments from hidden states during the reasoning phase can mitigate medium-novelty bias.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a standardized benchmark for evaluating research idea novelty.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a lightweight probe trained on hidden states of an 8B model can reliably generalize to steer complex scientific multi-agent revisions without destabilizing the generation coherence within a 6-week project window."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal presents a well-structured and clear idea combining multi-agent LLM dialogue loops with latent-space novelty probing, drawing inspiration from recent work on probing model hidden states. The motivation is clear, targeting the well-known medium-novelty bias of language models. However, the operational details on how a lightweight probe will be trained or applied to frozen open-weights models during generation require more elaboration.",
+            "problems": [
+              "The proposal lacks details on how the latent probe is trained or calibrated without requiring model weight training.",
+              "It is unclear how the latent probe on the critic's hidden states will accurately capture generation-side novelty trajectories when the generator and critic are separate agent roles."
+            ],
+            "improvements": [
+              "Clarify whether the probe is trained on a small supervised dataset of annotated hidden states, and specify the exact layer and token positions extracted from the critic model.",
+              "Provide a concrete example of how an intervention based on structural contrastive prompts is triggered and formatted when a medium-novelty latent state is detected."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states during the reasoning phase can be used to condition responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Language models suffer from a systematic bias towards judging ideas as medium novel.",
+                "supporting_excerpt": "We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a linear probe trained on hidden states for novelty judgment can be effectively repurposed to dynamically steer multi-agent generation trajectories in real time on a single consumer GPU within the 6-week project timeframe."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": 3,
+            "feasibility": 2,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a clever synthesis between recent work on latent-space probing for judgment bias mitigation and multi-agent scientific ideation. However, the core mechanism rests on a category error regarding the direction of the probe: existing literature applies latent probes to fix LLM as a *judge* of novelty during evaluation, whereas this proposal attempts to use a novelty probe on a critic's hidden states to steer *generation*. Hidden states of a frozen language model during text generation reflect token prediction dynamics rather than an invariant latent manifold of scientific originality. Furthermore, attempting to probe and intervene across multi-agent loops on a single consumer GPU within a 6-week timeframe presents severe systems-level and memory bottlenecks.",
+            "problems": [
+              "Conflating evaluation probing with generative steering: Probing hidden states for classification tasks (like judging if an idea is medium-novel) does not trivially translate to controlling or shifting text generation trajectories without full fine-tuning or activation steering.",
+              "Severe hardware and latency mismatch: Running multi-agent loops, external literature retrieval, re-ranking, and real-time hidden-state extraction/intervention on a 12GB consumer GPU for 70B models (or even quantized variants) introduces intractable memory swapping and compute latency.",
+              "Lack of a strong baseline control: The proposal compares against basic multi-agent setups but omits a simpler text-based steering baseline (e.g., explicit chain-of-thought critique prompting based on retrieved snippets), making it impossible to attribute gains to the latent probe rather than the added contrastive text prompts."
+            ],
+            "improvements": [
+              "Clarify whether the latent probe acts as a classifier that halts generation or modifies logits on the fly, and provide a concrete algorithmic description of how hidden states are mapped back to token-level interventions.",
+              "Simplify the experimental scope by restricting evaluation to smaller open-weights models (e.g., 8B) that fit comfortably into a single consumer GPU without aggressive quantization artifacts that could distort hidden-state probes.",
+              "Include a text-based contrastive prompt ablation as a primary baseline to isolate whether latent probing outperforms explicit, interpretable prompt engineering."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Latent probing approaches have been proposed to mitigate medium-novelty bias specifically for LLMs acting as judges of research idea novelty.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probed judgments improve evaluation performance in a judge configuration, but utilizing this mechanism for generative steering remains unproven.",
+                "supporting_excerpt": "Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It is uncertain whether internal hidden states of frozen autoregressive models contain stable, disentangled representations of scientific novelty prior to token realization, or if probing merely captures surface-level lexical phrasing."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a clever synthesis between multi-agent scientific ideation and latent-state novelty probing (adapting concepts similar to Think-Probe-Respond originally meant for novelty judgment). While multi-agent ideation and literature-grounded generation have been explored previously, adapting hidden-state probes during agent critique steps to steer generation away from medium-novelty biases provides a meaningful incremental contribution. However, the conceptual leap is somewhat derivative of recent work applying probing techniques to LLM internal states for novelty tasks.",
+            "problems": [
+              "Training or tuning a lightweight probe for latent hidden states requires access to internal model representations, which are often inaccessible or restricted when using closed commercial APIs.",
+              "The proposal assumes that a probe trained to detect novelty judgments can directly function as an active generation steering mechanism without extensive reward modeling or reinforcement learning.",
+              "Mapping latent probe signals back into explicit contrastive prompts during an agent loop introduces latency and coordination overhead."
+            ],
+            "improvements": [
+              "Clarify whether the latent probe is trained using proprietary hidden states of open-weights models and detail how inference-time interventions are executed without modifying model weights.",
+              "Define a concrete baseline that uses explicit token-level critique metrics rather than hidden-state probing to isolate the exact performance gain attributable to latent-space intervention.",
+              "Incorporate explicit validation experiments showing that the lightweight probe transfers well across different scientific sub-domains within RINoBench."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Prior frameworks like SCIMON use retrieval of inspirations and iteratively update idea suggestions until sufficient novelty is achieved.",
+                "supporting_excerpt": "We present SCIMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent setups involving generators and critics enable iterative improvement of ideas.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states during reasoning and using them to condition responses has been explored for judgment tasks.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The search scope was limited to the provided literature context, making it possible that other concurrent preprints have already combined latent probing with multi-agent generation loops."
+          },
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a clever and well-motivated integration of latent-space novelty probing inside a multi-agent ideation-critique-revision loop. While conceptually sound and supported by recent literature on hidden-state probing and benchmarking, the constraints of a 6-week university project using a single consumer GPU (or standard API) present notable implementation hurdles regarding hidden-state extraction from quantized models or black-box APIs.",
+            "problems": [
+              "Extracting hidden states to train or apply a lightweight novelty probe is extremely difficult or impossible when using proprietary LLM APIs (e.g., OpenAI or Anthropic), which do not expose internal activations.",
+              "Running local 70B open-weights models on a single consumer GPU (12 GB VRAM) requires aggressive quantization and high memory management overhead, limiting concurrent multi-agent dialogue loops and fast hidden-state probing.",
+              "Collecting and training a reliable probing classifier on hidden states requires generating a substantial calibration dataset of intermediate reasoning trajectories within a tight 6-week timeline."
+            ],
+            "improvements": [
+              "Restrict the scope entirely to open-weights models that can run locally via standard Hugging Face libraries (e.g., 8B parameter models) to ensure full access to hidden states.",
+              "Substitute the hidden-state probe with a logit-based or token-level probing approach if API usage is required, or use white-box lightweight proxy models for the critique phase.",
+              "Utilize pre-trained probes or zero-shot activation steering techniques rather than training a separate linear probe from scratch to save time and compute."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent judgments from hidden states during the reasoning phase can mitigate medium-novelty bias.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a standardized benchmark for evaluating research idea novelty.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a lightweight probe trained on hidden states of an 8B model can reliably generalize to steer complex scientific multi-agent revisions without destabilizing the generation coherence within a 6-week project window."
+          },
+          {
+            "role": "clarity",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal presents a well-structured and clear idea combining multi-agent LLM dialogue loops with latent-space novelty probing, drawing inspiration from recent work on probing model hidden states. The motivation is clear, targeting the well-known medium-novelty bias of language models. However, the operational details on how a lightweight probe will be trained or applied to frozen open-weights models during generation require more elaboration.",
+            "problems": [
+              "The proposal lacks details on how the latent probe is trained or calibrated without requiring model weight training.",
+              "It is unclear how the latent probe on the critic's hidden states will accurately capture generation-side novelty trajectories when the generator and critic are separate agent roles."
+            ],
+            "improvements": [
+              "Clarify whether the probe is trained on a small supervised dataset of annotated hidden states, and specify the exact layer and token positions extracted from the critic model.",
+              "Provide a concrete example of how an intervention based on structural contrastive prompts is triggered and formatted when a medium-novelty latent state is detected."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states during the reasoning phase can be used to condition responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Language models suffer from a systematic bias towards judging ideas as medium novel.",
+                "supporting_excerpt": "We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a linear probe trained on hidden states for novelty judgment can be effectively repurposed to dynamically steer multi-agent generation trajectories in real time on a single consumer GPU within the 6-week project timeframe."
+          },
+          {
+            "role": "contrarian",
+            "novelty": 3,
+            "feasibility": 2,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a clever synthesis between recent work on latent-space probing for judgment bias mitigation and multi-agent scientific ideation. However, the core mechanism rests on a category error regarding the direction of the probe: existing literature applies latent probes to fix LLM as a *judge* of novelty during evaluation, whereas this proposal attempts to use a novelty probe on a critic's hidden states to steer *generation*. Hidden states of a frozen language model during text generation reflect token prediction dynamics rather than an invariant latent manifold of scientific originality. Furthermore, attempting to probe and intervene across multi-agent loops on a single consumer GPU within a 6-week timeframe presents severe systems-level and memory bottlenecks.",
+            "problems": [
+              "Conflating evaluation probing with generative steering: Probing hidden states for classification tasks (like judging if an idea is medium-novel) does not trivially translate to controlling or shifting text generation trajectories without full fine-tuning or activation steering.",
+              "Severe hardware and latency mismatch: Running multi-agent loops, external literature retrieval, re-ranking, and real-time hidden-state extraction/intervention on a 12GB consumer GPU for 70B models (or even quantized variants) introduces intractable memory swapping and compute latency.",
+              "Lack of a strong baseline control: The proposal compares against basic multi-agent setups but omits a simpler text-based steering baseline (e.g., explicit chain-of-thought critique prompting based on retrieved snippets), making it impossible to attribute gains to the latent probe rather than the added contrastive text prompts."
+            ],
+            "improvements": [
+              "Clarify whether the latent probe acts as a classifier that halts generation or modifies logits on the fly, and provide a concrete algorithmic description of how hidden states are mapped back to token-level interventions.",
+              "Simplify the experimental scope by restricting evaluation to smaller open-weights models (e.g., 8B) that fit comfortably into a single consumer GPU without aggressive quantization artifacts that could distort hidden-state probes.",
+              "Include a text-based contrastive prompt ablation as a primary baseline to isolate whether latent probing outperforms explicit, interpretable prompt engineering."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Latent probing approaches have been proposed to mitigate medium-novelty bias specifically for LLMs acting as judges of research idea novelty.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probed judgments improve evaluation performance in a judge configuration, but utilizing this mechanism for generative steering remains unproven.",
+                "supporting_excerpt": "Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It is uncertain whether internal hidden states of frozen autoregressive models contain stable, disentangled representations of scientific novelty prior to token realization, or if probing merely captures surface-level lexical phrasing."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "novelty": 3,
+            "clarity": 3,
+            "contrarian": 3
+          },
+          "feasibility": {
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 3,
+            "contrarian": 2
+          },
+          "clarity": {
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 4,
+            "contrarian": 4
+          },
+          "importance": {
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 4,
+            "contrarian": 4
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "novelty": "disabled",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+        "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic bias of language models toward generating ideas of mediocre novelty?",
+        "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation and retrieval-based novelty checking independently, and recent methods apply hidden-state probes strictly for novelty judgment tasks rather than generative steering. There lacks an integrated framework where latent-space probing of critic internal states is adapted to dynamically steer multi-agent generation loops away from medium-novelty biases during iterative refinement.",
+        "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space probing. Specifically, we instantiate a generator agent and a critic agent using open-weights models (e.g., Llama-3-8B-Instruct) fitting a 12GB consumer GPU. During the critique and revision steps, we adapt a lightweight linear probe trained on hidden states to detect latent novelty assessments before final text generation. If the probed latent representation indicates a medium-novelty or unoriginal trajectory, we intervene by conditioning the subsequent revision step on explicit structural contrastive prompts derived from retrieved literature snippets (using a retrieve-then-rerank novelty checker), pushing the framework to produce higher technical depth without requiring model weight fine-tuning.",
+        "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck within consumer-hardware resource constraints.",
+        "experimental_setup": "We utilize the RINoBench benchmark and an open-source multi-agent orchestration framework running an 8B open-weights LLM via local quantization on a single 12GB consumer GPU. We run multi-agent ideation sessions across computer science domains, comparing baseline multi-agent setups and explicit text-based contrastive prompt ablations against our latent-probed revision loop.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics, measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker, and human expert evaluation alignment for novelty and feasibility.",
+        "feasibility_assumptions": [
+          "Access to frozen open-source 8B parameter models running locally via standard Hugging Face libraries with 4-bit/8-bit quantization on a single 12GB consumer GPU.",
+          "Availability of public benchmark datasets like RINoBench and public scientific literature indices for retrieval.",
+          "Training a lightweight linear probe using a small supervised dataset of annotated hidden states within the 6-week project window."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation multi-agent LLM",
+          "latent novelty probing language models",
+          "automated research idea novelty benchmark"
+        ]
+      },
+      "revision_error": null
+    },
+    {
+      "index": 2,
+      "input_idea": {
+        "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+        "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic bias of language models toward generating ideas of mediocre novelty?",
+        "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation and retrieval-based novelty checking independently, and recent methods apply hidden-state probes strictly for novelty judgment tasks rather than generative steering. There lacks an integrated framework where latent-space probing of critic internal states is adapted to dynamically steer multi-agent generation loops away from medium-novelty biases during iterative refinement.",
+        "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space probing. Specifically, we instantiate a generator agent and a critic agent using open-weights models (e.g., Llama-3-8B-Instruct) fitting a 12GB consumer GPU. During the critique and revision steps, we adapt a lightweight linear probe trained on hidden states to detect latent novelty assessments before final text generation. If the probed latent representation indicates a medium-novelty or unoriginal trajectory, we intervene by conditioning the subsequent revision step on explicit structural contrastive prompts derived from retrieved literature snippets (using a retrieve-then-rerank novelty checker), pushing the framework to produce higher technical depth without requiring model weight fine-tuning.",
+        "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck within consumer-hardware resource constraints.",
+        "experimental_setup": "We utilize the RINoBench benchmark and an open-source multi-agent orchestration framework running an 8B open-weights LLM via local quantization on a single 12GB consumer GPU. We run multi-agent ideation sessions across computer science domains, comparing baseline multi-agent setups and explicit text-based contrastive prompt ablations against our latent-probed revision loop.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics, measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker, and human expert evaluation alignment for novelty and feasibility.",
+        "feasibility_assumptions": [
+          "Access to frozen open-source 8B parameter models running locally via standard Hugging Face libraries with 4-bit/8-bit quantization on a single 12GB consumer GPU.",
+          "Availability of public benchmark datasets like RINoBench and public scientific literature indices for retrieval.",
+          "Training a lightweight linear probe using a small supervised dataset of annotated hidden states within the 6-week project window."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation multi-agent LLM",
+          "latent novelty probing language models",
+          "automated research idea novelty benchmark"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal introduces an integrated framework by adapting latent-space probing techniques—originally designed for novelty judgment tasks like Think-Probe-Respond—to steer multi-agent scientific ideation and iterative revision loops. While multi-agent ideation and latent probing for judgment exist independently in prior work, combining them to dynamically overcome medium-novelty biases during generation represents a novel and cohesive methodological extension.",
+            "problems": [
+              "The proposal relies on training a lightweight linear probe using a small supervised dataset of annotated hidden states within a constrained 6-week project window, which may be insufficient to guarantee robust generalization across diverse scientific domains.",
+              "Adapting internal state probes—which are typically trained to classify static judgment outputs—to dynamically steer text generation loops introduces complex intervention dynamics that are underexplored."
+            ],
+            "improvements": [
+              "Clarify the exact mechanism by which latent probe activations trigger structural contrastive prompts during token generation or revision steps.",
+              "Provide a preliminary validation or pilot experiment demonstrating that linear probes trained on smaller open-weights models (like Llama-3-8B) can reliably detect novelty states during generative dialogue."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Latent probing from hidden states can be used to capture novelty assessments and condition responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent frameworks utilize an ideation-critique-revision loop for iterative improvement.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The assessment is based on retrieved literature concerning latent-space novelty probing and multi-agent scientific ideation; however, direct prior attempts to use internal state probes for real-time generative steering in multi-agent loops remain sparse."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "disabled"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal introduces a compelling integration of latent-space probing for generative steering within a multi-agent ideation loop. Running an 8-billion parameter model with 4-bit or 8-bit quantization fits comfortably within a single 12GB consumer GPU, and lightweight linear probing of hidden states avoids heavy model weight fine-tuning. However, training a reliable latent probe requires capturing internal states across various generation layers, managing hidden state caching, and orchestrating iterative multi-agent loops within a strict 6-week timeline, which introduces substantial systems engineering overhead.",
+            "problems": [
+              "Extracting and caching hidden states dynamically during multi-agent orchestration frameworks adds significant implementation complexity.",
+              "Training a linear probe to accurately predict novelty states from hidden activations requires a carefully curated and labeled dataset of intermediate reasoning states, which may not be trivial to collect within 6 weeks.",
+              "Intervening in generation via latent space steering on quantized models using standard Hugging Face generation pipelines often requires custom forward hooks that can be tricky to implement robustly."
+            ],
+            "improvements": [
+              "Simplify the intervention mechanism by testing prompt-based contrastive feedback first as a strong baseline before implementing complex hidden-state activation steering.",
+              "Use pre-extracted hidden states or offload probe training to a separate script to de-risk the end-to-end multi-agent execution loop.",
+              "Restrict the agent loop to a fixed number of turns to bound inference latency and memory consumption on the 12GB GPU."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing hidden states during the reasoning phase can capture latent novelty assessments.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent setups featuring generation, critique, and iterative revision enable iterative improvement.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains unproven whether linear probes trained on hidden states of smaller 8B models can effectively transfer to dynamic generative steering without disrupting coherent natural language output."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The research proposal clearly lays out a multi-agent framework utilizing latent space probing to steer the generation of scientific research ideas away from the medium-novelty bias of LLMs. The motivation is sound, building directly upon recent work in latent probing and scientific ideation benchmarks.",
+            "problems": [
+              "The methodology mentions training a lightweight linear probe using a small supervised dataset of annotated hidden states, but does not detail how this training set will be constructed or labeled for generative steering rather than just classification.",
+              "It remains ambiguous how a probe trained to judge hidden states during a critique phase can be seamlessly inverted or used to condition the generative revision steps without fine-tuning model weights."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic description of how the hidden-state activation vector from the critic agent maps to a dynamic prompt modification or structural contrastive prompt intervention during the generation step.",
+              "Specify the exact layer and token positions within the Llama-3-8B architecture that will be targeted by the linear probe."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Latent probing can be applied to hidden states to capture novelty assessments and condition subsequent responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench serves as a comprehensive benchmark for large-scale evaluation of research idea novelty.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It is uncertain whether a linear probe trained purely on a discriminator task can reliably steer a generative language model loop without altering its underlying weights."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 3,
+            "importance": 4,
+            "explanation": "The proposal aims to adapt latent-space probing—originally developed for post-hoc novelty judgment tasks—into an active generative steering mechanism within a multi-agent ideation loop on consumer hardware. While conceptually creative, the central mechanism conflates the internal representation of an evaluation state with directional guidance for text generation. Training linear probes on hidden states to detect medium-novelty bias does not inherently provide a continuous gradient or semantic vector to steer open-weights LLMs away from unoriginal trajectories without full model fine-tuning or complex activation patching. Furthermore, applying this within a 12GB consumer GPU constraint while running multi-agent quantization frameworks introduces severe memory orchestration bottlenecks.",
+            "problems": [
+              "Conflation of judgment representation with generative steering: detecting a medium-novelty hidden state via a linear probe does not trivially translate into a causal intervention that injects high novelty without altering text generation coherence.",
+              "Resource starvation on a 12GB GPU: running concurrent open-weights 8B models (generator and critic) alongside hidden-state extraction, linear probing, retrieval-augmented reranking, and dynamic prompt conditioning exceeds practical VRAM limits under standard quantization.",
+              "Circular reliance on surface-level contrastive prompts: if the ultimate intervention relies on explicit structural contrastive prompts, the hidden-state probing mechanism may be redundant compared to standard text-based critique loops."
+            ],
+            "improvements": [
+              "Simplify the intervention by evaluating whether text-based contrastive prompting alone achieves comparable novelty gains without the complexity of hidden-state extraction and linear probing.",
+              "Benchmark the VRAM overhead and inference latency of real-time hidden-state extraction and probing during multi-turn agent dialogues before committing to the full loop.",
+              "Provide a formal mathematical or mechanistic justification for how a binary or categorical latent probe classification vector can be inverted to constructively steer auto-regressive generation."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states was designed as a judgment correction mechanism rather than an active multi-agent generative steering loop.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "LLM-generated reasoning does not reliably translate into accurate novelty judgments, suggesting that probing internal states may capture spurious correlations rather than true scientific novelty.",
+                "supporting_excerpt": "Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "The technical feasibility depends heavily on whether activation patching or steering vectors can be stably implemented on quantized 8B models within strict VRAM limits, which remains unproven."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal introduces an integrated framework by adapting latent-space probing techniques—originally designed for novelty judgment tasks like Think-Probe-Respond—to steer multi-agent scientific ideation and iterative revision loops. While multi-agent ideation and latent probing for judgment exist independently in prior work, combining them to dynamically overcome medium-novelty biases during generation represents a novel and cohesive methodological extension.",
+            "problems": [
+              "The proposal relies on training a lightweight linear probe using a small supervised dataset of annotated hidden states within a constrained 6-week project window, which may be insufficient to guarantee robust generalization across diverse scientific domains.",
+              "Adapting internal state probes—which are typically trained to classify static judgment outputs—to dynamically steer text generation loops introduces complex intervention dynamics that are underexplored."
+            ],
+            "improvements": [
+              "Clarify the exact mechanism by which latent probe activations trigger structural contrastive prompts during token generation or revision steps.",
+              "Provide a preliminary validation or pilot experiment demonstrating that linear probes trained on smaller open-weights models (like Llama-3-8B) can reliably detect novelty states during generative dialogue."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Latent probing from hidden states can be used to capture novelty assessments and condition responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent frameworks utilize an ideation-critique-revision loop for iterative improvement.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The assessment is based on retrieved literature concerning latent-space novelty probing and multi-agent scientific ideation; however, direct prior attempts to use internal state probes for real-time generative steering in multi-agent loops remain sparse."
+          },
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal introduces a compelling integration of latent-space probing for generative steering within a multi-agent ideation loop. Running an 8-billion parameter model with 4-bit or 8-bit quantization fits comfortably within a single 12GB consumer GPU, and lightweight linear probing of hidden states avoids heavy model weight fine-tuning. However, training a reliable latent probe requires capturing internal states across various generation layers, managing hidden state caching, and orchestrating iterative multi-agent loops within a strict 6-week timeline, which introduces substantial systems engineering overhead.",
+            "problems": [
+              "Extracting and caching hidden states dynamically during multi-agent orchestration frameworks adds significant implementation complexity.",
+              "Training a linear probe to accurately predict novelty states from hidden activations requires a carefully curated and labeled dataset of intermediate reasoning states, which may not be trivial to collect within 6 weeks.",
+              "Intervening in generation via latent space steering on quantized models using standard Hugging Face generation pipelines often requires custom forward hooks that can be tricky to implement robustly."
+            ],
+            "improvements": [
+              "Simplify the intervention mechanism by testing prompt-based contrastive feedback first as a strong baseline before implementing complex hidden-state activation steering.",
+              "Use pre-extracted hidden states or offload probe training to a separate script to de-risk the end-to-end multi-agent execution loop.",
+              "Restrict the agent loop to a fixed number of turns to bound inference latency and memory consumption on the 12GB GPU."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing hidden states during the reasoning phase can capture latent novelty assessments.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent setups featuring generation, critique, and iterative revision enable iterative improvement.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains unproven whether linear probes trained on hidden states of smaller 8B models can effectively transfer to dynamic generative steering without disrupting coherent natural language output."
+          },
+          {
+            "role": "clarity",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The research proposal clearly lays out a multi-agent framework utilizing latent space probing to steer the generation of scientific research ideas away from the medium-novelty bias of LLMs. The motivation is sound, building directly upon recent work in latent probing and scientific ideation benchmarks.",
+            "problems": [
+              "The methodology mentions training a lightweight linear probe using a small supervised dataset of annotated hidden states, but does not detail how this training set will be constructed or labeled for generative steering rather than just classification.",
+              "It remains ambiguous how a probe trained to judge hidden states during a critique phase can be seamlessly inverted or used to condition the generative revision steps without fine-tuning model weights."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic description of how the hidden-state activation vector from the critic agent maps to a dynamic prompt modification or structural contrastive prompt intervention during the generation step.",
+              "Specify the exact layer and token positions within the Llama-3-8B architecture that will be targeted by the linear probe."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Latent probing can be applied to hidden states to capture novelty assessments and condition subsequent responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench serves as a comprehensive benchmark for large-scale evaluation of research idea novelty.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It is uncertain whether a linear probe trained purely on a discriminator task can reliably steer a generative language model loop without altering its underlying weights."
+          },
+          {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 3,
+            "importance": 4,
+            "explanation": "The proposal aims to adapt latent-space probing—originally developed for post-hoc novelty judgment tasks—into an active generative steering mechanism within a multi-agent ideation loop on consumer hardware. While conceptually creative, the central mechanism conflates the internal representation of an evaluation state with directional guidance for text generation. Training linear probes on hidden states to detect medium-novelty bias does not inherently provide a continuous gradient or semantic vector to steer open-weights LLMs away from unoriginal trajectories without full model fine-tuning or complex activation patching. Furthermore, applying this within a 12GB consumer GPU constraint while running multi-agent quantization frameworks introduces severe memory orchestration bottlenecks.",
+            "problems": [
+              "Conflation of judgment representation with generative steering: detecting a medium-novelty hidden state via a linear probe does not trivially translate into a causal intervention that injects high novelty without altering text generation coherence.",
+              "Resource starvation on a 12GB GPU: running concurrent open-weights 8B models (generator and critic) alongside hidden-state extraction, linear probing, retrieval-augmented reranking, and dynamic prompt conditioning exceeds practical VRAM limits under standard quantization.",
+              "Circular reliance on surface-level contrastive prompts: if the ultimate intervention relies on explicit structural contrastive prompts, the hidden-state probing mechanism may be redundant compared to standard text-based critique loops."
+            ],
+            "improvements": [
+              "Simplify the intervention by evaluating whether text-based contrastive prompting alone achieves comparable novelty gains without the complexity of hidden-state extraction and linear probing.",
+              "Benchmark the VRAM overhead and inference latency of real-time hidden-state extraction and probing during multi-turn agent dialogues before committing to the full loop.",
+              "Provide a formal mathematical or mechanistic justification for how a binary or categorical latent probe classification vector can be inverted to constructively steer auto-regressive generation."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states was designed as a judgment correction mechanism rather than an active multi-agent generative steering loop.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "LLM-generated reasoning does not reliably translate into accurate novelty judgments, suggesting that probing internal states may capture spurious correlations rather than true scientific novelty.",
+                "supporting_excerpt": "Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "The technical feasibility depends heavily on whether activation patching or steering vectors can be stably implemented on quantized 8B models within strict VRAM limits, which remains unproven."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "novelty": 3,
+            "clarity": 3,
+            "contrarian": 2
+          },
+          "feasibility": {
+            "feasibility": 3,
+            "clarity": 3,
+            "contrarian": 2
+          },
+          "clarity": {
+            "clarity": 4,
+            "contrarian": 3
+          },
+          "importance": {
+            "clarity": 4,
+            "contrarian": 4
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "novelty": "disabled",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+        "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic bias of language models toward generating ideas of mediocre novelty?",
+        "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation and retrieval-based novelty checking independently, and recent methods apply hidden-state probes strictly for novelty judgment tasks rather than generative steering. There lacks an integrated framework where latent-space probing of critic internal states is adapted to dynamically steer multi-agent generation loops away from medium-novelty biases during iterative refinement, without assuming unrealistic VRAM budgets or conflating judgment classification directly with causal token-level steering vectors.",
+        "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space probing and rigorous prompt-based fallback mechanisms. We instantiate a generator agent and a critic agent using open-weights models (e.g., Llama-3-8B-Instruct) quantized to fit a single 12GB consumer GPU. To resolve the conflation between judgment representation and generative steering, we first evaluate a strong text-based contrastive prompting baseline powered by a retrieve-then-rerank novelty checker. Next, we adapt a lightweight linear probe trained on pre-extracted hidden states in an offline script to detect latent medium-novelty states. When a medium-novelty state is detected, rather than performing unstable activation patching on quantized weights, we trigger structured prompt modifications and structural contrastive interventions during the revision step.",
+        "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck within consumer-hardware resource constraints.",
+        "experimental_setup": "We utilize the RINoBench benchmark and an open-source multi-agent orchestration framework running an 8B open-weights LLM via local 4-bit/8-bit quantization on a single 12GB consumer GPU. We bound inference latency and VRAM consumption by restricting the agent loop to a fixed number of turns (max 3 turns). We compare baseline multi-agent setups, text-based contrastive prompt ablations, and our offline-probed prompt intervention loop across computer science domains.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics, measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker, and human expert evaluation alignment for novelty and feasibility.",
+        "feasibility_assumptions": [
+          "Access to frozen open-source 8B parameter models running locally via standard Hugging Face libraries with 4-bit/8-bit quantization on a single 12GB consumer GPU.",
+          "Availability of public benchmark datasets like RINoBench and public scientific literature indices for retrieval.",
+          "Training a lightweight linear probe using a pre-extracted supervised dataset of annotated hidden states via an offline script within the 6-week project window."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation multi-agent LLM",
+          "latent novelty probing language models",
+          "automated research idea novelty benchmark"
+        ]
+      },
+      "revision_error": null
+    },
+    {
+      "index": 3,
+      "input_idea": {
+        "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+        "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic bias of language models toward generating ideas of mediocre novelty?",
+        "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation and retrieval-based novelty checking independently, and recent methods apply hidden-state probes strictly for novelty judgment tasks rather than generative steering. There lacks an integrated framework where latent-space probing of critic internal states is adapted to dynamically steer multi-agent generation loops away from medium-novelty biases during iterative refinement, without assuming unrealistic VRAM budgets or conflating judgment classification directly with causal token-level steering vectors.",
+        "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space probing and rigorous prompt-based fallback mechanisms. We instantiate a generator agent and a critic agent using open-weights models (e.g., Llama-3-8B-Instruct) quantized to fit a single 12GB consumer GPU. To resolve the conflation between judgment representation and generative steering, we first evaluate a strong text-based contrastive prompting baseline powered by a retrieve-then-rerank novelty checker. Next, we adapt a lightweight linear probe trained on pre-extracted hidden states in an offline script to detect latent medium-novelty states. When a medium-novelty state is detected, rather than performing unstable activation patching on quantized weights, we trigger structured prompt modifications and structural contrastive interventions during the revision step.",
+        "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck within consumer-hardware resource constraints.",
+        "experimental_setup": "We utilize the RINoBench benchmark and an open-source multi-agent orchestration framework running an 8B open-weights LLM via local 4-bit/8-bit quantization on a single 12GB consumer GPU. We bound inference latency and VRAM consumption by restricting the agent loop to a fixed number of turns (max 3 turns). We compare baseline multi-agent setups, text-based contrastive prompt ablations, and our offline-probed prompt intervention loop across computer science domains.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics, measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker, and human expert evaluation alignment for novelty and feasibility.",
+        "feasibility_assumptions": [
+          "Access to frozen open-source 8B parameter models running locally via standard Hugging Face libraries with 4-bit/8-bit quantization on a single 12GB consumer GPU.",
+          "Availability of public benchmark datasets like RINoBench and public scientific literature indices for retrieval.",
+          "Training a lightweight linear probe using a pre-extracted supervised dataset of annotated hidden states via an offline script within the 6-week project window."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation multi-agent LLM",
+          "latent novelty probing language models",
+          "automated research idea novelty benchmark"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a novel combination of latent-space probing (inspired by recent work on detecting medium-novelty biases in judge models) with multi-agent iterative refinement loops for generative scientific ideation. While multi-agent ideation and latent-space probing for judgment exist independently, adapting internal state probes to steer a generative revision loop rather than a classification task represents an interesting and practical bridge. However, the connection between a probe trained on judgment tasks and its direct efficacy in conditioning a text-based generation/revision loop requires careful validation.",
+            "problems": [
+              "Training a linear probe on pre-extracted hidden states to detect 'medium-novelty states' comes from judgment literature (Think-Probe-Respond), but applying it during generative agent loops rather than static classification introduces distribution shifts.",
+              "Relying on prompt-based fallbacks when latent states are triggered makes it unclear whether the performance gains stem from the latent probe or simply from the structured contrastive prompt instructions.",
+              "Running multi-agent dialogues, quantization, and hidden state extractions within a 12GB VRAM constraint on an 8B model will hit tight memory and throughput bottlenecks during iterative refinement turns."
+            ],
+            "improvements": [
+              "Provide a direct ablation comparing the latent probe trigger against a baseline where the prompt-based contrastive intervention is triggered randomly or via a simpler text-based classifier.",
+              "Clarify how hidden states are captured from quantized models (4-bit/8-bit) without incurring severe overhead or precision loss during inference.",
+              "Include explicit runtime benchmarks showing that the end-to-end multi-agent loop with hidden state extraction fits comfortably within the 12GB VRAM limit."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent states from hidden phases to condition responses is established for novelty judgment tasks.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent setups involving generation and critique enable iterative improvement.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The search coverage was limited to the provided literature passages and did not perform an exhaustive live search, meaning concurrent preprints combining latent probes with generative steering may exist."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "disabled"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal outlines an interesting integration of latent probing for multi-agent idea refinement on consumer hardware (12GB GPU). However, running multi-turn loops with an 8B model alongside offline hidden-state extraction, linear probe training, and structured prompt fallback interventions within a tight 6-week window presents considerable engineering and computational overhead.",
+            "problems": [
+              "Extracting and storing hidden states from an 8B model across multiple dialogue turns while maintaining the model quantized in a 12GB VRAM budget creates memory fragmentation and context-switching bottlenecks.",
+              "Training a robust linear probe on pre-extracted hidden states requires a well-curated dataset that must be gathered and annotated within the limited 6-week project schedule."
+            ],
+            "improvements": [
+              "Restrict the evaluation to single-turn critic probing rather than full multi-turn dialogue loops to conserve VRAM and simplify the debugging pipeline.",
+              "Utilize already pre-trained probes or frozen feature extractors if available to bypass the offline training bottleneck."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states can be used to condition responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing mechanisms improve novelty judgment performance and mitigate medium novelty bias.",
+                "supporting_excerpt": "Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "The feasibility depends heavily on whether hidden state extraction and quantization frameworks can coexist smoothly within a single 12GB consumer GPU without exceeding memory limits during multi-turn generation."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": 4,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The research proposal clearly targets an important gap: extending latent-space probing methods previously used for novelty judgment tasks into active generative steering within multi-agent refinement loops. The writing is structured logically, defining the problem, methodology, and experimental evaluation using RINoBench. However, clarity can be further enhanced regarding the exact operational translation between offline linear probe activations and structured prompt modifications.",
+            "problems": [
+              "The translation mechanism from offline latent-space probe detections to runtime prompt modifications lacks a precise algorithmic description.",
+              "The constraint of a single 12GB GPU for running multi-turn multi-agent dialogues while simultaneously extracting hidden states for linear probing requires clearer latency and memory profiling.",
+              "Conflation between evaluation metrics for novelty judgment tasks versus generative ideation performance needs explicit separation."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic workflow showing how the hidden states are intercepted during the critic's generation pass and mapped to specific prompt interventions.",
+              "Include estimated VRAM overhead and token throughput calculations for the 8B quantized model under multi-turn generation.",
+              "Clarify how RINoBench metrics will be adapted from static idea judgment to dynamic generative refinement loops."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent judgments from hidden states can mitigate systematic biases in language models.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a comprehensive benchmark for large-scale evaluation of research idea novelty.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether offline-trained linear probes on hidden states can generalize robustly to dynamically evolving multi-agent dialogue contexts without incurring high performance degradation."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 3,
+            "importance": 3,
+            "explanation": "The proposal aims to bridge latent-space probing (typically used for static evaluation or judgment tasks like Think-Probe-Respond) with dynamic multi-agent generation and text-based prompt fallback. While creative, the framework suffers from a central category error: probes trained to detect classification states on discrete judgment tasks do not map causally or reliably to generative steering behaviors during multi-turn open-ended text generation, particularly under resource-constrained quantization regimes. Furthermore, transferring a probe from a judge model onto a critic/generator model setup across completely different output distributions risks introducing severe noise and degradation.",
+            "problems": [
+              "Conflation of classification and generation: Probing hidden states to classify whether a completed or intermediate thought is 'medium-novel' does not provide a directional token-level gradient or steering vector to guide text generation toward high novelty.",
+              "Hardware and quantization friction: Extracting reliable hidden states and running inference loops on an 8B quantized model (4-bit/8-bit) within a 12GB VRAM budget while maintaining active multi-agent conversation states and probing overhead will likely trigger severe out-of-memory or latency bottlenecks.",
+              "Cross-task generalization mismatch: Probes trained on static judgment datasets (like RINoBench or evaluation prompts) are structurally misaligned with dynamic multi-agent dialogue roles where the critic is tasked with formulating constructive critique rather than binary scoring."
+            ],
+            "improvements": [
+              "Reformulate the intervention mechanism from offline hidden-state probing to explicitly supervised contrastive prompt injection or fine-tuned reinforcement learning from AI feedback (RLAIF) within the multi-agent loop.",
+              "Provide a rigorous validation experiment testing whether the linear probe's activation states on the critic model actually correlate with generation novelty before coupling them to prompt modification triggers.",
+              "Benchmark the VRAM consumption and token throughput empirically on the target 12GB consumer GPU under 4-bit quantization prior to assuming feasible execution of multi-agent hidden-state extraction."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Language models exhibit a systematic bias towards judging research ideas as medium novel.",
+                "supporting_excerpt": "We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Think-Probe-Respond uses latent probes during the reasoning phase to condition the final response for novelty judgment tasks.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "LLM reasoning rationales do not reliably translate into accurate novelty judgments that match human standards.",
+                "supporting_excerpt": "Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It is uncertain whether lightweight linear probes trained on static classification tasks can provide robust signals for dynamic generative steering without full activation patching or fine-tuning, given the domain shift between idea judgment and open-ended text revision."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "novelty",
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal introduces a novel combination of latent-space probing (inspired by recent work on detecting medium-novelty biases in judge models) with multi-agent iterative refinement loops for generative scientific ideation. While multi-agent ideation and latent-space probing for judgment exist independently, adapting internal state probes to steer a generative revision loop rather than a classification task represents an interesting and practical bridge. However, the connection between a probe trained on judgment tasks and its direct efficacy in conditioning a text-based generation/revision loop requires careful validation.",
+            "problems": [
+              "Training a linear probe on pre-extracted hidden states to detect 'medium-novelty states' comes from judgment literature (Think-Probe-Respond), but applying it during generative agent loops rather than static classification introduces distribution shifts.",
+              "Relying on prompt-based fallbacks when latent states are triggered makes it unclear whether the performance gains stem from the latent probe or simply from the structured contrastive prompt instructions.",
+              "Running multi-agent dialogues, quantization, and hidden state extractions within a 12GB VRAM constraint on an 8B model will hit tight memory and throughput bottlenecks during iterative refinement turns."
+            ],
+            "improvements": [
+              "Provide a direct ablation comparing the latent probe trigger against a baseline where the prompt-based contrastive intervention is triggered randomly or via a simpler text-based classifier.",
+              "Clarify how hidden states are captured from quantized models (4-bit/8-bit) without incurring severe overhead or precision loss during inference.",
+              "Include explicit runtime benchmarks showing that the end-to-end multi-agent loop with hidden state extraction fits comfortably within the 12GB VRAM limit."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent states from hidden phases to condition responses is established for novelty judgment tasks.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent setups involving generation and critique enable iterative improvement.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The search coverage was limited to the provided literature passages and did not perform an exhaustive live search, meaning concurrent preprints combining latent probes with generative steering may exist."
+          },
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal outlines an interesting integration of latent probing for multi-agent idea refinement on consumer hardware (12GB GPU). However, running multi-turn loops with an 8B model alongside offline hidden-state extraction, linear probe training, and structured prompt fallback interventions within a tight 6-week window presents considerable engineering and computational overhead.",
+            "problems": [
+              "Extracting and storing hidden states from an 8B model across multiple dialogue turns while maintaining the model quantized in a 12GB VRAM budget creates memory fragmentation and context-switching bottlenecks.",
+              "Training a robust linear probe on pre-extracted hidden states requires a well-curated dataset that must be gathered and annotated within the limited 6-week project schedule."
+            ],
+            "improvements": [
+              "Restrict the evaluation to single-turn critic probing rather than full multi-turn dialogue loops to conserve VRAM and simplify the debugging pipeline.",
+              "Utilize already pre-trained probes or frozen feature extractors if available to bypass the offline training bottleneck."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent novelty judgments from hidden states can be used to condition responses.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing mechanisms improve novelty judgment performance and mitigate medium novelty bias.",
+                "supporting_excerpt": "Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "The feasibility depends heavily on whether hidden state extraction and quantization frameworks can coexist smoothly within a single 12GB consumer GPU without exceeding memory limits during multi-turn generation."
+          },
+          {
+            "role": "clarity",
+            "novelty": 4,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The research proposal clearly targets an important gap: extending latent-space probing methods previously used for novelty judgment tasks into active generative steering within multi-agent refinement loops. The writing is structured logically, defining the problem, methodology, and experimental evaluation using RINoBench. However, clarity can be further enhanced regarding the exact operational translation between offline linear probe activations and structured prompt modifications.",
+            "problems": [
+              "The translation mechanism from offline latent-space probe detections to runtime prompt modifications lacks a precise algorithmic description.",
+              "The constraint of a single 12GB GPU for running multi-turn multi-agent dialogues while simultaneously extracting hidden states for linear probing requires clearer latency and memory profiling.",
+              "Conflation between evaluation metrics for novelty judgment tasks versus generative ideation performance needs explicit separation."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic workflow showing how the hidden states are intercepted during the critic's generation pass and mapped to specific prompt interventions.",
+              "Include estimated VRAM overhead and token throughput calculations for the 8B quantized model under multi-turn generation.",
+              "Clarify how RINoBench metrics will be adapted from static idea judgment to dynamic generative refinement loops."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Probing latent judgments from hidden states can mitigate systematic biases in language models.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a comprehensive benchmark for large-scale evaluation of research idea novelty.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether offline-trained linear probes on hidden states can generalize robustly to dynamically evolving multi-agent dialogue contexts without incurring high performance degradation."
+          },
+          {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 3,
+            "importance": 3,
+            "explanation": "The proposal aims to bridge latent-space probing (typically used for static evaluation or judgment tasks like Think-Probe-Respond) with dynamic multi-agent generation and text-based prompt fallback. While creative, the framework suffers from a central category error: probes trained to detect classification states on discrete judgment tasks do not map causally or reliably to generative steering behaviors during multi-turn open-ended text generation, particularly under resource-constrained quantization regimes. Furthermore, transferring a probe from a judge model onto a critic/generator model setup across completely different output distributions risks introducing severe noise and degradation.",
+            "problems": [
+              "Conflation of classification and generation: Probing hidden states to classify whether a completed or intermediate thought is 'medium-novel' does not provide a directional token-level gradient or steering vector to guide text generation toward high novelty.",
+              "Hardware and quantization friction: Extracting reliable hidden states and running inference loops on an 8B quantized model (4-bit/8-bit) within a 12GB VRAM budget while maintaining active multi-agent conversation states and probing overhead will likely trigger severe out-of-memory or latency bottlenecks.",
+              "Cross-task generalization mismatch: Probes trained on static judgment datasets (like RINoBench or evaluation prompts) are structurally misaligned with dynamic multi-agent dialogue roles where the critic is tasked with formulating constructive critique rather than binary scoring."
+            ],
+            "improvements": [
+              "Reformulate the intervention mechanism from offline hidden-state probing to explicitly supervised contrastive prompt injection or fine-tuned reinforcement learning from AI feedback (RLAIF) within the multi-agent loop.",
+              "Provide a rigorous validation experiment testing whether the linear probe's activation states on the critic model actually correlate with generation novelty before coupling them to prompt modification triggers.",
+              "Benchmark the VRAM consumption and token throughput empirically on the target 12GB consumer GPU under 4-bit quantization prior to assuming feasible execution of multi-agent hidden-state extraction."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Language models exhibit a systematic bias towards judging research ideas as medium novel.",
+                "supporting_excerpt": "We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Think-Probe-Respond uses latent probes during the reasoning phase to condition the final response for novelty judgment tasks.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "LLM reasoning rationales do not reliably translate into accurate novelty judgments that match human standards.",
+                "supporting_excerpt": "Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It is uncertain whether lightweight linear probes trained on static classification tasks can provide robust signals for dynamic generative steering without full activation patching or fine-tuning, given the domain shift between idea judgment and open-ended text revision."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "novelty": 3,
+            "clarity": 4,
+            "contrarian": 2
+          },
+          "feasibility": {
+            "novelty": 3,
+            "feasibility": 3,
+            "clarity": 3,
+            "contrarian": 2
+          },
+          "clarity": {
+            "novelty": 4,
+            "clarity": 4,
+            "contrarian": 3
+          },
+          "importance": {
+            "novelty": 4,
+            "clarity": 4,
+            "contrarian": 3
+          }
+        },
+        "score_disagreements": [
+          {
+            "metric": "novelty",
+            "scores": {
+              "novelty": 3,
+              "clarity": 4,
+              "contrarian": 2
+            }
+          }
+        ],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "novelty": "disabled",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Latent-Probed Multi-Agent Iterative Refinement for Novel Scientific Idea Generation",
+        "research_problem": "How can multi-agent language model dialogues be optimized to generate scientific research ideas with high novelty while mitigating the systematic medium-novelty bias of language models?",
+        "research_gap": "Prior work explores multi-agent LLM dialogues for scientific ideation [2025.sigdial-1.26] and retrieval-based novelty checking independently [2025.sdp-1.9], and recent methods apply hidden-state probes strictly for novelty judgment tasks rather than generative steering [2026.findings-emnlp.574]. There lacks an integrated framework where latent-space probing of critic internal states is adapted to dynamically steer multi-agent generation loops away from medium-novelty biases during iterative refinement, without assuming unrealistic VRAM budgets or conflating judgment classification directly with causal token-level steering vectors.",
+        "methodology": "We propose a unified framework combining multi-agent dialogue loops with latent-space probing and rigorous prompt-based fallback mechanisms. We instantiate a generator agent and a critic agent using open-weights models (e.g., Llama-3-8B-Instruct) quantized to fit a single 12GB consumer GPU. To resolve the conflation between judgment representation and generative steering, we first evaluate a strong text-based contrastive prompting baseline powered by a retrieve-then-rerank novelty checker [2025.sdp-1.9]. Next, we adapt a lightweight linear probe trained on pre-extracted hidden states in an offline script to detect latent medium-novelty states. When a medium-novelty state is detected, rather than performing unstable activation patching on quantized weights, we trigger structured prompt modifications and structural contrastive interventions during the revision step.",
+        "expected_contribution": "This work provides a practical, automated scientific ideation system that integrates latent-space probing into multi-agent loops, achieving higher human-aligned novelty scores and bypassing the medium-novelty generation bottleneck within consumer-hardware resource constraints.",
+        "experimental_setup": "We utilize the RINoBench benchmark [2026.lrec-1.370] and an open-source multi-agent orchestration framework running an 8B open-weights LLM via local 4-bit/8-bit quantization on a single 12GB consumer GPU. To bound inference latency and VRAM consumption while resolving hardware bottlenecks, we restrict the evaluation to single-turn critic probing configurations rather than unbounded multi-turn loops. We compare baseline multi-agent setups, text-based contrastive prompt ablations, random-trigger baselines, and our offline-probed prompt intervention loop across computer science domains.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics [2026.lrec-1.370], measuring rubric-based novelty scores, factual grounding against retrieved literature via a retrieve-then-rerank novelty checker [2025.sdp-1.9], and human expert evaluation alignment for novelty and feasibility.",
+        "feasibility_assumptions": [
+          "Access to frozen open-source 8B parameter models running locally via standard Hugging Face libraries with 4-bit/8-bit quantization on a single 12GB consumer GPU.",
+          "Availability of public benchmark datasets like RINoBench [2026.lrec-1.370] and public scientific literature indices for retrieval.",
+          "Training a lightweight linear probe using a pre-extracted supervised dataset of annotated hidden states via an offline script within the 6-week project window."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation multi-agent LLM",
+          "latent novelty probing language models",
+          "automated research idea novelty benchmark"
+        ]
+      },
+      "revision_error": null
+    }
+  ],
+  "stop_reason": "iteration_limit",
+  "elapsed_seconds": 363.557633892,
+  "api_events": [
+    {
+      "label": "novelty_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:01:58.882731+00:00",
+      "prompt_hash": "71e77b46853168aec4315766511f2bdc25e66f65f282274ab6fe27b896bdcd22",
+      "input_tokens": 3950,
+      "output_tokens": 605,
+      "thinking_tokens": 0,
+      "total_tokens": 4555,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.833027814998786
+    },
+    {
+      "label": "feasibility_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:02:13.882959+00:00",
+      "prompt_hash": "aa9e42b0a88b56500de67912551ccaa8032722584e17f3cbe411d8c56248d516",
+      "input_tokens": 3950,
+      "output_tokens": 578,
+      "thinking_tokens": 0,
+      "total_tokens": 4528,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.8289806070024497
+    },
+    {
+      "label": "clarity_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:02:28.883187+00:00",
+      "prompt_hash": "e2971405eb2124a4129f3e9807a13891e98b1fd99d8f24a9455bf82bdca3c9dc",
+      "input_tokens": 3938,
+      "output_tokens": 467,
+      "thinking_tokens": 0,
+      "total_tokens": 4405,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.2763224429982074
+    },
+    {
+      "label": "contrarian_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:02:43.883689+00:00",
+      "prompt_hash": "101a3b323e2673fde1cf1c0ceeac8b3afd9d3a49cd3834664ddb3e3f6ec08eab",
+      "input_tokens": 3949,
+      "output_tokens": 702,
+      "thinking_tokens": 0,
+      "total_tokens": 4651,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.447038884998619
+    },
+    {
+      "label": "revision_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:02:58.883914+00:00",
+      "prompt_hash": "6e05dbb13a2124ef64aa86e8a4b2de1c5aa74dfb41a3ada9dcf9a4dec325a297",
+      "input_tokens": 5288,
+      "output_tokens": 726,
+      "thinking_tokens": 0,
+      "total_tokens": 6014,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.708718436999334
+    },
+    {
+      "label": "novelty_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:03:13.884147+00:00",
+      "prompt_hash": "6e3a973ee75b5a6c19e9895d35d6ef86cbe6288250824707eacc6c544306947c",
+      "input_tokens": 4058,
+      "output_tokens": 485,
+      "thinking_tokens": 0,
+      "total_tokens": 4543,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.8340240830002585
+    },
+    {
+      "label": "feasibility_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:03:28.884369+00:00",
+      "prompt_hash": "023f2fea1e87cd89d07410cb2ca22e509e778d00f99d9f758dcc40dd0536710a",
+      "input_tokens": 4058,
+      "output_tokens": 544,
+      "thinking_tokens": 0,
+      "total_tokens": 4602,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.272318700001051
+    },
+    {
+      "label": "clarity_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:03:43.884589+00:00",
+      "prompt_hash": "d46159bf1f230327bcc6c42a6ffb43f276b98e190e58566ed4e288280b2542ae",
+      "input_tokens": 4046,
+      "output_tokens": 447,
+      "thinking_tokens": 0,
+      "total_tokens": 4493,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.530532144999597
+    },
+    {
+      "label": "contrarian_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:03:58.884809+00:00",
+      "prompt_hash": "d4e5652fed7d68c6172fa3d802d05ae286f05750d3e6d7b99f9ae35413fd79df",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "HTTP 503",
+      "elapsed_seconds": 2.770410572000401
+    },
+    {
+      "label": "contrarian_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-08T13:04:13.885029+00:00",
+      "prompt_hash": "d4e5652fed7d68c6172fa3d802d05ae286f05750d3e6d7b99f9ae35413fd79df",
+      "input_tokens": 4057,
+      "output_tokens": 648,
+      "thinking_tokens": 0,
+      "total_tokens": 4705,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.9118503569989116
+    },
+    {
+      "label": "revision_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:04:28.885255+00:00",
+      "prompt_hash": "f66e5c3f601a26c5c9d2f881aa39922af59139948a72f82b40a491134178d219",
+      "input_tokens": 5118,
+      "output_tokens": 796,
+      "thinking_tokens": 0,
+      "total_tokens": 5914,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.6164457449995098
+    },
+    {
+      "label": "novelty_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:04:43.885387+00:00",
+      "prompt_hash": "dd7c5aa68beb7fe2de72574c1f64c8951175cfc812fec83961dd50d7f93daac4",
+      "input_tokens": 4127,
+      "output_tokens": 586,
+      "thinking_tokens": 0,
+      "total_tokens": 4713,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.047539250997943
+    },
+    {
+      "label": "feasibility_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:04:58.885611+00:00",
+      "prompt_hash": "52a88fd348d73f41f696e4a4aad31ae8ae4875b0b8c76bc14d6d522bb2388ae9",
+      "input_tokens": 4127,
+      "output_tokens": 444,
+      "thinking_tokens": 0,
+      "total_tokens": 4571,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.0759110170001804
+    },
+    {
+      "label": "clarity_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:05:13.885837+00:00",
+      "prompt_hash": "675d1fc032c9d57d092883bd0175043af7b854d5e1b11dda61b3f85b8a69e0fa",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "NetworkOrTimeoutError",
+      "elapsed_seconds": 120.35107373600113
+    },
+    {
+      "label": "clarity_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-08T13:07:17.239134+00:00",
+      "prompt_hash": "675d1fc032c9d57d092883bd0175043af7b854d5e1b11dda61b3f85b8a69e0fa",
+      "input_tokens": 4115,
+      "output_tokens": 480,
+      "thinking_tokens": 0,
+      "total_tokens": 4595,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.3540988269996888
+    },
+    {
+      "label": "contrarian_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:07:32.239356+00:00",
+      "prompt_hash": "9d30b3416d03709a95f0f8bd466f1267e7b8e8d14bf14566d2ce25139e8b4458",
+      "input_tokens": 4126,
+      "output_tokens": 732,
+      "thinking_tokens": 0,
+      "total_tokens": 4858,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.244079248001071
+    },
+    {
+      "label": "revision_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T13:07:47.239438+00:00",
+      "prompt_hash": "cd7238d1e998042d0e143b7f84f9c6cc0c03a40c254902c1d32d133a0fbae5df",
+      "input_tokens": 5374,
+      "output_tokens": 914,
+      "thinking_tokens": 0,
+      "total_tokens": 6288,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.7515263200002664
+    }
+  ],
+  "provenance": "live_gemini"
+}

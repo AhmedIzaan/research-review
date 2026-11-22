@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-13T11:10:10.198681+00:00",
+  "test_report": "results/web_pytest.xml",
+  "tests": 77,
+  "passed": 76,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "javascript_syntax": "passed: node --check frontend/app.js",
+  "html_script_targets": "passed: unique IDs and all literal script targets present",
+  "server_startup": "passed: Uvicorn application startup completed on loopback",
+  "in_process_http": "passed: FastAPI ASGI transport exercised by web tests",
+  "browser_visual_verification": "blocked: Chrome startup setsockopt: Operation not permitted",
+  "normal_http_readiness": "blocked in restricted shell; in-process API tests passed",
+  "new_live_gemini_call_from_ui": "not run: restricted network; use normal terminal",
+  "original_experiment_preservation": {
+    "smoke": {
+      "checked_files": 157,
+      "changed_files": []
+    },
+    "smoke_v2": {
+      "checked_files": 174,
+      "changed_files": []
+    }
+  },
+  "note": "Software verification only; test model responses are fixtures in temporary directories, never experimental findings."
+}

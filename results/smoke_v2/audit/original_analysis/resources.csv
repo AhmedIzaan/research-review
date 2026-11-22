@@ -1,0 +1,13 @@
+configuration,seed_id,replicate,seconds_excluding_shared_initial,calls_excluding_shared_initial,total_tokens,tokens_missing,estimated_cost_usd,cost_missing,agent_failures,api_failures,validation_failures,iterations,stop_reason
+no_novelty_retrieval,2025.naacl-long.342,0,224.6522234139993,15,75691,0,0.0,0,0,0,0,3,iteration_limit
+generic,2024.acl-long.18,0,59.375769954000134,4,,1,,1,1,1,0,2,all_reviewers_failed
+no_novelty_retrieval,2024.acl-long.18,0,363.557633892,17,,2,,2,0,2,0,3,iteration_limit
+full,2025.naacl-long.342,0,225.2453964689994,15,94340,0,0.0,0,0,0,0,3,iteration_limit
+no_feasibility,2025.naacl-long.342,0,302.98939438899833,13,,1,,1,0,1,0,3,iteration_limit
+one_shot,2024.acl-long.18,0,0.0005514469994523097,0,0,0,0,0,0,0,0,0,one_shot
+full,2024.acl-long.18,0,225.63890828500007,15,100180,0,0.0,0,0,0,0,3,iteration_limit
+generic,2025.naacl-long.342,0,90.13933811599782,6,27380,0,0.0,0,0,0,0,3,iteration_limit
+one_shot,2025.naacl-long.342,0,0.0006192200016812421,0,0,0,0,0,0,0,0,0,one_shot
+no_contrarian,2024.acl-long.18,0,179.66577516599864,12,79012,0,0.0,0,0,0,0,3,iteration_limit
+no_feasibility,2024.acl-long.18,0,179.98947186299847,12,79829,0,0.0,0,0,0,0,3,unchanged_proposal
+no_contrarian,2025.naacl-long.342,0,194.89105501000085,13,,1,,1,0,1,0,3,iteration_limit

@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-11-08T11:16:44.132728+00:00",
+  "stage": "finished",
+  "status": "completed_with_failures",
+  "plan": {
+    "seeds": 2,
+    "rounds": 3,
+    "generation_review_calls": 122,
+    "judge_calls_upper_bound": 16,
+    "total_calls_upper_bound": 138,
+    "with_retries_upper_bound": 414,
+    "planning_input_tokens": 897000,
+    "planning_output_tokens": 193200,
+    "note": "Planning token assumptions, not measured usage. Six natural-budget configurations; no equal-cost causal claim."
+  },
+  "expected_configurations": 12,
+  "saved_configurations": 12,
+  "missing_configurations": [],
+  "unscored_final_configurations": [
+    [
+      "2024.acl-long.18",
+      "full",
+      0
+    ],
+    [
+      "2024.acl-long.18",
+      "generic",
+      0
+    ],
+    [
+      "2024.acl-long.18",
+      "no_novelty_retrieval",
+      0
+    ],
+    [
+      "2025.naacl-long.342",
+      "no_feasibility",
+      0
+    ],
+    [
+      "2025.naacl-long.342",
+      "no_novelty_retrieval",
+      0
+    ]
+  ],
+  "failed_runs": [
+    "d4452cddff91dc6c370e",
+    "fbd2a64585358778c142"
+  ],
+  "reviewer_failures": 13,
+  "judge_failures": 6,
+  "analysis": {
+    "status": "analyzed",
+    "valid_score_rows": 17,
+    "failed_score_rows": 6,
+    "n_seeds": 2,
+    "n_final_rows": 7,
+    "limitations": "Same-model judge bias, abstract-only search coverage, natural unequal budgets, purposive seeds, no human calibration yet. Missing judgments excluded and counted; no claim of scientific success."
+  },
+  "finished_at": "2026-11-08T11:48:00.367717+00:00",
+  "jupyter_dependencies_available": false,
+  "notebook_execution": "pending; inspect saved study with the project notebooks"
+}

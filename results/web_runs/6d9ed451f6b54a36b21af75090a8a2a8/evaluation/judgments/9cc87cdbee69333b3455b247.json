@@ -1,0 +1,217 @@
+{
+  "blind_id": "9cc87cdbee69333b3455b247",
+  "spec_hash": "97f1d2f7e7a633b3ea96f754bdfcd40b10ac5f1a1dc9f170df8b269720b316f1",
+  "judgment": {
+    "novelty": 4,
+    "feasibility": 3,
+    "clarity": 4,
+    "importance": 4,
+    "evidence_grounding": 3,
+    "rationale": {
+      "novelty": "The proposal combines a query transformer for semantic alignment with a lightweight cross-encoder NLI scoring module and a contradiction gate for generator abstention under tight hardware constraints, offering a distinct mechanism compared to existing post-hoc evaluation or heavy multi-step decomposition baselines.",
+      "feasibility": "Running a 7B parameter quantized model along with an auxiliary cross-encoder within 12 GB VRAM is tight, but bitsandbytes 4-bit INT quantization and a concrete fallback plan (reducing batch size to 1) make it realistically implementable.",
+      "clarity": "The operational steps, components, hardware constraints, datasets, and evaluation metrics (EM, F1, Abstention Precision/Recall) are well-defined and reproducible.",
+      "importance": "Mitigating hallucinations caused by conflicting or insufficient retrieved evidence through principled abstention is a valuable problem in open-domain question answering and trustworthy RAG systems.",
+      "evidence_grounding": "The literature references correctly highlight the challenges of RAG hallucinations and noise filtering, though direct empirical citations regarding the cross-encoder contradiction gate integration are naturally part of the proposed novel design."
+    },
+    "evidence": [
+      {
+        "paper_id": "2024.acl-long.585",
+        "claim": "Despite the integration of RAG, LLMs may still present unsupported or contradictory claims to the retrieved contents.",
+        "supporting_excerpt": "Despite the integration of RAG, LLMs may still present unsupported or contradictory claims to the retrieved contents.",
+        "relation": "supports"
+      },
+      {
+        "paper_id": "2024.acl-long.585",
+        "claim": "Developing effective hallucination prevention strategies under RAG requires measuring the extent of hallucination.",
+        "supporting_excerpt": "In order to develop effective hallucination prevention strategies under RAG, it is important to create benchmark datasets that can measure the extent of hallucination.",
+        "relation": "supports"
+      }
+    ],
+    "uncertainty": "The primary uncertainty lies in whether a lightweight cross-encoder NLI classifier can achieve sufficient accuracy in contradiction detection without full multi-step prompt decomposition, and whether peak VRAM usage will stay safely below the 12 GB threshold during concurrent batch generation."
+  },
+  "search": [
+    {
+      "query": "contradiction detection retrieval augmented generation",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-14T13:27:00.540882+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-industry.26",
+          "title": "DSRAG: A Double-Stream Retrieval-Augmented Generation Framework for Countless Intent Detection",
+          "authors": [
+            "Pei Guo",
+            "Enjie Liu",
+            "Ruichao Zhong",
+            "Mochi Gao",
+            "Yunzhi Tan",
+            "Bo Hu",
+            "Zang Li"
+          ],
+          "year": 2025,
+          "abstract": "Current intent detection work experiments with minor intent categories. However, in real-world scenarios of data analysis dialogue systems, intents are composed of combinations of numerous metrics and dimensions, resulting in countless intents and posing challenges for the language model. The retrieval-augmented generation (RAG) method efficiently retrieves key intents. However, the single retrieval route sometimes fails to recall target intents and causes incorrect results. To alleviate the above challenges, we introduce the DSRAG framework combining query-to-query (Q2Q) and query-to-metadata (Q2M) double-stream RAG approaches. Specifically, we build a repository of query statements for Q2Q using the query templates with the key intents. When a user’s query comes, it rapidly matches repository statements. Once the relevant query is retrieved, the results can be quickly returned. In contrast, Q2M retrieves the relevant intents from the metadata and utilizes large language models to choose the answer. Experimental results show that DSRAG achieves significant improvements compared with merely using prompt engineering and a single retrieval route.",
+          "url": "https://aclanthology.org/2025.naacl-industry.26/",
+          "doi": "10.18653/v1/2025.naacl-industry.26",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-demos.25",
+          "title": "VeraCT Scan: Retrieval-Augmented Fake News Detection with Justifiable Reasoning",
+          "authors": [
+            "Cheng Niu",
+            "Yang Guan",
+            "Yuanhao Wu",
+            "Juno Zhu",
+            "Juntong Song",
+            "Randy Zhong",
+            "Kaihua Zhu",
+            "Siliang Xu",
+            "Shizhe Diao",
+            "Tong Zhang"
+          ],
+          "year": 2024,
+          "abstract": "The proliferation of fake news poses a significant threat not only by disseminating misleading information but also by undermining the very foundations of democracy. The recent advance of generative artificial intelligence has further exacerbated the challenge of distinguishing genuine news from fabricated stories. In response to this challenge, we introduce VeraCT Scan, a novel retrieval-augmented system for fake news detection. This system operates by extracting the core facts from a given piece of news and subsequently conducting an internet-wide search to identify corroborating or conflicting reports. Then sources’ credibility is leveraged for information verification. Besides determining the veracity of news, we also provide transparent evidence and reasoning to support its conclusions, resulting in the interpretability and trust in the results. In addition to GPT-4 Turbo, Llama-2 13B is also fine-tuned for news content understanding, information verification, and reasoning. Both implementations have demonstrated state-of-the-art accuracy in the realm of fake news detection.",
+          "url": "https://aclanthology.org/2024.acl-demos.25/",
+          "doi": "10.18653/v1/2024.acl-demos.25",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.585",
+          "title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+          "authors": [
+            "Cheng Niu",
+            "Yuanhao Wu",
+            "Juno Zhu",
+            "Siliang Xu",
+            "KaShun Shum",
+            "Randy Zhong",
+            "Juntong Song",
+            "Tong Zhang"
+          ],
+          "year": 2024,
+          "abstract": "Retrieval-augmented generation (RAG) has become a main technique for alleviating hallucinations in large language models (LLMs). Despite the integration of RAG, LLMs may still present unsupported or contradictory claims to the retrieved contents. In order to develop effective hallucination prevention strategies under RAG, it is important to create benchmark datasets that can measure the extent of hallucination. This paper presents RAGTruth, a corpus tailored for analyzing word-level hallucinations in various domains and tasks within the standard RAG frameworks for LLM applications. RAGTruth comprises nearly 18,000 naturally generated responses from diverse LLMs using RAG. These responses have undergone meticulous manual annotations at both the individual case and word levels, incorporating evaluations of hallucination intensity. We not only benchmark hallucination frequencies across different LLMs, but also critically assess the effectiveness of several existing hallucination detection methodologies. We show that using a high-quality dataset such as RAGTruth, it is possible to finetune a relatively small LLM and achieve a competitive hallucination detection performance when compared to the existing prompt-based approaches using state-of-the-art LLMs such as GPT-4. Furthermore, the finetuned model can effectively mitigate hallucination in LLM responses.",
+          "url": "https://aclanthology.org/2024.acl-long.585/",
+          "doi": "10.18653/v1/2024.acl-long.585",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.449",
+          "title": "Knowledge Graph-Guided Retrieval Augmented Generation",
+          "authors": [
+            "Xiangrong Zhu",
+            "Yuexiang Xie",
+            "Yi Liu",
+            "Yaliang Li",
+            "Wei Hu"
+          ],
+          "year": 2025,
+          "abstract": "Retrieval-augmented generation (RAG) has emerged as a promising technology for addressing hallucination issues in the responses generated by large language models (LLMs). Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships. In this paper, we propose a novel Knowledge Graph-Guided Retrieval Augmented Generation (KG^2RAG) framework that utilizes knowledge graphs (KGs) to provide fact-level relationships between chunks, improving the diversity and coherence of the retrieved results. Specifically, after performing a semantic-based retrieval to provide seed chunks, KG^2RAG employs a KG-guided chunk expansion process and a KG-based chunk organization process to deliver relevant and important knowledge in well-organized paragraphs. Extensive experiments conducted on the HotpotQA dataset and its variants demonstrate the advantages of KG^2RAG compared to existing RAG-based approaches, in terms of both response quality and retrieval quality.",
+          "url": "https://aclanthology.org/2025.naacl-long.449/",
+          "doi": "10.18653/v1/2025.naacl-long.449",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.334",
+          "title": "tRAG: Term-level Retrieval-Augmented Generation for Domain-Adaptive Retrieval",
+          "authors": [
+            "Dohyeon Lee",
+            "Jongyoon Kim",
+            "Jihyuk Kim",
+            "Seung-won Hwang",
+            "Joonsuk Park"
+          ],
+          "year": 2025,
+          "abstract": "Neural retrieval models have emerged as an effective tool for information retrieval, but their performance suffers when there is a domain shift between training and test data distributions. Recent work aims to construct pseudo-training data for the target domain by generating domain-adapted pseudo-queries using large language models (LLMs). However, we identifies that LLMs exhibit a “seen term bias” where the generated pseudo-queries fail to include relevant “unseen” terms as expected for domain adaptation purposes. To address this limitation, we propose to improve the term recall of unseen query terms, by using term-level Retrieval-Augmented Generation (tRAG). Specifically, unlike existing document-level RAG, we propose to generate domain-specific keywords from all documents in the corpus, including those unseen in any individual document. To filter hallucination, generated keywords are retrieved and reranked, leveraging relevance feedback from both retrievers and LLMs. Experiments on the BEIR benchmark show tRAG significantly improves recall for unseen terms by 10.6% and outperforms LLM and retrieval-augmented generation baselines on overall retrieval performance.",
+          "url": "https://aclanthology.org/2025.naacl-long.334/",
+          "doi": "10.18653/v1/2025.naacl-long.334",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-short.12",
+          "title": "On the Role of Long-tail Knowledge in Retrieval Augmented Large Language Models",
+          "authors": [
+            "Dongyang Li",
+            "Junbing Yan",
+            "Taolin Zhang",
+            "Chengyu Wang",
+            "Xiaofeng He",
+            "Longtao Huang",
+            "Hui Xue’",
+            "Jun Huang"
+          ],
+          "year": 2024,
+          "abstract": "Retrieval augmented generation (RAG) exhibits outstanding performance in promoting the knowledge capabilities of large language models (LLMs) with retrieved documents related to user queries. However, RAG only focuses on improving the response quality of LLMs via enhancing queries indiscriminately with retrieved information, paying little attention to what type of knowledge LLMs really need to answer original queries more accurately. In this paper, we suggest that long-tail knowledge is crucial for RAG as LLMs have already remembered common world knowledge during large-scale pre-training. Based on our observation, we propose a simple but effective long-tail knowledge detection method for LLMs. Specifically, the novel Generative Expected Calibration Error (GECE) metric is derived to measure the “long-tailness” of knowledge based on both statistics and semantics. Hence, we retrieve relevant documents and infuse them into the model for patching knowledge loopholes only when the input query relates to long-tail knowledge. Experiments show that, compared to existing RAG pipelines, our method achieves over 4x speedup in average inference time and consistent performance improvement in downstream tasks.",
+          "url": "https://aclanthology.org/2024.acl-short.12/",
+          "doi": "10.18653/v1/2024.acl-short.12",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.702",
+          "title": "DRAGIN: Dynamic Retrieval Augmented Generation based on the Real-time Information Needs of Large Language Models",
+          "authors": [
+            "Weihang Su",
+            "Yichen Tang",
+            "Qingyao Ai",
+            "Zhijing Wu",
+            "Yiqun Liu"
+          ],
+          "year": 2024,
+          "abstract": "Dynamic retrieval augmented generation (RAG) paradigm actively decides when and what to retrieve during the text generation process of Large Language Models (LLMs).There are two key elements of this paradigm: identifying the optimal moment to activate the retrieval module (deciding when to retrieve) and crafting the appropriate query once retrieval is triggered (determining what to retrieve).However, current dynamic RAG methods fall short in both aspects. Firstly, the strategies for deciding when to retrieve often rely on static rules. Moreover, the strategies for deciding what to retrieve typically limit themselves to the LLM’s most recent sentence or the last few tokens, while the LLM’s information needs may span across the entire context.To overcome these limitations, we introduce a new framework, DRAGIN, i.e., Dynamic Retrieval Augmented Generation based on the Information Needs of LLMs. Our framework is specifically designed to make decisions on when and what to retrieve based on the LLM’s information needs during the text generation process.We evaluate DRAGIN along with existing methods comprehensively over 4 knowledge-intensive generation datasets. Experimental results show that DRAGIN achieves superior performance on all tasks, demonstrating the effectiveness of our method.",
+          "url": "https://aclanthology.org/2024.acl-long.702/",
+          "doi": "10.18653/v1/2024.acl-long.702",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.59",
+          "title": "An Information Bottleneck Perspective for Effective Noise Filtering on Retrieval-Augmented Generation",
+          "authors": [
+            "Kun Zhu",
+            "Xiaocheng Feng",
+            "Xiyuan Du",
+            "Yuxuan Gu",
+            "Weijiang Yu",
+            "Haotian Wang",
+            "Qianglong Chen",
+            "Zheng Chu",
+            "Jingchang Chen",
+            "Bing Qin"
+          ],
+          "year": 2024,
+          "abstract": "Retrieval-augmented generation integrates the capabilities of large language models with relevant information retrieved from an extensive corpus, yet encounters challenges when confronted with real-world noisy data. One recent solution is to train a filter module to find relevant content but only achieve suboptimal noise compression. In this paper, we propose to introduce the information bottleneck theory into retrieval-augmented generation. Our approach involves the filtration of noise by simultaneously maximizing the mutual information between compression and ground output, while minimizing the mutual information between compression and retrieved passage. In addition, we derive the formula of information bottleneck to facilitate its application in novel comprehensive evaluations, the selection of supervised fine-tuning data, and the construction of reinforcement learning rewards. Experimental results demonstrate that our approach achieves significant improvements across various question answering datasets, not only in terms of the correctness of answer generation but also in the conciseness with 2.5% compression rate.",
+          "url": "https://aclanthology.org/2024.acl-long.59/",
+          "doi": "10.18653/v1/2024.acl-long.59",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    }
+  ],
+  "events": [
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:27:12.881686+00:00",
+      "prompt_hash": "ad3c9f03a855055653c5684e9587a0c527505341c3cc1a7f9b6f592e9b38c28e",
+      "input_tokens": 6845,
+      "output_tokens": 500,
+      "thinking_tokens": 0,
+      "total_tokens": 7345,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 2.5699593170002117
+    }
+  ],
+  "error": null
+}

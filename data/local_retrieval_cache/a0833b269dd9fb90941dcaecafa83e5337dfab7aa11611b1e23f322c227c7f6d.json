@@ -1,0 +1,111 @@
+{
+  "query": "chain of ideas scientific text generation",
+  "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "retrieved_at": "2026-11-08T12:34:28.973055+00:00",
+  "papers": [
+    {
+      "paper_id": "2025.findings-emnlp.477",
+      "title": "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
+      "authors": [
+        "Long Li",
+        "Weiwen Xu",
+        "Jiayan Guo",
+        "Ruochen Zhao",
+        "Xingxuan Li",
+        "Yuqian Yuan",
+        "Boqiang Zhang",
+        "Yuming Jiang",
+        "Yifei Xin",
+        "Ronghao Dang",
+        "Yu Rong",
+        "Deli Zhao",
+        "Tian Feng",
+        "Lidong Bing"
+      ],
+      "year": 2025,
+      "abstract": "Research ideation is crucial for scientific progress, but the exponential increase in scientific literature makes it challenging to stay updated and identify impactful directions. Recent developments in large language models (LLMs) offer a promising avenue to automate this process. However, existing methods for idea generation either trivially prompt LLMs or expose LLMs to extensive literature without indicating useful information. Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain. This organization helps LLMs better grasp current advancements, thereby improving ideation capabilities. Further, we present Idea Arena, a protocol for evaluating idea-generation methods from different perspectives, which aligns closely with the preferences of human researchers. Experiments show that CoI agent consistently outperforms existing methods and matches human quality in idea generation. Moreover, CoI agent is budgetfriendly, requiring only $0.50 to generate a candidate idea and its experimental design1 .",
+      "url": "https://aclanthology.org/2025.findings-emnlp.477/",
+      "doi": "10.18653/v1/2025.findings-emnlp.477",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.acl-long.1368",
+      "title": "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
+      "authors": [
+        "Haoyang Su",
+        "Renqi Chen",
+        "Shixiang Tang",
+        "Zhenfei Yin",
+        "Xinzhe Zheng",
+        "Jinzhe Li",
+        "Biqing Qi",
+        "Qi Wu",
+        "Hui Li",
+        "Wanli Ouyang",
+        "Philip Torr",
+        "Bowen Zhou",
+        "Nanqing Dong"
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement of scientific progress requires innovative tools that can accelerate knowledge discovery. Although recent AI methods, particularly large language models (LLMs), have shown promise in tasks such as hypothesis generation and experimental design, they fall short of replicating the collaborative nature of real-world scientific practices, where diverse experts work together in teams to tackle complex problems. To address the limitations, we propose an LLM-based multi-agent system, i.e., Virtual Scientists (VIRSCI), designed to mimic the teamwork inherent in scientific research. VIRSCI organizes a team of agents to collaboratively generate, evaluate, and refine research ideas. Through comprehensive experiments, we demonstrate that this multiagent approach outperforms the state-of-theart method in producing novel scientific ideas. We further investigate the collaboration mechanisms that contribute to its tendency to produce ideas with higher novelty, offering valuable insights to guide future research and illuminating pathways toward building a robust system for autonomous scientific discovery. The code is available at https://github.com/open-sci encelab/Virtual-Scientists.",
+      "url": "https://aclanthology.org/2025.acl-long.1368/",
+      "doi": "10.18653/v1/2025.acl-long.1368",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.emnlp-main.1704",
+      "title": "Can Large Language Models Unlock Novel Scientific Research Ideas?",
+      "authors": [
+        "Sandeep Kumar",
+        "Tirthankar Ghosal",
+        "Vinayak Goyal",
+        "Asif Ekbal"
+      ],
+      "year": 2025,
+      "abstract": "The widespread adoption of Large Language Models (LLMs) and publicly available ChatGPT have marked a significant turning point in the integration of Artificial Intelligence (AI) into people’s everyday lives. This study examines the ability of Large Language Models (LLMs) to generate future research ideas from scientific papers. Unlike tasks such as summarization or translation, idea generation lacks a clearly defined reference set or structure, making manual evaluation the default standard. However, human evaluation in this setting is extremely challenging — it requires substantial domain expertise, contextual understanding of the paper, and awareness of the current research landscape. This makes it time-consuming, costly, and fundamentally non-scalable, particularly as new LLMs are being released at a rapid pace. Currently, there is no automated evaluation metric specifically designed for this task. To address this gap, we propose two automated evaluation metrics: Idea Alignment Score (IAScore) and Idea Distinctness Index. We further conducted human evaluation to assess the novelty, relevance, and feasibility of the generated future research ideas. This investigation offers insights into the evolving role of LLMs in idea generation, highlighting both its capability and limitations. Our work contributes to the ongoing efforts in evaluating and utilizing language models for generating future research ideas. We make our datasets and codes publicly available1. “Innovation is seeing what everybody has seen and thinking what nobody has thought” —Dr. Albert Szent-Györgyi",
+      "url": "https://aclanthology.org/2025.emnlp-main.1704/",
+      "doi": "10.18653/v1/2025.emnlp-main.1704",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sdp-1.9",
+      "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+      "authors": [
+        "Simra Shahid",
+        "Marissa Radensky",
+        "Raymond Fok",
+        "Pao Siangliulue",
+        "Daniel S Weld",
+        "Tom Hope"
+      ],
+      "year": 2025,
+      "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+      "url": "https://aclanthology.org/2025.sdp-1.9/",
+      "doi": "10.18653/v1/2025.sdp-1.9",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    },
+    {
+      "paper_id": "2024.acl-long.18",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "authors": [
+        "Qingyun Wang",
+        "Doug Downey",
+        "Heng Ji",
+        "Tom Hope"
+      ],
+      "year": 2024,
+      "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction—severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature. Code, data, and resources are publicly available for research purposes: https://github.com/eaglew/clbd.",
+      "url": "https://aclanthology.org/2024.acl-long.18/",
+      "doi": "10.18653/v1/2024.acl-long.18",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    }
+  ],
+  "status": "ok",
+  "error": null,
+  "cache_hit": false
+}

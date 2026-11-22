@@ -1,0 +1,8 @@
+# Small local web app; core pipeline dependencies included, notebook extras optional.
+pydantic==2.12.5
+python-dotenv==1.2.1
+fastapi==0.129.0
+uvicorn==0.41.0
+# Used for in-process API tests, not for model access.
+httpx==0.28.1
+pytest==9.0.3

@@ -1,0 +1,9 @@
+,novelty,novelty,novelty,novelty,feasibility,feasibility,feasibility,feasibility,clarity,clarity,clarity,clarity,importance,importance,importance,importance,evidence_grounding,evidence_grounding,evidence_grounding,evidence_grounding
+,count,mean,median,std,count,mean,median,std,count,mean,median,std,count,mean,median,std,count,mean,median,std
+configuration,,,,,,,,,,,,,,,,,,,,
+one_shot,2,4.0,4.0,0.0,2,3.5,3.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.0,4.0,0.0,2,4.0,4.0,0.0
+generic,2,3.5,3.5,0.7071067811865476,2,3.5,3.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.0,4.0,0.0,2,4.0,4.0,0.0
+full,2,3.5,3.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.5,4.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.5,4.5,0.7071067811865476
+no_feasibility,2,4.0,4.0,0.0,2,3.5,3.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.0,4.0,0.0,2,4.0,4.0,0.0
+no_contrarian,2,4.0,4.0,0.0,2,3.5,3.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.0,4.0,0.0,2,4.0,4.0,0.0
+no_novelty_retrieval,2,4.0,4.0,0.0,2,3.5,3.5,0.7071067811865476,2,4.0,4.0,0.0,2,4.5,4.5,0.7071067811865476,2,4.0,4.0,0.0

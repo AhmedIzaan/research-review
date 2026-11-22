@@ -1,0 +1,1352 @@
+{
+  "run_id": "8e69bdc61553646d6a72",
+  "seed_id": "2025.naacl-long.342",
+  "configuration": "no_novelty_retrieval",
+  "replicate": 0,
+  "settings": {
+    "model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash-lite",
+    "temperature": 0.4,
+    "max_output_tokens": 4096,
+    "rounds": 3,
+    "max_attempts": 3,
+    "request_interval": 15.0,
+    "max_api_calls": 160,
+    "input_rate": 0.0,
+    "output_rate": 0.0,
+    "engine": "auto",
+    "retrieval_backend": "local",
+    "corpus_path": "data/corpus/papers.json",
+    "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+    "random_seed": 20261107,
+    "constraints": "University AI/NLP project: 6 weeks, 1 consumer GPU (12 GB) or API access, public lawful datasets, no LLM training.",
+    "resolved_engine": "python"
+  },
+  "literature": [
+    {
+      "paper_id": "2025.naacl-long.342",
+      "title": "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+      "authors": [
+        "Jinheon Baek",
+        "Sujay Kumar Jauhar",
+        "Silviu Cucerzan",
+        "Sung Ju Hwang"
+      ],
+      "year": 2025,
+      "abstract": "The pace of scientific research, vital for improving human life, is complex, slow, and needs specialized expertise. Meanwhile, novel, impactful research often stems from both a deep understanding of prior work, and a cross-pollination of ideas across domains and fields. To enhance the productivity of researchers, we propose ResearchAgent, which leverages the encyclopedic knowledge and linguistic reasoning capabilities of Large Language Models (LLMs) to assist them in their work. This system automatically defines novel problems, proposes methods and designs experiments, while iteratively refining them based on the feedback from collaborative LLM-powered reviewing agents. Specifically, starting with a core scientific paper, ResearchAgent is augmented not only with relevant publications by connecting information over an academic graph but also entities retrieved from a knowledge store derived from shared underlying concepts mined across numerous papers. Then, mimicking a scientific approach to improving ideas with peer discussions, we leverage multiple LLM-based ReviewingAgents that provide reviews and feedback via iterative revision processes. These reviewing agents are instantiated with human preference-aligned LLMs whose criteria for evaluation are elicited from actual human judgments via LLM prompting. We experimentally validate our ResearchAgent on scientific publications across multiple disciplines, showing its effectiveness in generating novel, clear, and valid ideas based on both human and modelbased evaluation results. Our initial foray into AI-mediated scientific research has important implications for the development of future systems aimed at supporting researchers in their ideation and operationalization of novel work1.",
+      "url": "https://aclanthology.org/2025.naacl-long.342/",
+      "doi": "10.18653/v1/2025.naacl-long.342",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sdp-1.9",
+      "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+      "authors": [
+        "Simra Shahid",
+        "Marissa Radensky",
+        "Raymond Fok",
+        "Pao Siangliulue",
+        "Daniel S Weld",
+        "Tom Hope"
+      ],
+      "year": 2025,
+      "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+      "url": "https://aclanthology.org/2025.sdp-1.9/",
+      "doi": "10.18653/v1/2025.sdp-1.9",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    },
+    {
+      "paper_id": "2025.findings-emnlp.477",
+      "title": "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
+      "authors": [
+        "Long Li",
+        "Weiwen Xu",
+        "Jiayan Guo",
+        "Ruochen Zhao",
+        "Xingxuan Li",
+        "Yuqian Yuan",
+        "Boqiang Zhang",
+        "Yuming Jiang",
+        "Yifei Xin",
+        "Ronghao Dang",
+        "Yu Rong",
+        "Deli Zhao",
+        "Tian Feng",
+        "Lidong Bing"
+      ],
+      "year": 2025,
+      "abstract": "Research ideation is crucial for scientific progress, but the exponential increase in scientific literature makes it challenging to stay updated and identify impactful directions. Recent developments in large language models (LLMs) offer a promising avenue to automate this process. However, existing methods for idea generation either trivially prompt LLMs or expose LLMs to extensive literature without indicating useful information. Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain. This organization helps LLMs better grasp current advancements, thereby improving ideation capabilities. Further, we present Idea Arena, a protocol for evaluating idea-generation methods from different perspectives, which aligns closely with the preferences of human researchers. Experiments show that CoI agent consistently outperforms existing methods and matches human quality in idea generation. Moreover, CoI agent is budgetfriendly, requiring only $0.50 to generate a candidate idea and its experimental design1 .",
+      "url": "https://aclanthology.org/2025.findings-emnlp.477/",
+      "doi": "10.18653/v1/2025.findings-emnlp.477",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.emnlp-main.1292",
+      "title": "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+      "authors": [
+        "Rosni Vasu",
+        "Chandrayee Basu",
+        "Bhavana Dalvi Mishra",
+        "Cristina Sarasua",
+        "Peter Clark",
+        "Abraham Bernstein"
+      ],
+      "year": 2025,
+      "abstract": "Large Language models have demonstrated promising performance in research ideation across scientific domains. Hypothesis development, the process of generating a highly specific declarative statement connecting a research idea with empirical validation, has received relatively less attention. Existing approaches trivially deploy retrieval augmentation and focus only on the quality of the final output ignoring the underlying reasoning process behind ideation. We present HypER (Hypothesis Generation with Explanation and Reasoning), a small language model (SLM) trained for literature-guided reasoning and evidence-based hypothesis generation. HypER is trained in a multi-task setting to discriminate between valid and invalid scientific reasoning chains in presence of controlled distractions. We find that HypER outperforms the base model, distinguishing valid from invalid reasoning chains (+22% average absolute F1), generates better evidence-grounded hypotheses (0.327 vs. 0.305 base model) with high feasibility and impact as judged by human experts (>3.5 on 5-point Likert scale). Resource at §.",
+      "url": "https://aclanthology.org/2025.emnlp-main.1292/",
+      "doi": "10.18653/v1/2025.emnlp-main.1292",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2024.acl-long.18",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "authors": [
+        "Qingyun Wang",
+        "Doug Downey",
+        "Heng Ji",
+        "Tom Hope"
+      ],
+      "year": 2024,
+      "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction—severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature. Code, data, and resources are publicly available for research purposes: https://github.com/eaglew/clbd.",
+      "url": "https://aclanthology.org/2024.acl-long.18/",
+      "doi": "10.18653/v1/2024.acl-long.18",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    }
+  ],
+  "initial_idea": {
+    "title": "Integrating Automated Novelty Assessment into Chain-of-Ideas Scientific Generation",
+    "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without manual intervention?",
+    "research_gap": "While recent frameworks like Chain-of-Ideas (CoI) and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during the generation trajectory. Conversely, novelty checkers operate entirely post-hoc rather than guiding generation interactively.",
+    "methodology": "We propose a modular pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker. During each intermediate step of idea refinement, the system queries a scientific literature index, extracts core facets using an LLM, and computes a dynamic novelty score. If the novelty score falls below a threshold, the feedback loop prompts the generator agent to pivot its conceptual trajectory away from existing prior art.",
+    "expected_contribution": "An integrated, automated ideation framework that demonstrably increases the novelty and technical depth of generated research proposals while maintaining high logical consistency and feasibility.",
+    "experimental_setup": "We select a benchmark set of 100 recent computer science and NLP papers published across top-tier venues. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We compare our integrated novelty-guided CoI approach against baseline vanilla CoI and ResearchAgent configurations.",
+    "evaluation_strategy": "We evaluate the generated ideas using both automated LLM-as-a-judge protocols (Idea Arena style preferences) and manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale.",
+    "feasibility_assumptions": [
+      "Access to API-based LLMs for multi-agent generation and facet extraction.",
+      "Availability of public pre-computed embeddings and vector databases for scientific literature retrieval.",
+      "Execution timeline fits within a 6-week university project window using existing open-source frameworks."
+    ],
+    "references": [
+      "2025.naacl-long.342",
+      "2025.sdp-1.9",
+      "2025.findings-emnlp.477",
+      "2025.emnlp-main.1292",
+      "2024.acl-long.18"
+    ],
+    "search_queries": [
+      "automated scientific idea generation novelty checker",
+      "chain of ideas llm agent research ideation",
+      "literature grounded hypothesis generation provenance"
+    ]
+  },
+  "final_idea": {
+    "title": "Integrating Automated Novelty Assessment into Milestone-Gated Chain-of-Ideas Scientific Generation",
+    "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without inducing degenerate lexical avoidance, excessive API latency, or unfeasible conceptual drift?",
+    "research_gap": "While frameworks like Chain-of-Ideas and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during generation trajectories. Prior novelty-checking approaches operate post-hoc or run heavy retrieval-rerank loops at every step, creating severe latency, high API costs, and perverse incentives for the generator to make unfeasible adjustments to clear arbitrary thresholds. Furthermore, existing work does not combine dynamic uncertainty-driven milestone scheduling with soft penalty-based optimization to guarantee logical soundness without trapping agents in trivial local optima.",
+    "methodology": "We propose an ideation pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker and a soft penalty-based feasibility rule. Instead of static milestone gating or continuous step-by-step loops, novelty checks and feedback loops are triggered dynamically via an uncertainty-driven adaptive trigger based on entropy over the generator's token distribution or semantic variance across intermediate steps. At these adaptive checkpoints, the system queries a pre-computed vector database of scientific literature, extracts core facets using an LLM, and computes a dynamic novelty score. Crucially, rather than using a hard binary filter that causes objective conflict, the programmatic feasibility check is formulated as a soft penalty within the reward model. Conflicting feedback signals between novelty and feasibility are reconciled using a weighted preference-alignment function that prevents the pruning of unconventional yet valid paradigms.",
+    "expected_contribution": "An integrated, cost-efficient ideation framework that increases the technical depth and novelty of generated research proposals while preserving logical consistency and experimental feasibility, accompanied by a formal ablation study detailing the latency-novelty trade-off curve and sensitivity analysis on milestone granularity.",
+    "experimental_setup": "We select a benchmark subset of 25 recent computer science and NLP papers published across top-tier venues to fit practical API budgets. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We leverage existing open-source implementations of ResearchAgent, SciMON, and vanilla Chain-of-Ideas (CoI) to serve as baselines, and compare our uncertainty-driven adaptive novelty-guided CoI approach against them.",
+    "evaluation_strategy": "We evaluate generated ideas using automated LLM-as-a-judge protocols (Idea Arena style preferences), manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale, and a historical prediction benchmark tasking the system with generating follow-up papers from a historical cutoff year to check overlap with actually published breakthroughs. We also conduct an explicit ablation study comparing the latency, cost, and novelty trade-off of adaptive uncertainty-driven gating versus static milestone spacing and continuous step-by-step checking.",
+    "feasibility_assumptions": [
+      "Access to API-based LLMs for multi-agent generation and facet extraction.",
+      "Availability of public pre-computed embeddings and vector databases (such as Semantic Scholar snapshots) for scientific literature retrieval.",
+      "Execution timeline fits within a 6-week university project window using open-source agent frameworks (such as pre-existing implementations of ResearchAgent and SciMON) and local quantized language models for intermediate steps combined with targeted API calls for final evaluation."
+    ],
+    "references": [
+      "2025.naacl-long.342",
+      "2025.sdp-1.9",
+      "2025.findings-emnlp.477",
+      "2025.emnlp-main.1292",
+      "2024.acl-long.18"
+    ],
+    "search_queries": [
+      "automated scientific idea generation novelty checker",
+      "chain of ideas llm agent research ideation",
+      "literature grounded hypothesis generation provenance"
+    ]
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "input_idea": {
+        "title": "Integrating Automated Novelty Assessment into Chain-of-Ideas Scientific Generation",
+        "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without manual intervention?",
+        "research_gap": "While recent frameworks like Chain-of-Ideas (CoI) and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during the generation trajectory. Conversely, novelty checkers operate entirely post-hoc rather than guiding generation interactively.",
+        "methodology": "We propose a modular pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker. During each intermediate step of idea refinement, the system queries a scientific literature index, extracts core facets using an LLM, and computes a dynamic novelty score. If the novelty score falls below a threshold, the feedback loop prompts the generator agent to pivot its conceptual trajectory away from existing prior art.",
+        "expected_contribution": "An integrated, automated ideation framework that demonstrably increases the novelty and technical depth of generated research proposals while maintaining high logical consistency and feasibility.",
+        "experimental_setup": "We select a benchmark set of 100 recent computer science and NLP papers published across top-tier venues. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We compare our integrated novelty-guided CoI approach against baseline vanilla CoI and ResearchAgent configurations.",
+        "evaluation_strategy": "We evaluate the generated ideas using both automated LLM-as-a-judge protocols (Idea Arena style preferences) and manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale.",
+        "feasibility_assumptions": [
+          "Access to API-based LLMs for multi-agent generation and facet extraction.",
+          "Availability of public pre-computed embeddings and vector databases for scientific literature retrieval.",
+          "Execution timeline fits within a 6-week university project window using existing open-source frameworks."
+        ],
+        "references": [
+          "2025.naacl-long.342",
+          "2025.sdp-1.9",
+          "2025.findings-emnlp.477",
+          "2025.emnlp-main.1292",
+          "2024.acl-long.18"
+        ],
+        "search_queries": [
+          "automated scientific idea generation novelty checker",
+          "chain of ideas llm agent research ideation",
+          "literature grounded hypothesis generation provenance"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": null,
+          "search": [],
+          "error": "Evidence excerpt does not match retrieved abstract",
+          "evidence_status": "disabled"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposed project attempts to integrate a dynamic retrieval-augmented novelty checker into a multi-agent generation loop (Chain-of-Ideas). While the component pieces (CoI generation and the Idea Novelty Checker) are well-documented in recent literature, orchestrating iterative RAG-based calls at each intermediate generation step within a 6-week window introduces substantial engineering overhead, API cost risks, and latency hurdles for a single consumer GPU or standard API setup.",
+            "problems": [
+              "Running multi-agent generation loops intertwined with dynamic retrieval and facet-based LLM re-ranking at every intermediate step will incur high API costs and severe latency.",
+              "A 6-week project window is tight for integrating two complex, independent frameworks (Chain-of-Ideas and a retrieve-then-rerank novelty checker) with robust evaluation.",
+              "Relying entirely on API-based LLMs without localized distillation or caching can lead to rate-limit bottlenecks during systematic evaluations over 100 benchmark topics."
+            ],
+            "improvements": [
+              "Restrict the novelty check to occur at major milestone revisions rather than every intermediate generation step to drastically reduce API overhead and latency.",
+              "Use pre-computed vector databases and fixed snapshot indexes (e.g., Semantic Scholar dumps or specialized subsets) to streamline the retrieval pipeline.",
+              "Leverage open-source lightweight embedding models locally combined with API-based generation to balance compute constraints."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "The Idea Novelty Checker utilizes a two-stage retrieve-then-rerank approach involving embedding filtering and facet-based LLM re-ranking.",
+                "supporting_excerpt": "To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.findings-emnlp.477",
+                "claim": "Chain of Ideas agent organizes literature in a chain structure to mirror progressive development.",
+                "supporting_excerpt": "Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether the student team has secured adequate API credits to sustain the heavy query volume required for multi-agent iterative loops coupled with frequent retrieval and reranking steps."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "clarity",
+          "review": null,
+          "search": [],
+          "error": "Evidence excerpt does not match retrieved abstract",
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 4,
+            "importance": 3,
+            "explanation": "The proposal aims to bridge two existing paradigms—Chain-of-Ideas (CoI) generation and a facet-based retrieval-augmented novelty checker—by injecting dynamic novelty scores mid-trajectory into the refinement loop. While this sounds appealing on paper, the core mechanism rests on a problematic feedback loop: LLM-driven generation guided by automated LLM-based novelty scores risks collapsing into degenerate lexical avoidance rather than genuine conceptual breakthroughs. If a novelty checker flags an idea as too similar to prior art based on embedding distance or surface-level facet overlap, the generator agent may be forced into making bizarre, unfeasible modifications just to clear an arbitrary numerical threshold, sacrificing technical depth and logical coherence.",
+            "problems": [
+              "The central mechanism creates a perverse incentive for the generator agent: to bypass the novelty threshold, the model may introduce arbitrary, nonsensical combinations of keywords or methods that clear the distance metric while destroying experimental feasibility and scientific soundness.",
+              "Running a heavy retrieve-then-rerank novelty assessment pipeline at every intermediate step of the generation trajectory introduces severe latency and cost overheads, conflicting with the stated goal of a lightweight 6-week project timeline.",
+              "The proposed evaluation relies heavily on LLM-as-a-judge protocols (Idea Arena style preferences), which share structural biases with the generative models themselves, creating circular validation loops."
+            ],
+            "improvements": [
+              "Instead of dynamic mid-trajectory interruption, evaluate novelty gating only at major branching checkpoints rather than every step to reduce compute overhead and prevent erratic trajectory shifts.",
+              "Incorporate a strict sanity-checking filter on feasibility before letting the novelty feedback loop force a conceptual pivot, ensuring that novelty scores do not drive the generation toward physically or logically impossible research directions.",
+              "Supplement the LLM-as-a-judge evaluation with a historical prediction benchmark—tasking the system with generating follow-up papers from a historical cutoff year and checking whether the generated ideas overlap with actually published breakthroughs."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "The novelty checker relies on a two-stage retrieve-then-rerank approach using embedding filtering and facet-based LLM re-ranking.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Prior work like SciMON already attempts iterative updating of idea suggestions until novelty is achieved, indicating that dynamic novelty-guided generation is not entirely distinct.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "It remains unclear how the dynamic novelty score threshold will be calibrated without extensive human tuning, as an overly aggressive threshold will prevent convergence while a lenient threshold will fail to filter incremental proposals."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposed project attempts to integrate a dynamic retrieval-augmented novelty checker into a multi-agent generation loop (Chain-of-Ideas). While the component pieces (CoI generation and the Idea Novelty Checker) are well-documented in recent literature, orchestrating iterative RAG-based calls at each intermediate generation step within a 6-week window introduces substantial engineering overhead, API cost risks, and latency hurdles for a single consumer GPU or standard API setup.",
+            "problems": [
+              "Running multi-agent generation loops intertwined with dynamic retrieval and facet-based LLM re-ranking at every intermediate step will incur high API costs and severe latency.",
+              "A 6-week project window is tight for integrating two complex, independent frameworks (Chain-of-Ideas and a retrieve-then-rerank novelty checker) with robust evaluation.",
+              "Relying entirely on API-based LLMs without localized distillation or caching can lead to rate-limit bottlenecks during systematic evaluations over 100 benchmark topics."
+            ],
+            "improvements": [
+              "Restrict the novelty check to occur at major milestone revisions rather than every intermediate generation step to drastically reduce API overhead and latency.",
+              "Use pre-computed vector databases and fixed snapshot indexes (e.g., Semantic Scholar dumps or specialized subsets) to streamline the retrieval pipeline.",
+              "Leverage open-source lightweight embedding models locally combined with API-based generation to balance compute constraints."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "The Idea Novelty Checker utilizes a two-stage retrieve-then-rerank approach involving embedding filtering and facet-based LLM re-ranking.",
+                "supporting_excerpt": "To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.findings-emnlp.477",
+                "claim": "Chain of Ideas agent organizes literature in a chain structure to mirror progressive development.",
+                "supporting_excerpt": "Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether the student team has secured adequate API credits to sustain the heavy query volume required for multi-agent iterative loops coupled with frequent retrieval and reranking steps."
+          },
+          {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 4,
+            "importance": 3,
+            "explanation": "The proposal aims to bridge two existing paradigms—Chain-of-Ideas (CoI) generation and a facet-based retrieval-augmented novelty checker—by injecting dynamic novelty scores mid-trajectory into the refinement loop. While this sounds appealing on paper, the core mechanism rests on a problematic feedback loop: LLM-driven generation guided by automated LLM-based novelty scores risks collapsing into degenerate lexical avoidance rather than genuine conceptual breakthroughs. If a novelty checker flags an idea as too similar to prior art based on embedding distance or surface-level facet overlap, the generator agent may be forced into making bizarre, unfeasible modifications just to clear an arbitrary numerical threshold, sacrificing technical depth and logical coherence.",
+            "problems": [
+              "The central mechanism creates a perverse incentive for the generator agent: to bypass the novelty threshold, the model may introduce arbitrary, nonsensical combinations of keywords or methods that clear the distance metric while destroying experimental feasibility and scientific soundness.",
+              "Running a heavy retrieve-then-rerank novelty assessment pipeline at every intermediate step of the generation trajectory introduces severe latency and cost overheads, conflicting with the stated goal of a lightweight 6-week project timeline.",
+              "The proposed evaluation relies heavily on LLM-as-a-judge protocols (Idea Arena style preferences), which share structural biases with the generative models themselves, creating circular validation loops."
+            ],
+            "improvements": [
+              "Instead of dynamic mid-trajectory interruption, evaluate novelty gating only at major branching checkpoints rather than every step to reduce compute overhead and prevent erratic trajectory shifts.",
+              "Incorporate a strict sanity-checking filter on feasibility before letting the novelty feedback loop force a conceptual pivot, ensuring that novelty scores do not drive the generation toward physically or logically impossible research directions.",
+              "Supplement the LLM-as-a-judge evaluation with a historical prediction benchmark—tasking the system with generating follow-up papers from a historical cutoff year and checking whether the generated ideas overlap with actually published breakthroughs."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "The novelty checker relies on a two-stage retrieve-then-rerank approach using embedding filtering and facet-based LLM re-ranking.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Prior work like SciMON already attempts iterative updating of idea suggestions until novelty is achieved, indicating that dynamic novelty-guided generation is not entirely distinct.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "It remains unclear how the dynamic novelty score threshold will be calibrated without extensive human tuning, as an overly aggressive threshold will prevent convergence while a lenient threshold will fail to filter incremental proposals."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "contrarian": 2
+          },
+          "feasibility": {
+            "feasibility": 3,
+            "contrarian": 2
+          },
+          "clarity": {
+            "contrarian": 4
+          },
+          "importance": {
+            "contrarian": 3
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [
+          {
+            "role": "novelty",
+            "error": "Evidence excerpt does not match retrieved abstract"
+          },
+          {
+            "role": "clarity",
+            "error": "Evidence excerpt does not match retrieved abstract"
+          }
+        ],
+        "evidence_status": {
+          "novelty": "disabled",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Integrating Automated Novelty Assessment into Milestone-Gated Chain-of-Ideas Scientific Generation",
+        "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without inducing degenerate lexical avoidance or excessive API latency?",
+        "research_gap": "While frameworks like Chain-of-Ideas (CoI) and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during generation trajectory. Prior novelty-checking approaches operate post-hoc or run heavy retrieval-rerank loops at every step, creating severe latency, high API costs, and perverse incentives for the generator to make unfeasible adjustments to clear arbitrary thresholds.",
+        "methodology": "We propose a milestone-gated pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker. Instead of evaluating novelty at every intermediate step, novelty checks and feedback loops are restricted to major branching checkpoints. At these checkpoints, the system queries a pre-computed vector database of scientific literature, extracts core facets using an LLM, and computes a dynamic novelty score. Crucially, a strict heuristic feasibility filter precedes the novelty feedback loop to ensure that generator agents pivot only toward logically and physically sound conceptual directions rather than arbitrary, unfeasible deviations.",
+        "expected_contribution": "An integrated, cost-efficient ideation framework that increases the technical depth and novelty of generated research proposals while preserving logical consistency and experimental feasibility.",
+        "experimental_setup": "We select a benchmark set of 100 recent computer science and NLP papers published across top-tier venues. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We compare our milestone-gated novelty-guided CoI approach against baseline vanilla CoI, ResearchAgent, and continuous step-by-step novelty checking configurations.",
+        "evaluation_strategy": "We evaluate generated ideas using automated LLM-as-a-judge protocols (Idea Arena style preferences), manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale, and a historical prediction benchmark tasking the system with generating follow-up papers from a historical cutoff year to check overlap with actually published breakthroughs.",
+        "feasibility_assumptions": [
+          "Access to API-based LLMs for multi-agent generation and facet extraction.",
+          "Availability of public pre-computed embeddings and vector databases (such as Semantic Scholar snapshots) for scientific literature retrieval.",
+          "Execution timeline fits within a 6-week university project window using open-source agent frameworks and local embedding models combined with targeted API calls."
+        ],
+        "references": [
+          "2025.naacl-long.342",
+          "2025.sdp-1.9",
+          "2025.findings-emnlp.477",
+          "2025.emnlp-main.1292",
+          "2024.acl-long.18"
+        ],
+        "search_queries": [
+          "automated scientific idea generation novelty checker",
+          "chain of ideas llm agent research ideation",
+          "literature grounded hypothesis generation provenance"
+        ]
+      },
+      "revision_error": null
+    },
+    {
+      "index": 2,
+      "input_idea": {
+        "title": "Integrating Automated Novelty Assessment into Milestone-Gated Chain-of-Ideas Scientific Generation",
+        "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without inducing degenerate lexical avoidance or excessive API latency?",
+        "research_gap": "While frameworks like Chain-of-Ideas (CoI) and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during generation trajectory. Prior novelty-checking approaches operate post-hoc or run heavy retrieval-rerank loops at every step, creating severe latency, high API costs, and perverse incentives for the generator to make unfeasible adjustments to clear arbitrary thresholds.",
+        "methodology": "We propose a milestone-gated pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker. Instead of evaluating novelty at every intermediate step, novelty checks and feedback loops are restricted to major branching checkpoints. At these checkpoints, the system queries a pre-computed vector database of scientific literature, extracts core facets using an LLM, and computes a dynamic novelty score. Crucially, a strict heuristic feasibility filter precedes the novelty feedback loop to ensure that generator agents pivot only toward logically and physically sound conceptual directions rather than arbitrary, unfeasible deviations.",
+        "expected_contribution": "An integrated, cost-efficient ideation framework that increases the technical depth and novelty of generated research proposals while preserving logical consistency and experimental feasibility.",
+        "experimental_setup": "We select a benchmark set of 100 recent computer science and NLP papers published across top-tier venues. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We compare our milestone-gated novelty-guided CoI approach against baseline vanilla CoI, ResearchAgent, and continuous step-by-step novelty checking configurations.",
+        "evaluation_strategy": "We evaluate generated ideas using automated LLM-as-a-judge protocols (Idea Arena style preferences), manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale, and a historical prediction benchmark tasking the system with generating follow-up papers from a historical cutoff year to check overlap with actually published breakthroughs.",
+        "feasibility_assumptions": [
+          "Access to API-based LLMs for multi-agent generation and facet extraction.",
+          "Availability of public pre-computed embeddings and vector databases (such as Semantic Scholar snapshots) for scientific literature retrieval.",
+          "Execution timeline fits within a 6-week university project window using open-source agent frameworks and local embedding models combined with targeted API calls."
+        ],
+        "references": [
+          "2025.naacl-long.342",
+          "2025.sdp-1.9",
+          "2025.findings-emnlp.477",
+          "2025.emnlp-main.1292",
+          "2024.acl-long.18"
+        ],
+        "search_queries": [
+          "automated scientific idea generation novelty checker",
+          "chain of ideas llm agent research ideation",
+          "literature grounded hypothesis generation provenance"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": {
+            "role": "novelty",
+            "novelty": 2,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 4,
+            "explanation": "The proposal combines two existing and well-known paradigms: Chain-of-Ideas (CoI) scientific generation (Li et al., 2025) and automated literature-grounded novelty assessment/checking (Shahid et al., 2025; Wang et al., 2024). While the idea of restricting novelty feedback loops to major milestone checkpoints rather than continuous step-by-step evaluation is a sensible engineering optimization to reduce API latency and cost, it represents an incremental orchestration adjustment rather than a fundamental conceptual breakthrough in novelty verification. Furthermore, SciMON (Wang et al., 2024) already explores iterative generation with novelty checking, and ResearchAgent (Baek et al., 2025) handles iterative review loops over literature graphs. Therefore, the core contribution is largely an algorithmic integration of existing components.",
+            "problems": [
+              "High overlap with prior work on iterative novelty optimization and retrieval-augmented ideation (such as SciMON and ResearchAgent).",
+              "Milestone-gated checks might still miss intermediate drift or introduce cascading errors if an unfeasible or redundant concept passes an early checkpoint.",
+              "The novelty scoring mechanism relies heavily on existing facet-based retrieval frameworks without introducing novel metrics or theoretical foundations for novelty."
+            ],
+            "improvements": [
+              "Clearly isolate the milestone-gated scheduling strategy from continuous checking via a formal ablation showing the exact trade-off curve between API latency and idea novelty.",
+              "Introduce a novel scoring metric or structural representation for novelty rather than directly adopting standard vector-similarity or existing facet-based re-ranking.",
+              "Provide a deeper theoretical analysis of why milestone gating prevents degenerate lexical avoidance better than continuous feedback loops."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.findings-emnlp.477",
+                "claim": "Chain of Ideas introduces agentic frameworks organizing literature in chain structures for ideation.",
+                "supporting_excerpt": "Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Automated literature-grounded novelty assessment uses facet-based LLM re-ranking to evaluate idea novelty.",
+                "supporting_excerpt": "To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "SciMON iteratively compares generated ideas to prior papers and updates suggestions until sufficient novelty is achieved.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.naacl-long.342",
+                "claim": "ResearchAgent iteratively refines problems, methods, and experiments based on feedback from collaborative reviewing agents.",
+                "supporting_excerpt": "This system automatically defines novel problems, proposes methods and designs experiments, while iteratively refining them based on the feedback from collaborative LLM-powered reviewing agents.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The search coverage is limited to the provided literature snapshot. Although clear overlaps exist regarding CoI and novelty checking, the exact combination of milestone-gated scheduling with a heuristic feasibility filter has not been evaluated head-to-head in prior literature."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "disabled"
+        },
+        {
+          "role": "feasibility",
+          "review": null,
+          "search": [],
+          "error": "Evidence excerpt does not match retrieved abstract",
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": 4,
+            "feasibility": 3,
+            "clarity": 5,
+            "importance": 4,
+            "explanation": "The proposal addresses a significant and clear gap in automated research ideation: balancing novelty verification with execution latency and lexical avoidance. The design introduces milestone-gated checks combined with a feasibility filter. The prose is exceptionally clear, with well-defined operational structures, metrics, and baselines. However, minor ambiguities remain regarding how the dynamic novelty score interacts with the heuristic feasibility filter during automated trajectory checkpoints.",
+            "problems": [
+              "The exact mechanism and operational threshold for the 'strict heuristic feasibility filter' are underspecified.",
+              "The mapping between intermediate milestones and the frequency of retrieval calls lacks formal criteria."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic specification or pseudo-code showing the sequence of the milestone check, feasibility filter, and novelty scoring.",
+              "Define explicit threshold parameters for what constitutes a valid feasibility score to ensure reproducibility."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Automated novelty assessment using facet-based retrieval frameworks enhances idea evaluation.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.findings-emnlp.477",
+                "claim": "Chain of Ideas agent organizes relevant literature in a chain structure to mirror progressive research developments.",
+                "supporting_excerpt": "Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It is somewhat uncertain whether a 6-week project timeline will successfully handle the overhead of multi-agent trajectory checkpoints combined with vector DB queries without encountering API rate limits or latency bottlenecks."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 3,
+            "importance": 3,
+            "explanation": "The proposal aims to solve the latency and API cost issues of continuous novelty checking in multi-agent research ideation (such as Chain-of-Ideas) by introducing a milestone-gated novelty feedback loop accompanied by a heuristic feasibility filter. While the problem of balancing novelty constraints with generation efficiency is relevant, the core technical mechanism rests on vague heuristics ('dynamic novelty score' and a 'strict heuristic feasibility filter') that are insufficiently specified. Specifically, defining what constitutes a 'major branching checkpoint' versus an intermediate step is subjective and prone to missing critical semantic drift early in the generation trajectory. Furthermore, combining vector retrieval with LLM-based facet extraction at major milestones still incurs significant latency and API costs, calling into question the primary motivation of efficiency over existing continuous or post-hoc frameworks like SciMON or ResearchAgent.",
+            "problems": [
+              "The core mechanism relies on undefined heuristics for the 'strict heuristic feasibility filter' and 'dynamic novelty score', making it impossible to determine how logical soundness is preserved without human-in-the-loop intervention.",
+              "Restricting novelty checks to 'major branching checkpoints' introduces a vulnerability: if an ideation trajectory goes down an incremental or saturated path between checkpoints, substantial compute is wasted before correction occurs.",
+              "The claim of overcoming high API latency and cost contradicts the proposal to query pre-computed vector databases, extract facets using an LLM, and compute dynamic novelty scores at multiple checkpoints during multi-agent generation."
+            ],
+            "improvements": [
+              "Replace vague heuristic filters with formal, programmatic constraints or symbolic verification rules to enforce feasibility deterministically.",
+              "Provide a concrete mathematical or algorithmic formulation of how 'major branching checkpoints' are detected dynamically rather than relying on arbitrary step counts.",
+              "Include an explicit ablation study comparing the latency, cost, and novelty trade-off of milestone-gating versus sparse adaptive sampling triggers."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Prior work like SciMON already utilizes iterative comparison to prior papers to optimize novelty during generation, showing that novelty-guided loops are well-established.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Facet-based retrieval and reranking pipelines are already computationally heavy, raising feasibility concerns for integration inside multi-agent generation loops.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a 6-week timeline with limited consumer hardware or standard API budgets can reliably support the multi-agent orchestration, vector database querying, and LLM-based facet extraction required for 100 benchmark runs and historical prediction evaluations."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "novelty",
+            "novelty": 2,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 4,
+            "explanation": "The proposal combines two existing and well-known paradigms: Chain-of-Ideas (CoI) scientific generation (Li et al., 2025) and automated literature-grounded novelty assessment/checking (Shahid et al., 2025; Wang et al., 2024). While the idea of restricting novelty feedback loops to major milestone checkpoints rather than continuous step-by-step evaluation is a sensible engineering optimization to reduce API latency and cost, it represents an incremental orchestration adjustment rather than a fundamental conceptual breakthrough in novelty verification. Furthermore, SciMON (Wang et al., 2024) already explores iterative generation with novelty checking, and ResearchAgent (Baek et al., 2025) handles iterative review loops over literature graphs. Therefore, the core contribution is largely an algorithmic integration of existing components.",
+            "problems": [
+              "High overlap with prior work on iterative novelty optimization and retrieval-augmented ideation (such as SciMON and ResearchAgent).",
+              "Milestone-gated checks might still miss intermediate drift or introduce cascading errors if an unfeasible or redundant concept passes an early checkpoint.",
+              "The novelty scoring mechanism relies heavily on existing facet-based retrieval frameworks without introducing novel metrics or theoretical foundations for novelty."
+            ],
+            "improvements": [
+              "Clearly isolate the milestone-gated scheduling strategy from continuous checking via a formal ablation showing the exact trade-off curve between API latency and idea novelty.",
+              "Introduce a novel scoring metric or structural representation for novelty rather than directly adopting standard vector-similarity or existing facet-based re-ranking.",
+              "Provide a deeper theoretical analysis of why milestone gating prevents degenerate lexical avoidance better than continuous feedback loops."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.findings-emnlp.477",
+                "claim": "Chain of Ideas introduces agentic frameworks organizing literature in chain structures for ideation.",
+                "supporting_excerpt": "Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Automated literature-grounded novelty assessment uses facet-based LLM re-ranking to evaluate idea novelty.",
+                "supporting_excerpt": "To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "SciMON iteratively compares generated ideas to prior papers and updates suggestions until sufficient novelty is achieved.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.naacl-long.342",
+                "claim": "ResearchAgent iteratively refines problems, methods, and experiments based on feedback from collaborative reviewing agents.",
+                "supporting_excerpt": "This system automatically defines novel problems, proposes methods and designs experiments, while iteratively refining them based on the feedback from collaborative LLM-powered reviewing agents.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The search coverage is limited to the provided literature snapshot. Although clear overlaps exist regarding CoI and novelty checking, the exact combination of milestone-gated scheduling with a heuristic feasibility filter has not been evaluated head-to-head in prior literature."
+          },
+          {
+            "role": "clarity",
+            "novelty": 4,
+            "feasibility": 3,
+            "clarity": 5,
+            "importance": 4,
+            "explanation": "The proposal addresses a significant and clear gap in automated research ideation: balancing novelty verification with execution latency and lexical avoidance. The design introduces milestone-gated checks combined with a feasibility filter. The prose is exceptionally clear, with well-defined operational structures, metrics, and baselines. However, minor ambiguities remain regarding how the dynamic novelty score interacts with the heuristic feasibility filter during automated trajectory checkpoints.",
+            "problems": [
+              "The exact mechanism and operational threshold for the 'strict heuristic feasibility filter' are underspecified.",
+              "The mapping between intermediate milestones and the frequency of retrieval calls lacks formal criteria."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic specification or pseudo-code showing the sequence of the milestone check, feasibility filter, and novelty scoring.",
+              "Define explicit threshold parameters for what constitutes a valid feasibility score to ensure reproducibility."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Automated novelty assessment using facet-based retrieval frameworks enhances idea evaluation.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.findings-emnlp.477",
+                "claim": "Chain of Ideas agent organizes relevant literature in a chain structure to mirror progressive research developments.",
+                "supporting_excerpt": "Inspired by human research processes, we propose a Chain-ofIdeas (CoI) agent, an LLM-based agent that organizes relevant literature in a chain structure to effectively mirror the progressive development in a research domain.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It is somewhat uncertain whether a 6-week project timeline will successfully handle the overhead of multi-agent trajectory checkpoints combined with vector DB queries without encountering API rate limits or latency bottlenecks."
+          },
+          {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 2,
+            "clarity": 3,
+            "importance": 3,
+            "explanation": "The proposal aims to solve the latency and API cost issues of continuous novelty checking in multi-agent research ideation (such as Chain-of-Ideas) by introducing a milestone-gated novelty feedback loop accompanied by a heuristic feasibility filter. While the problem of balancing novelty constraints with generation efficiency is relevant, the core technical mechanism rests on vague heuristics ('dynamic novelty score' and a 'strict heuristic feasibility filter') that are insufficiently specified. Specifically, defining what constitutes a 'major branching checkpoint' versus an intermediate step is subjective and prone to missing critical semantic drift early in the generation trajectory. Furthermore, combining vector retrieval with LLM-based facet extraction at major milestones still incurs significant latency and API costs, calling into question the primary motivation of efficiency over existing continuous or post-hoc frameworks like SciMON or ResearchAgent.",
+            "problems": [
+              "The core mechanism relies on undefined heuristics for the 'strict heuristic feasibility filter' and 'dynamic novelty score', making it impossible to determine how logical soundness is preserved without human-in-the-loop intervention.",
+              "Restricting novelty checks to 'major branching checkpoints' introduces a vulnerability: if an ideation trajectory goes down an incremental or saturated path between checkpoints, substantial compute is wasted before correction occurs.",
+              "The claim of overcoming high API latency and cost contradicts the proposal to query pre-computed vector databases, extract facets using an LLM, and compute dynamic novelty scores at multiple checkpoints during multi-agent generation."
+            ],
+            "improvements": [
+              "Replace vague heuristic filters with formal, programmatic constraints or symbolic verification rules to enforce feasibility deterministically.",
+              "Provide a concrete mathematical or algorithmic formulation of how 'major branching checkpoints' are detected dynamically rather than relying on arbitrary step counts.",
+              "Include an explicit ablation study comparing the latency, cost, and novelty trade-off of milestone-gating versus sparse adaptive sampling triggers."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Prior work like SciMON already utilizes iterative comparison to prior papers to optimize novelty during generation, showing that novelty-guided loops are well-established.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Facet-based retrieval and reranking pipelines are already computationally heavy, raising feasibility concerns for integration inside multi-agent generation loops.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a 6-week timeline with limited consumer hardware or standard API budgets can reliably support the multi-agent orchestration, vector database querying, and LLM-based facet extraction required for 100 benchmark runs and historical prediction evaluations."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "novelty": 2,
+            "clarity": 4,
+            "contrarian": 2
+          },
+          "feasibility": {
+            "novelty": 4,
+            "clarity": 3,
+            "contrarian": 2
+          },
+          "clarity": {
+            "novelty": 5,
+            "clarity": 5,
+            "contrarian": 3
+          },
+          "importance": {
+            "novelty": 4,
+            "clarity": 4,
+            "contrarian": 3
+          }
+        },
+        "score_disagreements": [
+          {
+            "metric": "novelty",
+            "scores": {
+              "novelty": 2,
+              "clarity": 4,
+              "contrarian": 2
+            }
+          },
+          {
+            "metric": "feasibility",
+            "scores": {
+              "novelty": 4,
+              "clarity": 3,
+              "contrarian": 2
+            }
+          },
+          {
+            "metric": "clarity",
+            "scores": {
+              "novelty": 5,
+              "clarity": 5,
+              "contrarian": 3
+            }
+          }
+        ],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [
+          {
+            "role": "feasibility",
+            "error": "Evidence excerpt does not match retrieved abstract"
+          }
+        ],
+        "evidence_status": {
+          "novelty": "disabled",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Integrating Automated Novelty Assessment into Milestone-Gated Chain-of-Ideas Scientific Generation",
+        "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without inducing degenerate lexical avoidance, excessive API latency, or unfeasible conceptual drift?",
+        "research_gap": "While frameworks like Chain-of-Ideas and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during generation trajectories. Prior novelty-checking approaches operate post-hoc or run heavy retrieval-rerank loops at every step, creating severe latency, high API costs, and perverse incentives for the generator to make unfeasible adjustments to clear arbitrary thresholds. Furthermore, existing work does not combine milestone-gated scheduling with formal programmatic constraints to guarantee logical soundness.",
+        "methodology": "We propose a milestone-gated pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker and a programmatic feasibility verification rule. Instead of evaluating novelty at every intermediate step or relying purely on continuous step-by-step loops, novelty checks and feedback loops are triggered at major branching checkpoints defined by structural shifts in the research chain. At these checkpoints, the system queries a pre-computed vector database of scientific literature, extracts core facets using an LLM, and computes a dynamic novelty score. Crucially, a programmatic constraint-checking module precedes the novelty feedback loop to ensure that generator agents pivot only toward logically and physically sound conceptual directions rather than arbitrary, unfeasible deviations.",
+        "expected_contribution": "An integrated, cost-efficient ideation framework that increases the technical depth and novelty of generated research proposals while preserving logical consistency and experimental feasibility, accompanied by a formal ablation study detailing the latency-novelty trade-off curve.",
+        "experimental_setup": "We select a benchmark set of 100 recent computer science and NLP papers published across top-tier venues. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We compare our milestone-gated novelty-guided CoI approach against baseline vanilla CoI, ResearchAgent, SciMON, and continuous step-by-step novelty checking configurations.",
+        "evaluation_strategy": "We evaluate generated ideas using automated LLM-as-a-judge protocols (Idea Arena style preferences), manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale, and a historical prediction benchmark tasking the system with generating follow-up papers from a historical cutoff year to check overlap with actually published breakthroughs. We also conduct an explicit ablation study comparing the latency, cost, and novelty trade-off of milestone gating versus sparse adaptive sampling triggers.",
+        "feasibility_assumptions": [
+          "Access to API-based LLMs for multi-agent generation and facet extraction.",
+          "Availability of public pre-computed embeddings and vector databases (such as Semantic Scholar snapshots) for scientific literature retrieval.",
+          "Execution timeline fits within a 6-week university project window using open-source agent frameworks and local embedding models combined with targeted API calls."
+        ],
+        "references": [
+          "2025.naacl-long.342",
+          "2025.sdp-1.9",
+          "2025.findings-emnlp.477",
+          "2025.emnlp-main.1292",
+          "2024.acl-long.18"
+        ],
+        "search_queries": [
+          "automated scientific idea generation novelty checker",
+          "chain of ideas llm agent research ideation",
+          "literature grounded hypothesis generation provenance"
+        ]
+      },
+      "revision_error": null
+    },
+    {
+      "index": 3,
+      "input_idea": {
+        "title": "Integrating Automated Novelty Assessment into Milestone-Gated Chain-of-Ideas Scientific Generation",
+        "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without inducing degenerate lexical avoidance, excessive API latency, or unfeasible conceptual drift?",
+        "research_gap": "While frameworks like Chain-of-Ideas and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during generation trajectories. Prior novelty-checking approaches operate post-hoc or run heavy retrieval-rerank loops at every step, creating severe latency, high API costs, and perverse incentives for the generator to make unfeasible adjustments to clear arbitrary thresholds. Furthermore, existing work does not combine milestone-gated scheduling with formal programmatic constraints to guarantee logical soundness.",
+        "methodology": "We propose a milestone-gated pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker and a programmatic feasibility verification rule. Instead of evaluating novelty at every intermediate step or relying purely on continuous step-by-step loops, novelty checks and feedback loops are triggered at major branching checkpoints defined by structural shifts in the research chain. At these checkpoints, the system queries a pre-computed vector database of scientific literature, extracts core facets using an LLM, and computes a dynamic novelty score. Crucially, a programmatic constraint-checking module precedes the novelty feedback loop to ensure that generator agents pivot only toward logically and physically sound conceptual directions rather than arbitrary, unfeasible deviations.",
+        "expected_contribution": "An integrated, cost-efficient ideation framework that increases the technical depth and novelty of generated research proposals while preserving logical consistency and experimental feasibility, accompanied by a formal ablation study detailing the latency-novelty trade-off curve.",
+        "experimental_setup": "We select a benchmark set of 100 recent computer science and NLP papers published across top-tier venues. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We compare our milestone-gated novelty-guided CoI approach against baseline vanilla CoI, ResearchAgent, SciMON, and continuous step-by-step novelty checking configurations.",
+        "evaluation_strategy": "We evaluate generated ideas using automated LLM-as-a-judge protocols (Idea Arena style preferences), manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale, and a historical prediction benchmark tasking the system with generating follow-up papers from a historical cutoff year to check overlap with actually published breakthroughs. We also conduct an explicit ablation study comparing the latency, cost, and novelty trade-off of milestone gating versus sparse adaptive sampling triggers.",
+        "feasibility_assumptions": [
+          "Access to API-based LLMs for multi-agent generation and facet extraction.",
+          "Availability of public pre-computed embeddings and vector databases (such as Semantic Scholar snapshots) for scientific literature retrieval.",
+          "Execution timeline fits within a 6-week university project window using open-source agent frameworks and local embedding models combined with targeted API calls."
+        ],
+        "references": [
+          "2025.naacl-long.342",
+          "2025.sdp-1.9",
+          "2025.findings-emnlp.477",
+          "2025.emnlp-main.1292",
+          "2024.acl-long.18"
+        ],
+        "search_queries": [
+          "automated scientific idea generation novelty checker",
+          "chain of ideas llm agent research ideation",
+          "literature grounded hypothesis generation provenance"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": null,
+          "search": [],
+          "error": "Evidence excerpt does not match retrieved abstract",
+          "evidence_status": "disabled"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposed milestone-gated pipeline combines Chain-of-Ideas generation with a facet-based novelty checker and a programmatic feasibility rule. While the design is conceptually sound and relies on available pre-computed embeddings and API-based LLMs, executing a comprehensive multi-agent ideation benchmark comparing against multiple baselines (ResearchAgent, SciMON, vanilla CoI) within a 6-week window on limited hardware presents significant integration and token-cost bottlenecks.",
+            "problems": [
+              "Integrating multiple distinct systems (Chain-of-Ideas, vector database retrieval, facet extraction LLM calls, programmatic constraints, and multi-agent feedback loops) within a 6-week student timeline is exceptionally tight and prone to software integration bugs.",
+              "Running exhaustive comparative evaluations against four complex baselines (ResearchAgent, SciMON, vanilla CoI, continuous novelty checking) across 100 benchmark topics will incur substantial API costs and potential rate-limit bottlenecks.",
+              "A local 12 GB consumer GPU is insufficient for hosting frontier LLMs, making the pipeline completely dependent on external paid APIs, which might stretch project budgets."
+            ],
+            "improvements": [
+              "Reduce the benchmark evaluation set from 100 papers to a representative subset of 25 papers to fit within practical API budgets and execution time constraints.",
+              "Leverage existing open-source implementations of ResearchAgent and SciMON rather than re-implementing them from scratch to save development time during the 6-week window.",
+              "Use smaller open-source LLMs hosted via efficient inference endpoints or quantized local models for intermediate agent steps where possible, reserving frontier APIs only for final judgment."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Facet-based re-ranking and retrieval-augmented novelty assessment can be computationally expensive.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Iterative novelty-optimized generation pipelines involve multiple retrieval and updating steps.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The feasibility heavily depends on the stability and rate limits of external LLM APIs and the ease of integrating disparate codebases for ResearchAgent and Chain-of-Ideas within a short timeframe."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal clearly articulates a specific problem in multi-agent research ideation—balancing novelty checking, latency, and feasibility—and offers a well-structured pipeline combining milestone-gated scheduling with programmatic constraints. The operational definitions and evaluation protocols are well-defined and comprehensive.",
+            "problems": [
+              "The exact operational definition of a 'milestone-gated branching checkpoint' requires further concrete specification to ensure reproducible implementation.",
+              "The interaction mechanism between the programmatic constraint-checking module and the facet-based novelty feedback loop is described at a high level without detailing how conflicting feedback signals are resolved."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic specification or pseudocode showing how structural shifts in the research chain trigger the novelty checkpoints.",
+              "Clarify the precedence rules between the programmatic feasibility checker and the novelty feedback loop when an idea is highly novel but fails preliminary physical or logical constraints."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Automated evaluation of idea novelty remains challenging and requires sophisticated retrieval-augmented techniques.",
+                "supporting_excerpt": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Existing language models struggle with generating novel scientific directions without explicit mechanisms optimizing for novelty.",
+                "supporting_excerpt": "Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains to be seen whether sparse milestone gating will sufficiently capture subtle incremental redundancies compared to continuous checking without missing crucial dead-ends early in the chain."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 3,
+            "explanation": "The proposal aims to solve the latency-novelty trade-off in automated research ideation by shifting from continuous step-by-step novelty checks to milestone-gated checks combined with a programmatic feasibility filter. However, the central mechanism relies heavily on heuristic definitions of 'milestone checkpoints' that risk being entirely arbitrary. If checkpoints are spaced too widely, redundant proposals will slip past the filter; if too narrowly, the system collapses back into the exact high-latency, iterative bottleneck the authors claim to avoid. Furthermore, the interplay between the programmatic feasibility constraint and the LLM facet-based novelty loop creates a severe risk of conflicting optimization objectives, trapping the agent in trivial local optima.",
+            "problems": [
+              "Arbitrary milestone gating definitions: The proposal does not provide a robust, automated method for defining structural branching checkpoints, leaving the milestone boundaries vulnerable to task-dependent tuning overfitting.",
+              "Objective conflict between programmatic feasibility and novelty: Hard programmatic constraints combined with dynamic novelty feedback can result in a paralyzed search space where valid, highly novel paradigms are pruned because they violate rigid heuristic rules.",
+              "Underestimated retrieval latency at checkpoints: Querying a pre-computed vector database of scientific literature and extracting facets via an LLM at major structural branches will still incur cumulative API and context costs that undermine the efficiency claims."
+            ],
+            "improvements": [
+              "Replace static milestone gating with an uncertainty-driven adaptive trigger based on entropy over the generator's token distribution or semantic variance across intermediate steps.",
+              "Formulate the programmatic feasibility check as a soft penalty within a reward model rather than a hard binary filter to prevent premature truncation of unconventional pathways.",
+              "Provide an explicit sensitivity analysis on the spacing and granularity of milestone checkpoints to demonstrate that the system's performance is not a artifact of hand-tuned thresholds."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Facet-based re-ranking and retrieval pipelines are computationally intensive and require careful design to avoid bottlenecks.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Iterative comparison to prior literature to optimize novelty is already a core component of existing systems like SciMON.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains unclear how the programmatic constraint module will evaluate feasibility without executing actual code or wet-lab experiments, meaning 'feasibility' may reduce to a superficial linguistic plausibility check that fails to catch real technical impossibilities."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposed milestone-gated pipeline combines Chain-of-Ideas generation with a facet-based novelty checker and a programmatic feasibility rule. While the design is conceptually sound and relies on available pre-computed embeddings and API-based LLMs, executing a comprehensive multi-agent ideation benchmark comparing against multiple baselines (ResearchAgent, SciMON, vanilla CoI) within a 6-week window on limited hardware presents significant integration and token-cost bottlenecks.",
+            "problems": [
+              "Integrating multiple distinct systems (Chain-of-Ideas, vector database retrieval, facet extraction LLM calls, programmatic constraints, and multi-agent feedback loops) within a 6-week student timeline is exceptionally tight and prone to software integration bugs.",
+              "Running exhaustive comparative evaluations against four complex baselines (ResearchAgent, SciMON, vanilla CoI, continuous novelty checking) across 100 benchmark topics will incur substantial API costs and potential rate-limit bottlenecks.",
+              "A local 12 GB consumer GPU is insufficient for hosting frontier LLMs, making the pipeline completely dependent on external paid APIs, which might stretch project budgets."
+            ],
+            "improvements": [
+              "Reduce the benchmark evaluation set from 100 papers to a representative subset of 25 papers to fit within practical API budgets and execution time constraints.",
+              "Leverage existing open-source implementations of ResearchAgent and SciMON rather than re-implementing them from scratch to save development time during the 6-week window.",
+              "Use smaller open-source LLMs hosted via efficient inference endpoints or quantized local models for intermediate agent steps where possible, reserving frontier APIs only for final judgment."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Facet-based re-ranking and retrieval-augmented novelty assessment can be computationally expensive.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Iterative novelty-optimized generation pipelines involve multiple retrieval and updating steps.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "The feasibility heavily depends on the stability and rate limits of external LLM APIs and the ease of integrating disparate codebases for ResearchAgent and Chain-of-Ideas within a short timeframe."
+          },
+          {
+            "role": "clarity",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": 4,
+            "importance": 4,
+            "explanation": "The proposal clearly articulates a specific problem in multi-agent research ideation—balancing novelty checking, latency, and feasibility—and offers a well-structured pipeline combining milestone-gated scheduling with programmatic constraints. The operational definitions and evaluation protocols are well-defined and comprehensive.",
+            "problems": [
+              "The exact operational definition of a 'milestone-gated branching checkpoint' requires further concrete specification to ensure reproducible implementation.",
+              "The interaction mechanism between the programmatic constraint-checking module and the facet-based novelty feedback loop is described at a high level without detailing how conflicting feedback signals are resolved."
+            ],
+            "improvements": [
+              "Provide a concrete algorithmic specification or pseudocode showing how structural shifts in the research chain trigger the novelty checkpoints.",
+              "Clarify the precedence rules between the programmatic feasibility checker and the novelty feedback loop when an idea is highly novel but fails preliminary physical or logical constraints."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Automated evaluation of idea novelty remains challenging and requires sophisticated retrieval-augmented techniques.",
+                "supporting_excerpt": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Existing language models struggle with generating novel scientific directions without explicit mechanisms optimizing for novelty.",
+                "supporting_excerpt": "Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains to be seen whether sparse milestone gating will sufficiently capture subtle incremental redundancies compared to continuous checking without missing crucial dead-ends early in the chain."
+          },
+          {
+            "role": "contrarian",
+            "novelty": 2,
+            "feasibility": 3,
+            "clarity": 4,
+            "importance": 3,
+            "explanation": "The proposal aims to solve the latency-novelty trade-off in automated research ideation by shifting from continuous step-by-step novelty checks to milestone-gated checks combined with a programmatic feasibility filter. However, the central mechanism relies heavily on heuristic definitions of 'milestone checkpoints' that risk being entirely arbitrary. If checkpoints are spaced too widely, redundant proposals will slip past the filter; if too narrowly, the system collapses back into the exact high-latency, iterative bottleneck the authors claim to avoid. Furthermore, the interplay between the programmatic feasibility constraint and the LLM facet-based novelty loop creates a severe risk of conflicting optimization objectives, trapping the agent in trivial local optima.",
+            "problems": [
+              "Arbitrary milestone gating definitions: The proposal does not provide a robust, automated method for defining structural branching checkpoints, leaving the milestone boundaries vulnerable to task-dependent tuning overfitting.",
+              "Objective conflict between programmatic feasibility and novelty: Hard programmatic constraints combined with dynamic novelty feedback can result in a paralyzed search space where valid, highly novel paradigms are pruned because they violate rigid heuristic rules.",
+              "Underestimated retrieval latency at checkpoints: Querying a pre-computed vector database of scientific literature and extracting facets via an LLM at major structural branches will still incur cumulative API and context costs that undermine the efficiency claims."
+            ],
+            "improvements": [
+              "Replace static milestone gating with an uncertainty-driven adaptive trigger based on entropy over the generator's token distribution or semantic variance across intermediate steps.",
+              "Formulate the programmatic feasibility check as a soft penalty within a reward model rather than a hard binary filter to prevent premature truncation of unconventional pathways.",
+              "Provide an explicit sensitivity analysis on the spacing and granularity of milestone checkpoints to demonstrate that the system's performance is not a artifact of hand-tuned thresholds."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.sdp-1.9",
+                "claim": "Facet-based re-ranking and retrieval pipelines are computationally intensive and require careful design to avoid bottlenecks.",
+                "supporting_excerpt": "The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Iterative comparison to prior literature to optimize novelty is already a core component of existing systems like SciMON.",
+                "supporting_excerpt": "We present SciMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains unclear how the programmatic constraint module will evaluate feasibility without executing actual code or wet-lab experiments, meaning 'feasibility' may reduce to a superficial linguistic plausibility check that fails to catch real technical impossibilities."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "contrarian": 2
+          },
+          "feasibility": {
+            "feasibility": 3,
+            "contrarian": 3
+          },
+          "clarity": {
+            "clarity": 4,
+            "contrarian": 4
+          },
+          "importance": {
+            "clarity": 4,
+            "contrarian": 3
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [
+          {
+            "role": "novelty",
+            "error": "Evidence excerpt does not match retrieved abstract"
+          }
+        ],
+        "evidence_status": {
+          "novelty": "disabled",
+          "feasibility": "not_required",
+          "clarity": "not_required",
+          "contrarian": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Integrating Automated Novelty Assessment into Milestone-Gated Chain-of-Ideas Scientific Generation",
+        "research_problem": "How can multi-agent literature-grounded research ideation systems automatically prevent incremental or redundant proposals without inducing degenerate lexical avoidance, excessive API latency, or unfeasible conceptual drift?",
+        "research_gap": "While frameworks like Chain-of-Ideas and ResearchAgent generate structured research proposals using iterative review loops, they lack a dedicated, automated novelty verification mechanism during generation trajectories. Prior novelty-checking approaches operate post-hoc or run heavy retrieval-rerank loops at every step, creating severe latency, high API costs, and perverse incentives for the generator to make unfeasible adjustments to clear arbitrary thresholds. Furthermore, existing work does not combine dynamic uncertainty-driven milestone scheduling with soft penalty-based optimization to guarantee logical soundness without trapping agents in trivial local optima.",
+        "methodology": "We propose an ideation pipeline combining Chain-of-Ideas generation with a facet-based retrieval-augmented novelty checker and a soft penalty-based feasibility rule. Instead of static milestone gating or continuous step-by-step loops, novelty checks and feedback loops are triggered dynamically via an uncertainty-driven adaptive trigger based on entropy over the generator's token distribution or semantic variance across intermediate steps. At these adaptive checkpoints, the system queries a pre-computed vector database of scientific literature, extracts core facets using an LLM, and computes a dynamic novelty score. Crucially, rather than using a hard binary filter that causes objective conflict, the programmatic feasibility check is formulated as a soft penalty within the reward model. Conflicting feedback signals between novelty and feasibility are reconciled using a weighted preference-alignment function that prevents the pruning of unconventional yet valid paradigms.",
+        "expected_contribution": "An integrated, cost-efficient ideation framework that increases the technical depth and novelty of generated research proposals while preserving logical consistency and experimental feasibility, accompanied by a formal ablation study detailing the latency-novelty trade-off curve and sensitivity analysis on milestone granularity.",
+        "experimental_setup": "We select a benchmark subset of 25 recent computer science and NLP papers published across top-tier venues to fit practical API budgets. We initialize our generation agents using seed papers from past years and task the system with proposing follow-up directions. We leverage existing open-source implementations of ResearchAgent, SciMON, and vanilla Chain-of-Ideas (CoI) to serve as baselines, and compare our uncertainty-driven adaptive novelty-guided CoI approach against them.",
+        "evaluation_strategy": "We evaluate generated ideas using automated LLM-as-a-judge protocols (Idea Arena style preferences), manual expert assessment on dimensions of novelty, technical depth, feasibility, and clarity on a 5-point Likert scale, and a historical prediction benchmark tasking the system with generating follow-up papers from a historical cutoff year to check overlap with actually published breakthroughs. We also conduct an explicit ablation study comparing the latency, cost, and novelty trade-off of adaptive uncertainty-driven gating versus static milestone spacing and continuous step-by-step checking.",
+        "feasibility_assumptions": [
+          "Access to API-based LLMs for multi-agent generation and facet extraction.",
+          "Availability of public pre-computed embeddings and vector databases (such as Semantic Scholar snapshots) for scientific literature retrieval.",
+          "Execution timeline fits within a 6-week university project window using open-source agent frameworks (such as pre-existing implementations of ResearchAgent and SciMON) and local quantized language models for intermediate steps combined with targeted API calls for final evaluation."
+        ],
+        "references": [
+          "2025.naacl-long.342",
+          "2025.sdp-1.9",
+          "2025.findings-emnlp.477",
+          "2025.emnlp-main.1292",
+          "2024.acl-long.18"
+        ],
+        "search_queries": [
+          "automated scientific idea generation novelty checker",
+          "chain of ideas llm agent research ideation",
+          "literature grounded hypothesis generation provenance"
+        ]
+      },
+      "revision_error": null
+    }
+  ],
+  "stop_reason": "iteration_limit",
+  "elapsed_seconds": 235.3977294949982,
+  "api_events": [
+    {
+      "label": "novelty_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:24:44.789502+00:00",
+      "prompt_hash": "43efb09123fa1fca926b9bae075b054b297640dbca718ee1f9bd3a7e63f63825",
+      "input_tokens": null,
+      "output_tokens": null,
+      "thinking_tokens": null,
+      "total_tokens": null,
+      "estimated_cost_usd": null,
+      "status": "failed",
+      "validation_failure": false,
+      "error": "HTTP 503",
+      "elapsed_seconds": 10.861214617001679
+    },
+    {
+      "label": "novelty_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 2,
+      "timestamp": "2026-11-08T11:24:59.789724+00:00",
+      "prompt_hash": "43efb09123fa1fca926b9bae075b054b297640dbca718ee1f9bd3a7e63f63825",
+      "input_tokens": 2820,
+      "output_tokens": 826,
+      "thinking_tokens": 0,
+      "total_tokens": 3646,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 7.53892068300047
+    },
+    {
+      "label": "feasibility_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:25:14.789938+00:00",
+      "prompt_hash": "859946bf16a51380f7a2aa47fc64ef5752e6e241878833c18bd8a14fd839e0a5",
+      "input_tokens": 2818,
+      "output_tokens": 607,
+      "thinking_tokens": 0,
+      "total_tokens": 3425,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.413927023000724
+    },
+    {
+      "label": "clarity_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:25:29.790155+00:00",
+      "prompt_hash": "c58ccfd07e9a412bbc16b57ea1b86b952567671e91d35fe7c697faa61bd14655",
+      "input_tokens": 2806,
+      "output_tokens": 744,
+      "thinking_tokens": 0,
+      "total_tokens": 3550,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.1289706280003884
+    },
+    {
+      "label": "contrarian_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:25:44.790345+00:00",
+      "prompt_hash": "4657640100c1c9d1e69189b2d9fd89dc525222486242f38d7e396803e562f3bb",
+      "input_tokens": 2817,
+      "output_tokens": 752,
+      "thinking_tokens": 0,
+      "total_tokens": 3569,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.8019813899991277
+    },
+    {
+      "label": "revision_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:25:59.790566+00:00",
+      "prompt_hash": "3c8d6fa7fbfd8652912ce6c1a8b4b3d3ce6b6077de0a134c706dec38f3f4eb2a",
+      "input_tokens": 4268,
+      "output_tokens": 701,
+      "thinking_tokens": 0,
+      "total_tokens": 4969,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.035796484000457
+    },
+    {
+      "label": "novelty_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:26:14.790781+00:00",
+      "prompt_hash": "995d4c1f10423eb9affc4807b55982ad33c98f9ea50ab8a87cf393b60f1b015a",
+      "input_tokens": 2944,
+      "output_tokens": 907,
+      "thinking_tokens": 0,
+      "total_tokens": 3851,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 5.927408246003324
+    },
+    {
+      "label": "feasibility_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:26:29.790999+00:00",
+      "prompt_hash": "796c1695b07f4aff833f1a3ba1dd55962d54a26867a44fdea1cc9019b499853b",
+      "input_tokens": 2942,
+      "output_tokens": 604,
+      "thinking_tokens": 0,
+      "total_tokens": 3546,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.737406569001905
+    },
+    {
+      "label": "clarity_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:26:44.791212+00:00",
+      "prompt_hash": "b8d8cf9f966a972a0154f5543f5ee7354cde97093f4c5aaf20457d8d9f0ce8ca",
+      "input_tokens": 2930,
+      "output_tokens": 503,
+      "thinking_tokens": 0,
+      "total_tokens": 3433,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 5.928287987000658
+    },
+    {
+      "label": "contrarian_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:26:59.791462+00:00",
+      "prompt_hash": "3589c6e8ccb25dbdf13105ffe7c485466dad1f9d14ab7d4d16bf5d320a31f66c",
+      "input_tokens": 2941,
+      "output_tokens": 743,
+      "thinking_tokens": 0,
+      "total_tokens": 3684,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.063518236001983
+    },
+    {
+      "label": "revision_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:27:14.791673+00:00",
+      "prompt_hash": "6d407d210e69e0063d16944166698529d8b50b8bbf1988024d797860dc1c9716",
+      "input_tokens": 5188,
+      "output_tokens": 797,
+      "thinking_tokens": 0,
+      "total_tokens": 5985,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.6879369169982965
+    },
+    {
+      "label": "novelty_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:27:29.791929+00:00",
+      "prompt_hash": "ee2185e71f8db7bcb1f1c1ab898dcd0a9b57ee09393fd275919557601af5b65d",
+      "input_tokens": 3040,
+      "output_tokens": 792,
+      "thinking_tokens": 0,
+      "total_tokens": 3832,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.866176314997574
+    },
+    {
+      "label": "feasibility_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:27:44.792135+00:00",
+      "prompt_hash": "6fbfcda011cc58e6cd86d748967881cb862ffcc0c6e61871368aa05e620ac264",
+      "input_tokens": 3038,
+      "output_tokens": 639,
+      "thinking_tokens": 0,
+      "total_tokens": 3677,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 6.279263060998346
+    },
+    {
+      "label": "clarity_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:27:59.792349+00:00",
+      "prompt_hash": "e9d126e389ad41a0f3e7863e109c30ea60db5cd38c2ec6c8969bc87027d80b1a",
+      "input_tokens": 3026,
+      "output_tokens": 456,
+      "thinking_tokens": 0,
+      "total_tokens": 3482,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 5.8093717340016156
+    },
+    {
+      "label": "contrarian_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:28:14.792566+00:00",
+      "prompt_hash": "696beeabbfd654b0683e7f63bfbd36ff5e152d7aac4494d098e322b0b4b8cfdf",
+      "input_tokens": 3037,
+      "output_tokens": 709,
+      "thinking_tokens": 0,
+      "total_tokens": 3746,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.9197657730001083
+    },
+    {
+      "label": "revision_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:28:29.792787+00:00",
+      "prompt_hash": "a7471b1b85065fc1eadafc1dc57ab52dd02c2ece0325a832ebcedbb5d1fada83",
+      "input_tokens": 4874,
+      "output_tokens": 887,
+      "thinking_tokens": 0,
+      "total_tokens": 5761,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 5.300385566999466
+    }
+  ],
+  "provenance": "live_gemini"
+}

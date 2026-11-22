@@ -1,0 +1,996 @@
+{
+  "blind_id": "7499ac2e23e94e8190228acb",
+  "spec_hash": "25ba4d99681ebc959ce0a337809917156e6bb5327d07e764084f1a8ad129876a",
+  "judgment": {
+    "novelty": 3,
+    "feasibility": 4,
+    "clarity": 4,
+    "importance": 4,
+    "evidence_grounding": 4,
+    "rationale": {
+      "novelty": "The proposal targets a clear gap: measuring how translation artifacts in low-resource machine-translated QA affect token-probability-based abstention thresholds and whether minimal target-language sets fix this. While cross-lingual transfer and selective prediction exist separately, their intersection on translated factual QA calibration is sufficiently distinct.",
+      "feasibility": "The experimental design utilizes an accessible model (Llama-3.1-8B-Instruct with 4-bit NF4 quantization) fitting within a 12GB consumer GPU, with clear data splits and concrete verification steps.",
+      "clarity": "The methodology is well-outlined, specifying sequence-normalized length-adjusted token probability and entropy scores, target risk levels, and specific data split sizes from IrokoBench.",
+      "importance": "Reliable uncertainty estimation and safe abstention in low-resource and translated tasks are critical for deploying LLMs safely across diverse linguistic settings.",
+      "evidence_grounding": "The cited works establish performance gaps on low-resource and translated tasks, as well as the importance of uncertainty metrics, providing solid grounding for the proposed study."
+    },
+    "evidence": [
+      {
+        "paper_id": "2025.naacl-long.139",
+        "claim": "Low-resource languages often lack appropriate or comprehensive benchmarks for complex tasks.",
+        "supporting_excerpt": "Additionally, many low-resource languages (e.g.",
+        "relation": "supports"
+      },
+      {
+        "paper_id": "2025.naacl-long.139",
+        "claim": "There is a significant performance gap between high-resource languages and low-resource languages.",
+        "supporting_excerpt": "Our evaluation reveals a significant performance gap between high-resource languages (such as English and French) and low-resource African languages.",
+        "relation": "supports"
+      }
+    ],
+    "uncertainty": "The proposal relies on the assumption that machine-translated evaluation data accurately represents genuine low-resource structural patterns, and that 300 calibration samples avoid overfitting when estimating quantile thresholds."
+  },
+  "replications": [
+    {
+      "repeat": 0,
+      "judgment": {
+        "novelty": 3,
+        "feasibility": 4,
+        "clarity": 4,
+        "importance": 4,
+        "evidence_grounding": 4,
+        "rationale": {
+          "novelty": "The proposal targets a clear gap: measuring how translation artifacts in low-resource machine-translated QA affect token-probability-based abstention thresholds and whether minimal target-language sets fix this. While cross-lingual transfer and selective prediction exist separately, their intersection on translated factual QA calibration is sufficiently distinct.",
+          "feasibility": "The experimental design utilizes an accessible model (Llama-3.1-8B-Instruct with 4-bit NF4 quantization) fitting within a 12GB consumer GPU, with clear data splits and concrete verification steps.",
+          "clarity": "The methodology is well-outlined, specifying sequence-normalized length-adjusted token probability and entropy scores, target risk levels, and specific data split sizes from IrokoBench.",
+          "importance": "Reliable uncertainty estimation and safe abstention in low-resource and translated tasks are critical for deploying LLMs safely across diverse linguistic settings.",
+          "evidence_grounding": "The cited works establish performance gaps on low-resource and translated tasks, as well as the importance of uncertainty metrics, providing solid grounding for the proposed study."
+        },
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "Low-resource languages often lack appropriate or comprehensive benchmarks for complex tasks.",
+            "supporting_excerpt": "Additionally, many low-resource languages (e.g.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "There is a significant performance gap between high-resource languages and low-resource languages.",
+            "supporting_excerpt": "Our evaluation reveals a significant performance gap between high-resource languages (such as English and French) and low-resource African languages.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The proposal relies on the assumption that machine-translated evaluation data accurately represents genuine low-resource structural patterns, and that 300 calibration samples avoid overfitting when estimating quantile thresholds."
+      },
+      "error": null,
+      "events": [
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 1,
+          "timestamp": "2026-11-15T12:18:19.896716+00:00",
+          "prompt_hash": "511b6645362066fb880c345d5d99a8c2979faf264a46ac6294262a70a003fb92",
+          "input_tokens": 14598,
+          "output_tokens": 474,
+          "thinking_tokens": 0,
+          "total_tokens": 15072,
+          "estimated_cost_usd": 0.0,
+          "status": "ok",
+          "validation_failure": false,
+          "elapsed_seconds": 3.2754847859996516
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "judgment": {
+        "novelty": 4,
+        "feasibility": 4,
+        "clarity": 5,
+        "importance": 4,
+        "evidence_grounding": 4,
+        "rationale": {
+          "novelty": "The proposal addresses a distinct gap by measuring how translation artifacts and cross-lingual shifts distort token-probability-based abstention thresholds, moving beyond static benchmark evaluations such as IrokoBench.",
+          "feasibility": "The methodology relies on standard open-access weights (Llama-3.1-8B-Instruct with 4-bit NF4 quantization) that fit comfortably within a 12GB consumer GPU, and uses well-defined calibration and test splits.",
+          "clarity": "The research problem, dataset splits, metrics (selective accuracy, risk-coverage curves), and assumption checks are specified with high operational precision.",
+          "importance": "Reliable uncertainty estimation and risk-control for low-resource or translated settings are critical for safe deployment of language models across diverse linguistic communities.",
+          "evidence_grounding": "The literature references accurately reflect work on low-resource benchmarking (IrokoBench) and open-domain QA evaluation, although direct citations for cross-lingual threshold calibration are limited."
+        },
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "IrokoBench provides human-translated benchmark datasets and tasks for low-resource languages.",
+            "supporting_excerpt": "In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU).",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2025.naacl-long.139",
+            "claim": "Evaluation settings on multilingual benchmarks include translate-test configurations.",
+            "supporting_excerpt": "We use IrokoBench to evaluate zero-shot, few-shot, and translate-test settings(where test sets are translated into English) across 10 open and four proprietary LLMs.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2024.acl-long.419",
+            "claim": "Uncertainty estimation in generative LLMs commonly employs length-normalized scoring.",
+            "supporting_excerpt": "Uncertainty Estimation (UE) in generative LLMs is an evolving domain, where SOTA probability-based methods commonly employ length-normalized scoring.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The proposal assumes that machine-translated Urdu questions accurately reflect native low-resource structural patterns and that a 300-sample calibration split is sufficient to avoid overfitting when estimating quantile thresholds, which requires empirical validation."
+      },
+      "error": null,
+      "events": [
+        {
+          "label": "blinded_judge",
+          "model": "gemini-3.5-flash-lite",
+          "attempt": 1,
+          "timestamp": "2026-11-15T12:18:34.896954+00:00",
+          "prompt_hash": "511b6645362066fb880c345d5d99a8c2979faf264a46ac6294262a70a003fb92",
+          "input_tokens": 14598,
+          "output_tokens": 522,
+          "thinking_tokens": 0,
+          "total_tokens": 15120,
+          "estimated_cost_usd": 0.0,
+          "status": "ok",
+          "validation_failure": false,
+          "elapsed_seconds": 4.142290744999627
+        }
+      ]
+    }
+  ],
+  "score_summary": {
+    "novelty": {
+      "median": 3.5,
+      "min": 3,
+      "max": 4
+    },
+    "feasibility": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "clarity": {
+      "median": 4.5,
+      "min": 4,
+      "max": 5
+    },
+    "importance": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    },
+    "evidence_grounding": {
+      "median": 4.0,
+      "min": 4,
+      "max": 4
+    }
+  },
+  "search": [
+    {
+      "query": "cross lingual abstention threshold calibration question answering",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-15T12:17:22.850999+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-short.12",
+          "title": "Improving Vietnamese-English Cross-Lingual Retrieval for Legal and General Domains",
+          "authors": [
+            "Toan Ngoc Nguyen",
+            "Nam Le Hai",
+            "Nguyen Doan Hieu",
+            "Dai An Nguyen",
+            "Linh Ngo Van",
+            "Thien Huu Nguyen",
+            "Sang Dinh"
+          ],
+          "year": 2025,
+          "abstract": "Document retrieval plays a crucial role in numerous question-answering systems, yet research has concentrated on the general knowledge domain and resource-rich languages like English. In contrast, it remains largely underexplored in low-resource languages and cross-lingual scenarios within specialized domain knowledge such as legal. We present a novel dataset designed for cross-lingual retrieval between Vietnamese and English, which not only covers the general domain but also extends to the legal field. Additionally, we propose auxiliary loss function and symmetrical training strategy that significantly enhance the performance of state-of-the-art models on these retrieval tasks. Our contributions offer a significant resource and methodology aimed at improving cross-lingual retrieval in both legal and general QA settings, facilitating further advancements in document retrieval research across multiple languages and a broader spectrum of specialized domains. All the resources related to our work can be accessed at huggingface.co/datasets/bkai-foundation-models/crosslingual.",
+          "url": "https://aclanthology.org/2025.naacl-short.12/",
+          "doi": "10.18653/v1/2025.naacl-short.12",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.344",
+          "title": "Exploring Alignment in Shared Cross-lingual Spaces",
+          "authors": [
+            "Basel Mousi",
+            "Nadir Durrani",
+            "Fahim Dalvi",
+            "Majd Hawasly",
+            "Ahmed Abdelali"
+          ],
+          "year": 2024,
+          "abstract": "Despite their remarkable ability to capture linguistic nuances across diverse languages, questions persist regarding the degree of alignment between languages in multilingual embeddings. Drawing inspiration from research on high-dimensional representations in neural language models, we employ clustering to uncover latent concepts within multilingual models. Our analysis focuses on quantifying the alignment and overlap of these concepts across various languages within the latent space. To this end, we introduce two metrics CALIGN and COLAP aimed at quantifying these aspects, enabling a deeper exploration of multilingual embeddings. Our study encompasses three multilingual models (mT5, mBERT, and XLM-R) and three downstream tasks (Machine Translation, Named Entity Recognition, and Sentiment Analysis). Key findings from our analysis include: i) deeper layers in the network demonstrate increased cross-lingual alignment due to the presence of language-agnostic concepts, ii) fine-tuning of the models enhances alignment within the latent space, and iii) such task-specific calibration helps in explaining the emergence of zero-shot capabilities in the models.",
+          "url": "https://aclanthology.org/2024.acl-long.344/",
+          "doi": "10.18653/v1/2024.acl-long.344",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.17",
+          "title": "PromptRefine: Enhancing Few-Shot Performance on Low-Resource Indic Languages with Example Selection from related Example Banks",
+          "authors": [
+            "Soumya Suvra Ghosal",
+            "Soumyabrata Pal",
+            "Koyel Mukherjee",
+            "Dinesh Manocha"
+          ],
+          "year": 2025,
+          "abstract": "Large Language Models (LLMs) have recently demonstrated impressive few-shot learning capabilities through in-context learning (ICL). However, ICL performance is highly dependent on the choice of few-shot demonstrations, making the selection of the most optimal examples a persistent research challenge. This issue is further amplified in low-resource Indic languages, where the scarcity of ground-truth data complicates the selection process. In this work, we propose PromptRefine, a novel Alternating Minimization approach for example selection that improves ICL performance on low-resource Indic languages. PromptRefine leverages auxiliary example banks from related high-resource Indic languages and employs multi-task learning techniques to align language-specific retrievers, enabling effective cross-language retrieval. Additionally, we incorporate diversity in the selected examples to enhance generalization and reduce bias. Through comprehensive evaluations on four text generation tasks—Cross-Lingual Question Answering, Multilingual Question Answering, Machine Translation, and Cross-Lingual Summarization using state-of-the-art LLMs such as LLAMA-3.1-8B, LLAMA-2-7B, Qwen-2-7B, and Qwen-2.5-7B, we demonstrate that PromptRefine significantly outperforms existing frameworks for retrieving examples.",
+          "url": "https://aclanthology.org/2025.naacl-long.17/",
+          "doi": "10.18653/v1/2025.naacl-long.17",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.353",
+          "title": "Knowledge Graph Guided Evaluation of Abstention Techniques",
+          "authors": [
+            "Kinshuk Vasisht",
+            "Navreet Kaur",
+            "Danish Pruthi"
+          ],
+          "year": 2025,
+          "abstract": "To deploy language models safely, it is crucial that they abstain from responding to inappropriate requests. Several prior studies test the safety promises of models based on their effectiveness in blocking malicious requests. In this work, we focus on evaluating the underlying techniques that cause models to abstain. We create ‘SELECT‘, a benchmark derived from a set of benign concepts (e.g., “rivers”) from a knowledge graph. Focusing on benign concepts isolates the effect of safety training, and grounding these concepts in a knowledge graph allows us to study the generalization and specificity of abstention techniques. Using ‘SELECT‘, we benchmark different abstention techniques over six open-weight and closed-source models. We find that the examined techniques indeed cause models to abstain with over 80% abstention rates. However, these techniques are not as effective for descendants of the target concepts, where abstention rates drop by 19%. We also characterize the generalization-specificity trade-offs for different techniques. Overall, no single technique is invariably better than others, and our findings inform practitioners of the various trade-offs involved.",
+          "url": "https://aclanthology.org/2025.naacl-long.353/",
+          "doi": "10.18653/v1/2025.naacl-long.353",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-short.8",
+          "title": "Cross-lingual Transfer of Reward Models in Multilingual Alignment",
+          "authors": [
+            "Jiwoo Hong",
+            "Noah Lee",
+            "Rodrigo Martínez-Castaño",
+            "César Rodríguez",
+            "James Thorne"
+          ],
+          "year": 2025,
+          "abstract": "Reinforcement learning with human feedback (RLHF) is shown to largely benefit from precise reward models (RMs). However, recent studies in reward modeling schemes are skewed towards English, limiting the applicability of RLHF in multilingual alignments. In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English. Our experimental results demonstrate the strong cross-lingual transfer of English RMs, exceeding target language RMs by 3~4% average increase in Multilingual RewardBench. Furthermore, we analyze the cross-lingual transfer of RMs through the representation shifts. Finally, we perform multilingual alignment to exemplify how cross-lingual transfer in RM propagates to enhanced multilingual instruction-following capability.",
+          "url": "https://aclanthology.org/2025.naacl-short.8/",
+          "doi": "10.18653/v1/2025.naacl-short.8",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "uncertainty estimation translated low resource qa",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-15T12:17:22.851966+00:00",
+      "papers": [
+        {
+          "paper_id": "2024.acl-long.419",
+          "title": "MARS: Meaning-Aware Response Scoring for Uncertainty Estimation in Generative LLMs",
+          "authors": [
+            "Yavuz Faruk Bakman",
+            "Duygu Nur Yaldiz",
+            "Baturalp Buyukates",
+            "Chenyang Tao",
+            "Dimitrios Dimitriadis",
+            "Salman Avestimehr"
+          ],
+          "year": 2024,
+          "abstract": "Generative Large Language Models (LLMs) are widely utilized for their excellence in various tasks. However, their tendency to produce inaccurate or misleading outputs poses a potential risk, particularly in high-stakes environments. Therefore, estimating the correctness of generative LLM outputs is an important task for enhanced reliability. Uncertainty Estimation (UE) in generative LLMs is an evolving domain, where SOTA probability-based methods commonly employ length-normalized scoring. In this work, we propose Meaning-Aware Response Scoring (MARS) as an alternative to length-normalized scoring for UE methods. MARS is a novel scoring function that considers the semantic contribution of each token in the generated sequence in the context of the question. We demonstrate that integrating MARS into UE methods results in a universal and significant improvement in UE performance. We conduct experiments using three distinct closed-book question-answering datasets across five popular pre-trained LLMs. Lastly, we validate the efficacy of MARS on a Medical QA dataset. Code can be found here.",
+          "url": "https://aclanthology.org/2024.acl-long.419/",
+          "doi": "10.18653/v1/2024.acl-long.419",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.139",
+          "title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+          "authors": [
+            "David Ifeoluwa Adelani",
+            "Jessica Ojo",
+            "Israel Abebe Azime",
+            "Jian Yun Zhuang",
+            "Jesujoba Oluwadara Alabi",
+            "Xuanli He",
+            "Millicent Ochieng",
+            "Sara Hooker",
+            "Andiswa Bukula",
+            "En-Shiun Annie Lee",
+            "Chiamaka Ijeoma Chukwuneke",
+            "Happy Buzaaba",
+            "Blessing Kudzaishe Sibanda",
+            "Godson Koffi Kalipe",
+            "Jonathan Mukiibi",
+            "Salomon Kabongo Kabenamualu",
+            "Foutse Yuehgoh",
+            "Mmasibidi Setaka",
+            "Lolwethu Ndolela",
+            "Nkiruka Odu",
+            "Rooweither Mabuya",
+            "Salomey Osei",
+            "Shamsuddeen Hassan Muhammad",
+            "Sokhar Samb",
+            "Tadesse Kebede Guge",
+            "Tombekai Vangoni Sherman",
+            "Pontus Stenetorp"
+          ],
+          "year": 2025,
+          "abstract": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages. Additionally, many low-resource languages (e.g. African languages) are often evaluated only on basic text classification tasks due to the lack of appropriate or comprehensive benchmarks outside of high-resource languages. In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU). We use IrokoBench to evaluate zero-shot, few-shot, and translate-test settings(where test sets are translated into English) across 10 open and four proprietary LLMs. Our evaluation reveals a significant performance gap between high-resource languages (such as English and French) and low-resource African languages. We observe a significant performance gap between open and proprietary models, with the highest performing open model, Gemma 2 27B only at 63% of the best-performing proprietary model GPT-4o performance. Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B. These findings suggest that more efforts are needed to develop and adapt LLMs for African languages.",
+          "url": "https://aclanthology.org/2025.naacl-long.139/",
+          "doi": "10.18653/v1/2025.naacl-long.139",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.114",
+          "title": "Handling Ambiguity in Emotion: From Out-of-Domain Detection to Distribution Estimation",
+          "authors": [
+            "Wen Wu",
+            "Bo Li",
+            "Chao Zhang",
+            "Chung-Cheng Chiu",
+            "Qiujia Li",
+            "Junwen Bai",
+            "Tara Sainath",
+            "Phil Woodland"
+          ],
+          "year": 2024,
+          "abstract": "The subjective perception of emotion leads to inconsistent labels from human annotators. Typically, utterances lacking majority-agreed labels are excluded when training an emotion classifier, which cause problems when encountering ambiguous emotional expressions during testing. This paper investigates three methods to handle ambiguous emotion. First, we show that incorporating utterances without majority-agreed labels as an additional class in the classifier reduces the classification performance of the other emotion classes. Then, we propose detecting utterances with ambiguous emotions as out-of-domain samples by quantifying the uncertainty in emotion classification using evidential deep learning. This approach retains the classification accuracy while effectively detects ambiguous emotion expressions. Furthermore, to obtain fine-grained distinctions among ambiguous emotions, we propose representing emotion as a distribution instead of a single class label. The task is thus re-framed from classification to distribution estimation where every individual annotation is taken into account, not just the majority opinion. The evidential uncertainty measure is extended to quantify the uncertainty in emotion distribution estimation. Experimental results on the IEMOCAP and CREMA-D datasets demonstrate the superior capability of the proposed method in terms of majority class prediction, emotion distribution estimation, and uncertainty estimation.",
+          "url": "https://aclanthology.org/2024.acl-long.114/",
+          "doi": "10.18653/v1/2024.acl-long.114",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.629",
+          "title": "Pipeline Analysis for Developing Instruct LLMs in Low-Resource Languages: A Case Study on Basque",
+          "authors": [
+            "Ander Corral",
+            "Ixak Sarasua Antero",
+            "Xabier Saralegi"
+          ],
+          "year": 2025,
+          "abstract": "Large language models (LLMs) are typically optimized for resource-rich languages like English, exacerbating the gap between high-resource and underrepresented languages. This work presents a detailed analysis of strategies for developing a model capable of following instructions in a low-resource language, specifically Basque, by focusing on three key stages: pre-training, instruction tuning, and alignment with human preferences. Our findings demonstrate that continual pre-training with a high-quality Basque corpus of around 600 million words improves natural language understanding (NLU) of the foundational model by over 12 points. Moreover, instruction tuning and human preference alignment using automatically translated datasets proved highly effective, resulting in a 24-point improvement in instruction-following performance. The resulting models, Llama-eus-8B and Llama-eus-8B-instruct, establish a new state-of-the-art for Basque in the sub-10B parameter category.",
+          "url": "https://aclanthology.org/2025.naacl-long.629/",
+          "doi": "10.18653/v1/2025.naacl-long.629",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2025.naacl-short.18",
+          "title": "Alligators All Around: Mitigating Lexical Confusion in Low-resource Machine Translation",
+          "authors": [
+            "Elizabeth Nielsen",
+            "Isaac Rayburn Caswell",
+            "Jiaming Luo",
+            "Colin Cherry"
+          ],
+          "year": 2025,
+          "abstract": "Current machine translation (MT) systems for low-resource languages have a particular failure mode: When translating words in a given domain, they tend to confuse words within that domain. So, for example, “lion” might be translated as “alligator”, and “orange” might be rendered as “purple.” We propose a recall-based metric for measuring this problem and show that the problem exists in 122 low-resource languages. We then show that this problem can be mitigated by using a large language model (LLM) to post-edit the MT output, specifically by including the entire GATITOS lexicon for the relevant language as a very long context prompt. We show gains in average ChrF score over the set of 122 languages, and we show that the recall score for relevant lexical items also improves. Finally, we demonstrate that a small dedicated MT system with a general-purpose LLM as a post-editor is outperforms a lexicon-based RAG-LLM translator, suggesting a new paradigm for LLM use.",
+          "url": "https://aclanthology.org/2025.naacl-short.18/",
+          "doi": "10.18653/v1/2025.naacl-short.18",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "selective prediction risk coverage language transfer",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-15T12:17:22.854504+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-short.9",
+          "title": "Inference-Time Selective Debiasing to Enhance Fairness in Text Classification Models",
+          "authors": [
+            "Gleb Kuzmin",
+            "Neemesh Yadav",
+            "Ivan Smirnov",
+            "Timothy Baldwin",
+            "Artem Shelmanov"
+          ],
+          "year": 2025,
+          "abstract": "We propose selective debiasing – an inference-time safety mechanism designed to enhance the overall model quality in terms of prediction performance and fairness, especially in scenarios where retraining the model is impractical. The method draws inspiration from selective classification, where at inference time, predictions with low quality, as indicated by their uncertainty scores, are discarded. In our approach, we identify the potentially biased model predictions and, instead of discarding them, we remove bias from these predictions using LEACE – a post-processing debiasing method. To select problematic predictions, we propose a bias quantification approach based on KL divergence, which achieves better results than standard uncertainty quantification methods. Experiments on text classification datasets with encoder-based classification models demonstrate that selective debiasing helps to reduce the performance gap between post-processing methods and debiasing techniques from the at-training and pre-processing categories.",
+          "url": "https://aclanthology.org/2025.naacl-short.9/",
+          "doi": "10.18653/v1/2025.naacl-short.9",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.174",
+          "title": "UniBridge: A Unified Approach to Cross-Lingual Transfer Learning for Low-Resource Languages",
+          "authors": [
+            "Trinh Pham",
+            "Khoi Le",
+            "Anh Tuan Luu"
+          ],
+          "year": 2024,
+          "abstract": "In this paper, we introduce UniBridge (Cross-Lingual Transfer Learning with Optimized Embeddings and Vocabulary), a comprehensive approach developed to improve the effectiveness of Cross-Lingual Transfer Learning, particularly in languages with limited resources. Our approach tackles two essential elements of a language model: the initialization of embeddings and the optimal vocabulary size. Specifically, we propose a novel embedding initialization method that leverages both lexical and semantic alignment for a language. In addition, we present a method for systematically searching for the optimal vocabulary size, ensuring a balance between model complexity and linguistic coverage. Our experiments across multilingual datasets show that our approach greatly improves the F1-Score in several languages. UniBridge is a robust and adaptable solution for cross-lingual systems in various languages, highlighting the significance of initializing embeddings and choosing the right vocabulary size in cross-lingual environments.",
+          "url": "https://aclanthology.org/2024.acl-long.174/",
+          "doi": "10.18653/v1/2024.acl-long.174",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-srw.24",
+          "title": "Exploring the Effectiveness and Consistency of Task Selection in Intermediate-Task Transfer Learning",
+          "authors": [
+            "Pin-Jie Lin",
+            "Miaoran Zhang",
+            "Marius Mosbach",
+            "Dietrich Klakow"
+          ],
+          "year": 2024,
+          "abstract": "Identifying beneficial tasks to transfer from is a critical step toward successful intermediate-task transfer learning. In this work, we experiment with 130 source-target task combinations and demonstrate that the transfer performance exhibits severe variance across different source tasks and training seeds, highlighting the crucial role of intermediate-task selection in a broader context. We compare four representative task selection methods in a unified setup, focusing on their effectiveness and consistency. Compared to embedding-free methods and text embeddings, task embeddings constructed from fine-tuned weights can better estimate task transferability by improving task prediction scores from 2.59% to 3.96%. Despite their strong performance, we observe that the task embeddings do not consistently demonstrate superiority for tasks requiring reasoning abilities. Furthermore, we introduce a novel method that measures pairwise token similarity using maximum inner product search, leading to the highest performance in task prediction. Our findings suggest that token-wise similarity is better predictive for predicting transferability compared to averaging weights.",
+          "url": "https://aclanthology.org/2024.acl-srw.24/",
+          "doi": "10.18653/v1/2024.acl-srw.24",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.103",
+          "title": "Does DetectGPT Fully Utilize Perturbation? Bridging Selective Perturbation to Fine-tuned Contrastive Learning Detector would be Better",
+          "authors": [
+            "Shengchao Liu",
+            "Xiaoming Liu",
+            "Yichen Wang",
+            "Zehua Cheng",
+            "Chengzhengxu Li",
+            "Zhaohan Zhang",
+            "Yu Lan",
+            "Chao Shen"
+          ],
+          "year": 2024,
+          "abstract": "The burgeoning generative capabilities of large language models (LLMs) have raised growing concerns about abuse, demanding automatic machine-generated text detectors. DetectGPT, a zero-shot metric-based detector, first introduces perturbation and shows great performance improvement. However, in DetectGPT, the random perturbation strategy could introduce noise, and logit regression depends on the threshold, harming the generalizability and applicability of individual or small-batch inputs. Hence, we propose a novel fine-tuned detector, PECOLA, bridging metric-based and fine-tuned methods by contrastive learning on selective perturbation. Selective strategy retains important tokens during perturbation and weights for multi-pair contrastive learning. The experiments show that PECOLA outperforms the state-of-the-art (SOTA) by 1.20% in accuracy on average on four public datasets. And we further analyze the effectiveness, robustness, and generalization of the method.",
+          "url": "https://aclanthology.org/2024.acl-long.103/",
+          "doi": "10.18653/v1/2024.acl-long.103",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2024.acl-long.763",
+          "title": "Tracking the Newsworthiness of Public Documents",
+          "authors": [
+            "Alexander Spangher",
+            "Serdar Tumgoren",
+            "Ben Welsh",
+            "Nanyun Peng",
+            "Emilio Ferrara",
+            "Jonathan May"
+          ],
+          "year": 2024,
+          "abstract": "Journalists regularly make decisions on whether or not to report stories, based on “news values”. In this work, we wish to explicitly model these decisions to explore when and why certain stories get press attention. This is challenging because very few labelled links between source documents and news articles exist and language use between corpora is very different. We address this problem by implementing a novel probabilistic relational modeling framework, which we show is a low-annotation linking methodology that outperforms other, more state-of-the-art retrieval-based baselines. Next, we define a new task: newsworthiness prediction, to predict if a policy item will get covered. We focus on news coverage of local public policy in the San Francisco Bay Area by the San Francisco Chronicle. We gather 15k policies discussed across 10 years of public policy meetings, and transcribe over 3,200 hours of public discussion. In general, we find limited impact of public discussion on newsworthiness prediction accuracy, suggesting that some of the most important stories barely get discussed in public.Finally, we show that newsworthiness predictions can be a useful assistive tool for journalists seeking to keep abreast of local government. We perform human evaluation with expert journalists and show our systems identify policies they consider newsworthy with 68% F1 and our coverage recommendations are helpful with an 84% win-rate against baseline. We release all code and data to our work here: https://github.com/alex2awesome/newsworthiness-public.",
+          "url": "https://aclanthology.org/2024.acl-long.763/",
+          "doi": "10.18653/v1/2024.acl-long.763",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    },
+    {
+      "query": "Cross-Lingual Transfer and Calibration of Abstention Thresholds in Translated Factual Question Answering We freeze an open-access model (Llama-3.1-8B-Instruct via HuggingFace) and evaluate its generation probabilities on English factual QA datasets (e.g., EntityQuestions) and their machine-translate",
+      "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+      "retrieved_at": "2026-11-15T12:17:22.858259+00:00",
+      "papers": [
+        {
+          "paper_id": "2025.naacl-short.12",
+          "title": "Improving Vietnamese-English Cross-Lingual Retrieval for Legal and General Domains",
+          "authors": [
+            "Toan Ngoc Nguyen",
+            "Nam Le Hai",
+            "Nguyen Doan Hieu",
+            "Dai An Nguyen",
+            "Linh Ngo Van",
+            "Thien Huu Nguyen",
+            "Sang Dinh"
+          ],
+          "year": 2025,
+          "abstract": "Document retrieval plays a crucial role in numerous question-answering systems, yet research has concentrated on the general knowledge domain and resource-rich languages like English. In contrast, it remains largely underexplored in low-resource languages and cross-lingual scenarios within specialized domain knowledge such as legal. We present a novel dataset designed for cross-lingual retrieval between Vietnamese and English, which not only covers the general domain but also extends to the legal field. Additionally, we propose auxiliary loss function and symmetrical training strategy that significantly enhance the performance of state-of-the-art models on these retrieval tasks. Our contributions offer a significant resource and methodology aimed at improving cross-lingual retrieval in both legal and general QA settings, facilitating further advancements in document retrieval research across multiple languages and a broader spectrum of specialized domains. All the resources related to our work can be accessed at huggingface.co/datasets/bkai-foundation-models/crosslingual.",
+          "url": "https://aclanthology.org/2025.naacl-short.12/",
+          "doi": "10.18653/v1/2025.naacl-short.12",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.365",
+          "title": "Narrowing the Knowledge Evaluation Gap: Open-Domain Question Answering with Multi-Granularity Answers",
+          "authors": [
+            "Gal Yona",
+            "Roee Aharoni",
+            "Mor Geva"
+          ],
+          "year": 2024,
+          "abstract": "Factual questions typically can be answered correctly at different levels of granularity. For example, both “August 4, 1961” and “1961” are correct answers to the question “When was Barack Obama born?”. Standard question answering (QA) evaluation protocols, however, do not explicitly take this into account and compare a predicted answer against answers of a single granularity level. In this work, we propose GRANOLA QA, a novel evaluation setting where a predicted answer is evaluated in terms of accuracy and informativeness against a set of multi-granularity answers. We present a simple methodology for enriching existing datasets with multi-granularity answers, and create GRANOLA-EQ, a multi-granularity version of the EntityQuestions dataset. We evaluate a range of decoding methods on GRANOLA-EQ, including a new algorithm, called Decoding with Response Aggregation (DRAG), that is geared towards aligning the response granularity with the model’s uncertainty. Our experiments show that large language models with standard decoding tend to generate specific answers, which are often incorrect. In contrast, when evaluated on multi-granularity answers, DRAG yields a nearly 20 point increase in accuracy on average, which further increases for rare entities. Overall, this reveals that standard evaluation and decoding schemes may significantly underestimate the knowledge encapsulated in LMs.",
+          "url": "https://aclanthology.org/2024.acl-long.365/",
+          "doi": "10.18653/v1/2024.acl-long.365",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-long.139",
+          "title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+          "authors": [
+            "David Ifeoluwa Adelani",
+            "Jessica Ojo",
+            "Israel Abebe Azime",
+            "Jian Yun Zhuang",
+            "Jesujoba Oluwadara Alabi",
+            "Xuanli He",
+            "Millicent Ochieng",
+            "Sara Hooker",
+            "Andiswa Bukula",
+            "En-Shiun Annie Lee",
+            "Chiamaka Ijeoma Chukwuneke",
+            "Happy Buzaaba",
+            "Blessing Kudzaishe Sibanda",
+            "Godson Koffi Kalipe",
+            "Jonathan Mukiibi",
+            "Salomon Kabongo Kabenamualu",
+            "Foutse Yuehgoh",
+            "Mmasibidi Setaka",
+            "Lolwethu Ndolela",
+            "Nkiruka Odu",
+            "Rooweither Mabuya",
+            "Salomey Osei",
+            "Shamsuddeen Hassan Muhammad",
+            "Sokhar Samb",
+            "Tadesse Kebede Guge",
+            "Tombekai Vangoni Sherman",
+            "Pontus Stenetorp"
+          ],
+          "year": 2025,
+          "abstract": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages. Additionally, many low-resource languages (e.g. African languages) are often evaluated only on basic text classification tasks due to the lack of appropriate or comprehensive benchmarks outside of high-resource languages. In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU). We use IrokoBench to evaluate zero-shot, few-shot, and translate-test settings(where test sets are translated into English) across 10 open and four proprietary LLMs. Our evaluation reveals a significant performance gap between high-resource languages (such as English and French) and low-resource African languages. We observe a significant performance gap between open and proprietary models, with the highest performing open model, Gemma 2 27B only at 63% of the best-performing proprietary model GPT-4o performance. Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B. These findings suggest that more efforts are needed to develop and adapt LLMs for African languages.",
+          "url": "https://aclanthology.org/2025.naacl-long.139/",
+          "doi": "10.18653/v1/2025.naacl-long.139",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        },
+        {
+          "paper_id": "2024.acl-long.595",
+          "title": "IndicGenBench: A Multilingual Benchmark to Evaluate Generation Capabilities of LLMs on Indic Languages",
+          "authors": [
+            "Harman Singh",
+            "Nitish Gupta",
+            "Shikhar Bharadwaj",
+            "Dinesh Tewari",
+            "Partha Talukdar"
+          ],
+          "year": 2024,
+          "abstract": "As large language models (LLMs) see increasing adoption across the globe, it is imperative for LLMs to be representative of the linguistic diversity of the world. India is a linguistically diverse country of 1.4 Billion people. To facilitate research on multilingual LLM evaluation, we release IndicGenBench — the largest benchmark for evaluating LLMs on user-facing generation tasks across a diverse set 29 of Indic languages covering 13 scripts and 4 language families. IndicGenBench is composed of diverse generation tasks like cross-lingual summarization, machine translation, and cross-lingual question answering. IndicGenBench extends existing benchmarks to many Indic languages through human curation providing multi-way parallel evaluation data for many under-represented Indic languages for the first time. We evaluate stateof-the-art LLMs like GPT-3.5, GPT-4, PaLM2, and LLaMA on IndicGenBench in a variety of settings. The largest PaLM-2 models performs the best on most tasks, however, there is a significant performance gap in all languages compared to English showing that further research is needed for the development of more inclusive multilingual language models. IndicGenBench isavailable at www.github.com/google-researchdatasets/indic-gen-bench",
+          "url": "https://aclanthology.org/2024.acl-long.595/",
+          "doi": "10.18653/v1/2024.acl-long.595",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.409Z"
+        },
+        {
+          "paper_id": "2025.naacl-short.8",
+          "title": "Cross-lingual Transfer of Reward Models in Multilingual Alignment",
+          "authors": [
+            "Jiwoo Hong",
+            "Noah Lee",
+            "Rodrigo Martínez-Castaño",
+            "César Rodríguez",
+            "James Thorne"
+          ],
+          "year": 2025,
+          "abstract": "Reinforcement learning with human feedback (RLHF) is shown to largely benefit from precise reward models (RMs). However, recent studies in reward modeling schemes are skewed towards English, limiting the applicability of RLHF in multilingual alignments. In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English. Our experimental results demonstrate the strong cross-lingual transfer of English RMs, exceeding target language RMs by 3~4% average increase in Multilingual RewardBench. Furthermore, we analyze the cross-lingual transfer of RMs through the representation shifts. Finally, we perform multilingual alignment to exemplify how cross-lingual transfer in RM propagates to enhanced multilingual instruction-following capability.",
+          "url": "https://aclanthology.org/2025.naacl-short.8/",
+          "doi": "10.18653/v1/2025.naacl-short.8",
+          "source": "ACL Anthology official XML snapshot",
+          "retrieved_at": "2026-11-08T10:49:42.777Z"
+        }
+      ],
+      "status": "ok",
+      "error": null,
+      "cache_hit": false
+    }
+  ],
+  "events": [
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T12:18:19.896716+00:00",
+      "prompt_hash": "511b6645362066fb880c345d5d99a8c2979faf264a46ac6294262a70a003fb92",
+      "input_tokens": 14598,
+      "output_tokens": 474,
+      "thinking_tokens": 0,
+      "total_tokens": 15072,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.2754847859996516
+    },
+    {
+      "label": "blinded_judge",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-15T12:18:34.896954+00:00",
+      "prompt_hash": "511b6645362066fb880c345d5d99a8c2979faf264a46ac6294262a70a003fb92",
+      "input_tokens": 14598,
+      "output_tokens": 522,
+      "thinking_tokens": 0,
+      "total_tokens": 15120,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.142290744999627
+    }
+  ],
+  "error": null,
+  "literature_context": {
+    "coverage": {
+      "protocol": "multi_query_shared_evidence_v1",
+      "selection_policy": "Shared evidence per seed/replicate; cited papers first, then interleaved multi-query hits.",
+      "query_count": 4,
+      "paper_count": 19,
+      "paper_limit": 24,
+      "search_failures": 0,
+      "missing_cited_ids": [],
+      "omitted_cited_ids": [],
+      "omitted_hit_count": 0,
+      "limitations": "Bounded abstract corpus and lexical search; incomplete retrieval does not establish novelty."
+    },
+    "fingerprint": "8ea8379a9ef25f9a4285484de17854685fe8769b173989375ec9a8d57a481e0f",
+    "queries": [
+      "cross lingual abstention threshold calibration question answering",
+      "uncertainty estimation translated low resource qa",
+      "selective prediction risk coverage language transfer",
+      "Cross-Lingual Transfer and Calibration of Abstention Thresholds in Translated Factual Question Answering We freeze an open-access model (Llama-3.1-8B-Instruct via HuggingFace) and evaluate its generation probabilities on English factual QA datasets (e.g., EntityQuestions) and their machine-translate"
+    ],
+    "papers": [
+      {
+        "paper_id": "2024.acl-long.365",
+        "title": "Narrowing the Knowledge Evaluation Gap: Open-Domain Question Answering with Multi-Granularity Answers",
+        "authors": [
+          "Gal Yona",
+          "Roee Aharoni",
+          "Mor Geva"
+        ],
+        "year": 2024,
+        "abstract": "Factual questions typically can be answered correctly at different levels of granularity. For example, both “August 4, 1961” and “1961” are correct answers to the question “When was Barack Obama born?”. Standard question answering (QA) evaluation protocols, however, do not explicitly take this into account and compare a predicted answer against answers of a single granularity level. In this work, we propose GRANOLA QA, a novel evaluation setting where a predicted answer is evaluated in terms of accuracy and informativeness against a set of multi-granularity answers. We present a simple methodology for enriching existing datasets with multi-granularity answers, and create GRANOLA-EQ, a multi-granularity version of the EntityQuestions dataset. We evaluate a range of decoding methods on GRANOLA-EQ, including a new algorithm, called Decoding with Response Aggregation (DRAG), that is geared towards aligning the response granularity with the model’s uncertainty. Our experiments show that large language models with standard decoding tend to generate specific answers, which are often incorrect. In contrast, when evaluated on multi-granularity answers, DRAG yields a nearly 20 point increase in accuracy on average, which further increases for rare entities. Overall, this reveals that standard evaluation and decoding schemes may significantly underestimate the knowledge encapsulated in LMs.",
+        "url": "https://aclanthology.org/2024.acl-long.365/",
+        "doi": "10.18653/v1/2024.acl-long.365",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.745",
+        "title": "LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts",
+        "authors": [
+          "Helia Hashemi",
+          "Jason Eisner",
+          "Corby Rosset",
+          "Benjamin Van Durme",
+          "Chris Kedzie"
+        ],
+        "year": 2024,
+        "abstract": "This paper introduces a framework for the automated evaluation of natural language texts. A manually constructed rubric describes how to assess multiple dimensions of interest. To evaluate a text, a large language model (LLM) is prompted with each rubric question and produces a distribution over potential responses. The LLM predictions often fail to agree well with human judges—indeed, the humans do not fully agree with one another. However, the multiple LLM distributions can be combined to predict each human judge’s annotations on all questions, including a summary question that assesses overall quality or relevance. LLM-Rubric accomplishes this by training a small feed-forward neural network that includes both judge-specific and judge-independent parameters. When evaluating dialogue systems in a human-AI information-seeking task, we find that LLM-Rubric with 9 questions (assessing dimensions such as naturalness, conciseness, and citation quality) predicts human judges’ assessment of overall user satisfaction, on a scale of 1–4, with RMS error < 0.5, a 2× improvement over the uncalibrated baseline.",
+        "url": "https://aclanthology.org/2024.acl-long.745/",
+        "doi": "10.18653/v1/2024.acl-long.745",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.139",
+        "title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+        "authors": [
+          "David Ifeoluwa Adelani",
+          "Jessica Ojo",
+          "Israel Abebe Azime",
+          "Jian Yun Zhuang",
+          "Jesujoba Oluwadara Alabi",
+          "Xuanli He",
+          "Millicent Ochieng",
+          "Sara Hooker",
+          "Andiswa Bukula",
+          "En-Shiun Annie Lee",
+          "Chiamaka Ijeoma Chukwuneke",
+          "Happy Buzaaba",
+          "Blessing Kudzaishe Sibanda",
+          "Godson Koffi Kalipe",
+          "Jonathan Mukiibi",
+          "Salomon Kabongo Kabenamualu",
+          "Foutse Yuehgoh",
+          "Mmasibidi Setaka",
+          "Lolwethu Ndolela",
+          "Nkiruka Odu",
+          "Rooweither Mabuya",
+          "Salomey Osei",
+          "Shamsuddeen Hassan Muhammad",
+          "Sokhar Samb",
+          "Tadesse Kebede Guge",
+          "Tombekai Vangoni Sherman",
+          "Pontus Stenetorp"
+        ],
+        "year": 2025,
+        "abstract": "Despite the widespread adoption of Large language models (LLMs), their remarkable capabilities remain limited to a few high-resource languages. Additionally, many low-resource languages (e.g. African languages) are often evaluated only on basic text classification tasks due to the lack of appropriate or comprehensive benchmarks outside of high-resource languages. In this paper, we introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference(AfriXNLI), mathematical reasoning(AfriMGSM), and multi-choice knowledge-based QA(AfriMMLU). We use IrokoBench to evaluate zero-shot, few-shot, and translate-test settings(where test sets are translated into English) across 10 open and four proprietary LLMs. Our evaluation reveals a significant performance gap between high-resource languages (such as English and French) and low-resource African languages. We observe a significant performance gap between open and proprietary models, with the highest performing open model, Gemma 2 27B only at 63% of the best-performing proprietary model GPT-4o performance. Machine translating the test set to English before evaluation helped to close the gap for larger models that are English-centric, like Gemma 2 27B and LLaMa 3.1 70B. These findings suggest that more efforts are needed to develop and adapt LLMs for African languages.",
+        "url": "https://aclanthology.org/2025.naacl-long.139/",
+        "doi": "10.18653/v1/2025.naacl-long.139",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.453",
+        "title": "Dynamic Uncertainty Ranking: Enhancing Retrieval-Augmented In-Context Learning for Long-Tail Knowledge in LLMs",
+        "authors": [
+          "Shuyang Yu",
+          "Runxue Bao",
+          "Parminder Bhatia",
+          "Taha Kass-Hout",
+          "Jiayu Zhou",
+          "Cao Xiao"
+        ],
+        "year": 2025,
+        "abstract": "Large language models (LLMs) can learn vast amounts of knowledge from diverse domains during pre-training. However, long-tail knowledge from specialized domains is often scarce and underrepresented, rarely appearing in the models’ memorization. Prior work has shown that in-context learning (ICL) with retriever augmentation can help LLMs better capture long-tail knowledge, reducing their reliance on pre-trained data. Despite these advances, we observe that LLM predictions for long-tail questions remain uncertain to variations in retrieved samples. To take advantage of the uncertainty in ICL for guiding LLM predictions toward correct answers on long-tail samples, we propose a reinforcement learning-based dynamic uncertainty ranking method for retrieval-augmented ICL that accounts for the varying impact of each retrieved sample on LLM predictions. Our approach prioritizes more informative and stable samples while demoting misleading ones, updating rankings based on the feedback from the LLM w.r.t. each retrieved sample. To enhance training efficiency and reduce query costs, we introduce a learnable dynamic ranking threshold, adjusted when the model encounters negative prediction shifts. Experimental results on various question-answering datasets from different domains show that our method outperforms the best baseline by 2.76%, with a notable 5.96% boost in accuracy on long-tail questions that elude zero-shot inference. Our code is available at https://github.com/Yu-shuyan/uncertian_ranker.",
+        "url": "https://aclanthology.org/2025.naacl-long.453/",
+        "doi": "10.18653/v1/2025.naacl-long.453",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-short.12",
+        "title": "Improving Vietnamese-English Cross-Lingual Retrieval for Legal and General Domains",
+        "authors": [
+          "Toan Ngoc Nguyen",
+          "Nam Le Hai",
+          "Nguyen Doan Hieu",
+          "Dai An Nguyen",
+          "Linh Ngo Van",
+          "Thien Huu Nguyen",
+          "Sang Dinh"
+        ],
+        "year": 2025,
+        "abstract": "Document retrieval plays a crucial role in numerous question-answering systems, yet research has concentrated on the general knowledge domain and resource-rich languages like English. In contrast, it remains largely underexplored in low-resource languages and cross-lingual scenarios within specialized domain knowledge such as legal. We present a novel dataset designed for cross-lingual retrieval between Vietnamese and English, which not only covers the general domain but also extends to the legal field. Additionally, we propose auxiliary loss function and symmetrical training strategy that significantly enhance the performance of state-of-the-art models on these retrieval tasks. Our contributions offer a significant resource and methodology aimed at improving cross-lingual retrieval in both legal and general QA settings, facilitating further advancements in document retrieval research across multiple languages and a broader spectrum of specialized domains. All the resources related to our work can be accessed at huggingface.co/datasets/bkai-foundation-models/crosslingual.",
+        "url": "https://aclanthology.org/2025.naacl-short.12/",
+        "doi": "10.18653/v1/2025.naacl-short.12",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.419",
+        "title": "MARS: Meaning-Aware Response Scoring for Uncertainty Estimation in Generative LLMs",
+        "authors": [
+          "Yavuz Faruk Bakman",
+          "Duygu Nur Yaldiz",
+          "Baturalp Buyukates",
+          "Chenyang Tao",
+          "Dimitrios Dimitriadis",
+          "Salman Avestimehr"
+        ],
+        "year": 2024,
+        "abstract": "Generative Large Language Models (LLMs) are widely utilized for their excellence in various tasks. However, their tendency to produce inaccurate or misleading outputs poses a potential risk, particularly in high-stakes environments. Therefore, estimating the correctness of generative LLM outputs is an important task for enhanced reliability. Uncertainty Estimation (UE) in generative LLMs is an evolving domain, where SOTA probability-based methods commonly employ length-normalized scoring. In this work, we propose Meaning-Aware Response Scoring (MARS) as an alternative to length-normalized scoring for UE methods. MARS is a novel scoring function that considers the semantic contribution of each token in the generated sequence in the context of the question. We demonstrate that integrating MARS into UE methods results in a universal and significant improvement in UE performance. We conduct experiments using three distinct closed-book question-answering datasets across five popular pre-trained LLMs. Lastly, we validate the efficacy of MARS on a Medical QA dataset. Code can be found here.",
+        "url": "https://aclanthology.org/2024.acl-long.419/",
+        "doi": "10.18653/v1/2024.acl-long.419",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-short.9",
+        "title": "Inference-Time Selective Debiasing to Enhance Fairness in Text Classification Models",
+        "authors": [
+          "Gleb Kuzmin",
+          "Neemesh Yadav",
+          "Ivan Smirnov",
+          "Timothy Baldwin",
+          "Artem Shelmanov"
+        ],
+        "year": 2025,
+        "abstract": "We propose selective debiasing – an inference-time safety mechanism designed to enhance the overall model quality in terms of prediction performance and fairness, especially in scenarios where retraining the model is impractical. The method draws inspiration from selective classification, where at inference time, predictions with low quality, as indicated by their uncertainty scores, are discarded. In our approach, we identify the potentially biased model predictions and, instead of discarding them, we remove bias from these predictions using LEACE – a post-processing debiasing method. To select problematic predictions, we propose a bias quantification approach based on KL divergence, which achieves better results than standard uncertainty quantification methods. Experiments on text classification datasets with encoder-based classification models demonstrate that selective debiasing helps to reduce the performance gap between post-processing methods and debiasing techniques from the at-training and pre-processing categories.",
+        "url": "https://aclanthology.org/2025.naacl-short.9/",
+        "doi": "10.18653/v1/2025.naacl-short.9",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.344",
+        "title": "Exploring Alignment in Shared Cross-lingual Spaces",
+        "authors": [
+          "Basel Mousi",
+          "Nadir Durrani",
+          "Fahim Dalvi",
+          "Majd Hawasly",
+          "Ahmed Abdelali"
+        ],
+        "year": 2024,
+        "abstract": "Despite their remarkable ability to capture linguistic nuances across diverse languages, questions persist regarding the degree of alignment between languages in multilingual embeddings. Drawing inspiration from research on high-dimensional representations in neural language models, we employ clustering to uncover latent concepts within multilingual models. Our analysis focuses on quantifying the alignment and overlap of these concepts across various languages within the latent space. To this end, we introduce two metrics CALIGN and COLAP aimed at quantifying these aspects, enabling a deeper exploration of multilingual embeddings. Our study encompasses three multilingual models (mT5, mBERT, and XLM-R) and three downstream tasks (Machine Translation, Named Entity Recognition, and Sentiment Analysis). Key findings from our analysis include: i) deeper layers in the network demonstrate increased cross-lingual alignment due to the presence of language-agnostic concepts, ii) fine-tuning of the models enhances alignment within the latent space, and iii) such task-specific calibration helps in explaining the emergence of zero-shot capabilities in the models.",
+        "url": "https://aclanthology.org/2024.acl-long.344/",
+        "doi": "10.18653/v1/2024.acl-long.344",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.174",
+        "title": "UniBridge: A Unified Approach to Cross-Lingual Transfer Learning for Low-Resource Languages",
+        "authors": [
+          "Trinh Pham",
+          "Khoi Le",
+          "Anh Tuan Luu"
+        ],
+        "year": 2024,
+        "abstract": "In this paper, we introduce UniBridge (Cross-Lingual Transfer Learning with Optimized Embeddings and Vocabulary), a comprehensive approach developed to improve the effectiveness of Cross-Lingual Transfer Learning, particularly in languages with limited resources. Our approach tackles two essential elements of a language model: the initialization of embeddings and the optimal vocabulary size. Specifically, we propose a novel embedding initialization method that leverages both lexical and semantic alignment for a language. In addition, we present a method for systematically searching for the optimal vocabulary size, ensuring a balance between model complexity and linguistic coverage. Our experiments across multilingual datasets show that our approach greatly improves the F1-Score in several languages. UniBridge is a robust and adaptable solution for cross-lingual systems in various languages, highlighting the significance of initializing embeddings and choosing the right vocabulary size in cross-lingual environments.",
+        "url": "https://aclanthology.org/2024.acl-long.174/",
+        "doi": "10.18653/v1/2024.acl-long.174",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.17",
+        "title": "PromptRefine: Enhancing Few-Shot Performance on Low-Resource Indic Languages with Example Selection from related Example Banks",
+        "authors": [
+          "Soumya Suvra Ghosal",
+          "Soumyabrata Pal",
+          "Koyel Mukherjee",
+          "Dinesh Manocha"
+        ],
+        "year": 2025,
+        "abstract": "Large Language Models (LLMs) have recently demonstrated impressive few-shot learning capabilities through in-context learning (ICL). However, ICL performance is highly dependent on the choice of few-shot demonstrations, making the selection of the most optimal examples a persistent research challenge. This issue is further amplified in low-resource Indic languages, where the scarcity of ground-truth data complicates the selection process. In this work, we propose PromptRefine, a novel Alternating Minimization approach for example selection that improves ICL performance on low-resource Indic languages. PromptRefine leverages auxiliary example banks from related high-resource Indic languages and employs multi-task learning techniques to align language-specific retrievers, enabling effective cross-language retrieval. Additionally, we incorporate diversity in the selected examples to enhance generalization and reduce bias. Through comprehensive evaluations on four text generation tasks—Cross-Lingual Question Answering, Multilingual Question Answering, Machine Translation, and Cross-Lingual Summarization using state-of-the-art LLMs such as LLAMA-3.1-8B, LLAMA-2-7B, Qwen-2-7B, and Qwen-2.5-7B, we demonstrate that PromptRefine significantly outperforms existing frameworks for retrieving examples.",
+        "url": "https://aclanthology.org/2025.naacl-long.17/",
+        "doi": "10.18653/v1/2025.naacl-long.17",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.114",
+        "title": "Handling Ambiguity in Emotion: From Out-of-Domain Detection to Distribution Estimation",
+        "authors": [
+          "Wen Wu",
+          "Bo Li",
+          "Chao Zhang",
+          "Chung-Cheng Chiu",
+          "Qiujia Li",
+          "Junwen Bai",
+          "Tara Sainath",
+          "Phil Woodland"
+        ],
+        "year": 2024,
+        "abstract": "The subjective perception of emotion leads to inconsistent labels from human annotators. Typically, utterances lacking majority-agreed labels are excluded when training an emotion classifier, which cause problems when encountering ambiguous emotional expressions during testing. This paper investigates three methods to handle ambiguous emotion. First, we show that incorporating utterances without majority-agreed labels as an additional class in the classifier reduces the classification performance of the other emotion classes. Then, we propose detecting utterances with ambiguous emotions as out-of-domain samples by quantifying the uncertainty in emotion classification using evidential deep learning. This approach retains the classification accuracy while effectively detects ambiguous emotion expressions. Furthermore, to obtain fine-grained distinctions among ambiguous emotions, we propose representing emotion as a distribution instead of a single class label. The task is thus re-framed from classification to distribution estimation where every individual annotation is taken into account, not just the majority opinion. The evidential uncertainty measure is extended to quantify the uncertainty in emotion distribution estimation. Experimental results on the IEMOCAP and CREMA-D datasets demonstrate the superior capability of the proposed method in terms of majority class prediction, emotion distribution estimation, and uncertainty estimation.",
+        "url": "https://aclanthology.org/2024.acl-long.114/",
+        "doi": "10.18653/v1/2024.acl-long.114",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-srw.24",
+        "title": "Exploring the Effectiveness and Consistency of Task Selection in Intermediate-Task Transfer Learning",
+        "authors": [
+          "Pin-Jie Lin",
+          "Miaoran Zhang",
+          "Marius Mosbach",
+          "Dietrich Klakow"
+        ],
+        "year": 2024,
+        "abstract": "Identifying beneficial tasks to transfer from is a critical step toward successful intermediate-task transfer learning. In this work, we experiment with 130 source-target task combinations and demonstrate that the transfer performance exhibits severe variance across different source tasks and training seeds, highlighting the crucial role of intermediate-task selection in a broader context. We compare four representative task selection methods in a unified setup, focusing on their effectiveness and consistency. Compared to embedding-free methods and text embeddings, task embeddings constructed from fine-tuned weights can better estimate task transferability by improving task prediction scores from 2.59% to 3.96%. Despite their strong performance, we observe that the task embeddings do not consistently demonstrate superiority for tasks requiring reasoning abilities. Furthermore, we introduce a novel method that measures pairwise token similarity using maximum inner product search, leading to the highest performance in task prediction. Our findings suggest that token-wise similarity is better predictive for predicting transferability compared to averaging weights.",
+        "url": "https://aclanthology.org/2024.acl-srw.24/",
+        "doi": "10.18653/v1/2024.acl-srw.24",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.353",
+        "title": "Knowledge Graph Guided Evaluation of Abstention Techniques",
+        "authors": [
+          "Kinshuk Vasisht",
+          "Navreet Kaur",
+          "Danish Pruthi"
+        ],
+        "year": 2025,
+        "abstract": "To deploy language models safely, it is crucial that they abstain from responding to inappropriate requests. Several prior studies test the safety promises of models based on their effectiveness in blocking malicious requests. In this work, we focus on evaluating the underlying techniques that cause models to abstain. We create ‘SELECT‘, a benchmark derived from a set of benign concepts (e.g., “rivers”) from a knowledge graph. Focusing on benign concepts isolates the effect of safety training, and grounding these concepts in a knowledge graph allows us to study the generalization and specificity of abstention techniques. Using ‘SELECT‘, we benchmark different abstention techniques over six open-weight and closed-source models. We find that the examined techniques indeed cause models to abstain with over 80% abstention rates. However, these techniques are not as effective for descendants of the target concepts, where abstention rates drop by 19%. We also characterize the generalization-specificity trade-offs for different techniques. Overall, no single technique is invariably better than others, and our findings inform practitioners of the various trade-offs involved.",
+        "url": "https://aclanthology.org/2025.naacl-long.353/",
+        "doi": "10.18653/v1/2025.naacl-long.353",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-long.629",
+        "title": "Pipeline Analysis for Developing Instruct LLMs in Low-Resource Languages: A Case Study on Basque",
+        "authors": [
+          "Ander Corral",
+          "Ixak Sarasua Antero",
+          "Xabier Saralegi"
+        ],
+        "year": 2025,
+        "abstract": "Large language models (LLMs) are typically optimized for resource-rich languages like English, exacerbating the gap between high-resource and underrepresented languages. This work presents a detailed analysis of strategies for developing a model capable of following instructions in a low-resource language, specifically Basque, by focusing on three key stages: pre-training, instruction tuning, and alignment with human preferences. Our findings demonstrate that continual pre-training with a high-quality Basque corpus of around 600 million words improves natural language understanding (NLU) of the foundational model by over 12 points. Moreover, instruction tuning and human preference alignment using automatically translated datasets proved highly effective, resulting in a 24-point improvement in instruction-following performance. The resulting models, Llama-eus-8B and Llama-eus-8B-instruct, establish a new state-of-the-art for Basque in the sub-10B parameter category.",
+        "url": "https://aclanthology.org/2025.naacl-long.629/",
+        "doi": "10.18653/v1/2025.naacl-long.629",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.103",
+        "title": "Does DetectGPT Fully Utilize Perturbation? Bridging Selective Perturbation to Fine-tuned Contrastive Learning Detector would be Better",
+        "authors": [
+          "Shengchao Liu",
+          "Xiaoming Liu",
+          "Yichen Wang",
+          "Zehua Cheng",
+          "Chengzhengxu Li",
+          "Zhaohan Zhang",
+          "Yu Lan",
+          "Chao Shen"
+        ],
+        "year": 2024,
+        "abstract": "The burgeoning generative capabilities of large language models (LLMs) have raised growing concerns about abuse, demanding automatic machine-generated text detectors. DetectGPT, a zero-shot metric-based detector, first introduces perturbation and shows great performance improvement. However, in DetectGPT, the random perturbation strategy could introduce noise, and logit regression depends on the threshold, harming the generalizability and applicability of individual or small-batch inputs. Hence, we propose a novel fine-tuned detector, PECOLA, bridging metric-based and fine-tuned methods by contrastive learning on selective perturbation. Selective strategy retains important tokens during perturbation and weights for multi-pair contrastive learning. The experiments show that PECOLA outperforms the state-of-the-art (SOTA) by 1.20% in accuracy on average on four public datasets. And we further analyze the effectiveness, robustness, and generalization of the method.",
+        "url": "https://aclanthology.org/2024.acl-long.103/",
+        "doi": "10.18653/v1/2024.acl-long.103",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2024.acl-long.595",
+        "title": "IndicGenBench: A Multilingual Benchmark to Evaluate Generation Capabilities of LLMs on Indic Languages",
+        "authors": [
+          "Harman Singh",
+          "Nitish Gupta",
+          "Shikhar Bharadwaj",
+          "Dinesh Tewari",
+          "Partha Talukdar"
+        ],
+        "year": 2024,
+        "abstract": "As large language models (LLMs) see increasing adoption across the globe, it is imperative for LLMs to be representative of the linguistic diversity of the world. India is a linguistically diverse country of 1.4 Billion people. To facilitate research on multilingual LLM evaluation, we release IndicGenBench — the largest benchmark for evaluating LLMs on user-facing generation tasks across a diverse set 29 of Indic languages covering 13 scripts and 4 language families. IndicGenBench is composed of diverse generation tasks like cross-lingual summarization, machine translation, and cross-lingual question answering. IndicGenBench extends existing benchmarks to many Indic languages through human curation providing multi-way parallel evaluation data for many under-represented Indic languages for the first time. We evaluate stateof-the-art LLMs like GPT-3.5, GPT-4, PaLM2, and LLaMA on IndicGenBench in a variety of settings. The largest PaLM-2 models performs the best on most tasks, however, there is a significant performance gap in all languages compared to English showing that further research is needed for the development of more inclusive multilingual language models. IndicGenBench isavailable at www.github.com/google-researchdatasets/indic-gen-bench",
+        "url": "https://aclanthology.org/2024.acl-long.595/",
+        "doi": "10.18653/v1/2024.acl-long.595",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      },
+      {
+        "paper_id": "2025.naacl-short.8",
+        "title": "Cross-lingual Transfer of Reward Models in Multilingual Alignment",
+        "authors": [
+          "Jiwoo Hong",
+          "Noah Lee",
+          "Rodrigo Martínez-Castaño",
+          "César Rodríguez",
+          "James Thorne"
+        ],
+        "year": 2025,
+        "abstract": "Reinforcement learning with human feedback (RLHF) is shown to largely benefit from precise reward models (RMs). However, recent studies in reward modeling schemes are skewed towards English, limiting the applicability of RLHF in multilingual alignments. In this work, we investigate the cross-lingual transfer of RMs trained in diverse languages, primarily from English. Our experimental results demonstrate the strong cross-lingual transfer of English RMs, exceeding target language RMs by 3~4% average increase in Multilingual RewardBench. Furthermore, we analyze the cross-lingual transfer of RMs through the representation shifts. Finally, we perform multilingual alignment to exemplify how cross-lingual transfer in RM propagates to enhanced multilingual instruction-following capability.",
+        "url": "https://aclanthology.org/2025.naacl-short.8/",
+        "doi": "10.18653/v1/2025.naacl-short.8",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2025.naacl-short.18",
+        "title": "Alligators All Around: Mitigating Lexical Confusion in Low-resource Machine Translation",
+        "authors": [
+          "Elizabeth Nielsen",
+          "Isaac Rayburn Caswell",
+          "Jiaming Luo",
+          "Colin Cherry"
+        ],
+        "year": 2025,
+        "abstract": "Current machine translation (MT) systems for low-resource languages have a particular failure mode: When translating words in a given domain, they tend to confuse words within that domain. So, for example, “lion” might be translated as “alligator”, and “orange” might be rendered as “purple.” We propose a recall-based metric for measuring this problem and show that the problem exists in 122 low-resource languages. We then show that this problem can be mitigated by using a large language model (LLM) to post-edit the MT output, specifically by including the entire GATITOS lexicon for the relevant language as a very long context prompt. We show gains in average ChrF score over the set of 122 languages, and we show that the recall score for relevant lexical items also improves. Finally, we demonstrate that a small dedicated MT system with a general-purpose LLM as a post-editor is outperforms a lexicon-based RAG-LLM translator, suggesting a new paradigm for LLM use.",
+        "url": "https://aclanthology.org/2025.naacl-short.18/",
+        "doi": "10.18653/v1/2025.naacl-short.18",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.777Z"
+      },
+      {
+        "paper_id": "2024.acl-long.763",
+        "title": "Tracking the Newsworthiness of Public Documents",
+        "authors": [
+          "Alexander Spangher",
+          "Serdar Tumgoren",
+          "Ben Welsh",
+          "Nanyun Peng",
+          "Emilio Ferrara",
+          "Jonathan May"
+        ],
+        "year": 2024,
+        "abstract": "Journalists regularly make decisions on whether or not to report stories, based on “news values”. In this work, we wish to explicitly model these decisions to explore when and why certain stories get press attention. This is challenging because very few labelled links between source documents and news articles exist and language use between corpora is very different. We address this problem by implementing a novel probabilistic relational modeling framework, which we show is a low-annotation linking methodology that outperforms other, more state-of-the-art retrieval-based baselines. Next, we define a new task: newsworthiness prediction, to predict if a policy item will get covered. We focus on news coverage of local public policy in the San Francisco Bay Area by the San Francisco Chronicle. We gather 15k policies discussed across 10 years of public policy meetings, and transcribe over 3,200 hours of public discussion. In general, we find limited impact of public discussion on newsworthiness prediction accuracy, suggesting that some of the most important stories barely get discussed in public.Finally, we show that newsworthiness predictions can be a useful assistive tool for journalists seeking to keep abreast of local government. We perform human evaluation with expert journalists and show our systems identify policies they consider newsworthy with 68% F1 and our coverage recommendations are helpful with an 84% win-rate against baseline. We release all code and data to our work here: https://github.com/alex2awesome/newsworthiness-public.",
+        "url": "https://aclanthology.org/2024.acl-long.763/",
+        "doi": "10.18653/v1/2024.acl-long.763",
+        "source": "ACL Anthology official XML snapshot",
+        "retrieved_at": "2026-11-08T10:49:42.409Z"
+      }
+    ]
+  }
+}

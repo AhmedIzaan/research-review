@@ -1,0 +1,7 @@
+blind_id,seed_id,replicate,configuration,round,run_id,is_final,novelty,feasibility,clarity,importance,evidence_grounding,judge_error,judge_model
+cd0f4912684478f0069b135f,2024.acl-long.18,0,full,3,c41708b92bff2d0ffcc7,True,,,,,,Evidence excerpt does not match retrieved abstract,gemini-3.5-flash-lite
+de890660363cd3c2eb5bf187,2024.acl-long.18,0,no_novelty_retrieval,3,37da464cc11eaae14ca6,True,,,,,,Evidence excerpt does not match retrieved abstract,gemini-3.5-flash-lite
+2fda9cd7f83d166514276ed6,2025.naacl-long.342,0,no_novelty_retrieval,3,8e69bdc61553646d6a72,True,,,,,,Evidence excerpt does not match retrieved abstract,gemini-3.5-flash-lite
+eb5735af508a39808c9f480f,2025.naacl-long.342,0,no_feasibility,3,192ef0a22fdb47e56346,True,,,,,,Evidence excerpt does not match retrieved abstract,gemini-3.5-flash-lite
+cd0f4912684478f0069b135f,2024.acl-long.18,0,full,2,c41708b92bff2d0ffcc7,False,,,,,,Evidence excerpt does not match retrieved abstract,gemini-3.5-flash-lite
+abe4f46c2533f2f9e6885513,2024.acl-long.18,0,generic,3,a256ec5eb23679a430e6,True,,,,,,Evidence excerpt does not match retrieved abstract,gemini-3.5-flash-lite

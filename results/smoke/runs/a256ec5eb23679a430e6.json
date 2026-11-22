@@ -1,0 +1,748 @@
+{
+  "run_id": "a256ec5eb23679a430e6",
+  "seed_id": "2024.acl-long.18",
+  "configuration": "generic",
+  "replicate": 0,
+  "settings": {
+    "model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash-lite",
+    "temperature": 0.4,
+    "max_output_tokens": 4096,
+    "rounds": 3,
+    "max_attempts": 3,
+    "request_interval": 15.0,
+    "max_api_calls": 160,
+    "input_rate": 0.0,
+    "output_rate": 0.0,
+    "engine": "auto",
+    "retrieval_backend": "local",
+    "corpus_path": "data/corpus/papers.json",
+    "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+    "random_seed": 20261107,
+    "constraints": "University AI/NLP project: 6 weeks, 1 consumer GPU (12 GB) or API access, public lawful datasets, no LLM training.",
+    "resolved_engine": "python"
+  },
+  "literature": [
+    {
+      "paper_id": "2024.acl-long.18",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "authors": [
+        "Qingyun Wang",
+        "Doug Downey",
+        "Heng Ji",
+        "Tom Hope"
+      ],
+      "year": 2024,
+      "abstract": "We explore and enhance the ability of neural language models to generate novel scientific directions grounded in literature. Work on literature-based hypothesis generation has traditionally focused on binary link prediction— severely limiting the expressivity of hypotheses. This line of work also does not focus on optimizing novelty. We take a dramatic departure with a novel setting in which models use as input background contexts (e.g., problems, experimental settings, goals), and output natural language ideas grounded in literature. We present SCIMON, a modeling framework that uses retrieval of “inspirations” from past scientific papers, and explicitly optimizes for novelty by iteratively comparing to prior papers and updating idea suggestions until sufficient novelty is achieved. Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue. Our work represents a first step toward evaluating and developing language models that generate new ideas derived from the scientific literature1.",
+      "url": "https://aclanthology.org/2024.acl-long.18/",
+      "doi": "10.18653/v1/2024.acl-long.18",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sdp-1.9",
+      "title": "Literature-Grounded Novelty Assessment of Scientific Ideas",
+      "authors": [
+        "Simra Shahid",
+        "Marissa Radensky",
+        "Raymond Fok",
+        "Pao Siangliulue",
+        "Daniel S Weld",
+        "Tom Hope"
+      ],
+      "year": 2025,
+      "abstract": "Automated scientific idea generation systems have made remarkable progress, yet the automatic evaluation of idea novelty remains a critical and underexplored challenge. Manual evaluation of novelty through literature review is labor-intensive, prone to error due to subjectivity, and impractical at scale. To address these issues, we propose the Idea Novelty Checker, an LLM-based retrieval-augmented generation (RAG) framework that leverages a two-stage retrieve-then-rerank approach. The Idea Novelty Checker first collects a broad set of relevant papers using keyword and snippet-based retrieval, then refines this collection through embedding-based filtering followed by facet-based LLM re-ranking. It incorporates expert-labeled examples to guide the system in comparing papers for novelty evaluation and in generating literature-grounded reasoning. Our extensive experiments demonstrate that our novelty checker achieves approximately 13% higher agreement than existing approaches. Ablation studies further showcases the importance of the facet-based re-ranker in identifying the most relevant literature for novelty evaluation.",
+      "url": "https://aclanthology.org/2025.sdp-1.9/",
+      "doi": "10.18653/v1/2025.sdp-1.9",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:41.753Z"
+    },
+    {
+      "paper_id": "2026.lrec-1.370",
+      "title": "Is This Idea Novel? An Automated Benchmark for Judgment of Research Ideas",
+      "authors": [
+        "Tim Schopf",
+        "Michael Färber"
+      ],
+      "year": 2026,
+      "abstract": "Judging the novelty of research ideas is crucial for advancing science, enabling the identification of unexplored directions, and ensuring contributions meaningfully extend existing knowledge rather than reiterate minor variations. However, given the exponential growth of scientific literature, manually judging the novelty of research ideas through literature reviews is labor-intensive, subjective, and infeasible at scale. Therefore, recent efforts have proposed automated approaches for research idea novelty judgment. Yet, evaluation of these approaches remains largely inconsistent and is typically based on non-standardized human evaluations, hindering large-scale, comparable evaluations. To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments. It comprises 1,381 research ideas derived from and judged by human experts as well as nine automated evaluation metrics designed to assess both rubric-based novelty scores and textual justifications of novelty judgments. Using this benchmark, we evaluate several state-of-the-art large language models (LLMs) on their ability to judge the novelty of research ideas. Our findings reveal that while LLM-generated reasoning closely mirrors human rationales, this alignment does not reliably translate into accurate novelty judgments, which diverge significantly from human gold standard judgments—even among leading reasoning-capable models. Data and code available at: https://github.com/TimSchopf/RINoBench. Keywords: research idea novelty judgment, evaluation benchmark, scientific discovery, llm-as-a-judge",
+      "url": "https://aclanthology.org/2026.lrec-1.370/",
+      "doi": "10.63317/4c3gy3f7epnj",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2026.findings-emnlp.574",
+      "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+      "authors": [
+        "Tim Schopf",
+        "Tobias Schreieder",
+        "Akiko Aizawa"
+      ],
+      "year": 2026,
+      "abstract": "Automated novelty judgment can accelerate scientific discovery by enabling efficient evaluation, refinement, and comparison of research ideas. While large language models are increasingly adopted for this task, we investigate a previously overlooked limitation in their judgment capabilities: despite generating reasoning rationales that closely mirror those of human experts, their final novelty judgments often diverge substantially. We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response. Across strong baselines, TPR improves novelty judgment performance by 22.30% and successfully mitigates the prevalent “medium novelty” bias.",
+      "url": "https://aclanthology.org/2026.findings-emnlp.574/",
+      "doi": "10.18653/2026.findings-emnlp.574",
+      "source": "ACL Anthology; imported saved primary-source capture",
+      "retrieved_at": "2026-11-07"
+    },
+    {
+      "paper_id": "2025.sigdial-1.26",
+      "title": "Exploring the Design of Multi-Agent LLM Dialogues for Research Ideation",
+      "authors": [
+        "Keisuke Ueda",
+        "Wataru Hirota",
+        "Takuto Asakura",
+        "Takahiro Omi",
+        "Kosuke Takahashi",
+        "Kosuke Arima",
+        "Tatsuya Ishigaki"
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are increasingly used to support creative tasks such as research idea generation. While recent work has shown that structured dialogues between LLMs can improve the novelty and feasibility of generated ideas, the optimal design of such interactions remains unclear. In this study, we conduct a comprehensive analysis of multi-agent LLM dialogues for scientific ideation. We compare different configurations of agent roles, number of agents, and dialogue depth to understand how these factors influence the novelty and feasibility of generated ideas. Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement. Our results show that enlarging the agent cohort, deepening the interaction depth, and broadening agent persona heterogeneity each enrich the diversity of generated ideas. Moreover, specifically increasing critic-side diversity within the ideation–critique–revision loop further boosts the feasibility of the final proposals. Our findings offer practical guidelines for building effective multi-agent LLM systems for scientific ideation.",
+      "url": "https://aclanthology.org/2025.sigdial-1.26/",
+      "doi": "10.18653/v1/2025.sigdial-1.26",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.064Z"
+    }
+  ],
+  "initial_idea": {
+    "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+    "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+    "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive \"medium novelty\" bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+    "methodology": "We propose a unified pipeline combining multi-agent ideation with a latent-probing calibration mechanism. During the generation and critique loop, where generator and critic agents iteratively refine research directions, we integrate a Think-Probe-Respond layer. Instead of allowing the model's final text generation to default to safe, medium-novelty compromises, we probe the hidden states during the critique phase to extract latent novelty judgments. These probed signals condition the final refinement prompt, steering the multi-agent system toward genuinely novel conceptual spaces.",
+    "expected_contribution": "An integrated multi-agent scientific ideation framework that leverages latent probing to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores.",
+    "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using frozen LLM APIs. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts.",
+    "evaluation_strategy": "We evaluate the generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of the medium-novelty bias, and technical depth scores.",
+    "feasibility_assumptions": [
+      "Access to standard LLM APIs for multi-agent generation and hidden state extraction.",
+      "Availability of the public RINoBench dataset for evaluation.",
+      "Feasibility of completing the 6-week project timeline without model weight training."
+    ],
+    "references": [
+      "2024.acl-long.18",
+      "2025.sdp-1.9",
+      "2026.lrec-1.370",
+      "2026.findings-emnlp.574",
+      "2025.sigdial-1.26"
+    ],
+    "search_queries": [
+      "scientific idea generation novelty bias",
+      "multi-agent llm dialogues research ideation",
+      "latent probing llm novelty judgment"
+    ]
+  },
+  "final_idea": {
+    "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+    "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+    "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive medium novelty bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+    "methodology": "To resolve the trade-off between white-box access required for hidden state extraction and practical API constraints on a single 12GB consumer GPU, we restrict our architecture to open-source models (Llama-3-8B-Instruct) using 4-bit quantization and activation checkpointing to avoid memory bottlenecks. We integrate a Think-Probe-Respond layer into the multi-agent critique loop, augmented by a preliminary probe training phase on a validation split of RINoBench to verify that hidden states linearly separate novelty tiers prior to integration. During generation and critique, we probe hidden states to extract latent novelty judgments instead of relying on default text output. We define a programmatic mapping function where the probed continuous latent vector is transformed via a linear projection layer into a soft prompt prefix. To address semantic mismatch and prevent collapse, we include explicit monitoring of semantic drift and KL divergence against base generation distributions during the prompt-prefix conditioning step, steering the multi-agent system toward genuinely novel conceptual spaces without compromising textual coherence.",
+    "expected_contribution": "An integrated open-source multi-agent scientific ideation framework that leverages latent probing with explicit memory optimization and semantic drift monitoring to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores while preserving overall textual coherence.",
+    "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using Llama-3-8B-Instruct on a single 12 GB consumer GPU with 4-bit quantization. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts. We include an explicit validation step measuring generation perplexity and coherence scores to confirm that conditioning the final prompt with probed latent signals does not degrade technical depth or text quality.",
+    "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of medium-novelty bias, generation perplexity for textual coherence, and a small-scale human expert evaluation subset to validate whether reduced medium-novelty bias translates to genuinely valuable and feasible scientific ideas.",
+    "feasibility_assumptions": [
+      "Availability of open-source model weights (e.g., Llama-3-8B-Instruct) for hidden state extraction on a single 12 GB consumer GPU using 4-bit quantization and activation checkpointing.",
+      "Availability of the public RINoBench dataset and SciMON benchmark contexts for evaluation.",
+      "Feasibility of completing the 6-week project timeline without full model weight training, restricting intervention to inference-time latent probing, linear projection mapping, and prompt conditioning."
+    ],
+    "references": [
+      "2024.acl-long.18",
+      "2025.sdp-1.9",
+      "2026.lrec-1.370",
+      "2026.findings-emnlp.574",
+      "2025.sigdial-1.26"
+    ],
+    "search_queries": [
+      "scientific idea generation novelty bias",
+      "multi-agent llm dialogues research ideation",
+      "latent probing llm novelty judgment"
+    ]
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "input_idea": {
+        "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+        "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+        "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive \"medium novelty\" bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+        "methodology": "We propose a unified pipeline combining multi-agent ideation with a latent-probing calibration mechanism. During the generation and critique loop, where generator and critic agents iteratively refine research directions, we integrate a Think-Probe-Respond layer. Instead of allowing the model's final text generation to default to safe, medium-novelty compromises, we probe the hidden states during the critique phase to extract latent novelty judgments. These probed signals condition the final refinement prompt, steering the multi-agent system toward genuinely novel conceptual spaces.",
+        "expected_contribution": "An integrated multi-agent scientific ideation framework that leverages latent probing to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores.",
+        "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using frozen LLM APIs. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts.",
+        "evaluation_strategy": "We evaluate the generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of the medium-novelty bias, and technical depth scores.",
+        "feasibility_assumptions": [
+          "Access to standard LLM APIs for multi-agent generation and hidden state extraction.",
+          "Availability of the public RINoBench dataset for evaluation.",
+          "Feasibility of completing the 6-week project timeline without model weight training."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation novelty bias",
+          "multi-agent llm dialogues research ideation",
+          "latent probing llm novelty judgment"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "generic",
+          "review": {
+            "role": "generic",
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 5,
+            "explanation": "The proposal introduces a well-founded approach to address the medium novelty bias in multi-agent scientific ideation by applying latent probing during the critique phase, directly adapting recent breakthroughs in automated novelty judgment calibration.",
+            "problems": [
+              "Extracting hidden states or latent representations may require white-box model access, which can conflict with the reliance on frozen proprietary LLM APIs.",
+              "Probing internal representations for a continuous or categorical novelty score across distinct agent personas might introduce unstable feedback loops in multi-turn dialogues."
+            ],
+            "improvements": [
+              "Clarify whether the latent probing mechanism will be implemented using open-source models (such as Llama-3) that allow hidden state extraction, or outline how logits/hidden states will be accessed via API providers.",
+              "Include a validation step to ensure that conditioning the final prompt with probed latent signals does not degrade the overall coherence or technical depth of the generated research proposals."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Think-Probe-Respond (TPR) mitigates medium novelty bias by probing latent novelty judgments from hidden states during the reasoning phase.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a standardized benchmark for evaluating research idea novelty judgments and automated scoring.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Language models like GPT-4 often generate ideas with low technical depth and novelty without targeted optimization.",
+                "supporting_excerpt": "Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains to be seen whether hidden-state probes trained on single-turn novelty judgment tasks transfer effectively to multi-agent, iterative generation-critique loops without overfitting."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "generic",
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 5,
+            "explanation": "The proposal introduces a well-founded approach to address the medium novelty bias in multi-agent scientific ideation by applying latent probing during the critique phase, directly adapting recent breakthroughs in automated novelty judgment calibration.",
+            "problems": [
+              "Extracting hidden states or latent representations may require white-box model access, which can conflict with the reliance on frozen proprietary LLM APIs.",
+              "Probing internal representations for a continuous or categorical novelty score across distinct agent personas might introduce unstable feedback loops in multi-turn dialogues."
+            ],
+            "improvements": [
+              "Clarify whether the latent probing mechanism will be implemented using open-source models (such as Llama-3) that allow hidden state extraction, or outline how logits/hidden states will be accessed via API providers.",
+              "Include a validation step to ensure that conditioning the final prompt with probed latent signals does not degrade the overall coherence or technical depth of the generated research proposals."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Think-Probe-Respond (TPR) mitigates medium novelty bias by probing latent novelty judgments from hidden states during the reasoning phase.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a standardized benchmark for evaluating research idea novelty judgments and automated scoring.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Language models like GPT-4 often generate ideas with low technical depth and novelty without targeted optimization.",
+                "supporting_excerpt": "Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains to be seen whether hidden-state probes trained on single-turn novelty judgment tasks transfer effectively to multi-agent, iterative generation-critique loops without overfitting."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "generic": 4
+          },
+          "feasibility": {
+            "generic": 4
+          },
+          "clarity": {
+            "generic": 5
+          },
+          "importance": {
+            "generic": 5
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "generic": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+        "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+        "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive medium novelty bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+        "methodology": "To resolve the trade-off between white-box access required for hidden state extraction and practical API constraints, we restrict our multi-agent architecture and latent probing to open-source models with accessible weights, such as Llama-3-8B-Instruct. We propose a unified pipeline combining multi-agent ideation with a latent-probing calibration mechanism. During the generation and critique loop, where generator and critic agents iteratively refine research directions, we integrate a Think-Probe-Respond layer. Instead of allowing the model's final text generation to default to safe, medium-novelty compromises, we probe the hidden states during the critique phase to extract latent novelty judgments. These probed signals condition the final refinement prompt, steering the multi-agent system toward genuinely novel conceptual spaces.",
+        "expected_contribution": "An integrated open-source multi-agent scientific ideation framework that leverages latent probing to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores while preserving overall textual coherence.",
+        "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using open-source models (Llama-3-8B-Instruct) on a single consumer GPU. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts. We include an explicit validation step measuring generation perplexity and coherence scores to confirm that conditioning the final prompt with probed latent signals does not degrade technical depth or text quality.",
+        "evaluation_strategy": "We evaluate the generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of the medium-novelty bias, and technical depth scores alongside text coherence checks.",
+        "feasibility_assumptions": [
+          "Availability of open-source model weights (e.g., Llama-3-8B-Instruct) for hidden state extraction on a single consumer GPU.",
+          "Availability of the public RINoBench dataset and SciMON benchmark contexts for evaluation.",
+          "Feasibility of completing the 6-week project timeline without full model weight training, restricting intervention to inference-time latent probing and prompting."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation novelty bias",
+          "multi-agent llm dialogues research ideation",
+          "latent probing llm novelty judgment"
+        ]
+      },
+      "revision_error": null
+    },
+    {
+      "index": 2,
+      "input_idea": {
+        "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+        "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+        "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive medium novelty bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+        "methodology": "To resolve the trade-off between white-box access required for hidden state extraction and practical API constraints, we restrict our multi-agent architecture and latent probing to open-source models with accessible weights, such as Llama-3-8B-Instruct. We propose a unified pipeline combining multi-agent ideation with a latent-probing calibration mechanism. During the generation and critique loop, where generator and critic agents iteratively refine research directions, we integrate a Think-Probe-Respond layer. Instead of allowing the model's final text generation to default to safe, medium-novelty compromises, we probe the hidden states during the critique phase to extract latent novelty judgments. These probed signals condition the final refinement prompt, steering the multi-agent system toward genuinely novel conceptual spaces.",
+        "expected_contribution": "An integrated open-source multi-agent scientific ideation framework that leverages latent probing to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores while preserving overall textual coherence.",
+        "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using open-source models (Llama-3-8B-Instruct) on a single consumer GPU. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts. We include an explicit validation step measuring generation perplexity and coherence scores to confirm that conditioning the final prompt with probed latent signals does not degrade technical depth or text quality.",
+        "evaluation_strategy": "We evaluate the generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of the medium-novelty bias, and technical depth scores alongside text coherence checks.",
+        "feasibility_assumptions": [
+          "Availability of open-source model weights (e.g., Llama-3-8B-Instruct) for hidden state extraction on a single consumer GPU.",
+          "Availability of the public RINoBench dataset and SciMON benchmark contexts for evaluation.",
+          "Feasibility of completing the 6-week project timeline without full model weight training, restricting intervention to inference-time latent probing and prompting."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation novelty bias",
+          "multi-agent llm dialogues research ideation",
+          "latent probing llm novelty judgment"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "generic",
+          "review": {
+            "role": "generic",
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 5,
+            "explanation": "The proposal introduces a novel and timely application by extending the Think-Probe-Respond framework from novelty judgment to multi-agent scientific ideation, effectively tackling the well-documented medium novelty bias in language models. The methodology is clearly defined, leveraging open-source weights like Llama-3-8B-Instruct to extract hidden states via inference-time probing without costly full model training, aligning well with the specified constraints of a 6-week timeline and a single consumer GPU.",
+            "problems": [
+              "The translation of probed latent novelty signals from a judgment context into a generative conditioning prompt lacks a detailed specification of the mapping function.",
+              "Running hidden state extraction and multi-agent dialogue loops on a single consumer GPU (12 GB) with models like Llama-3-8B-Instruct may encounter memory bottlenecks when storing and probing intermediate activations.",
+              "The validation of technical depth and text coherence relies heavily on automated metrics, which might not fully capture genuine scientific utility or semantic degradation."
+            ],
+            "improvements": [
+              "Provide a concrete mathematical or programmatic formulation for how the probed latent vector conditions the subsequent text generation prompt.",
+              "Incorporate memory optimization techniques such as 4-bit quantization or gradient/activation checkpointing to ensure stable hidden-state extraction on a 12 GB consumer GPU.",
+              "Add a small-scale human expert evaluation subset to validate whether the reduction in medium-novelty bias actually translates to genuinely valuable and feasible scientific ideas."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Language models like GPT-4 often generate scientific ideas with low technical depth and novelty.",
+                "supporting_excerpt": "Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "LLM novelty judgments suffer from a medium novelty bias that can be mitigated using Think-Probe-Respond hidden state extraction.",
+                "supporting_excerpt": "We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a standardized benchmark for evaluating research idea novelty judgments.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent LLM dialogues with generator and critic personas enhance research ideation.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether hidden states probed during an evaluation or critique phase will transfer effectively as conditioning signals to alter the generative trajectory of a separate generator agent without compromising syntactic or semantic coherence."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "generic",
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 5,
+            "explanation": "The proposal introduces a novel and timely application by extending the Think-Probe-Respond framework from novelty judgment to multi-agent scientific ideation, effectively tackling the well-documented medium novelty bias in language models. The methodology is clearly defined, leveraging open-source weights like Llama-3-8B-Instruct to extract hidden states via inference-time probing without costly full model training, aligning well with the specified constraints of a 6-week timeline and a single consumer GPU.",
+            "problems": [
+              "The translation of probed latent novelty signals from a judgment context into a generative conditioning prompt lacks a detailed specification of the mapping function.",
+              "Running hidden state extraction and multi-agent dialogue loops on a single consumer GPU (12 GB) with models like Llama-3-8B-Instruct may encounter memory bottlenecks when storing and probing intermediate activations.",
+              "The validation of technical depth and text coherence relies heavily on automated metrics, which might not fully capture genuine scientific utility or semantic degradation."
+            ],
+            "improvements": [
+              "Provide a concrete mathematical or programmatic formulation for how the probed latent vector conditions the subsequent text generation prompt.",
+              "Incorporate memory optimization techniques such as 4-bit quantization or gradient/activation checkpointing to ensure stable hidden-state extraction on a 12 GB consumer GPU.",
+              "Add a small-scale human expert evaluation subset to validate whether the reduction in medium-novelty bias actually translates to genuinely valuable and feasible scientific ideas."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.18",
+                "claim": "Language models like GPT-4 often generate scientific ideas with low technical depth and novelty.",
+                "supporting_excerpt": "Comprehensive evaluations reveal that GPT-4 tends to generate ideas with overall low technical depth and novelty, while our methods partially mitigate this issue.",
+                "relation": "context"
+              },
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "LLM novelty judgments suffer from a medium novelty bias that can be mitigated using Think-Probe-Respond hidden state extraction.",
+                "supporting_excerpt": "We demonstrate that this miscalibration stems from a systematic bias towards judging ideas as “medium novel”. To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides a standardized benchmark for evaluating research idea novelty judgments.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.sigdial-1.26",
+                "claim": "Multi-agent LLM dialogues with generator and critic personas enhance research ideation.",
+                "supporting_excerpt": "Our experimental setup includes settings where one agent generates ideas and another critiques them, enabling iterative improvement.",
+                "relation": "context"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether hidden states probed during an evaluation or critique phase will transfer effectively as conditioning signals to alter the generative trajectory of a separate generator agent without compromising syntactic or semantic coherence."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "generic": 4
+          },
+          "feasibility": {
+            "generic": 4
+          },
+          "clarity": {
+            "generic": 5
+          },
+          "importance": {
+            "generic": 5
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "generic": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+        "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+        "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive medium novelty bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+        "methodology": "To resolve the trade-off between white-box access required for hidden state extraction and practical API constraints on a single 12GB consumer GPU, we restrict our architecture to open-source models (Llama-3-8B-Instruct) using 4-bit quantization and activation checkpointing to avoid memory bottlenecks. We integrate a Think-Probe-Respond layer into the multi-agent critique loop. During generation and critique, we probe hidden states to extract latent novelty judgments instead of relying on default text output. We define a programmatic mapping function where the probed continuous latent vector is transformed via a linear projection layer into a soft prompt prefix, which conditions the subsequent generator agent refinement step to steer the multi-agent system toward genuinely novel conceptual spaces.",
+        "expected_contribution": "An integrated open-source multi-agent scientific ideation framework that leverages latent probing with explicit memory optimization to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores while preserving overall textual coherence.",
+        "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using Llama-3-8B-Instruct on a single 12 GB consumer GPU with 4-bit quantization. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts. We include an explicit validation step measuring generation perplexity and coherence scores to confirm that conditioning the final prompt with probed latent signals does not degrade technical depth or text quality.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of medium-novelty bias, generation perplexity for textual coherence, and a small-scale human expert evaluation subset to validate whether reduced medium-novelty bias translates to genuinely valuable and feasible scientific ideas.",
+        "feasibility_assumptions": [
+          "Availability of open-source model weights (e.g., Llama-3-8B-Instruct) for hidden state extraction on a single 12 GB consumer GPU using 4-bit quantization and activation checkpointing.",
+          "Availability of the public RINoBench dataset and SciMON benchmark contexts for evaluation.",
+          "Feasibility of completing the 6-week project timeline without full model weight training, restricting intervention to inference-time latent probing, linear projection mapping, and prompt conditioning."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation novelty bias",
+          "multi-agent llm dialogues research ideation",
+          "latent probing llm novelty judgment"
+        ]
+      },
+      "revision_error": null
+    },
+    {
+      "index": 3,
+      "input_idea": {
+        "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+        "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+        "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive medium novelty bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+        "methodology": "To resolve the trade-off between white-box access required for hidden state extraction and practical API constraints on a single 12GB consumer GPU, we restrict our architecture to open-source models (Llama-3-8B-Instruct) using 4-bit quantization and activation checkpointing to avoid memory bottlenecks. We integrate a Think-Probe-Respond layer into the multi-agent critique loop. During generation and critique, we probe hidden states to extract latent novelty judgments instead of relying on default text output. We define a programmatic mapping function where the probed continuous latent vector is transformed via a linear projection layer into a soft prompt prefix, which conditions the subsequent generator agent refinement step to steer the multi-agent system toward genuinely novel conceptual spaces.",
+        "expected_contribution": "An integrated open-source multi-agent scientific ideation framework that leverages latent probing with explicit memory optimization to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores while preserving overall textual coherence.",
+        "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using Llama-3-8B-Instruct on a single 12 GB consumer GPU with 4-bit quantization. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts. We include an explicit validation step measuring generation perplexity and coherence scores to confirm that conditioning the final prompt with probed latent signals does not degrade technical depth or text quality.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of medium-novelty bias, generation perplexity for textual coherence, and a small-scale human expert evaluation subset to validate whether reduced medium-novelty bias translates to genuinely valuable and feasible scientific ideas.",
+        "feasibility_assumptions": [
+          "Availability of open-source model weights (e.g., Llama-3-8B-Instruct) for hidden state extraction on a single 12 GB consumer GPU using 4-bit quantization and activation checkpointing.",
+          "Availability of the public RINoBench dataset and SciMON benchmark contexts for evaluation.",
+          "Feasibility of completing the 6-week project timeline without full model weight training, restricting intervention to inference-time latent probing, linear projection mapping, and prompt conditioning."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation novelty bias",
+          "multi-agent llm dialogues research ideation",
+          "latent probing llm novelty judgment"
+        ]
+      },
+      "reviews": [
+        {
+          "role": "generic",
+          "review": {
+            "role": "generic",
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 5,
+            "explanation": "The proposal introduces a creative adaptation of recent latent probing techniques designed to mitigate medium-novelty bias in LLMs, shifting the application from mere novelty judgment evaluation to active, literature-grounded multi-agent scientific ideation. The methodology is well-tailored to consumer hardware constraints via 4-bit quantization and activation checkpointing.",
+            "problems": [
+              "The proposal assumes that a linear projection from hidden states of an 8B parameter model can reliably condition generation to produce genuinely novel scientific concepts without falling into collapse or producing incoherent prompt prefixes.",
+              "Mapping a scalar or vector novelty judgment latent directly into a soft prompt prefix for generation involves a mismatch in semantic spaces between evaluation criteria and generative token distributions."
+            ],
+            "improvements": [
+              "Include a preliminary probe training phase using a validation split of RINoBench to verify that hidden states linearly separate novelty tiers prior to integrating the feedback loop into the multi-agent generation.",
+              "Add explicit monitoring of semantic drift during the prompt-prefix conditioning step to ensure that technical depth is not compromised by forcing latent shifts."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Think-Probe-Respond mitigates medium novelty bias by extracting latent novelty judgments from hidden states.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides the standard benchmark for research idea novelty judgments.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains unverified whether latent steering derived from a judging task transfers effectively to an open-ended multi-agent generation loop without requiring fine-tuning of the underlying generation weights."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "not_required"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "generic",
+            "novelty": 4,
+            "feasibility": 4,
+            "clarity": 5,
+            "importance": 5,
+            "explanation": "The proposal introduces a creative adaptation of recent latent probing techniques designed to mitigate medium-novelty bias in LLMs, shifting the application from mere novelty judgment evaluation to active, literature-grounded multi-agent scientific ideation. The methodology is well-tailored to consumer hardware constraints via 4-bit quantization and activation checkpointing.",
+            "problems": [
+              "The proposal assumes that a linear projection from hidden states of an 8B parameter model can reliably condition generation to produce genuinely novel scientific concepts without falling into collapse or producing incoherent prompt prefixes.",
+              "Mapping a scalar or vector novelty judgment latent directly into a soft prompt prefix for generation involves a mismatch in semantic spaces between evaluation criteria and generative token distributions."
+            ],
+            "improvements": [
+              "Include a preliminary probe training phase using a validation split of RINoBench to verify that hidden states linearly separate novelty tiers prior to integrating the feedback loop into the multi-agent generation.",
+              "Add explicit monitoring of semantic drift during the prompt-prefix conditioning step to ensure that technical depth is not compromised by forcing latent shifts."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2026.findings-emnlp.574",
+                "claim": "Think-Probe-Respond mitigates medium novelty bias by extracting latent novelty judgments from hidden states.",
+                "supporting_excerpt": "To mitigate this, we propose ThinkProbe-Respond (TPR), a lightweight approach that probes latent novelty judgments from hidden states during the reasoning phase and uses the probed judgments to condition the final response.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2026.lrec-1.370",
+                "claim": "RINoBench provides the standard benchmark for research idea novelty judgments.",
+                "supporting_excerpt": "To address this, we introduce RINoBench, the first comprehensive benchmark for large-scale evaluation of research idea novelty judgments.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains unverified whether latent steering derived from a judging task transfers effectively to an open-ended multi-agent generation loop without requiring fine-tuning of the underlying generation weights."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "generic": 4
+          },
+          "feasibility": {
+            "generic": 4
+          },
+          "clarity": {
+            "generic": 5
+          },
+          "importance": {
+            "generic": 5
+          }
+        },
+        "score_disagreements": [],
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "generic": "not_required"
+        }
+      },
+      "revised_idea": {
+        "title": "Mitigating Medium Novelty Bias in Multi-Agent Scientific Ideation via Latent Probing",
+        "research_problem": "How can multi-agent scientific ideation frameworks overcome systematic biases in novelty judgment to generate truly high-impact research directions?",
+        "research_gap": "While recent frameworks generate literature-grounded scientific ideas and assess novelty using retrieval and multi-agent dialogue, language models suffer from a pervasive medium novelty bias where their final judgments and iterative refinements diverge from human gold standards due to miscalibrated reasoning-to-judgment translation.",
+        "methodology": "To resolve the trade-off between white-box access required for hidden state extraction and practical API constraints on a single 12GB consumer GPU, we restrict our architecture to open-source models (Llama-3-8B-Instruct) using 4-bit quantization and activation checkpointing to avoid memory bottlenecks. We integrate a Think-Probe-Respond layer into the multi-agent critique loop, augmented by a preliminary probe training phase on a validation split of RINoBench to verify that hidden states linearly separate novelty tiers prior to integration. During generation and critique, we probe hidden states to extract latent novelty judgments instead of relying on default text output. We define a programmatic mapping function where the probed continuous latent vector is transformed via a linear projection layer into a soft prompt prefix. To address semantic mismatch and prevent collapse, we include explicit monitoring of semantic drift and KL divergence against base generation distributions during the prompt-prefix conditioning step, steering the multi-agent system toward genuinely novel conceptual spaces without compromising textual coherence.",
+        "expected_contribution": "An integrated open-source multi-agent scientific ideation framework that leverages latent probing with explicit memory optimization and semantic drift monitoring to eliminate medium-novelty bias, yielding research directions with higher technical depth and verified novelty scores while preserving overall textual coherence.",
+        "experimental_setup": "We utilize the RINoBench benchmark and the SciMON generation task setup. We deploy a multi-agent ideation architecture consisting of diverse personas (generator, reviewer, domain expert) using Llama-3-8B-Instruct on a single 12 GB consumer GPU with 4-bit quantization. We compare our latent-probe-enhanced multi-agent loop against standard multi-agent generation baselines and standalone SciMON configurations across 200 standard computer science research background contexts. We include an explicit validation step measuring generation perplexity and coherence scores to confirm that conditioning the final prompt with probed latent signals does not degrade technical depth or text quality.",
+        "evaluation_strategy": "We evaluate generated ideas using RINoBench metrics and the Idea Novelty Checker framework. We measure alignment with human expert novelty judgments, distribution variance across novelty tiers to verify mitigation of medium-novelty bias, generation perplexity for textual coherence, and a small-scale human expert evaluation subset to validate whether reduced medium-novelty bias translates to genuinely valuable and feasible scientific ideas.",
+        "feasibility_assumptions": [
+          "Availability of open-source model weights (e.g., Llama-3-8B-Instruct) for hidden state extraction on a single 12 GB consumer GPU using 4-bit quantization and activation checkpointing.",
+          "Availability of the public RINoBench dataset and SciMON benchmark contexts for evaluation.",
+          "Feasibility of completing the 6-week project timeline without full model weight training, restricting intervention to inference-time latent probing, linear projection mapping, and prompt conditioning."
+        ],
+        "references": [
+          "2024.acl-long.18",
+          "2025.sdp-1.9",
+          "2026.lrec-1.370",
+          "2026.findings-emnlp.574",
+          "2025.sigdial-1.26"
+        ],
+        "search_queries": [
+          "scientific idea generation novelty bias",
+          "multi-agent llm dialogues research ideation",
+          "latent probing llm novelty judgment"
+        ]
+      },
+      "revision_error": null
+    }
+  ],
+  "stop_reason": "iteration_limit",
+  "elapsed_seconds": 89.45111156300118,
+  "api_events": [
+    {
+      "label": "generic_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:43:14.802821+00:00",
+      "prompt_hash": "8a1f47831ea02f58963292afcb0a94a8829f8b6630108613615d6aa437aa650b",
+      "input_tokens": 2660,
+      "output_tokens": 600,
+      "thinking_tokens": 0,
+      "total_tokens": 3260,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 2.7412896459973126
+    },
+    {
+      "label": "revision_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:43:29.803013+00:00",
+      "prompt_hash": "d41afa9ff42b55966b498d94163b97e3c03082d4a5c2a0c99bde45d04652c1a6",
+      "input_tokens": 3351,
+      "output_tokens": 760,
+      "thinking_tokens": 0,
+      "total_tokens": 4111,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.0165893060002418
+    },
+    {
+      "label": "generic_review_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:43:44.803136+00:00",
+      "prompt_hash": "9ce6b0c9f775c9226236c99b9b76a0166f29de17d06a3c9ca2f89baa1f65e786",
+      "input_tokens": 2804,
+      "output_tokens": 811,
+      "thinking_tokens": 0,
+      "total_tokens": 3615,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.7832329840020975
+    },
+    {
+      "label": "revision_2",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:43:59.803228+00:00",
+      "prompt_hash": "acfa671d8e21679e836b5626375647c386e75e1727f0407d4e0247d91d825e72",
+      "input_tokens": 3688,
+      "output_tokens": 805,
+      "thinking_tokens": 0,
+      "total_tokens": 4493,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.6586798050011566
+    },
+    {
+      "label": "generic_review_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:44:14.803343+00:00",
+      "prompt_hash": "ba22c493524d615558507ee5da04ba209c1b4b83800eea7ce3cebaace8622c00",
+      "input_tokens": 2849,
+      "output_tokens": 525,
+      "thinking_tokens": 0,
+      "total_tokens": 3374,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 2.7659645439998712
+    },
+    {
+      "label": "revision_3",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T11:44:29.803485+00:00",
+      "prompt_hash": "4d6c641f829e8847018b37c037c60e130f755a2f4362ce0533076ed3910dcded",
+      "input_tokens": 3479,
+      "output_tokens": 862,
+      "thinking_tokens": 0,
+      "total_tokens": 4341,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.127161898999475
+    }
+  ],
+  "provenance": "live_gemini"
+}

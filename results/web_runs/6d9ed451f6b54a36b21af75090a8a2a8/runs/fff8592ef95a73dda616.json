@@ -1,0 +1,2021 @@
+{
+  "run_id": "fff8592ef95a73dda616",
+  "seed_id": "topic:Reducing incorrect answers in RAG systems by detecting contradictions between retrieved documents and allowing the model to abstain when evidence is insufficient.",
+  "configuration": "full",
+  "replicate": 0,
+  "settings": {
+    "methodology_version": "specialized_review_v2",
+    "final_review": true,
+    "audit_evidence": true,
+    "model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash-lite",
+    "temperature": 0.4,
+    "max_output_tokens": 4096,
+    "rounds": 1,
+    "max_attempts": 3,
+    "request_interval": 15.0,
+    "max_api_calls": 39,
+    "input_rate": 0.0,
+    "output_rate": 0.0,
+    "engine": "auto",
+    "retrieval_backend": "local",
+    "corpus_path": "data/corpus/papers.json",
+    "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+    "random_seed": 20261107,
+    "constraints": "University AI/NLP project: 6 weeks, 1 consumer GPU (12 GB) or API access, public lawful datasets, no LLM training.",
+    "resolved_engine": "python"
+  },
+  "literature": [
+    {
+      "paper_id": "2025.naacl-industry.42",
+      "title": "From Generating Answers to Building Explanations: Integrating Multi-Round RAG and Causal Modeling for Scientific QA",
+      "authors": [
+        "Victor Barres",
+        "Clifton James McFate",
+        "Aditya Kalyanpur",
+        "Kailash Karthik Saravanakumar",
+        "Lori Moon",
+        "Natnael Seifu",
+        "Abraham Bautista-Castillo"
+      ],
+      "year": 2025,
+      "abstract": "Application of LLMs for complex causal question answering can be stymied by their opacity and propensity for hallucination. Although recent approaches such as Retrieval Augmented Generation and Chain of Thought prompting have improved reliability, we argue current approaches are insufficient and further fail to satisfy key criteria humans use to select and evaluate causal explanations. Inspired by findings from the social sciences, we present an implemented causal QA approach that combines iterative RAG with guidance from a formal model of causation. Our causal model is backed by the Cogent reasoning engine, allowing users to interactively perform counterfactual analysis and refine their answer. Our approach has been integrated into a deployed Collaborative Research Assistant (Cora) and we present a pilot evaluation in the life sciences domain.",
+      "url": "https://aclanthology.org/2025.naacl-industry.42/",
+      "doi": "10.18653/v1/2025.naacl-industry.42",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2025.naacl-long.144",
+      "title": "FactTrack: Time-Aware World State Tracking in Story Outlines",
+      "authors": [
+        "Zhiheng Lyu",
+        "Kevin Yang",
+        "Lingpeng Kong",
+        "Dan Klein"
+      ],
+      "year": 2025,
+      "abstract": "While accurately detecting and correcting factual contradictions in language model outputs has become increasingly important as their capabilities improve, doing so is highly challenging. We propose a novel method, FactTrack, for tracking atomic facts and addressing factual contradictions. Crucially, FactTrack also maintains time-aware validity intervals for each fact, allowing for change over time. At a high level, FactTrack consists of a four-step pipeline to update a world state data structure for each new event: (1) decompose the event into directional atomic facts; (2) determine the validity interval of each atomic fact using the world state; (3) detect contradictions with existing facts in the world state; and finally (4) add new facts to the world state and update existing atomic facts. When we apply FactTrack to contradiction detection on structured story outlines, we find that FactTrack using LLaMA2-7B-Chat substantially outperforms a fair baseline using LLaMA2-7B-Chat, and achieves performance comparable to a GPT4 baseline. Moreover, when using GPT4, FactTrack significantly outperforms the GPT4 baseline.",
+      "url": "https://aclanthology.org/2025.naacl-long.144/",
+      "doi": "10.18653/v1/2025.naacl-long.144",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2024.acl-long.71",
+      "title": "Grounding Language Model with Chunking-Free In-Context Retrieval",
+      "authors": [
+        "Hongjin Qian",
+        "Zheng Liu",
+        "Kelong Mao",
+        "Yujia Zhou",
+        "Zhicheng Dou"
+      ],
+      "year": 2024,
+      "abstract": "This paper presents a novel Chunking-Free In-Context (CFIC) retrieval approach, specifically tailored for Retrieval-Augmented Generation (RAG) systems. Traditional RAG systems often struggle with grounding responses using precise evidence text due to the challenges of processing lengthy documents and filtering out irrelevant content. Commonly employed solutions, such as document chunking and adapting language models to handle longer contexts, have their limitations. These methods either disrupt the semantic coherence of the text or fail to effectively address the issues of noise and inaccuracy in evidence retrieval.The CFIC approach addresses these challenges by circumventing the conventional chunking process. It utilizes the encoded hidden states of documents for in-context retrieval, employing auto-aggressive decoding to accurately identify the specific evidence text required for user queries, eliminating the need for chunking. CFIC is further enhanced by incorporating two innovative decoding strategies, namely Constrained Sentence Prefix Decoding and Skip Decoding. These strategies not only improve the efficiency of the retrieval process but also ensure that the fidelity of the generated grounding text evidence is maintained.Our evaluations of CFIC on a range of open question answering datasets demonstrate its superiority in retrieving relevant and accurate information, offering a significant improvement over traditional methods. By doing away with the need for document chunking, CFIC presents a more streamlined, effective, and efficient retrieval solution, making it a valuable advancement in the field of RAG systems.",
+      "url": "https://aclanthology.org/2024.acl-long.71/",
+      "doi": "10.18653/v1/2024.acl-long.71",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.naacl-long.557",
+      "title": "Eliciting Critical Reasoning in Retrieval-Augmented Generation via Contrastive Explanations",
+      "authors": [
+        "Leonardo Ranaldi",
+        "Marco Valentino",
+        "Andre Freitas"
+      ],
+      "year": 2025,
+      "abstract": "Retrieval-augmented generation (RAG) have emerged as a critical mechanism in contemporary NLP to support Large Language Models (LLMs) in systematically accessing richer factual context. However, the integration of RAG mechanisms bring its inherent challenges, as LLMs need to integrate potentially noisy contexts. Recent studies have shown that LLMs still struggle to critically analyse RAG-based in-context information, a limitation that may lead to incorrect inferences and hallucinations. In this paper, we investigate how to elicit critical arguments in RAG via contrastive explanations. In particular, we propose Contrastive-RAG (CRAG), a framework that (i) retrieves relevant documents given a query,(ii) selects and exemplifies relevant passages, and (iii) generates explanations that explicitly contrast the relevance of the passages to (iv) support the final answer. We show the impact of C-RAG building contrastive reasoning demonstrations from LLMs to instruct smaller models for retrieval-augmented tasks. Extensive experiments demonstrate that CRAG improves state-of-the-art RAG models while (a) requiring significantly fewer prompts and demonstrations and (b) being robust to perturbations in the retrieved documents.",
+      "url": "https://aclanthology.org/2025.naacl-long.557/",
+      "doi": "10.18653/v1/2025.naacl-long.557",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2025.naacl-short.50",
+      "title": "Transform Retrieval for Textual Entailment in RAG",
+      "authors": [
+        "Xin Liang",
+        "Quan Guo"
+      ],
+      "year": 2025,
+      "abstract": "In this paper, we introduce Transform Retrieval, a novel approach aimed at improving Textual Entailment Retrieval within the framework of Retrieval-Augmented Generation (RAG). While RAG has shown promise in enhancing Large Language Models by retrieving relevant documents to extract specific knowledge or mitigate hallucination, current retrieval methods often prioritize relevance without ensuring the retrieved documents semantically support answering the queries. Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus. We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model. Experimental results show that Transform Retrieval with simple MLP consistently approaches the skyline across multiple datasets, demonstrating the method’s effectiveness. The high performance on HotpotQA highlights its strength in many-to-many retrieval scenarios.",
+      "url": "https://aclanthology.org/2025.naacl-short.50/",
+      "doi": "10.18653/v1/2025.naacl-short.50",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.777Z"
+    },
+    {
+      "paper_id": "2024.acl-long.254",
+      "title": "A Chain-of-Thought Is as Strong as Its Weakest Link: A Benchmark for Verifiers of Reasoning Chains",
+      "authors": [
+        "Alon Jacovi",
+        "Yonatan Bitton",
+        "Bernd Bohnet",
+        "Jonathan Herzig",
+        "Or Honovich",
+        "Michael Tseng",
+        "Michael Collins",
+        "Roee Aharoni",
+        "Mor Geva"
+      ],
+      "year": 2024,
+      "abstract": "Prompting language models to provide step-by-step answers (e.g., “Chain-of-Thought”) is the prominent approach for complex reasoning tasks, where more accurate reasoning chains typically improve downstream task performance. Recent literature discusses automatic methods to verify reasoning to evaluate and improve their correctness. However, no fine-grained step-level datasets are available to enable thorough evaluation of such verification methods, hindering progress in this direction. We introduce REVEAL: Reasoning Verification Evaluation, a dataset to benchmark automatic verifiers of complex Chain-of-Thought reasoning in open-domain question-answering settings. REVEAL includes comprehensive labels for the relevance, attribution to evidence passages, and logical correctness of each reasoning step in a language model’s answer, across a variety of datasets and state-of-the-art language models. Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions. Available at https://reveal-dataset.github.io/ .",
+      "url": "https://aclanthology.org/2024.acl-long.254/",
+      "doi": "10.18653/v1/2024.acl-long.254",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.409Z"
+    },
+    {
+      "paper_id": "2025.sigdial-1.52",
+      "title": "Building Open-Retrieval Conversational Question Answering Systems by Generating Synthetic Data and Decontextualizing User Questions",
+      "authors": [
+        "Christos Vlachos",
+        "Nikolaos Stylianou",
+        "Alexandra Fiotaki",
+        "Spiros Methenitis",
+        "Elisavet Palogiannidi",
+        "Themos Stafylakis",
+        "Ion Androutsopoulos"
+      ],
+      "year": 2025,
+      "abstract": "We consider open-retrieval conversational question answering (OR-CONVQA), an extension of question answering where system responses need to be (i) aware of dialog history and (ii) grounded in documents (or document fragments) retrieved per question. Domain-specific OR-CONVQA training datasets are crucial for real-world applications, but hard to obtain. We propose a pipeline that capitalizes on the abundance of plain text documents in organizations (e.g., product documentation) to automatically produce realistic OR-CONVQA dialogs with annotations. Similarly to real-world humanannotated OR-CONVQA datasets, we generate in-dialog question-answer pairs, self-contained (decontextualized, e.g., no referring expressions) versions of user questions, and propositions (sentences expressing prominent information from the documents) the system responses are grounded in. We show how the synthetic dialogs can be used to train efficient question rewriters that decontextualize user questions, allowing existing dialog-unaware retrievers to be utilized. The retrieved information and the decontextualized question are then passed on to an LLM that generates the system’s response.",
+      "url": "https://aclanthology.org/2025.sigdial-1.52/",
+      "doi": "10.18653/v1/2025.sigdial-1.52",
+      "source": "ACL Anthology official XML snapshot",
+      "retrieved_at": "2026-11-08T10:49:42.064Z"
+    }
+  ],
+  "initial_idea": {
+    "title": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification",
+    "research_problem": "Large Language Models relying on Retrieval-Augmented Generation frequently hallucinate or generate ungrounded responses when confronted with conflicting or insufficient evidence passages, failing to abstain appropriately when contextually contradictory data is retrieved.",
+    "research_gap": "Bounded search findings indicate that while existing work addresses chunk-free retrieval and contrastive explanations for RAG, current frameworks lack a lightweight inference-time verification mechanism that explicitly detects inter-document contradictions and triggers calibrated model abstention when evidence does not logically entail the answer.",
+    "methodology": "We propose a two-stage inference framework combining text entailment transformation and contradiction detection. First, we adopt a frozen encoder with a lightweight learned query transformer to align retrieval embeddings for semantic entailment. Second, we introduce a structured verification module that decomposes retrieved passages into atomic facts, checks for pairwise contradictions, and evaluates logical entailment against the query. If inter-document contradictions exceed a threshold or entailment scores fall below a calibrated confidence margin, the system forces the generator to abstain rather than hallucinate an answer.",
+    "expected_contribution": "We hypothesize that explicitly modeling inter-document contradictions and coupling them with a calibrated abstention gate will significantly reduce factual hallucination rates in open-domain QA while preserving answer recall on supported queries.",
+    "experimental_setup": "We evaluate on open-domain question answering benchmarks including HotpotQA and subset derivations from REVEAL, using a consumer GPU (12 GB VRAM) for local inference and embedding transformations. We benchmark our pipeline against standard vanilla RAG and contrastive retrieval baselines.",
+    "evaluation_strategy": "We measure Exact Match (EM), F1 score, and specifically Abstention Precision/Recall to quantify whether the model correctly abstains on contradictory or insufficient contexts without refusing answerable queries.",
+    "feasibility_assumptions": [
+      "A consumer GPU with 12 GB VRAM is sufficient to run local inference for small-scale open-source LLMs and embedding transformations without full model retraining.",
+      "Publicly available datasets like HotpotQA and REVEAL provide adequate multi-document instances containing conflicting or noisy evidence passages."
+    ],
+    "references": [],
+    "search_queries": [
+      "contradiction detection in retrieval augmented generation",
+      "abstention mechanisms for faithful question answering",
+      "transform retrieval textual entailment RAG"
+    ],
+    "assumption_checks": [
+      {
+        "assumption": "The lightweight query transformation model can be optimized within local hardware constraints without full LLM fine-tuning.",
+        "validation_step": "Train the projection MLP using frozen encoder outputs on a small subset of HotpotQA for 5 epochs and measure gradient stability.",
+        "acceptance_criterion": "Training completes within 4 hours on a 12 GB GPU with validation loss decreasing monotonically.",
+        "fallback": "Substitute the learned MLP with a fixed rule-based query expansion heuristic."
+      },
+      {
+        "assumption": "Prompt-based atomic fact decomposition and contradiction detection can run reliably on a 7B parameter open-weights model.",
+        "validation_step": "Run the 4-step factual decomposition pipeline on a 200-sample validation split and compute agreement with human contradiction labels.",
+        "acceptance_criterion": "Achieves at least 65 percent agreement with reference contradiction tags.",
+        "fallback": "Use stricter regex parsing filters combined with external NLI entailment classifiers."
+      }
+    ],
+    "prior_work_comparison": [
+      {
+        "paper_id": "2025.naacl-short.50",
+        "shared_mechanism": "Utilizes a transform model to align query embeddings for semantic entailment without re-encoding the corpus.",
+        "proposed_difference": "Integrates transform retrieval directly with an explicit inter-document contradiction detector and a calibrated abstention gate, rather than focusing solely on entailment matching.",
+        "verification_needed": "Ablate the transform retrieval component to measure its isolated impact on contradiction detection accuracy."
+      },
+      {
+        "paper_id": "2025.naacl-long.557",
+        "shared_mechanism": "Constructs contrastive explanations or comparative passages to improve reasoning in RAG.",
+        "proposed_difference": "Focuses on automated contradiction detection and programmatic abstention rather than generating qualitative contrastive text demonstrations.",
+        "verification_needed": "Compare output refusal accuracy against contrastive prompt demonstrations on ambiguous datasets."
+      },
+      {
+        "paper_id": "2024.acl-long.254",
+        "shared_mechanism": "Evaluates reasoning chains for attribution to evidence passages and logical consistency.",
+        "proposed_difference": "Applies verification at the retrieved evidence and contradiction-checking stage prior to generation rather than evaluating completed reasoning chains post-hoc.",
+        "verification_needed": "Evaluate runtime overhead and error propagation differences between pre-generation filtering and post-hoc verification."
+      }
+    ]
+  },
+  "final_idea": {
+    "title": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification",
+    "research_problem": "Large Language Models relying on Retrieval-Augmented Generation frequently hallucinate or generate ungrounded responses when confronted with conflicting or insufficient evidence passages, failing to abstain appropriately when contextually contradictory data is retrieved.",
+    "research_gap": "Bounded search findings indicate that while existing work addresses transform-based textual entailment retrieval and atomic fact state tracking separately, current frameworks lack an integrated, resource-constrained inference-time verification mechanism that explicitly detects inter-document contradictions and triggers calibrated model abstention when evidence does not logically entail the answer.",
+    "methodology": "We propose a two-stage inference framework combining a lightweight query transform for semantic alignment and a structured verification module. First, we adopt a frozen encoder with a lightweight learned query transformer to align retrieval embeddings for semantic entailment. Second, rather than exhaustive multi-step decomposition, we introduce a lightweight cross-encoder NLI scoring module and a contradiction gate to evaluate pairwise passage consistency and logical entailment against the query. If inter-document contradictions exceed a calibrated threshold or entailment scores fall below a confidence margin, the system forces generator abstention. We implement 4-bit INT quantization via bitsandbytes to ensure execution within a 12 GB VRAM limit.",
+    "expected_contribution": "We hypothesize that explicitly modeling inter-document contradictions via a lightweight cross-encoder coupled with a calibrated abstention gate will significantly reduce factual hallucination rates in open-domain QA while preserving answer recall on supported queries.",
+    "experimental_setup": "We evaluate on open-domain question answering benchmarks including HotpotQA and subset derivations from REVEAL, using a single consumer GPU (12 GB VRAM) running a 7B open-weights model with 4-bit quantization. We benchmark our pipeline against standard vanilla RAG, contrastive retrieval baselines, and a sequence-level log-probability abstention baseline.",
+    "evaluation_strategy": "We measure Exact Match (EM), F1 score, and specifically Abstention Precision/Recall to quantify whether the model correctly abstains on contradictory or insufficient contexts without refusing answerable queries.",
+    "feasibility_assumptions": [
+      "A 7B parameter open-weights model with 4-bit INT quantization can execute local inference and embedding transformations within 12 GB VRAM.",
+      "Publicly available datasets like HotpotQA provide adequate multi-document instances containing conflicting or noisy evidence passages."
+    ],
+    "references": [
+      "2025.naacl-short.50",
+      "2025.naacl-long.144",
+      "2024.acl-long.254",
+      "2025.naacl-long.557"
+    ],
+    "search_queries": [
+      "contradiction detection retrieval augmented generation",
+      "abstention mechanisms faithful question answering",
+      "transform retrieval textual entailment RAG"
+    ],
+    "assumption_checks": [
+      {
+        "assumption": "The 7B parameter quantized model paired with the cross-encoder verification module fits within the 12GB VRAM constraint during batch inference.",
+        "validation_step": "Run memory profiling over a 50-sample validation batch from HotpotQA while tracking peak VRAM consumption.",
+        "acceptance_criterion": "Peak VRAM usage remains strictly under 11.5 GB.",
+        "fallback": "Reduce the batch size to 1 and offload auxiliary layers to CPU."
+      },
+      {
+        "assumption": "A lightweight cross-encoder NLI classifier correlates reliably with contradiction presence without full prompt-based atomic decomposition.",
+        "validation_step": "Compute classification agreement between the cross-encoder and human-annotated contradiction labels on 200 validation samples.",
+        "acceptance_criterion": "Achieves at least 65 percent agreement with reference contradiction tags.",
+        "fallback": "Incorporate a stricter regex parsing filter combined with verbalized confidence thresholds."
+      }
+    ],
+    "prior_work_comparison": [
+      {
+        "paper_id": "2025.naacl-short.50",
+        "shared_mechanism": "Utilizes a transform model to align query embeddings for semantic entailment without re-encoding the corpus.",
+        "proposed_difference": "Integrates transform retrieval directly with an explicit cross-encoder inter-document contradiction detector and a calibrated abstention gate, rather than focusing solely on entailment matching.",
+        "verification_needed": "Ablate the transform retrieval component to measure its isolated impact on contradiction detection accuracy."
+      },
+      {
+        "paper_id": "2025.naacl-long.557",
+        "shared_mechanism": "Constructs contrastive explanations or comparative passages to improve reasoning in RAG.",
+        "proposed_difference": "Focuses on automated contradiction detection and programmatic abstention rather than generating qualitative contrastive text demonstrations.",
+        "verification_needed": "Compare output refusal accuracy against contrastive prompt demonstrations on ambiguous datasets."
+      },
+      {
+        "paper_id": "2024.acl-long.254",
+        "shared_mechanism": "Evaluates reasoning chains for attribution to evidence passages and logical consistency.",
+        "proposed_difference": "Applies verification at the retrieved evidence and contradiction-checking stage prior to generation rather than evaluating completed reasoning chains post-hoc.",
+        "verification_needed": "Evaluate runtime overhead and error propagation differences between pre-generation filtering and post-hoc verification."
+      },
+      {
+        "paper_id": "2025.naacl-long.144",
+        "shared_mechanism": "Tracks factual consistency and state updates across text segments.",
+        "proposed_difference": "Replaces multi-step LLM-based state tracking with a single-pass cross-encoder verification mechanism to satisfy hardware constraints.",
+        "verification_needed": "Compare the execution time and contradiction accuracy against multi-step decomposition."
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "input_idea": {
+        "title": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification",
+        "research_problem": "Large Language Models relying on Retrieval-Augmented Generation frequently hallucinate or generate ungrounded responses when confronted with conflicting or insufficient evidence passages, failing to abstain appropriately when contextually contradictory data is retrieved.",
+        "research_gap": "Bounded search findings indicate that while existing work addresses chunk-free retrieval and contrastive explanations for RAG, current frameworks lack a lightweight inference-time verification mechanism that explicitly detects inter-document contradictions and triggers calibrated model abstention when evidence does not logically entail the answer.",
+        "methodology": "We propose a two-stage inference framework combining text entailment transformation and contradiction detection. First, we adopt a frozen encoder with a lightweight learned query transformer to align retrieval embeddings for semantic entailment. Second, we introduce a structured verification module that decomposes retrieved passages into atomic facts, checks for pairwise contradictions, and evaluates logical entailment against the query. If inter-document contradictions exceed a threshold or entailment scores fall below a calibrated confidence margin, the system forces the generator to abstain rather than hallucinate an answer.",
+        "expected_contribution": "We hypothesize that explicitly modeling inter-document contradictions and coupling them with a calibrated abstention gate will significantly reduce factual hallucination rates in open-domain QA while preserving answer recall on supported queries.",
+        "experimental_setup": "We evaluate on open-domain question answering benchmarks including HotpotQA and subset derivations from REVEAL, using a consumer GPU (12 GB VRAM) for local inference and embedding transformations. We benchmark our pipeline against standard vanilla RAG and contrastive retrieval baselines.",
+        "evaluation_strategy": "We measure Exact Match (EM), F1 score, and specifically Abstention Precision/Recall to quantify whether the model correctly abstains on contradictory or insufficient contexts without refusing answerable queries.",
+        "feasibility_assumptions": [
+          "A consumer GPU with 12 GB VRAM is sufficient to run local inference for small-scale open-source LLMs and embedding transformations without full model retraining.",
+          "Publicly available datasets like HotpotQA and REVEAL provide adequate multi-document instances containing conflicting or noisy evidence passages."
+        ],
+        "references": [],
+        "search_queries": [
+          "contradiction detection in retrieval augmented generation",
+          "abstention mechanisms for faithful question answering",
+          "transform retrieval textual entailment RAG"
+        ],
+        "assumption_checks": [
+          {
+            "assumption": "The lightweight query transformation model can be optimized within local hardware constraints without full LLM fine-tuning.",
+            "validation_step": "Train the projection MLP using frozen encoder outputs on a small subset of HotpotQA for 5 epochs and measure gradient stability.",
+            "acceptance_criterion": "Training completes within 4 hours on a 12 GB GPU with validation loss decreasing monotonically.",
+            "fallback": "Substitute the learned MLP with a fixed rule-based query expansion heuristic."
+          },
+          {
+            "assumption": "Prompt-based atomic fact decomposition and contradiction detection can run reliably on a 7B parameter open-weights model.",
+            "validation_step": "Run the 4-step factual decomposition pipeline on a 200-sample validation split and compute agreement with human contradiction labels.",
+            "acceptance_criterion": "Achieves at least 65 percent agreement with reference contradiction tags.",
+            "fallback": "Use stricter regex parsing filters combined with external NLI entailment classifiers."
+          }
+        ],
+        "prior_work_comparison": [
+          {
+            "paper_id": "2025.naacl-short.50",
+            "shared_mechanism": "Utilizes a transform model to align query embeddings for semantic entailment without re-encoding the corpus.",
+            "proposed_difference": "Integrates transform retrieval directly with an explicit inter-document contradiction detector and a calibrated abstention gate, rather than focusing solely on entailment matching.",
+            "verification_needed": "Ablate the transform retrieval component to measure its isolated impact on contradiction detection accuracy."
+          },
+          {
+            "paper_id": "2025.naacl-long.557",
+            "shared_mechanism": "Constructs contrastive explanations or comparative passages to improve reasoning in RAG.",
+            "proposed_difference": "Focuses on automated contradiction detection and programmatic abstention rather than generating qualitative contrastive text demonstrations.",
+            "verification_needed": "Compare output refusal accuracy against contrastive prompt demonstrations on ambiguous datasets."
+          },
+          {
+            "paper_id": "2024.acl-long.254",
+            "shared_mechanism": "Evaluates reasoning chains for attribution to evidence passages and logical consistency.",
+            "proposed_difference": "Applies verification at the retrieved evidence and contradiction-checking stage prior to generation rather than evaluating completed reasoning chains post-hoc.",
+            "verification_needed": "Evaluate runtime overhead and error propagation differences between pre-generation filtering and post-hoc verification."
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "role": "novelty",
+          "review": {
+            "role": "novelty",
+            "novelty": 2,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposed framework combines a transform-based retrieval approach for semantic entailment with a structured fact decomposition and contradiction verification pipeline to trigger model abstention. The core component of aligning query embeddings for textual entailment without corpus re-encoding closely mirrors the Transform Retrieval mechanism introduced by Liang & Guo (2025). Furthermore, decomposing text into atomic facts to detect contradictions has been explored in frameworks like FactTrack by Lyu et al. (2025). The combination of these existing mechanisms into a unified RAG abstention pipeline represents an incremental integration rather than a fundamentally new paradigm, although the specific coupling of inter-document contradiction detection with calibrated inference-time abstention offers useful applied value.",
+            "problems": [
+              "The query transformation and entailment alignment mechanism heavily overlaps with existing work on Transform Retrieval for RAG.",
+              "Atomic fact decomposition and contradiction checking pipelines have been previously demonstrated in world-state tracking and verification contexts.",
+              "Relying on prompt-based atomic fact decomposition and iterative entailment checks on a 7B parameter local model within a 12 GB VRAM constraint introduces significant latency and error propagation bottlenecks."
+            ],
+            "improvements": [
+              "Clearly demarcate the novelty by focusing specifically on the calibration dynamics of the abstention gate rather than re-implementing the embedding transformation module.",
+              "Incorporate existing open-source lightweight Natural Language Inference (NLI) classifiers instead of relying entirely on 7B prompt-based fact decomposition to fit hardware constraints reliably.",
+              "Conduct empirical ablation to isolate the contribution of the inter-document contradiction detector from the base entailment scoring module."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-short.50",
+                "claim": "Transform Retrieval aligns query embeddings for semantic entailment without re-encoding the document corpus.",
+                "supporting_excerpt": "Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "FactTrack uses a pipeline to decompose events into directional atomic facts and detect contradictions.",
+                "supporting_excerpt": "At a high level, FactTrack consists of a four-step pipeline to update a world state data structure for each new event: (1) decompose the event into directional atomic facts; (2) determine the validity interval of each atomic fact using the world state; (3) detect contradictions with existing facts in the world state; and finally (4) add new facts to the world state and update existing atomic facts.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The search coverage is limited to retrieved ACL Anthology passages, which may not capture concurrent pre-prints or concurrent independent work addressing contradiction-aware abstention in RAG.",
+            "tradeoffs": [
+              "Combining multi-step atomic fact decomposition with local inference on a 12 GB GPU creates a severe tension between pipeline accuracy and computational feasibility within the 6-week project scope."
+            ],
+            "falsification_test": "If an ablation study reveals that removing the inter-document contradiction detection module results in no statistically significant drop in Abstention Precision on conflicting evidence benchmarks like HotpotQA, the claimed necessity of the structured contradiction verification stage is falsified."
+          },
+          "search": [
+            {
+              "query": "contradiction detection in retrieval augmented generation",
+              "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+              "retrieved_at": "2026-11-14T13:24:18.129049+00:00",
+              "papers": [
+                {
+                  "paper_id": "2025.naacl-industry.26",
+                  "title": "DSRAG: A Double-Stream Retrieval-Augmented Generation Framework for Countless Intent Detection",
+                  "authors": [
+                    "Pei Guo",
+                    "Enjie Liu",
+                    "Ruichao Zhong",
+                    "Mochi Gao",
+                    "Yunzhi Tan",
+                    "Bo Hu",
+                    "Zang Li"
+                  ],
+                  "year": 2025,
+                  "abstract": "Current intent detection work experiments with minor intent categories. However, in real-world scenarios of data analysis dialogue systems, intents are composed of combinations of numerous metrics and dimensions, resulting in countless intents and posing challenges for the language model. The retrieval-augmented generation (RAG) method efficiently retrieves key intents. However, the single retrieval route sometimes fails to recall target intents and causes incorrect results. To alleviate the above challenges, we introduce the DSRAG framework combining query-to-query (Q2Q) and query-to-metadata (Q2M) double-stream RAG approaches. Specifically, we build a repository of query statements for Q2Q using the query templates with the key intents. When a user’s query comes, it rapidly matches repository statements. Once the relevant query is retrieved, the results can be quickly returned. In contrast, Q2M retrieves the relevant intents from the metadata and utilizes large language models to choose the answer. Experimental results show that DSRAG achieves significant improvements compared with merely using prompt engineering and a single retrieval route.",
+                  "url": "https://aclanthology.org/2025.naacl-industry.26/",
+                  "doi": "10.18653/v1/2025.naacl-industry.26",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-demos.25",
+                  "title": "VeraCT Scan: Retrieval-Augmented Fake News Detection with Justifiable Reasoning",
+                  "authors": [
+                    "Cheng Niu",
+                    "Yang Guan",
+                    "Yuanhao Wu",
+                    "Juno Zhu",
+                    "Juntong Song",
+                    "Randy Zhong",
+                    "Kaihua Zhu",
+                    "Siliang Xu",
+                    "Shizhe Diao",
+                    "Tong Zhang"
+                  ],
+                  "year": 2024,
+                  "abstract": "The proliferation of fake news poses a significant threat not only by disseminating misleading information but also by undermining the very foundations of democracy. The recent advance of generative artificial intelligence has further exacerbated the challenge of distinguishing genuine news from fabricated stories. In response to this challenge, we introduce VeraCT Scan, a novel retrieval-augmented system for fake news detection. This system operates by extracting the core facts from a given piece of news and subsequently conducting an internet-wide search to identify corroborating or conflicting reports. Then sources’ credibility is leveraged for information verification. Besides determining the veracity of news, we also provide transparent evidence and reasoning to support its conclusions, resulting in the interpretability and trust in the results. In addition to GPT-4 Turbo, Llama-2 13B is also fine-tuned for news content understanding, information verification, and reasoning. Both implementations have demonstrated state-of-the-art accuracy in the realm of fake news detection.",
+                  "url": "https://aclanthology.org/2024.acl-demos.25/",
+                  "doi": "10.18653/v1/2024.acl-demos.25",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.585",
+                  "title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+                  "authors": [
+                    "Cheng Niu",
+                    "Yuanhao Wu",
+                    "Juno Zhu",
+                    "Siliang Xu",
+                    "KaShun Shum",
+                    "Randy Zhong",
+                    "Juntong Song",
+                    "Tong Zhang"
+                  ],
+                  "year": 2024,
+                  "abstract": "Retrieval-augmented generation (RAG) has become a main technique for alleviating hallucinations in large language models (LLMs). Despite the integration of RAG, LLMs may still present unsupported or contradictory claims to the retrieved contents. In order to develop effective hallucination prevention strategies under RAG, it is important to create benchmark datasets that can measure the extent of hallucination. This paper presents RAGTruth, a corpus tailored for analyzing word-level hallucinations in various domains and tasks within the standard RAG frameworks for LLM applications. RAGTruth comprises nearly 18,000 naturally generated responses from diverse LLMs using RAG. These responses have undergone meticulous manual annotations at both the individual case and word levels, incorporating evaluations of hallucination intensity. We not only benchmark hallucination frequencies across different LLMs, but also critically assess the effectiveness of several existing hallucination detection methodologies. We show that using a high-quality dataset such as RAGTruth, it is possible to finetune a relatively small LLM and achieve a competitive hallucination detection performance when compared to the existing prompt-based approaches using state-of-the-art LLMs such as GPT-4. Furthermore, the finetuned model can effectively mitigate hallucination in LLM responses.",
+                  "url": "https://aclanthology.org/2024.acl-long.585/",
+                  "doi": "10.18653/v1/2024.acl-long.585",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.449",
+                  "title": "Knowledge Graph-Guided Retrieval Augmented Generation",
+                  "authors": [
+                    "Xiangrong Zhu",
+                    "Yuexiang Xie",
+                    "Yi Liu",
+                    "Yaliang Li",
+                    "Wei Hu"
+                  ],
+                  "year": 2025,
+                  "abstract": "Retrieval-augmented generation (RAG) has emerged as a promising technology for addressing hallucination issues in the responses generated by large language models (LLMs). Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships. In this paper, we propose a novel Knowledge Graph-Guided Retrieval Augmented Generation (KG^2RAG) framework that utilizes knowledge graphs (KGs) to provide fact-level relationships between chunks, improving the diversity and coherence of the retrieved results. Specifically, after performing a semantic-based retrieval to provide seed chunks, KG^2RAG employs a KG-guided chunk expansion process and a KG-based chunk organization process to deliver relevant and important knowledge in well-organized paragraphs. Extensive experiments conducted on the HotpotQA dataset and its variants demonstrate the advantages of KG^2RAG compared to existing RAG-based approaches, in terms of both response quality and retrieval quality.",
+                  "url": "https://aclanthology.org/2025.naacl-long.449/",
+                  "doi": "10.18653/v1/2025.naacl-long.449",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.334",
+                  "title": "tRAG: Term-level Retrieval-Augmented Generation for Domain-Adaptive Retrieval",
+                  "authors": [
+                    "Dohyeon Lee",
+                    "Jongyoon Kim",
+                    "Jihyuk Kim",
+                    "Seung-won Hwang",
+                    "Joonsuk Park"
+                  ],
+                  "year": 2025,
+                  "abstract": "Neural retrieval models have emerged as an effective tool for information retrieval, but their performance suffers when there is a domain shift between training and test data distributions. Recent work aims to construct pseudo-training data for the target domain by generating domain-adapted pseudo-queries using large language models (LLMs). However, we identifies that LLMs exhibit a “seen term bias” where the generated pseudo-queries fail to include relevant “unseen” terms as expected for domain adaptation purposes. To address this limitation, we propose to improve the term recall of unseen query terms, by using term-level Retrieval-Augmented Generation (tRAG). Specifically, unlike existing document-level RAG, we propose to generate domain-specific keywords from all documents in the corpus, including those unseen in any individual document. To filter hallucination, generated keywords are retrieved and reranked, leveraging relevance feedback from both retrievers and LLMs. Experiments on the BEIR benchmark show tRAG significantly improves recall for unseen terms by 10.6% and outperforms LLM and retrieval-augmented generation baselines on overall retrieval performance.",
+                  "url": "https://aclanthology.org/2025.naacl-long.334/",
+                  "doi": "10.18653/v1/2025.naacl-long.334",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                }
+              ],
+              "status": "ok",
+              "error": null,
+              "cache_hit": false
+            },
+            {
+              "query": "abstention mechanisms for faithful question answering",
+              "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+              "retrieved_at": "2026-11-14T13:24:18.131146+00:00",
+              "papers": [
+                {
+                  "paper_id": "2024.acl-long.105",
+                  "title": "Towards Faithful and Robust LLM Specialists for Evidence-Based Question-Answering",
+                  "authors": [
+                    "Tobias Schimanski",
+                    "Jingwei Ni",
+                    "Mathias Kraus",
+                    "Elliott Ash",
+                    "Markus Leippold"
+                  ],
+                  "year": 2024,
+                  "abstract": "Advances towards more faithful and traceable answers of Large Language Models (LLMs) are crucial for various research and practical endeavors. One avenue in reaching this goal is basing the answers on reliable sources. However, this Evidence-Based QA has proven to work insufficiently with LLMs in terms of citing the correct sources (source quality) and truthfully representing the information within sources (answer attributability). In this work, we systematically investigate how to robustly fine-tune LLMs for better source quality and answer attributability. Specifically, we introduce a data generation pipeline with automated data quality filters, which can synthesize diversified high-quality training and testing data at scale. We further introduce four test sets to benchmark the robustness of fine-tuned specialist models. Extensive evaluation shows that fine-tuning on synthetic data improves performance on both in- and out-of-distribution. Furthermore, we show that data quality, which can be drastically improved by proposed quality filters, matters more than quantity in improving Evidence-Based QA.",
+                  "url": "https://aclanthology.org/2024.acl-long.105/",
+                  "doi": "10.18653/v1/2024.acl-long.105",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.353",
+                  "title": "Knowledge Graph Guided Evaluation of Abstention Techniques",
+                  "authors": [
+                    "Kinshuk Vasisht",
+                    "Navreet Kaur",
+                    "Danish Pruthi"
+                  ],
+                  "year": 2025,
+                  "abstract": "To deploy language models safely, it is crucial that they abstain from responding to inappropriate requests. Several prior studies test the safety promises of models based on their effectiveness in blocking malicious requests. In this work, we focus on evaluating the underlying techniques that cause models to abstain. We create ‘SELECT‘, a benchmark derived from a set of benign concepts (e.g., “rivers”) from a knowledge graph. Focusing on benign concepts isolates the effect of safety training, and grounding these concepts in a knowledge graph allows us to study the generalization and specificity of abstention techniques. Using ‘SELECT‘, we benchmark different abstention techniques over six open-weight and closed-source models. We find that the examined techniques indeed cause models to abstain with over 80% abstention rates. However, these techniques are not as effective for descendants of the target concepts, where abstention rates drop by 19%. We also characterize the generalization-specificity trade-offs for different techniques. Overall, no single technique is invariably better than others, and our findings inform practitioners of the various trade-offs involved.",
+                  "url": "https://aclanthology.org/2025.naacl-long.353/",
+                  "doi": "10.18653/v1/2025.naacl-long.353",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.185",
+                  "title": "Beyond Memorization: The Challenge of Random Memory Access in Language Models",
+                  "authors": [
+                    "Tongyao Zhu",
+                    "Qian Liu",
+                    "Liang Pang",
+                    "Zhengbao Jiang",
+                    "Min-Yen Kan",
+                    "Min Lin"
+                  ],
+                  "year": 2024,
+                  "abstract": "Recent developments in Language Models (LMs) have shown their effectiveness in NLP tasks, particularly in knowledge-intensive tasks.However, the mechanisms underlying knowledge storage and memory access within their parameters remain elusive. In this paper, we investigate whether a generative LM (e.g., GPT-2) is able to access its memory sequentially or randomly. Through carefully-designed synthetic tasks, covering the scenarios of full recitation, selective recitation and grounded question answering, we reveal that LMs manage to sequentially access their memory while encountering challenges in randomly accessing memorized content. We find that techniques including recitation and permutation improve the random memory access capability of LMs. Furthermore, by applying this intervention to realistic scenarios of open-domain question answering, we validate that enhancing random access by recitation leads to notable improvements in question answering. The code to reproduce our experiments can be found at https://github.com/sail-sg/lm-random-memory-access.",
+                  "url": "https://aclanthology.org/2024.acl-long.185/",
+                  "doi": "10.18653/v1/2024.acl-long.185",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.184",
+                  "title": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+                  "authors": [
+                    "Guangya Wan",
+                    "Yuqi Wu",
+                    "Jie Chen",
+                    "Sheng Li"
+                  ],
+                  "year": 2025,
+                  "abstract": "Self-consistency mitigates hallucinations in Large Language Models (LLMs) by sampling multiple reasoning paths, but it lacks a systematic approach to determine the optimal number of samples or select the most faithful rationale. To address this limitation, we introduce Reasoning-Aware Self-Consistency (RASC), a novel framework that enhances sampling efficiency and reasoning faithfulness by dynamically evaluating both outputs and rationales. RASC assesses the quality of reasoning and the consistency of answers for each generated sample, using these assessments to guide early stopping decisions and rationale selection. The framework employs criteria-based stopping and weighted majority voting, enabling more informed choices on when to halt sampling and which rationale to select. Our comprehensive experiments across diverse question-answering datasets demonstrate that RASC outperforms existing methods, reducing sample usage by approximately 70% while maintaining accuracy. Moreover, RASC facilitates the selection of high-fidelity rationales, thereby improving the faithfulness of LLM outputs. Our approach effectively addresses the efficiency-accuracy trade-off in LLM reasoning tasks, offering a new perspective for more nuanced, faithful, and effective utilization of LLMs in resource-constrained environments.",
+                  "url": "https://aclanthology.org/2025.naacl-long.184/",
+                  "doi": "10.18653/v1/2025.naacl-long.184",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.304",
+                  "title": "DreamSync: Aligning Text-to-Image Generation with Image Understanding Feedback",
+                  "authors": [
+                    "Jiao Sun",
+                    "Deqing Fu",
+                    "Yushi Hu",
+                    "Su Wang",
+                    "Royi Rassin",
+                    "Da-Cheng Juan",
+                    "Dana Alon",
+                    "Charles Herrmann",
+                    "Sjoerd van Steenkiste",
+                    "Ranjay Krishna",
+                    "Cyrus Rashtchian"
+                  ],
+                  "year": 2025,
+                  "abstract": "Despite their widespread success, Text-to-Image models (T2I) still struggle to produce images that are both aesthetically pleasing and faithful to the user’s input text. We introduce DreamSync, a simple yet effective training algorithm that improves T2I models to be faithful to the text input. DreamSync utilizes large vision-language models (VLMs) to effectively identify the fine-grained discrepancies between generated images and the text inputs and enable T2I models to self-improve without labeled data. First, it prompts the model to generate several candidate images for a given input text. Then, it uses two VLMs to select the best generation: a Visual Question Answering model that measures the alignment of generated images to the text, and another that measures the generation’s aesthetic quality. After selection, we use LoRA to iteratively finetune the T2I model to guide its generation towards the selected best generations. DreamSync does not need any additional human annotation, model architecture changes, or reinforcement learning. Despite its simplicity, DreamSync improves both the semantic alignment and aesthetic appeal of two diffusion-based T2I models, evidenced by multiple benchmarks (+1.7% on TIFA, +2.9% on DSG1K, +3.4% on VILA aesthetic) and human evaluation shows that DreamSync improves text rendering compared to SDXL by 18.5% on DSG1K benchmark.",
+                  "url": "https://aclanthology.org/2025.naacl-long.304/",
+                  "doi": "10.18653/v1/2025.naacl-long.304",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                }
+              ],
+              "status": "ok",
+              "error": null,
+              "cache_hit": false
+            },
+            {
+              "query": "transform retrieval textual entailment RAG",
+              "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+              "retrieved_at": "2026-11-14T13:24:18.133009+00:00",
+              "papers": [
+                {
+                  "paper_id": "2025.naacl-short.50",
+                  "title": "Transform Retrieval for Textual Entailment in RAG",
+                  "authors": [
+                    "Xin Liang",
+                    "Quan Guo"
+                  ],
+                  "year": 2025,
+                  "abstract": "In this paper, we introduce Transform Retrieval, a novel approach aimed at improving Textual Entailment Retrieval within the framework of Retrieval-Augmented Generation (RAG). While RAG has shown promise in enhancing Large Language Models by retrieving relevant documents to extract specific knowledge or mitigate hallucination, current retrieval methods often prioritize relevance without ensuring the retrieved documents semantically support answering the queries. Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus. We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model. Experimental results show that Transform Retrieval with simple MLP consistently approaches the skyline across multiple datasets, demonstrating the method’s effectiveness. The high performance on HotpotQA highlights its strength in many-to-many retrieval scenarios.",
+                  "url": "https://aclanthology.org/2025.naacl-short.50/",
+                  "doi": "10.18653/v1/2025.naacl-short.50",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.naacl-long.310",
+                  "title": "VisDoM: Multi-Document QA with Visually Rich Elements Using Multimodal Retrieval-Augmented Generation",
+                  "authors": [
+                    "Manan Suri",
+                    "Puneet Mathur",
+                    "Franck Dernoncourt",
+                    "Kanika Goswami",
+                    "Ryan A. Rossi",
+                    "Dinesh Manocha"
+                  ],
+                  "year": 2025,
+                  "abstract": "Understanding information from a collection of multiple documents, particularly those with visually rich elements, is important for document-grounded question answering. This paper introduces VisDoMBench, the first comprehensive benchmark designed to evaluate QA systems in multi-document settings with rich multimodal content, including tables, charts, and presentation slides. We propose VisDoMRAG, a novel multimodal Retrieval Augmented Generation (RAG) approach that simultaneously utilizes visual and textual RAG, combining robust visual retrieval capabilities with sophisticated linguistic reasoning. VisDoMRAG employs a multi-step reasoning process encompassing evidence curation and chain-of-thought reasoning for concurrent textual and visual RAG pipelines. A key novelty of VisDoMRAG is its consistency-constrained modality fusion mechanism, which aligns the reasoning processes across modalities at inference time to produce a coherent final answer. This leads to enhanced accuracy in scenarios where critical information is distributed across modalities and improved answer verifiability through implicit context attribution. Through extensive experiments involving open-source and proprietary large language models, we benchmark state-of-the-art document QA methods on VisDoMBench. Extensive results show that VisDoMRAG outperforms unimodal and long-context LLM baselines for end-to-end multimodal document QA by 12-20%.",
+                  "url": "https://aclanthology.org/2025.naacl-long.310/",
+                  "doi": "10.18653/v1/2025.naacl-long.310",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                },
+                {
+                  "paper_id": "2025.sigdial-1.31",
+                  "title": "Beyond Simple Personas: Evaluating LLMs and Relevance Models for Character-Consistent Dialogue",
+                  "authors": [
+                    "Debaditya Pal",
+                    "David Traum"
+                  ],
+                  "year": 2025,
+                  "abstract": "Dialogue systems often rely on overly simplistic persona representations, limiting their capacity to portray realistic, nuanced characters. In this paper, we explore how well existing persona-grounding methods capture complex personalities using two character-rich domains—Sgt Blackwell (single-character) and Twins (two-character)—described extensively through detailed narratives. We compare early fusion techniques, Retrieval-Augmented Generation (RAG), and relevance-based approaches. Evaluations across entailment, persona alignment, and hallucination metrics reveal distinct trade-offs: Knowledge Graph fusion notably reduces hallucinations and maintains relevance, Persona fusion strongly preserves relevance but has higher hallucination rates, and RAG provides fast, fluent responses. Our findings emphasize the critical role of structured persona grounding in achieving nuanced personality modeling.",
+                  "url": "https://aclanthology.org/2025.sigdial-1.31/",
+                  "doi": "10.18653/v1/2025.sigdial-1.31",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.064Z"
+                },
+                {
+                  "paper_id": "2024.acl-long.520",
+                  "title": "Beyond Recognising Entailment: Formalising Natural Language Inference from an Argumentative Perspective",
+                  "authors": [
+                    "Ameer Saadat-Yazdi",
+                    "Nadin Kökciyan"
+                  ],
+                  "year": 2024,
+                  "abstract": "In argumentation theory, argument schemes are a characterisation of stereotypical patterns of inference. There has been little work done to develop computational approaches to identify these schemes in natural language. Moreover, advancements in recognizing textual entailment lack a standardized definition of inference, which makes it challenging to compare methods trained on different datasets and rely on the generalisability of their results. In this work, we propose a rigorous approach to align entailment recognition with argumentation theory. Wagemans’ Periodic Table of Arguments (PTA), a taxonomy of argument schemes, provides the appropriate framework to unify these two fields. To operationalise the theoretical model, we introduce a tool to assist humans in annotating arguments according to the PTA. Beyond providing insights into non-expert annotator training, we present Kialo-PTA24, the first multi-topic dataset for the PTA. Finally, we benchmark the performance of pre-trained language models on various aspects of argument analysis. Our experiments show that the task of argument canonicalisation poses a significant challenge for state-of-the-art models, suggesting an inability to represent argumentative reasoning and a direction for future investigation.",
+                  "url": "https://aclanthology.org/2024.acl-long.520/",
+                  "doi": "10.18653/v1/2024.acl-long.520",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.409Z"
+                },
+                {
+                  "paper_id": "2025.naacl-industry.79",
+                  "title": "HyPA-RAG: A Hybrid Parameter Adaptive Retrieval-Augmented Generation System for AI Legal and Policy Applications",
+                  "authors": [
+                    "Rishi Kalra",
+                    "Zekun Wu",
+                    "Ayesha Gulley",
+                    "Airlie Hilliard",
+                    "Xin Guan",
+                    "Adriano Koshiyama",
+                    "Philip Colin Treleaven"
+                  ],
+                  "year": 2025,
+                  "abstract": "Large Language Models (LLMs) face limitations in AI legal and policy applications due to outdated knowledge, hallucinations, and poor reasoning in complex contexts. Retrieval-Augmented Generation (RAG) systems address these issues by incorporating external knowledge, but suffer from retrieval errors, ineffective context integration, and high operational costs. This paper presents the Hybrid Parameter-Adaptive RAG (HyPA-RAG) system, designed for the AI legal domain, with NYC Local Law 144 (LL144) as the test case. HyPA-RAG integrates a query complexity classifier for adaptive parameter tuning, a hybrid retrieval approach combining dense, sparse, and knowledge graph methods, and a comprehensive evaluation framework with tailored question types and metrics. Testing on LL144 demonstrates that HyPA-RAG enhances retrieval accuracy, response fidelity, and contextual precision, offering a robust and adaptable solution for high-stakes legal and policy applications.",
+                  "url": "https://aclanthology.org/2025.naacl-industry.79/",
+                  "doi": "10.18653/v1/2025.naacl-industry.79",
+                  "source": "ACL Anthology official XML snapshot",
+                  "retrieved_at": "2026-11-08T10:49:42.777Z"
+                }
+              ],
+              "status": "ok",
+              "error": null,
+              "cache_hit": false
+            }
+          ],
+          "error": null,
+          "evidence_status": "verified_excerpt"
+        },
+        {
+          "role": "feasibility",
+          "review": {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal presents a coherent two-stage inference framework for RAG abstention using a lightweight query transformer and an atomic fact verification module. However, running an atomic fact decomposition pipeline alongside pairwise contradiction detection and LLM generation on a single 12GB consumer GPU introduces significant memory bottlenecks and latency overhead, especially when using a 7B parameter open-weights model.",
+            "problems": [
+              "Running multi-step atomic fact decomposition and pairwise contradiction checking with a 7B parameter model on a 12GB GPU risks out-of-memory (OOM) errors during inference due to context accumulation.",
+              "The interaction between the transform retrieval alignment step and the downstream contradiction gate lacks a concrete threshold tuning strategy, which could lead to extreme over-abstention.",
+              "Evaluating multi-hop datasets like HotpotQA completely locally under a 6-week academic timeline leaves very little margin for iterative prompt engineering and robust calibration of the confidence margin."
+            ],
+            "improvements": [
+              "Use a heavily quantized model (e.g., 4-bit INT quantization via bitsandbytes or llama.cpp) to safely fit the 7B generator and verification pipeline within the 12GB VRAM limit.",
+              "Replace the prompt-based atomic decomposition with a lightweight, non-autoregressive NLI classifier to drastically reduce inference latency and memory overhead.",
+              "Implement a strict caching mechanism for document embeddings and pre-computed atomic facts during the pilot phase to accelerate experimental iteration within the 6-week window."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-short.50",
+                "claim": "Transform Retrieval with a simple MLP can be effectively optimized and utilized for retrieval alignment.",
+                "supporting_excerpt": "Experimental results show that Transform Retrieval with simple MLP consistently approaches the skyline across multiple datasets, demonstrating the method’s effectiveness.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "LLaMA2-7B-Chat can perform contradiction detection and state tracking tasks effectively.",
+                "supporting_excerpt": "When we apply FactTrack to contradiction detection on structured story outlines, we find that FactTrack using LLaMA2-7B-Chat substantially outperforms a fair baseline using LLaMA2-7B-Chat, and achieves performance comparable to a GPT4 baseline.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.254",
+                "claim": "Automated verifiers and language models still struggle with verifying logical correctness and detecting contradictions in complex reasoning chains.",
+                "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The feasibility score assumes that 4-bit model quantization and aggressive caching will be sufficient to bypass the memory limits of a 12GB GPU during multi-step verification, though actual latency under full pipeline load remains unverified.",
+            "tradeoffs": [
+              "Relying on prompt-based atomic fact decomposition provides high flexibility but incurs severe latency and memory penalties on a 12GB consumer GPU compared to using a lightweight dedicated NLI classifier."
+            ],
+            "falsification_test": "If the 7B parameter model paired with the atomic fact decomposition and pairwise contradiction checks exceeds 12GB VRAM during standard batch processing or fails to achieve above random-chance agreement on contradiction labels during the pilot check, the current pipeline architecture must be replaced with a non-autoregressive lightweight classifier."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "verified_excerpt"
+        },
+        {
+          "role": "clarity",
+          "review": {
+            "role": "clarity",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": 3,
+            "importance": 4,
+            "explanation": "The research proposal outlines a well-motivated approach to combining transform retrieval with explicit contradiction detection and a calibrated abstention gate for RAG. However, several operational definitions—particularly regarding the threshold for inter-document contradictions and how entailment scores map to forced abstention—lack precise formalization. Additionally, the proposal spans multiple complex modules (query transformation, atomic fact decomposition, pairwise contradiction checks, and entailment verification) within a constrained 6-week timeline on limited hardware.",
+            "problems": [
+              "The exact mechanism and operational threshold for determining when inter-document contradictions exceed the limit for triggering model abstention are underspecified.",
+              "The proposal attempts to combine multiple heavy inference-time components (atomic fact decomposition, pairwise contradiction detection, query transformation, and generation) which may introduce prohibitive latency and error propagation on a single 12 GB GPU.",
+              "The distinction between how the system handles insufficient evidence versus direct contradictions during the abstention gating phase is ambiguous."
+            ],
+            "improvements": [
+              "Define a concrete mathematical or heuristic formula for the contradiction threshold and confidence margin that triggers the abstention gate.",
+              "Include a simpler baseline ablation that couples standard retriever outputs directly with the abstention gate, isolating the contribution of the atomic fact decomposition and transform retrieval components.",
+              "Clarify whether atomic fact decomposition and pairwise contradiction checking are performed via few-shot prompting, regex, or external classifiers, and specify how cascading errors from the decomposition step are measured."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "Atomic fact decomposition and contradiction detection form a multi-step pipeline that can be computationally intensive.",
+                "supporting_excerpt": "At a high level, FactTrack consists of a four-step pipeline to update a world state data structure for each new event: (1) decompose the event into directional atomic facts; (2) determine the validity interval of each atomic fact using the world state; (3) detect contradictions with existing facts in the world state; and finally (4) add new facts to the world state and update existing atomic facts.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.naacl-short.50",
+                "claim": "Transform retrieval improves textual entailment retrieval within RAG frameworks.",
+                "supporting_excerpt": "In this paper, we introduce Transform Retrieval, a novel approach aimed at improving Textual Entailment Retrieval within the framework of Retrieval-Augmented Generation (RAG).",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether running atomic fact decomposition and contradiction checking alongside an open-source LLM on a single 12 GB GPU will meet acceptable latency bounds for practical deployment.",
+            "tradeoffs": [
+              "Relying on prompt-based atomic fact decomposition and pairwise checks improves interpretability and contradiction precision at the cost of significantly higher inference latency and error propagation."
+            ],
+            "falsification_test": "If the pipeline's end-to-end latency on HotpotQA exceeds 15 seconds per query on the 12 GB consumer GPU, or if the abstention precision drops below that of standard confidence-thresholding baselines, the utility of the multi-stage verification module is falsified."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "verified_excerpt"
+        },
+        {
+          "role": "contrarian",
+          "review": {
+            "role": "contrarian",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal aims to curb RAG hallucinations by combining transform-based retrieval with an inference-time verification pipeline that decomposes passages into atomic facts, detects contradictions, and triggers abstention. However, the mechanism relies heavily on multi-step prompt-based decomposition and pairwise contradiction checking using a 7B parameter open-weights model on a single 12 GB GPU, introducing severe latency and compounding error bottlenecks. The strongest simpler explanation is that standard length-normalized log-prob confidence thresholds or off-the-shelf NLI classifiers achieve identical or superior calibration without the massive combinatorial overhead of atomic fact extraction.",
+            "problems": [
+              "Decomposing retrieved passages into atomic facts and performing pairwise contradiction checks via an unfinetuned 7B model introduces extreme latency, making real-time inference impractical on a 12 GB consumer GPU.",
+              "Error propagation in the atomic decomposition stage will cascade into the contradiction detector, leading to false positives where clean passages are incorrectly flagged as contradictory.",
+              "The baseline comparison ignores standard, lightweight calibration techniques such as verbalized confidence scores or token-level entropy that achieve robust abstention without structured verification modules."
+            ],
+            "improvements": [
+              "Replace the multi-step atomic fact decomposition pipeline with a single-pass cross-encoder NLI scoring model that evaluates entailment directly between the query and unsegmented passages.",
+              "Incorporate sequence-level generation entropy and token log-probabilities as a zero-cost abstention baseline to verify whether the complex contradiction gate provides any orthogonal value.",
+              "Limit the evaluation of pairwise contradictions to top-k overlapping chunks rather than exhaustive document-wide decomposition."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.254",
+                "claim": "Verifying complex reasoning chains and detecting contradictions remains a major bottleneck for language models.",
+                "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "Accurately detecting and correcting factual contradictions in language model outputs is highly challenging.",
+                "supporting_excerpt": "While accurately detecting and correcting factual contradictions in language model outputs has become increasingly important as their capabilities improve, doing so is highly challenging.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a 7B parameter model running locally on a 12 GB GPU can execute multi-step atomic fact decomposition and pairwise contradiction checks within acceptable latency thresholds for interactive QA.",
+            "tradeoffs": [
+              "Relying on complex structural verification improves explainability and precision in abstention, but severely penalizes inference latency and resource usage on constrained hardware."
+            ],
+            "falsification_test": "To distinguish the proposed contradiction-aware abstention mechanism from a simpler baseline, evaluate a standard 7B generator configured to abstain based solely on its mean output token log-probability. If the simple log-probability baseline matches or exceeds the Abstention Precision/Recall of the multi-step atomic decomposition and pairwise contradiction framework across HotpotQA, the complex verification module is redundant."
+          },
+          "search": [],
+          "error": null,
+          "evidence_status": "verified_excerpt"
+        }
+      ],
+      "aggregation": {
+        "independent_reviews": [
+          {
+            "role": "novelty",
+            "novelty": 2,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposed framework combines a transform-based retrieval approach for semantic entailment with a structured fact decomposition and contradiction verification pipeline to trigger model abstention. The core component of aligning query embeddings for textual entailment without corpus re-encoding closely mirrors the Transform Retrieval mechanism introduced by Liang & Guo (2025). Furthermore, decomposing text into atomic facts to detect contradictions has been explored in frameworks like FactTrack by Lyu et al. (2025). The combination of these existing mechanisms into a unified RAG abstention pipeline represents an incremental integration rather than a fundamentally new paradigm, although the specific coupling of inter-document contradiction detection with calibrated inference-time abstention offers useful applied value.",
+            "problems": [
+              "The query transformation and entailment alignment mechanism heavily overlaps with existing work on Transform Retrieval for RAG.",
+              "Atomic fact decomposition and contradiction checking pipelines have been previously demonstrated in world-state tracking and verification contexts.",
+              "Relying on prompt-based atomic fact decomposition and iterative entailment checks on a 7B parameter local model within a 12 GB VRAM constraint introduces significant latency and error propagation bottlenecks."
+            ],
+            "improvements": [
+              "Clearly demarcate the novelty by focusing specifically on the calibration dynamics of the abstention gate rather than re-implementing the embedding transformation module.",
+              "Incorporate existing open-source lightweight Natural Language Inference (NLI) classifiers instead of relying entirely on 7B prompt-based fact decomposition to fit hardware constraints reliably.",
+              "Conduct empirical ablation to isolate the contribution of the inter-document contradiction detector from the base entailment scoring module."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-short.50",
+                "claim": "Transform Retrieval aligns query embeddings for semantic entailment without re-encoding the document corpus.",
+                "supporting_excerpt": "Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus.",
+                "relation": "overlaps"
+              },
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "FactTrack uses a pipeline to decompose events into directional atomic facts and detect contradictions.",
+                "supporting_excerpt": "At a high level, FactTrack consists of a four-step pipeline to update a world state data structure for each new event: (1) decompose the event into directional atomic facts; (2) determine the validity interval of each atomic fact using the world state; (3) detect contradictions with existing facts in the world state; and finally (4) add new facts to the world state and update existing atomic facts.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The search coverage is limited to retrieved ACL Anthology passages, which may not capture concurrent pre-prints or concurrent independent work addressing contradiction-aware abstention in RAG.",
+            "tradeoffs": [
+              "Combining multi-step atomic fact decomposition with local inference on a 12 GB GPU creates a severe tension between pipeline accuracy and computational feasibility within the 6-week project scope."
+            ],
+            "falsification_test": "If an ablation study reveals that removing the inter-document contradiction detection module results in no statistically significant drop in Abstention Precision on conflicting evidence benchmarks like HotpotQA, the claimed necessity of the structured contradiction verification stage is falsified."
+          },
+          {
+            "role": "feasibility",
+            "novelty": null,
+            "feasibility": 3,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal presents a coherent two-stage inference framework for RAG abstention using a lightweight query transformer and an atomic fact verification module. However, running an atomic fact decomposition pipeline alongside pairwise contradiction detection and LLM generation on a single 12GB consumer GPU introduces significant memory bottlenecks and latency overhead, especially when using a 7B parameter open-weights model.",
+            "problems": [
+              "Running multi-step atomic fact decomposition and pairwise contradiction checking with a 7B parameter model on a 12GB GPU risks out-of-memory (OOM) errors during inference due to context accumulation.",
+              "The interaction between the transform retrieval alignment step and the downstream contradiction gate lacks a concrete threshold tuning strategy, which could lead to extreme over-abstention.",
+              "Evaluating multi-hop datasets like HotpotQA completely locally under a 6-week academic timeline leaves very little margin for iterative prompt engineering and robust calibration of the confidence margin."
+            ],
+            "improvements": [
+              "Use a heavily quantized model (e.g., 4-bit INT quantization via bitsandbytes or llama.cpp) to safely fit the 7B generator and verification pipeline within the 12GB VRAM limit.",
+              "Replace the prompt-based atomic decomposition with a lightweight, non-autoregressive NLI classifier to drastically reduce inference latency and memory overhead.",
+              "Implement a strict caching mechanism for document embeddings and pre-computed atomic facts during the pilot phase to accelerate experimental iteration within the 6-week window."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-short.50",
+                "claim": "Transform Retrieval with a simple MLP can be effectively optimized and utilized for retrieval alignment.",
+                "supporting_excerpt": "Experimental results show that Transform Retrieval with simple MLP consistently approaches the skyline across multiple datasets, demonstrating the method’s effectiveness.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "LLaMA2-7B-Chat can perform contradiction detection and state tracking tasks effectively.",
+                "supporting_excerpt": "When we apply FactTrack to contradiction detection on structured story outlines, we find that FactTrack using LLaMA2-7B-Chat substantially outperforms a fair baseline using LLaMA2-7B-Chat, and achieves performance comparable to a GPT4 baseline.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2024.acl-long.254",
+                "claim": "Automated verifiers and language models still struggle with verifying logical correctness and detecting contradictions in complex reasoning chains.",
+                "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+                "relation": "overlaps"
+              }
+            ],
+            "uncertainty": "The feasibility score assumes that 4-bit model quantization and aggressive caching will be sufficient to bypass the memory limits of a 12GB GPU during multi-step verification, though actual latency under full pipeline load remains unverified.",
+            "tradeoffs": [
+              "Relying on prompt-based atomic fact decomposition provides high flexibility but incurs severe latency and memory penalties on a 12GB consumer GPU compared to using a lightweight dedicated NLI classifier."
+            ],
+            "falsification_test": "If the 7B parameter model paired with the atomic fact decomposition and pairwise contradiction checks exceeds 12GB VRAM during standard batch processing or fails to achieve above random-chance agreement on contradiction labels during the pilot check, the current pipeline architecture must be replaced with a non-autoregressive lightweight classifier."
+          },
+          {
+            "role": "clarity",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": 3,
+            "importance": 4,
+            "explanation": "The research proposal outlines a well-motivated approach to combining transform retrieval with explicit contradiction detection and a calibrated abstention gate for RAG. However, several operational definitions—particularly regarding the threshold for inter-document contradictions and how entailment scores map to forced abstention—lack precise formalization. Additionally, the proposal spans multiple complex modules (query transformation, atomic fact decomposition, pairwise contradiction checks, and entailment verification) within a constrained 6-week timeline on limited hardware.",
+            "problems": [
+              "The exact mechanism and operational threshold for determining when inter-document contradictions exceed the limit for triggering model abstention are underspecified.",
+              "The proposal attempts to combine multiple heavy inference-time components (atomic fact decomposition, pairwise contradiction detection, query transformation, and generation) which may introduce prohibitive latency and error propagation on a single 12 GB GPU.",
+              "The distinction between how the system handles insufficient evidence versus direct contradictions during the abstention gating phase is ambiguous."
+            ],
+            "improvements": [
+              "Define a concrete mathematical or heuristic formula for the contradiction threshold and confidence margin that triggers the abstention gate.",
+              "Include a simpler baseline ablation that couples standard retriever outputs directly with the abstention gate, isolating the contribution of the atomic fact decomposition and transform retrieval components.",
+              "Clarify whether atomic fact decomposition and pairwise contradiction checking are performed via few-shot prompting, regex, or external classifiers, and specify how cascading errors from the decomposition step are measured."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "Atomic fact decomposition and contradiction detection form a multi-step pipeline that can be computationally intensive.",
+                "supporting_excerpt": "At a high level, FactTrack consists of a four-step pipeline to update a world state data structure for each new event: (1) decompose the event into directional atomic facts; (2) determine the validity interval of each atomic fact using the world state; (3) detect contradictions with existing facts in the world state; and finally (4) add new facts to the world state and update existing atomic facts.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.naacl-short.50",
+                "claim": "Transform retrieval improves textual entailment retrieval within RAG frameworks.",
+                "supporting_excerpt": "In this paper, we introduce Transform Retrieval, a novel approach aimed at improving Textual Entailment Retrieval within the framework of Retrieval-Augmented Generation (RAG).",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether running atomic fact decomposition and contradiction checking alongside an open-source LLM on a single 12 GB GPU will meet acceptable latency bounds for practical deployment.",
+            "tradeoffs": [
+              "Relying on prompt-based atomic fact decomposition and pairwise checks improves interpretability and contradiction precision at the cost of significantly higher inference latency and error propagation."
+            ],
+            "falsification_test": "If the pipeline's end-to-end latency on HotpotQA exceeds 15 seconds per query on the 12 GB consumer GPU, or if the abstention precision drops below that of standard confidence-thresholding baselines, the utility of the multi-stage verification module is falsified."
+          },
+          {
+            "role": "contrarian",
+            "novelty": null,
+            "feasibility": null,
+            "clarity": null,
+            "importance": null,
+            "explanation": "The proposal aims to curb RAG hallucinations by combining transform-based retrieval with an inference-time verification pipeline that decomposes passages into atomic facts, detects contradictions, and triggers abstention. However, the mechanism relies heavily on multi-step prompt-based decomposition and pairwise contradiction checking using a 7B parameter open-weights model on a single 12 GB GPU, introducing severe latency and compounding error bottlenecks. The strongest simpler explanation is that standard length-normalized log-prob confidence thresholds or off-the-shelf NLI classifiers achieve identical or superior calibration without the massive combinatorial overhead of atomic fact extraction.",
+            "problems": [
+              "Decomposing retrieved passages into atomic facts and performing pairwise contradiction checks via an unfinetuned 7B model introduces extreme latency, making real-time inference impractical on a 12 GB consumer GPU.",
+              "Error propagation in the atomic decomposition stage will cascade into the contradiction detector, leading to false positives where clean passages are incorrectly flagged as contradictory.",
+              "The baseline comparison ignores standard, lightweight calibration techniques such as verbalized confidence scores or token-level entropy that achieve robust abstention without structured verification modules."
+            ],
+            "improvements": [
+              "Replace the multi-step atomic fact decomposition pipeline with a single-pass cross-encoder NLI scoring model that evaluates entailment directly between the query and unsegmented passages.",
+              "Incorporate sequence-level generation entropy and token log-probabilities as a zero-cost abstention baseline to verify whether the complex contradiction gate provides any orthogonal value.",
+              "Limit the evaluation of pairwise contradictions to top-k overlapping chunks rather than exhaustive document-wide decomposition."
+            ],
+            "evidence": [
+              {
+                "paper_id": "2024.acl-long.254",
+                "claim": "Verifying complex reasoning chains and detecting contradictions remains a major bottleneck for language models.",
+                "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+                "relation": "supports"
+              },
+              {
+                "paper_id": "2025.naacl-long.144",
+                "claim": "Accurately detecting and correcting factual contradictions in language model outputs is highly challenging.",
+                "supporting_excerpt": "While accurately detecting and correcting factual contradictions in language model outputs has become increasingly important as their capabilities improve, doing so is highly challenging.",
+                "relation": "supports"
+              }
+            ],
+            "uncertainty": "It remains uncertain whether a 7B parameter model running locally on a 12 GB GPU can execute multi-step atomic fact decomposition and pairwise contradiction checks within acceptable latency thresholds for interactive QA.",
+            "tradeoffs": [
+              "Relying on complex structural verification improves explainability and precision in abstention, but severely penalizes inference latency and resource usage on constrained hardware."
+            ],
+            "falsification_test": "To distinguish the proposed contradiction-aware abstention mechanism from a simpler baseline, evaluate a standard 7B generator configured to abstain based solely on its mean output token log-probability. If the simple log-probability baseline matches or exceeds the Abstention Precision/Recall of the multi-step atomic decomposition and pairwise contradiction framework across HotpotQA, the complex verification module is redundant."
+          }
+        ],
+        "scores_by_role": {
+          "novelty": {
+            "novelty": 2
+          },
+          "feasibility": {
+            "feasibility": 3
+          },
+          "clarity": {
+            "clarity": 3
+          },
+          "importance": {
+            "clarity": 4
+          }
+        },
+        "score_disagreements": [],
+        "qualitative_tradeoffs": [
+          {
+            "role": "novelty",
+            "tension": "Combining multi-step atomic fact decomposition with local inference on a 12 GB GPU creates a severe tension between pipeline accuracy and computational feasibility within the 6-week project scope."
+          },
+          {
+            "role": "feasibility",
+            "tension": "Relying on prompt-based atomic fact decomposition provides high flexibility but incurs severe latency and memory penalties on a 12GB consumer GPU compared to using a lightweight dedicated NLI classifier."
+          },
+          {
+            "role": "clarity",
+            "tension": "Relying on prompt-based atomic fact decomposition and pairwise checks improves interpretability and contradiction precision at the cost of significantly higher inference latency and error propagation."
+          },
+          {
+            "role": "contrarian",
+            "tension": "Relying on complex structural verification improves explainability and precision in abstention, but severely penalizes inference latency and resource usage on constrained hardware."
+          }
+        ],
+        "score_policy": "Only designated role scores are aggregated. Distinct scores do not imply distinct model beliefs.",
+        "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+        "failures": [],
+        "evidence_status": {
+          "novelty": "verified_excerpt",
+          "feasibility": "verified_excerpt",
+          "clarity": "verified_excerpt",
+          "contrarian": "verified_excerpt"
+        }
+      },
+      "revised_idea": {
+        "title": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification",
+        "research_problem": "Large Language Models relying on Retrieval-Augmented Generation frequently hallucinate or generate ungrounded responses when confronted with conflicting or insufficient evidence passages, failing to abstain appropriately when contextually contradictory data is retrieved.",
+        "research_gap": "Bounded search findings indicate that while existing work addresses transform-based textual entailment retrieval and atomic fact state tracking separately, current frameworks lack an integrated, resource-constrained inference-time verification mechanism that explicitly detects inter-document contradictions and triggers calibrated model abstention when evidence does not logically entail the answer.",
+        "methodology": "We propose a two-stage inference framework combining a lightweight query transform for semantic alignment and a structured verification module. First, we adopt a frozen encoder with a lightweight learned query transformer to align retrieval embeddings for semantic entailment. Second, rather than exhaustive multi-step decomposition, we introduce a lightweight cross-encoder NLI scoring module and a contradiction gate to evaluate pairwise passage consistency and logical entailment against the query. If inter-document contradictions exceed a calibrated threshold or entailment scores fall below a confidence margin, the system forces generator abstention. We implement 4-bit INT quantization via bitsandbytes to ensure execution within a 12 GB VRAM limit.",
+        "expected_contribution": "We hypothesize that explicitly modeling inter-document contradictions via a lightweight cross-encoder coupled with a calibrated abstention gate will significantly reduce factual hallucination rates in open-domain QA while preserving answer recall on supported queries.",
+        "experimental_setup": "We evaluate on open-domain question answering benchmarks including HotpotQA and subset derivations from REVEAL, using a single consumer GPU (12 GB VRAM) running a 7B open-weights model with 4-bit quantization. We benchmark our pipeline against standard vanilla RAG, contrastive retrieval baselines, and a sequence-level log-probability abstention baseline.",
+        "evaluation_strategy": "We measure Exact Match (EM), F1 score, and specifically Abstention Precision/Recall to quantify whether the model correctly abstains on contradictory or insufficient contexts without refusing answerable queries.",
+        "feasibility_assumptions": [
+          "A 7B parameter open-weights model with 4-bit INT quantization can execute local inference and embedding transformations within 12 GB VRAM.",
+          "Publicly available datasets like HotpotQA provide adequate multi-document instances containing conflicting or noisy evidence passages."
+        ],
+        "references": [
+          "2025.naacl-short.50",
+          "2025.naacl-long.144",
+          "2024.acl-long.254",
+          "2025.naacl-long.557"
+        ],
+        "search_queries": [
+          "contradiction detection retrieval augmented generation",
+          "abstention mechanisms faithful question answering",
+          "transform retrieval textual entailment RAG"
+        ],
+        "assumption_checks": [
+          {
+            "assumption": "The 7B parameter quantized model paired with the cross-encoder verification module fits within the 12GB VRAM constraint during batch inference.",
+            "validation_step": "Run memory profiling over a 50-sample validation batch from HotpotQA while tracking peak VRAM consumption.",
+            "acceptance_criterion": "Peak VRAM usage remains strictly under 11.5 GB.",
+            "fallback": "Reduce the batch size to 1 and offload auxiliary layers to CPU."
+          },
+          {
+            "assumption": "A lightweight cross-encoder NLI classifier correlates reliably with contradiction presence without full prompt-based atomic decomposition.",
+            "validation_step": "Compute classification agreement between the cross-encoder and human-annotated contradiction labels on 200 validation samples.",
+            "acceptance_criterion": "Achieves at least 65 percent agreement with reference contradiction tags.",
+            "fallback": "Incorporate a stricter regex parsing filter combined with verbalized confidence thresholds."
+          }
+        ],
+        "prior_work_comparison": [
+          {
+            "paper_id": "2025.naacl-short.50",
+            "shared_mechanism": "Utilizes a transform model to align query embeddings for semantic entailment without re-encoding the corpus.",
+            "proposed_difference": "Integrates transform retrieval directly with an explicit cross-encoder inter-document contradiction detector and a calibrated abstention gate, rather than focusing solely on entailment matching.",
+            "verification_needed": "Ablate the transform retrieval component to measure its isolated impact on contradiction detection accuracy."
+          },
+          {
+            "paper_id": "2025.naacl-long.557",
+            "shared_mechanism": "Constructs contrastive explanations or comparative passages to improve reasoning in RAG.",
+            "proposed_difference": "Focuses on automated contradiction detection and programmatic abstention rather than generating qualitative contrastive text demonstrations.",
+            "verification_needed": "Compare output refusal accuracy against contrastive prompt demonstrations on ambiguous datasets."
+          },
+          {
+            "paper_id": "2024.acl-long.254",
+            "shared_mechanism": "Evaluates reasoning chains for attribution to evidence passages and logical consistency.",
+            "proposed_difference": "Applies verification at the retrieved evidence and contradiction-checking stage prior to generation rather than evaluating completed reasoning chains post-hoc.",
+            "verification_needed": "Evaluate runtime overhead and error propagation differences between pre-generation filtering and post-hoc verification."
+          },
+          {
+            "paper_id": "2025.naacl-long.144",
+            "shared_mechanism": "Tracks factual consistency and state updates across text segments.",
+            "proposed_difference": "Replaces multi-step LLM-based state tracking with a single-pass cross-encoder verification mechanism to satisfy hardware constraints.",
+            "verification_needed": "Compare the execution time and contradiction accuracy against multi-step decomposition."
+          }
+        ]
+      },
+      "revision_error": null
+    }
+  ],
+  "stop_reason": "iteration_limit",
+  "elapsed_seconds": 147.358169868,
+  "api_events": [
+    {
+      "label": "novelty_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:24:27.879495+00:00",
+      "prompt_hash": "27e7e446125e9527d582e8e1107213c610bf370ba713e6796fc6966c14b7aed1",
+      "input_tokens": 14538,
+      "output_tokens": 673,
+      "thinking_tokens": 0,
+      "total_tokens": 15211,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.689265539000189
+    },
+    {
+      "label": "feasibility_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:24:42.879760+00:00",
+      "prompt_hash": "bcab4c1ad72e20e3360f349874da3ad97838515dabfce81c62eca0fd9de0a8fa",
+      "input_tokens": 5673,
+      "output_tokens": 760,
+      "thinking_tokens": 0,
+      "total_tokens": 6433,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.888950809000562
+    },
+    {
+      "label": "clarity_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:24:57.879901+00:00",
+      "prompt_hash": "844fed343ba7014f8a1dd4d24ef32197f1a21695168af69fbab066f53a677eba",
+      "input_tokens": 5638,
+      "output_tokens": 651,
+      "thinking_tokens": 0,
+      "total_tokens": 6289,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.650212001
+    },
+    {
+      "label": "contrarian_review_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:25:12.880028+00:00",
+      "prompt_hash": "6a121c8375437f991d3e07ad886d7ca7ab6a88d5a10c02323a1151c09e8d6e6e",
+      "input_tokens": 5639,
+      "output_tokens": 705,
+      "thinking_tokens": 0,
+      "total_tokens": 6344,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.8011320790001264
+    },
+    {
+      "label": "revision_1",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:25:27.880236+00:00",
+      "prompt_hash": "bb919fd553dc9d4963b1f93d8eb9003bb49327a878c2c9e6892662a12ec03e79",
+      "input_tokens": 13094,
+      "output_tokens": 1326,
+      "thinking_tokens": 0,
+      "total_tokens": 14420,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.86774443000013
+    },
+    {
+      "label": "novelty_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:25:42.880512+00:00",
+      "prompt_hash": "7372f5aa607e1674fad3c9f1000660ca2c3851aace216355fc90d841701a03ee",
+      "input_tokens": 16537,
+      "output_tokens": 875,
+      "thinking_tokens": 0,
+      "total_tokens": 17412,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.25714200999937
+    },
+    {
+      "label": "feasibility_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:25:57.880636+00:00",
+      "prompt_hash": "62a41acd67deb9cb740d9933286b1905a357e7925af4d7aeb01dbcd1e84ad990",
+      "input_tokens": 14757,
+      "output_tokens": 564,
+      "thinking_tokens": 0,
+      "total_tokens": 15321,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.953313717999663
+    },
+    {
+      "label": "clarity_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:26:12.880723+00:00",
+      "prompt_hash": "6b14ef349af965fb823391747b5a7263000b8b4d600c801139d834bfeb18e5b9",
+      "input_tokens": 14722,
+      "output_tokens": 452,
+      "thinking_tokens": 0,
+      "total_tokens": 15174,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 3.0115993829995205
+    },
+    {
+      "label": "contrarian_review_final",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:26:27.880959+00:00",
+      "prompt_hash": "9b425b277bde54f8c69ad588077878ebe1709c71478222ec96d5eaa8a779d428",
+      "input_tokens": 14723,
+      "output_tokens": 828,
+      "thinking_tokens": 0,
+      "total_tokens": 15551,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 4.563884494999911
+    },
+    {
+      "label": "evidence_support_audit",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-14T13:26:42.881204+00:00",
+      "prompt_hash": "1e14d4ceee869bf309aa8e873d5ebc0a45b3414e5fb00ed58f75da26c01337a2",
+      "input_tokens": 2172,
+      "output_tokens": 508,
+      "thinking_tokens": 0,
+      "total_tokens": 2680,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 2.5730789760000334
+    }
+  ],
+  "provenance": "live_gemini",
+  "final_reviews": [
+    {
+      "role": "novelty",
+      "review": {
+        "role": "novelty",
+        "novelty": 2,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposed research combines query transformation for semantic alignment in retrieval-augmented generation with a cross-encoder module for NLI scoring and contradiction detection to trigger model abstention. This architecture heavily overlaps with existing work: Transform Retrieval (Li & Guo, 2025) already addresses semantic entailment alignment via a frozen encoder and a lightweight query transform model, while natural language inference (NLI) classification and cross-encoder scoring for hallucination and stance detection are well-established paradigms in reference-grounded question answering and fact-checking (Galimzianova et al., 2025; Wang et al., 2025). Furthermore, applying verification checks prior to generation to prevent hallucinations has been explored in various evidence-based frameworks. The combination of these existing components represents an incremental integration rather than a fundamentally new mechanism.",
+        "problems": [
+          "The core idea of aligning query embeddings specifically for semantic entailment using a frozen encoder and a lightweight transform model is already introduced by Transform Retrieval (Li & Guo, 2025).",
+          "Framing hallucination detection and evidence consistency verification as an NLI classification task using cross-encoders or fine-tuned NLI models is standard practice in recent literature (Galimzianova et al., 2025).",
+          "Combining retrieval alignment, contradiction scoring, and threshold-based abstention is an engineering integration of existing modules rather than a novel conceptual breakthrough."
+        ],
+        "improvements": [
+          "Ablate the query transformation module against standard dense retrieval to demonstrate whether semantic entailment alignment provides gains over off-the-shelf cross-encoders under strict 12GB VRAM constraints.",
+          "Formally define the contradiction gate function and provide theoretical or empirical validation on how threshold tuning interacts with false abstention rates on multi-hop datasets like HotpotQA.",
+          "Compare the computational overhead and latency of the proposed cross-encoder NLI scoring against sequence-level log-probability abstention baselines to justify the added complexity."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-short.50",
+            "claim": "Transform Retrieval addresses semantic entailment alignment by transforming query embeddings without re-encoding the document corpus.",
+            "supporting_excerpt": "Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus.",
+            "relation": "overlaps"
+          },
+          {
+            "paper_id": "2025.naacl-short.50",
+            "claim": "Transform Retrieval utilizes a frozen pre-trained encoder combined with a lightweight transform model and contrastive learning to optimize query-document entailment alignment.",
+            "supporting_excerpt": "We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model.",
+            "relation": "overlaps"
+          },
+          {
+            "paper_id": "2025.sdp-1.34",
+            "claim": "Hallucination and contradiction detection are framed as NLI-style classification using fine-tuned encoder models.",
+            "supporting_excerpt": "We frame hallucination detection as an NLI-style three-way classification (entailment, contradiction, unverifiable) and show that simple fine-tuning of NLI-adapted encoder models on task data outperforms more elaborate feature-based pipelines and large language model prompting.",
+            "relation": "overlaps"
+          }
+        ],
+        "uncertainty": "The search scope was limited to retrieved papers from ACL Anthology snapshots covering RAG hallucination, textual entailment retrieval, and abstention mechanisms. While considerable overlap exists in individual components, specific combinations under 12GB VRAM hardware limits may exhibit practical engineering differences.",
+        "tradeoffs": [
+          "Integrating a cross-encoder verification module alongside a 7B quantized generator increases inference latency and memory management complexity within the 12 GB VRAM constraint."
+        ],
+        "falsification_test": "If replacing the proposed query transform and cross-encoder abstention gate with a standard off-the-shelf cross-encoder reranker and a simple log-probability threshold yields statistically indistinguishable Abstention Precision/Recall on HotpotQA and REVEAL, the claimed contribution of the integrated framework is falsified."
+      },
+      "search": [
+        {
+          "query": "contradiction detection retrieval augmented generation",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-14T13:25:32.769107+00:00",
+          "papers": [
+            {
+              "paper_id": "2025.naacl-industry.26",
+              "title": "DSRAG: A Double-Stream Retrieval-Augmented Generation Framework for Countless Intent Detection",
+              "authors": [
+                "Pei Guo",
+                "Enjie Liu",
+                "Ruichao Zhong",
+                "Mochi Gao",
+                "Yunzhi Tan",
+                "Bo Hu",
+                "Zang Li"
+              ],
+              "year": 2025,
+              "abstract": "Current intent detection work experiments with minor intent categories. However, in real-world scenarios of data analysis dialogue systems, intents are composed of combinations of numerous metrics and dimensions, resulting in countless intents and posing challenges for the language model. The retrieval-augmented generation (RAG) method efficiently retrieves key intents. However, the single retrieval route sometimes fails to recall target intents and causes incorrect results. To alleviate the above challenges, we introduce the DSRAG framework combining query-to-query (Q2Q) and query-to-metadata (Q2M) double-stream RAG approaches. Specifically, we build a repository of query statements for Q2Q using the query templates with the key intents. When a user’s query comes, it rapidly matches repository statements. Once the relevant query is retrieved, the results can be quickly returned. In contrast, Q2M retrieves the relevant intents from the metadata and utilizes large language models to choose the answer. Experimental results show that DSRAG achieves significant improvements compared with merely using prompt engineering and a single retrieval route.",
+              "url": "https://aclanthology.org/2025.naacl-industry.26/",
+              "doi": "10.18653/v1/2025.naacl-industry.26",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-demos.25",
+              "title": "VeraCT Scan: Retrieval-Augmented Fake News Detection with Justifiable Reasoning",
+              "authors": [
+                "Cheng Niu",
+                "Yang Guan",
+                "Yuanhao Wu",
+                "Juno Zhu",
+                "Juntong Song",
+                "Randy Zhong",
+                "Kaihua Zhu",
+                "Siliang Xu",
+                "Shizhe Diao",
+                "Tong Zhang"
+              ],
+              "year": 2024,
+              "abstract": "The proliferation of fake news poses a significant threat not only by disseminating misleading information but also by undermining the very foundations of democracy. The recent advance of generative artificial intelligence has further exacerbated the challenge of distinguishing genuine news from fabricated stories. In response to this challenge, we introduce VeraCT Scan, a novel retrieval-augmented system for fake news detection. This system operates by extracting the core facts from a given piece of news and subsequently conducting an internet-wide search to identify corroborating or conflicting reports. Then sources’ credibility is leveraged for information verification. Besides determining the veracity of news, we also provide transparent evidence and reasoning to support its conclusions, resulting in the interpretability and trust in the results. In addition to GPT-4 Turbo, Llama-2 13B is also fine-tuned for news content understanding, information verification, and reasoning. Both implementations have demonstrated state-of-the-art accuracy in the realm of fake news detection.",
+              "url": "https://aclanthology.org/2024.acl-demos.25/",
+              "doi": "10.18653/v1/2024.acl-demos.25",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2024.acl-long.585",
+              "title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+              "authors": [
+                "Cheng Niu",
+                "Yuanhao Wu",
+                "Juno Zhu",
+                "Siliang Xu",
+                "KaShun Shum",
+                "Randy Zhong",
+                "Juntong Song",
+                "Tong Zhang"
+              ],
+              "year": 2024,
+              "abstract": "Retrieval-augmented generation (RAG) has become a main technique for alleviating hallucinations in large language models (LLMs). Despite the integration of RAG, LLMs may still present unsupported or contradictory claims to the retrieved contents. In order to develop effective hallucination prevention strategies under RAG, it is important to create benchmark datasets that can measure the extent of hallucination. This paper presents RAGTruth, a corpus tailored for analyzing word-level hallucinations in various domains and tasks within the standard RAG frameworks for LLM applications. RAGTruth comprises nearly 18,000 naturally generated responses from diverse LLMs using RAG. These responses have undergone meticulous manual annotations at both the individual case and word levels, incorporating evaluations of hallucination intensity. We not only benchmark hallucination frequencies across different LLMs, but also critically assess the effectiveness of several existing hallucination detection methodologies. We show that using a high-quality dataset such as RAGTruth, it is possible to finetune a relatively small LLM and achieve a competitive hallucination detection performance when compared to the existing prompt-based approaches using state-of-the-art LLMs such as GPT-4. Furthermore, the finetuned model can effectively mitigate hallucination in LLM responses.",
+              "url": "https://aclanthology.org/2024.acl-long.585/",
+              "doi": "10.18653/v1/2024.acl-long.585",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.449",
+              "title": "Knowledge Graph-Guided Retrieval Augmented Generation",
+              "authors": [
+                "Xiangrong Zhu",
+                "Yuexiang Xie",
+                "Yi Liu",
+                "Yaliang Li",
+                "Wei Hu"
+              ],
+              "year": 2025,
+              "abstract": "Retrieval-augmented generation (RAG) has emerged as a promising technology for addressing hallucination issues in the responses generated by large language models (LLMs). Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships. In this paper, we propose a novel Knowledge Graph-Guided Retrieval Augmented Generation (KG^2RAG) framework that utilizes knowledge graphs (KGs) to provide fact-level relationships between chunks, improving the diversity and coherence of the retrieved results. Specifically, after performing a semantic-based retrieval to provide seed chunks, KG^2RAG employs a KG-guided chunk expansion process and a KG-based chunk organization process to deliver relevant and important knowledge in well-organized paragraphs. Extensive experiments conducted on the HotpotQA dataset and its variants demonstrate the advantages of KG^2RAG compared to existing RAG-based approaches, in terms of both response quality and retrieval quality.",
+              "url": "https://aclanthology.org/2025.naacl-long.449/",
+              "doi": "10.18653/v1/2025.naacl-long.449",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.334",
+              "title": "tRAG: Term-level Retrieval-Augmented Generation for Domain-Adaptive Retrieval",
+              "authors": [
+                "Dohyeon Lee",
+                "Jongyoon Kim",
+                "Jihyuk Kim",
+                "Seung-won Hwang",
+                "Joonsuk Park"
+              ],
+              "year": 2025,
+              "abstract": "Neural retrieval models have emerged as an effective tool for information retrieval, but their performance suffers when there is a domain shift between training and test data distributions. Recent work aims to construct pseudo-training data for the target domain by generating domain-adapted pseudo-queries using large language models (LLMs). However, we identifies that LLMs exhibit a “seen term bias” where the generated pseudo-queries fail to include relevant “unseen” terms as expected for domain adaptation purposes. To address this limitation, we propose to improve the term recall of unseen query terms, by using term-level Retrieval-Augmented Generation (tRAG). Specifically, unlike existing document-level RAG, we propose to generate domain-specific keywords from all documents in the corpus, including those unseen in any individual document. To filter hallucination, generated keywords are retrieved and reranked, leveraging relevance feedback from both retrievers and LLMs. Experiments on the BEIR benchmark show tRAG significantly improves recall for unseen terms by 10.6% and outperforms LLM and retrieval-augmented generation baselines on overall retrieval performance.",
+              "url": "https://aclanthology.org/2025.naacl-long.334/",
+              "doi": "10.18653/v1/2025.naacl-long.334",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        },
+        {
+          "query": "abstention mechanisms faithful question answering",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-14T13:25:32.770015+00:00",
+          "papers": [
+            {
+              "paper_id": "2024.acl-long.105",
+              "title": "Towards Faithful and Robust LLM Specialists for Evidence-Based Question-Answering",
+              "authors": [
+                "Tobias Schimanski",
+                "Jingwei Ni",
+                "Mathias Kraus",
+                "Elliott Ash",
+                "Markus Leippold"
+              ],
+              "year": 2024,
+              "abstract": "Advances towards more faithful and traceable answers of Large Language Models (LLMs) are crucial for various research and practical endeavors. One avenue in reaching this goal is basing the answers on reliable sources. However, this Evidence-Based QA has proven to work insufficiently with LLMs in terms of citing the correct sources (source quality) and truthfully representing the information within sources (answer attributability). In this work, we systematically investigate how to robustly fine-tune LLMs for better source quality and answer attributability. Specifically, we introduce a data generation pipeline with automated data quality filters, which can synthesize diversified high-quality training and testing data at scale. We further introduce four test sets to benchmark the robustness of fine-tuned specialist models. Extensive evaluation shows that fine-tuning on synthetic data improves performance on both in- and out-of-distribution. Furthermore, we show that data quality, which can be drastically improved by proposed quality filters, matters more than quantity in improving Evidence-Based QA.",
+              "url": "https://aclanthology.org/2024.acl-long.105/",
+              "doi": "10.18653/v1/2024.acl-long.105",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.353",
+              "title": "Knowledge Graph Guided Evaluation of Abstention Techniques",
+              "authors": [
+                "Kinshuk Vasisht",
+                "Navreet Kaur",
+                "Danish Pruthi"
+              ],
+              "year": 2025,
+              "abstract": "To deploy language models safely, it is crucial that they abstain from responding to inappropriate requests. Several prior studies test the safety promises of models based on their effectiveness in blocking malicious requests. In this work, we focus on evaluating the underlying techniques that cause models to abstain. We create ‘SELECT‘, a benchmark derived from a set of benign concepts (e.g., “rivers”) from a knowledge graph. Focusing on benign concepts isolates the effect of safety training, and grounding these concepts in a knowledge graph allows us to study the generalization and specificity of abstention techniques. Using ‘SELECT‘, we benchmark different abstention techniques over six open-weight and closed-source models. We find that the examined techniques indeed cause models to abstain with over 80% abstention rates. However, these techniques are not as effective for descendants of the target concepts, where abstention rates drop by 19%. We also characterize the generalization-specificity trade-offs for different techniques. Overall, no single technique is invariably better than others, and our findings inform practitioners of the various trade-offs involved.",
+              "url": "https://aclanthology.org/2025.naacl-long.353/",
+              "doi": "10.18653/v1/2025.naacl-long.353",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2024.acl-long.185",
+              "title": "Beyond Memorization: The Challenge of Random Memory Access in Language Models",
+              "authors": [
+                "Tongyao Zhu",
+                "Qian Liu",
+                "Liang Pang",
+                "Zhengbao Jiang",
+                "Min-Yen Kan",
+                "Min Lin"
+              ],
+              "year": 2024,
+              "abstract": "Recent developments in Language Models (LMs) have shown their effectiveness in NLP tasks, particularly in knowledge-intensive tasks.However, the mechanisms underlying knowledge storage and memory access within their parameters remain elusive. In this paper, we investigate whether a generative LM (e.g., GPT-2) is able to access its memory sequentially or randomly. Through carefully-designed synthetic tasks, covering the scenarios of full recitation, selective recitation and grounded question answering, we reveal that LMs manage to sequentially access their memory while encountering challenges in randomly accessing memorized content. We find that techniques including recitation and permutation improve the random memory access capability of LMs. Furthermore, by applying this intervention to realistic scenarios of open-domain question answering, we validate that enhancing random access by recitation leads to notable improvements in question answering. The code to reproduce our experiments can be found at https://github.com/sail-sg/lm-random-memory-access.",
+              "url": "https://aclanthology.org/2024.acl-long.185/",
+              "doi": "10.18653/v1/2024.acl-long.185",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.184",
+              "title": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+              "authors": [
+                "Guangya Wan",
+                "Yuqi Wu",
+                "Jie Chen",
+                "Sheng Li"
+              ],
+              "year": 2025,
+              "abstract": "Self-consistency mitigates hallucinations in Large Language Models (LLMs) by sampling multiple reasoning paths, but it lacks a systematic approach to determine the optimal number of samples or select the most faithful rationale. To address this limitation, we introduce Reasoning-Aware Self-Consistency (RASC), a novel framework that enhances sampling efficiency and reasoning faithfulness by dynamically evaluating both outputs and rationales. RASC assesses the quality of reasoning and the consistency of answers for each generated sample, using these assessments to guide early stopping decisions and rationale selection. The framework employs criteria-based stopping and weighted majority voting, enabling more informed choices on when to halt sampling and which rationale to select. Our comprehensive experiments across diverse question-answering datasets demonstrate that RASC outperforms existing methods, reducing sample usage by approximately 70% while maintaining accuracy. Moreover, RASC facilitates the selection of high-fidelity rationales, thereby improving the faithfulness of LLM outputs. Our approach effectively addresses the efficiency-accuracy trade-off in LLM reasoning tasks, offering a new perspective for more nuanced, faithful, and effective utilization of LLMs in resource-constrained environments.",
+              "url": "https://aclanthology.org/2025.naacl-long.184/",
+              "doi": "10.18653/v1/2025.naacl-long.184",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.304",
+              "title": "DreamSync: Aligning Text-to-Image Generation with Image Understanding Feedback",
+              "authors": [
+                "Jiao Sun",
+                "Deqing Fu",
+                "Yushi Hu",
+                "Su Wang",
+                "Royi Rassin",
+                "Da-Cheng Juan",
+                "Dana Alon",
+                "Charles Herrmann",
+                "Sjoerd van Steenkiste",
+                "Ranjay Krishna",
+                "Cyrus Rashtchian"
+              ],
+              "year": 2025,
+              "abstract": "Despite their widespread success, Text-to-Image models (T2I) still struggle to produce images that are both aesthetically pleasing and faithful to the user’s input text. We introduce DreamSync, a simple yet effective training algorithm that improves T2I models to be faithful to the text input. DreamSync utilizes large vision-language models (VLMs) to effectively identify the fine-grained discrepancies between generated images and the text inputs and enable T2I models to self-improve without labeled data. First, it prompts the model to generate several candidate images for a given input text. Then, it uses two VLMs to select the best generation: a Visual Question Answering model that measures the alignment of generated images to the text, and another that measures the generation’s aesthetic quality. After selection, we use LoRA to iteratively finetune the T2I model to guide its generation towards the selected best generations. DreamSync does not need any additional human annotation, model architecture changes, or reinforcement learning. Despite its simplicity, DreamSync improves both the semantic alignment and aesthetic appeal of two diffusion-based T2I models, evidenced by multiple benchmarks (+1.7% on TIFA, +2.9% on DSG1K, +3.4% on VILA aesthetic) and human evaluation shows that DreamSync improves text rendering compared to SDXL by 18.5% on DSG1K benchmark.",
+              "url": "https://aclanthology.org/2025.naacl-long.304/",
+              "doi": "10.18653/v1/2025.naacl-long.304",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        },
+        {
+          "query": "transform retrieval textual entailment RAG",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-14T13:25:32.772591+00:00",
+          "papers": [
+            {
+              "paper_id": "2025.naacl-short.50",
+              "title": "Transform Retrieval for Textual Entailment in RAG",
+              "authors": [
+                "Xin Liang",
+                "Quan Guo"
+              ],
+              "year": 2025,
+              "abstract": "In this paper, we introduce Transform Retrieval, a novel approach aimed at improving Textual Entailment Retrieval within the framework of Retrieval-Augmented Generation (RAG). While RAG has shown promise in enhancing Large Language Models by retrieving relevant documents to extract specific knowledge or mitigate hallucination, current retrieval methods often prioritize relevance without ensuring the retrieved documents semantically support answering the queries. Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus. We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model. Experimental results show that Transform Retrieval with simple MLP consistently approaches the skyline across multiple datasets, demonstrating the method’s effectiveness. The high performance on HotpotQA highlights its strength in many-to-many retrieval scenarios.",
+              "url": "https://aclanthology.org/2025.naacl-short.50/",
+              "doi": "10.18653/v1/2025.naacl-short.50",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.naacl-long.310",
+              "title": "VisDoM: Multi-Document QA with Visually Rich Elements Using Multimodal Retrieval-Augmented Generation",
+              "authors": [
+                "Manan Suri",
+                "Puneet Mathur",
+                "Franck Dernoncourt",
+                "Kanika Goswami",
+                "Ryan A. Rossi",
+                "Dinesh Manocha"
+              ],
+              "year": 2025,
+              "abstract": "Understanding information from a collection of multiple documents, particularly those with visually rich elements, is important for document-grounded question answering. This paper introduces VisDoMBench, the first comprehensive benchmark designed to evaluate QA systems in multi-document settings with rich multimodal content, including tables, charts, and presentation slides. We propose VisDoMRAG, a novel multimodal Retrieval Augmented Generation (RAG) approach that simultaneously utilizes visual and textual RAG, combining robust visual retrieval capabilities with sophisticated linguistic reasoning. VisDoMRAG employs a multi-step reasoning process encompassing evidence curation and chain-of-thought reasoning for concurrent textual and visual RAG pipelines. A key novelty of VisDoMRAG is its consistency-constrained modality fusion mechanism, which aligns the reasoning processes across modalities at inference time to produce a coherent final answer. This leads to enhanced accuracy in scenarios where critical information is distributed across modalities and improved answer verifiability through implicit context attribution. Through extensive experiments involving open-source and proprietary large language models, we benchmark state-of-the-art document QA methods on VisDoMBench. Extensive results show that VisDoMRAG outperforms unimodal and long-context LLM baselines for end-to-end multimodal document QA by 12-20%.",
+              "url": "https://aclanthology.org/2025.naacl-long.310/",
+              "doi": "10.18653/v1/2025.naacl-long.310",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.sigdial-1.31",
+              "title": "Beyond Simple Personas: Evaluating LLMs and Relevance Models for Character-Consistent Dialogue",
+              "authors": [
+                "Debaditya Pal",
+                "David Traum"
+              ],
+              "year": 2025,
+              "abstract": "Dialogue systems often rely on overly simplistic persona representations, limiting their capacity to portray realistic, nuanced characters. In this paper, we explore how well existing persona-grounding methods capture complex personalities using two character-rich domains—Sgt Blackwell (single-character) and Twins (two-character)—described extensively through detailed narratives. We compare early fusion techniques, Retrieval-Augmented Generation (RAG), and relevance-based approaches. Evaluations across entailment, persona alignment, and hallucination metrics reveal distinct trade-offs: Knowledge Graph fusion notably reduces hallucinations and maintains relevance, Persona fusion strongly preserves relevance but has higher hallucination rates, and RAG provides fast, fluent responses. Our findings emphasize the critical role of structured persona grounding in achieving nuanced personality modeling.",
+              "url": "https://aclanthology.org/2025.sigdial-1.31/",
+              "doi": "10.18653/v1/2025.sigdial-1.31",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.064Z"
+            },
+            {
+              "paper_id": "2024.acl-long.520",
+              "title": "Beyond Recognising Entailment: Formalising Natural Language Inference from an Argumentative Perspective",
+              "authors": [
+                "Ameer Saadat-Yazdi",
+                "Nadin Kökciyan"
+              ],
+              "year": 2024,
+              "abstract": "In argumentation theory, argument schemes are a characterisation of stereotypical patterns of inference. There has been little work done to develop computational approaches to identify these schemes in natural language. Moreover, advancements in recognizing textual entailment lack a standardized definition of inference, which makes it challenging to compare methods trained on different datasets and rely on the generalisability of their results. In this work, we propose a rigorous approach to align entailment recognition with argumentation theory. Wagemans’ Periodic Table of Arguments (PTA), a taxonomy of argument schemes, provides the appropriate framework to unify these two fields. To operationalise the theoretical model, we introduce a tool to assist humans in annotating arguments according to the PTA. Beyond providing insights into non-expert annotator training, we present Kialo-PTA24, the first multi-topic dataset for the PTA. Finally, we benchmark the performance of pre-trained language models on various aspects of argument analysis. Our experiments show that the task of argument canonicalisation poses a significant challenge for state-of-the-art models, suggesting an inability to represent argumentative reasoning and a direction for future investigation.",
+              "url": "https://aclanthology.org/2024.acl-long.520/",
+              "doi": "10.18653/v1/2024.acl-long.520",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.409Z"
+            },
+            {
+              "paper_id": "2025.naacl-industry.79",
+              "title": "HyPA-RAG: A Hybrid Parameter Adaptive Retrieval-Augmented Generation System for AI Legal and Policy Applications",
+              "authors": [
+                "Rishi Kalra",
+                "Zekun Wu",
+                "Ayesha Gulley",
+                "Airlie Hilliard",
+                "Xin Guan",
+                "Adriano Koshiyama",
+                "Philip Colin Treleaven"
+              ],
+              "year": 2025,
+              "abstract": "Large Language Models (LLMs) face limitations in AI legal and policy applications due to outdated knowledge, hallucinations, and poor reasoning in complex contexts. Retrieval-Augmented Generation (RAG) systems address these issues by incorporating external knowledge, but suffer from retrieval errors, ineffective context integration, and high operational costs. This paper presents the Hybrid Parameter-Adaptive RAG (HyPA-RAG) system, designed for the AI legal domain, with NYC Local Law 144 (LL144) as the test case. HyPA-RAG integrates a query complexity classifier for adaptive parameter tuning, a hybrid retrieval approach combining dense, sparse, and knowledge graph methods, and a comprehensive evaluation framework with tailored question types and metrics. Testing on LL144 demonstrates that HyPA-RAG enhances retrieval accuracy, response fidelity, and contextual precision, offering a robust and adaptable solution for high-stakes legal and policy applications.",
+              "url": "https://aclanthology.org/2025.naacl-industry.79/",
+              "doi": "10.18653/v1/2025.naacl-industry.79",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        },
+        {
+          "query": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification We propose a two-stage inference framework combining a lightweight query transform for semantic alignment and a structured verification module. First, we adopt a frozen encoder with a lightweight le",
+          "provider": "local_bm25_v1:f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+          "retrieved_at": "2026-11-14T13:25:32.778064+00:00",
+          "papers": [
+            {
+              "paper_id": "2025.naacl-short.50",
+              "title": "Transform Retrieval for Textual Entailment in RAG",
+              "authors": [
+                "Xin Liang",
+                "Quan Guo"
+              ],
+              "year": 2025,
+              "abstract": "In this paper, we introduce Transform Retrieval, a novel approach aimed at improving Textual Entailment Retrieval within the framework of Retrieval-Augmented Generation (RAG). While RAG has shown promise in enhancing Large Language Models by retrieving relevant documents to extract specific knowledge or mitigate hallucination, current retrieval methods often prioritize relevance without ensuring the retrieved documents semantically support answering the queries. Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus. We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model. Experimental results show that Transform Retrieval with simple MLP consistently approaches the skyline across multiple datasets, demonstrating the method’s effectiveness. The high performance on HotpotQA highlights its strength in many-to-many retrieval scenarios.",
+              "url": "https://aclanthology.org/2025.naacl-short.50/",
+              "doi": "10.18653/v1/2025.naacl-short.50",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.777Z"
+            },
+            {
+              "paper_id": "2025.sdp-1.34",
+              "title": "From RAG to Reality: Coarse-Grained Hallucination Detection via NLI Fine-Tuning",
+              "authors": [
+                "Daria Galimzianova",
+                "Aleksandr Boriskin",
+                "Grigory Arshinov"
+              ],
+              "year": 2025,
+              "abstract": "We present our submission to SciHal Subtask 1: coarse-grained hallucination detection for scientific question answering. We frame hallucination detection as an NLI-style three-way classification (entailment, contradiction, unverifiable) and show that simple fine-tuning of NLI-adapted encoder models on task data outperforms more elaborate feature-based pipelines and large language model prompting. In particular, DeBERTa-V3-large, a model pretrained on five diverse NLI corpora, achieves the highest weighted F1 on the public leaderboard. We additionally explore a pipeline combining joint claim–reference embeddings and NLI softmax probabilities fed into a classifier, but find its performance consistently below direct encoder fine-tuning. Our findings demonstrate that, for reference-grounded hallucination detection, targeted encoder fine-tuning remains the most accurate and efficient approach.",
+              "url": "https://aclanthology.org/2025.sdp-1.34/",
+              "doi": "10.18653/v1/2025.sdp-1.34",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:41.753Z"
+            },
+            {
+              "paper_id": "2025.sdp-1.25",
+              "title": "Winning ClimateCheck: A Multi-Stage System with BM25, BGE-Reranker Ensembles, and LLM-based Analysis for Scientific Abstract Retrieval",
+              "authors": [
+                "Junjun Wang",
+                "Kunlong Chen",
+                "Zhaoqun Chen",
+                "Peng He",
+                "Wenlu Zheng"
+              ],
+              "year": 2025,
+              "abstract": "The ClimateCheck shared task addresses the critical challenge of grounding social media claims about climate change in scientific literature. This paper details our winning approach. For abstract retrieval, we propose a multi-stage pipeline: (1) initial candidate generation from a corpus of ~400,000 abstracts using BM25; (2) fine-grained reranking of these candidates using an ensemble of BGE-Reranker cross-encoder models, fine-tuned with a specialized training set incorporating both random and hard negative samples; and (3) final list selection based on an RRF-ensembled score. For the verification aspect, we leverage Gemini 2.5 Pro to classify the relationship (Supports, Refutes, Not Enough Information) between claims and the retrieved abstracts, guided by carefully engineered prompts. Our system achieved first place in both subtasks, demonstrating the efficacy of combining robust sparse retrieval, powerful neural rerankers, strategic negative sampling, and LLM-based semantic analysis for connecting social media discourse to scientific evidence. Part of the example code: https://anonymous.4open.science/r/climatecheck_solution-1120",
+              "url": "https://aclanthology.org/2025.sdp-1.25/",
+              "doi": "10.18653/v1/2025.sdp-1.25",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:41.753Z"
+            },
+            {
+              "paper_id": "2025.sdp-1.28",
+              "title": "ClimateCheck2025: Multi-Stage Retrieval Meets LLMs for Automated Scientfic Fact-Checking",
+              "authors": [
+                "Anna Kiepura",
+                "Jessica Lam"
+              ],
+              "year": 2025,
+              "abstract": "Misinformation on social media poses significant risks, particularly when it concerns critical scientific issues such as climate change. One promising direction for mitigation is the development of automated fact-checking systems that verify claims against authoritative scientific sources. In this work, we present our solution to the ClimateCheck2025 shared task, which involves retrieving and classifying scientific abstracts as evidence for or against given claims. Our system is built around a multi-stage hybrid retrieval pipeline that integrates lexical, sparse neural, and dense neural retrievers, followed by cross-encoder and large language model (LLM)-based reranking stages. For stance classification, we employ prompting strategies with LLMs to determine whether a retrieved abstract supports, refutes, or provides no evidence for a given claim. Our approach achieves the second-highest overall score across both subtasks of the benchmark and significantly surpasses the official baseline by 53.79% on average across Recall@2, Recall@5, Recall@10, and B-Pref. Notably, we achieve state-of-the-art performance in Recall@2. These results highlight the effectiveness of combining structured retrieval architectures with the emergent reasoning capabilities of LLMs for scientific fact verification, especially in domains where reliable human annotation is scarce and timely intervention is essential.",
+              "url": "https://aclanthology.org/2025.sdp-1.28/",
+              "doi": "10.18653/v1/2025.sdp-1.28",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:41.753Z"
+            },
+            {
+              "paper_id": "2025.sigdial-1.31",
+              "title": "Beyond Simple Personas: Evaluating LLMs and Relevance Models for Character-Consistent Dialogue",
+              "authors": [
+                "Debaditya Pal",
+                "David Traum"
+              ],
+              "year": 2025,
+              "abstract": "Dialogue systems often rely on overly simplistic persona representations, limiting their capacity to portray realistic, nuanced characters. In this paper, we explore how well existing persona-grounding methods capture complex personalities using two character-rich domains—Sgt Blackwell (single-character) and Twins (two-character)—described extensively through detailed narratives. We compare early fusion techniques, Retrieval-Augmented Generation (RAG), and relevance-based approaches. Evaluations across entailment, persona alignment, and hallucination metrics reveal distinct trade-offs: Knowledge Graph fusion notably reduces hallucinations and maintains relevance, Persona fusion strongly preserves relevance but has higher hallucination rates, and RAG provides fast, fluent responses. Our findings emphasize the critical role of structured persona grounding in achieving nuanced personality modeling.",
+              "url": "https://aclanthology.org/2025.sigdial-1.31/",
+              "doi": "10.18653/v1/2025.sigdial-1.31",
+              "source": "ACL Anthology official XML snapshot",
+              "retrieved_at": "2026-11-08T10:49:42.064Z"
+            }
+          ],
+          "status": "ok",
+          "error": null,
+          "cache_hit": false
+        }
+      ],
+      "error": null,
+      "evidence_status": "verified_excerpt"
+    },
+    {
+      "role": "feasibility",
+      "review": {
+        "role": "feasibility",
+        "novelty": null,
+        "feasibility": 3,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposed project outlines an inference-time RAG verification and abstention framework relying on a 7B quantized model and a lightweight cross-encoder within a 12 GB VRAM consumer GPU. While 4-bit INT quantization makes hosting a 7B model feasible on a 12 GB card, loading an auxiliary cross-encoder concurrently alongside the main generation model can quickly exceed memory limits during inference. Furthermore, the timeline of 6 weeks is tight for setting up the transform-retrieval alignment, training or calibrating the contradiction gate, and conducting thorough benchmarks on multi-hop datasets like HotpotQA.",
+        "problems": [
+          "Concurrent memory overhead of running both a 7B generation model (even quantized) and an auxiliary cross-encoder NLI model within a strict 12 GB VRAM budget.",
+          "Complexity of implementing and tuning the transform-retrieval embedding alignment model within a 6-week academic timeframe.",
+          "Potential brittleness of threshold-based contradiction gates when handling nuanced multi-hop reasoning contexts."
+        ],
+        "improvements": [
+          "Utilize a shared encoder backbone or API-based lightweight NLI scoring to minimize local VRAM pressure.",
+          "Scope down the transform-retrieval component to a simpler re-ranking heuristic or zero-shot cross-encoder filtering in the initial weeks.",
+          "Incorporate a rigorous memory profiling pilot check before scaling batch evaluations."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-short.50",
+            "claim": "Transform retrieval optimizes alignment between query and document embeddings for semantic entailment using a frozen pre-trained encoder.",
+            "supporting_excerpt": "We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "VRAM consumption depends heavily on the specific context length, batch size, and the exact quantization backend used, which may cause out-of-memory errors during concurrent cross-encoder scoring.",
+        "tradeoffs": [
+          "Balancing the computational overhead of running an auxiliary cross-encoder for contradiction detection against the strict 12 GB VRAM memory constraint."
+        ],
+        "falsification_test": "If running the 7B quantized model concurrently with the cross-encoder NLI module exceeds 11.5 GB VRAM at a batch size of 1, or if the contradiction gate fails to outperform random abstention on ambiguous HotpotQA subsets, the core feasibility assumption is falsified."
+      },
+      "search": [],
+      "error": null,
+      "evidence_status": "verified_excerpt"
+    },
+    {
+      "role": "clarity",
+      "review": {
+        "role": "clarity",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": 3,
+        "importance": 4,
+        "explanation": "The proposal addresses an important problem in retrieval-augmented generation: handling contradictory or insufficient evidence and deciding when a model should abstain. However, the methodology section lacks operational clarity regarding how the cross-encoder NLI scoring module and the contradiction gate interact computationally, how threshold calibration is performed, and how the system distinguishes between insufficient evidence and active inter-document contradictions.",
+        "problems": [
+          "The operational definition of the 'contradiction gate' threshold is insufficiently specified, leaving it unclear how false abstention rates will be controlled during deployment.",
+          "The integration mechanism between the lightweight query transformer and the downstream cross-encoder NLI scoring module lacks a concrete algorithmic description.",
+          "The proposal does not detail how the system isolates whether an abstention is triggered by inter-document contradiction versus a lack of entailment."
+        ],
+        "improvements": [
+          "Provide a formal algorithmic description or pseudocode detailing the input-output flow from the transform retrieval stage through the cross-encoder to the abstention gate.",
+          "Specify the exact calibration dataset and validation metric used to set the threshold parameters for the contradiction gate.",
+          "Define concrete evaluation criteria for distinguishing between false abstention on answerable queries and correct abstention on contradictory contexts."
+        ],
+        "evidence": [],
+        "uncertainty": "The proposal does not fully describe how the cross-encoder handles multi-passage pairwise combinations without incurring excessive latency under the 12 GB VRAM constraint.",
+        "tradeoffs": [
+          "Balancing the computational overhead of evaluating pairwise passage consistency via a cross-encoder against the strict 12 GB VRAM and inference latency limits."
+        ],
+        "falsification_test": "If the cross-encoder NLI scoring module fails to achieve higher Abstention Precision than the sequence-level log-probability baseline on the HotpotQA contradictory subset while maintaining identical answer recall, the proposed contradiction gate hypothesis is falsified."
+      },
+      "search": [],
+      "error": null,
+      "evidence_status": "not_required"
+    },
+    {
+      "role": "contrarian",
+      "review": {
+        "role": "contrarian",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposal introduces a clever pipeline combining query transformation and a lightweight cross-encoder for contradiction gating to trigger model abstention under hardware constraints (12 GB VRAM). However, the central mechanism relies on the assumption that an off-the-shelf cross-encoder NLI model can reliably detect inter-document contradictions and insufficient evidence without explicit multi-step reasoning or full atomic fact decomposition. In multi-hop settings like HotpotQA, evidence is often complementary rather than contradictory; a cross-encoder scoring passages independently against the query will likely misinterpret additive evidence fragments as contradictory or fail to capture subtle cross-document dependencies. Furthermore, forcing a hard abstention gate based purely on pairwise NLI thresholds risks catastrophic false negatives, drastically harming answer recall on complex queries where evidence span distributions are non-trivial.",
+        "problems": [
+          "A standalone cross-encoder evaluating pairwise passage consistency and entailment against the query fails to capture multi-hop relational dependencies inherent in complex datasets like HotpotQA, treating complementary evidence as contradictory.",
+          "The 12 GB VRAM constraint with 4-bit INT quantization for a 7B generator plus concurrent execution of a query transformer and a cross-encoder NLI scoring module creates severe memory fragmentation and latency overhead during active batch inference.",
+          "Relying on a static confidence margin and contradiction gate threshold ignores prompt-dependent sensitivity, leading to high false abstention rates on multi-document syntheses where partial overlap is sufficient for answering."
+        ],
+        "improvements": [
+          "Incorporate a lightweight graph-guided chunk organization or sentence-level attribution filter (similar to structured evidence expansion) rather than raw pairwise cross-encoder scoring to better handle multi-hop synthesis.",
+          "Replace the hard threshold contradiction gate with a calibrated reinforcement learning-free verbalized confidence scorer evaluated directly within the quantized generator's generation prefix.",
+          "Provide a detailed memory profiling budget demonstrating that simultaneous residency of the frozen encoder, query transformer, cross-encoder, and 7B quantized model fits safely within the 11.5 GB ceiling without incurring slow CPU-GPU tensor offloading."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.254",
+            "claim": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+            "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2025.naacl-long.449",
+            "claim": "Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships.",
+            "supporting_excerpt": "Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The effectiveness of the proposed contradiction gate depends entirely on the cross-encoder's out-of-domain generalization on multi-hop datasets, which remains unverified under resource-restricted 4-bit quantization.",
+        "tradeoffs": [
+          "Using a lightweight cross-encoder reduces computational latency and VRAM footprint compared to multi-step LLM decomposition, but sacrifices the granular structural reasoning required to distinguish genuine contradiction from complementary multi-hop evidence."
+        ],
+        "falsification_test": "Evaluate the proposed framework on a controlled subset of HotpotQA where multi-hop evidence passages are artificially decoupled into non-overlapping contexts. If the cross-encoder contradiction gate triggers abstention on >40% of fully answerable instances due to misinterpreting complementary facts as contradictory, the core mechanism fails to differentiate additive multi-hop evidence from genuine logical conflict."
+      },
+      "search": [],
+      "error": null,
+      "evidence_status": "verified_excerpt"
+    }
+  ],
+  "final_aggregation": {
+    "independent_reviews": [
+      {
+        "role": "novelty",
+        "novelty": 2,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposed research combines query transformation for semantic alignment in retrieval-augmented generation with a cross-encoder module for NLI scoring and contradiction detection to trigger model abstention. This architecture heavily overlaps with existing work: Transform Retrieval (Li & Guo, 2025) already addresses semantic entailment alignment via a frozen encoder and a lightweight query transform model, while natural language inference (NLI) classification and cross-encoder scoring for hallucination and stance detection are well-established paradigms in reference-grounded question answering and fact-checking (Galimzianova et al., 2025; Wang et al., 2025). Furthermore, applying verification checks prior to generation to prevent hallucinations has been explored in various evidence-based frameworks. The combination of these existing components represents an incremental integration rather than a fundamentally new mechanism.",
+        "problems": [
+          "The core idea of aligning query embeddings specifically for semantic entailment using a frozen encoder and a lightweight transform model is already introduced by Transform Retrieval (Li & Guo, 2025).",
+          "Framing hallucination detection and evidence consistency verification as an NLI classification task using cross-encoders or fine-tuned NLI models is standard practice in recent literature (Galimzianova et al., 2025).",
+          "Combining retrieval alignment, contradiction scoring, and threshold-based abstention is an engineering integration of existing modules rather than a novel conceptual breakthrough."
+        ],
+        "improvements": [
+          "Ablate the query transformation module against standard dense retrieval to demonstrate whether semantic entailment alignment provides gains over off-the-shelf cross-encoders under strict 12GB VRAM constraints.",
+          "Formally define the contradiction gate function and provide theoretical or empirical validation on how threshold tuning interacts with false abstention rates on multi-hop datasets like HotpotQA.",
+          "Compare the computational overhead and latency of the proposed cross-encoder NLI scoring against sequence-level log-probability abstention baselines to justify the added complexity."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-short.50",
+            "claim": "Transform Retrieval addresses semantic entailment alignment by transforming query embeddings without re-encoding the document corpus.",
+            "supporting_excerpt": "Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus.",
+            "relation": "overlaps"
+          },
+          {
+            "paper_id": "2025.naacl-short.50",
+            "claim": "Transform Retrieval utilizes a frozen pre-trained encoder combined with a lightweight transform model and contrastive learning to optimize query-document entailment alignment.",
+            "supporting_excerpt": "We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model.",
+            "relation": "overlaps"
+          },
+          {
+            "paper_id": "2025.sdp-1.34",
+            "claim": "Hallucination and contradiction detection are framed as NLI-style classification using fine-tuned encoder models.",
+            "supporting_excerpt": "We frame hallucination detection as an NLI-style three-way classification (entailment, contradiction, unverifiable) and show that simple fine-tuning of NLI-adapted encoder models on task data outperforms more elaborate feature-based pipelines and large language model prompting.",
+            "relation": "overlaps"
+          }
+        ],
+        "uncertainty": "The search scope was limited to retrieved papers from ACL Anthology snapshots covering RAG hallucination, textual entailment retrieval, and abstention mechanisms. While considerable overlap exists in individual components, specific combinations under 12GB VRAM hardware limits may exhibit practical engineering differences.",
+        "tradeoffs": [
+          "Integrating a cross-encoder verification module alongside a 7B quantized generator increases inference latency and memory management complexity within the 12 GB VRAM constraint."
+        ],
+        "falsification_test": "If replacing the proposed query transform and cross-encoder abstention gate with a standard off-the-shelf cross-encoder reranker and a simple log-probability threshold yields statistically indistinguishable Abstention Precision/Recall on HotpotQA and REVEAL, the claimed contribution of the integrated framework is falsified."
+      },
+      {
+        "role": "feasibility",
+        "novelty": null,
+        "feasibility": 3,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposed project outlines an inference-time RAG verification and abstention framework relying on a 7B quantized model and a lightweight cross-encoder within a 12 GB VRAM consumer GPU. While 4-bit INT quantization makes hosting a 7B model feasible on a 12 GB card, loading an auxiliary cross-encoder concurrently alongside the main generation model can quickly exceed memory limits during inference. Furthermore, the timeline of 6 weeks is tight for setting up the transform-retrieval alignment, training or calibrating the contradiction gate, and conducting thorough benchmarks on multi-hop datasets like HotpotQA.",
+        "problems": [
+          "Concurrent memory overhead of running both a 7B generation model (even quantized) and an auxiliary cross-encoder NLI model within a strict 12 GB VRAM budget.",
+          "Complexity of implementing and tuning the transform-retrieval embedding alignment model within a 6-week academic timeframe.",
+          "Potential brittleness of threshold-based contradiction gates when handling nuanced multi-hop reasoning contexts."
+        ],
+        "improvements": [
+          "Utilize a shared encoder backbone or API-based lightweight NLI scoring to minimize local VRAM pressure.",
+          "Scope down the transform-retrieval component to a simpler re-ranking heuristic or zero-shot cross-encoder filtering in the initial weeks.",
+          "Incorporate a rigorous memory profiling pilot check before scaling batch evaluations."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2025.naacl-short.50",
+            "claim": "Transform retrieval optimizes alignment between query and document embeddings for semantic entailment using a frozen pre-trained encoder.",
+            "supporting_excerpt": "We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "VRAM consumption depends heavily on the specific context length, batch size, and the exact quantization backend used, which may cause out-of-memory errors during concurrent cross-encoder scoring.",
+        "tradeoffs": [
+          "Balancing the computational overhead of running an auxiliary cross-encoder for contradiction detection against the strict 12 GB VRAM memory constraint."
+        ],
+        "falsification_test": "If running the 7B quantized model concurrently with the cross-encoder NLI module exceeds 11.5 GB VRAM at a batch size of 1, or if the contradiction gate fails to outperform random abstention on ambiguous HotpotQA subsets, the core feasibility assumption is falsified."
+      },
+      {
+        "role": "clarity",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": 3,
+        "importance": 4,
+        "explanation": "The proposal addresses an important problem in retrieval-augmented generation: handling contradictory or insufficient evidence and deciding when a model should abstain. However, the methodology section lacks operational clarity regarding how the cross-encoder NLI scoring module and the contradiction gate interact computationally, how threshold calibration is performed, and how the system distinguishes between insufficient evidence and active inter-document contradictions.",
+        "problems": [
+          "The operational definition of the 'contradiction gate' threshold is insufficiently specified, leaving it unclear how false abstention rates will be controlled during deployment.",
+          "The integration mechanism between the lightweight query transformer and the downstream cross-encoder NLI scoring module lacks a concrete algorithmic description.",
+          "The proposal does not detail how the system isolates whether an abstention is triggered by inter-document contradiction versus a lack of entailment."
+        ],
+        "improvements": [
+          "Provide a formal algorithmic description or pseudocode detailing the input-output flow from the transform retrieval stage through the cross-encoder to the abstention gate.",
+          "Specify the exact calibration dataset and validation metric used to set the threshold parameters for the contradiction gate.",
+          "Define concrete evaluation criteria for distinguishing between false abstention on answerable queries and correct abstention on contradictory contexts."
+        ],
+        "evidence": [],
+        "uncertainty": "The proposal does not fully describe how the cross-encoder handles multi-passage pairwise combinations without incurring excessive latency under the 12 GB VRAM constraint.",
+        "tradeoffs": [
+          "Balancing the computational overhead of evaluating pairwise passage consistency via a cross-encoder against the strict 12 GB VRAM and inference latency limits."
+        ],
+        "falsification_test": "If the cross-encoder NLI scoring module fails to achieve higher Abstention Precision than the sequence-level log-probability baseline on the HotpotQA contradictory subset while maintaining identical answer recall, the proposed contradiction gate hypothesis is falsified."
+      },
+      {
+        "role": "contrarian",
+        "novelty": null,
+        "feasibility": null,
+        "clarity": null,
+        "importance": null,
+        "explanation": "The proposal introduces a clever pipeline combining query transformation and a lightweight cross-encoder for contradiction gating to trigger model abstention under hardware constraints (12 GB VRAM). However, the central mechanism relies on the assumption that an off-the-shelf cross-encoder NLI model can reliably detect inter-document contradictions and insufficient evidence without explicit multi-step reasoning or full atomic fact decomposition. In multi-hop settings like HotpotQA, evidence is often complementary rather than contradictory; a cross-encoder scoring passages independently against the query will likely misinterpret additive evidence fragments as contradictory or fail to capture subtle cross-document dependencies. Furthermore, forcing a hard abstention gate based purely on pairwise NLI thresholds risks catastrophic false negatives, drastically harming answer recall on complex queries where evidence span distributions are non-trivial.",
+        "problems": [
+          "A standalone cross-encoder evaluating pairwise passage consistency and entailment against the query fails to capture multi-hop relational dependencies inherent in complex datasets like HotpotQA, treating complementary evidence as contradictory.",
+          "The 12 GB VRAM constraint with 4-bit INT quantization for a 7B generator plus concurrent execution of a query transformer and a cross-encoder NLI scoring module creates severe memory fragmentation and latency overhead during active batch inference.",
+          "Relying on a static confidence margin and contradiction gate threshold ignores prompt-dependent sensitivity, leading to high false abstention rates on multi-document syntheses where partial overlap is sufficient for answering."
+        ],
+        "improvements": [
+          "Incorporate a lightweight graph-guided chunk organization or sentence-level attribution filter (similar to structured evidence expansion) rather than raw pairwise cross-encoder scoring to better handle multi-hop synthesis.",
+          "Replace the hard threshold contradiction gate with a calibrated reinforcement learning-free verbalized confidence scorer evaluated directly within the quantized generator's generation prefix.",
+          "Provide a detailed memory profiling budget demonstrating that simultaneous residency of the frozen encoder, query transformer, cross-encoder, and 7B quantized model fits safely within the 11.5 GB ceiling without incurring slow CPU-GPU tensor offloading."
+        ],
+        "evidence": [
+          {
+            "paper_id": "2024.acl-long.254",
+            "claim": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+            "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+            "relation": "supports"
+          },
+          {
+            "paper_id": "2025.naacl-long.449",
+            "claim": "Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships.",
+            "supporting_excerpt": "Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships.",
+            "relation": "supports"
+          }
+        ],
+        "uncertainty": "The effectiveness of the proposed contradiction gate depends entirely on the cross-encoder's out-of-domain generalization on multi-hop datasets, which remains unverified under resource-restricted 4-bit quantization.",
+        "tradeoffs": [
+          "Using a lightweight cross-encoder reduces computational latency and VRAM footprint compared to multi-step LLM decomposition, but sacrifices the granular structural reasoning required to distinguish genuine contradiction from complementary multi-hop evidence."
+        ],
+        "falsification_test": "Evaluate the proposed framework on a controlled subset of HotpotQA where multi-hop evidence passages are artificially decoupled into non-overlapping contexts. If the cross-encoder contradiction gate triggers abstention on >40% of fully answerable instances due to misinterpreting complementary facts as contradictory, the core mechanism fails to differentiate additive multi-hop evidence from genuine logical conflict."
+      }
+    ],
+    "scores_by_role": {
+      "novelty": {
+        "novelty": 2
+      },
+      "feasibility": {
+        "feasibility": 3
+      },
+      "clarity": {
+        "clarity": 3
+      },
+      "importance": {
+        "clarity": 4
+      }
+    },
+    "score_disagreements": [],
+    "qualitative_tradeoffs": [
+      {
+        "role": "novelty",
+        "tension": "Integrating a cross-encoder verification module alongside a 7B quantized generator increases inference latency and memory management complexity within the 12 GB VRAM constraint."
+      },
+      {
+        "role": "feasibility",
+        "tension": "Balancing the computational overhead of running an auxiliary cross-encoder for contradiction detection against the strict 12 GB VRAM memory constraint."
+      },
+      {
+        "role": "clarity",
+        "tension": "Balancing the computational overhead of evaluating pairwise passage consistency via a cross-encoder against the strict 12 GB VRAM and inference latency limits."
+      },
+      {
+        "role": "contrarian",
+        "tension": "Using a lightweight cross-encoder reduces computational latency and VRAM footprint compared to multi-step LLM decomposition, but sacrifices the granular structural reasoning required to distinguish genuine contradiction from complementary multi-hop evidence."
+      }
+    ],
+    "score_policy": "Only designated role scores are aggregated. Distinct scores do not imply distinct model beliefs.",
+    "instruction": "Preserve all criticisms and textual trade-offs; absence of score disagreement does not imply agreement.",
+    "failures": [],
+    "evidence_status": {
+      "novelty": "verified_excerpt",
+      "feasibility": "verified_excerpt",
+      "clarity": "not_required",
+      "contrarian": "verified_excerpt"
+    }
+  },
+  "final_review_status": "completed",
+  "evidence_audit": {
+    "assessments": [
+      {
+        "citation_id": "c_9f073377c8b05a70b51d",
+        "verdict": "supported",
+        "explanation": "The cited excerpt directly states that Transform Retrieval addresses the gap by transforming query embeddings to align with semantic entailment without re-encoding the document corpus."
+      },
+      {
+        "citation_id": "c_0e3f95ced9da0e450825",
+        "verdict": "supported",
+        "explanation": "The excerpt explicitly mentions using a transform model with contrastive learning and BERT as a frozen pre-trained encoder to optimize query-document alignment."
+      },
+      {
+        "citation_id": "c_4dd6406362eaae6e687e",
+        "verdict": "supported",
+        "explanation": "The excerpt confirms that hallucination detection is framed as an NLI-style three-way classification using fine-tuned encoder models."
+      },
+      {
+        "citation_id": "c_ce4b5ec5c3d0f3aa33cd",
+        "verdict": "supported",
+        "explanation": "The source explicitly discusses optimizing alignment between transformed query embeddings and document embeddings for better entailment using a frozen encoder."
+      },
+      {
+        "citation_id": "c_d6170e2c42292950930f",
+        "verdict": "supported",
+        "explanation": "The excerpt explicitly reports that evaluation on REVEAL shows verifiers struggle at verifying reasoning chains, specifically verifying logical correctness and detecting contradictions."
+      },
+      {
+        "citation_id": "c_ca8f7e5a933b8e8a90a7",
+        "verdict": "supported",
+        "explanation": "The source states that existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks while ignoring their intrinsic relationships."
+      }
+    ],
+    "limitations": "The evaluation relies solely on matching the text claims against the provided source paper abstracts without accessing full-text contents or verifying broader context."
+  },
+  "evidence_audit_error": null,
+  "evidence_audit_citations": {
+    "c_9f073377c8b05a70b51d": {
+      "citation_id": "c_9f073377c8b05a70b51d",
+      "paper_id": "2025.naacl-short.50",
+      "claim": "Transform Retrieval addresses semantic entailment alignment by transforming query embeddings without re-encoding the document corpus.",
+      "supporting_excerpt": "Transform Retrieval addresses this gap by transforming query embeddings to better align with semantic entailment without re-encoding the document corpus.",
+      "relation": "overlaps"
+    },
+    "c_0e3f95ced9da0e450825": {
+      "citation_id": "c_0e3f95ced9da0e450825",
+      "paper_id": "2025.naacl-short.50",
+      "claim": "Transform Retrieval utilizes a frozen pre-trained encoder combined with a lightweight transform model and contrastive learning to optimize query-document entailment alignment.",
+      "supporting_excerpt": "We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model.",
+      "relation": "overlaps"
+    },
+    "c_4dd6406362eaae6e687e": {
+      "citation_id": "c_4dd6406362eaae6e687e",
+      "paper_id": "2025.sdp-1.34",
+      "claim": "Hallucination and contradiction detection are framed as NLI-style classification using fine-tuned encoder models.",
+      "supporting_excerpt": "We frame hallucination detection as an NLI-style three-way classification (entailment, contradiction, unverifiable) and show that simple fine-tuning of NLI-adapted encoder models on task data outperforms more elaborate feature-based pipelines and large language model prompting.",
+      "relation": "overlaps"
+    },
+    "c_ce4b5ec5c3d0f3aa33cd": {
+      "citation_id": "c_ce4b5ec5c3d0f3aa33cd",
+      "paper_id": "2025.naacl-short.50",
+      "claim": "Transform retrieval optimizes alignment between query and document embeddings for semantic entailment using a frozen pre-trained encoder.",
+      "supporting_excerpt": "We achieve this by using a transform model and employing a contrastive learning strategy to optimize the alignment between transformed query embeddings and document embeddings for better entailment.We evaluated the framework using BERT as frozen pre-trained encoder and compared it with a fully fine-tuned skyline model.",
+      "relation": "supports"
+    },
+    "c_d6170e2c42292950930f": {
+      "citation_id": "c_d6170e2c42292950930f",
+      "paper_id": "2024.acl-long.254",
+      "claim": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+      "supporting_excerpt": "Evaluation on REVEAL shows that verifiers struggle at verifying reasoning chains - in particular, verifying logical correctness and detecting contradictions.",
+      "relation": "supports"
+    },
+    "c_ca8f7e5a933b8e8a90a7": {
+      "citation_id": "c_ca8f7e5a933b8e8a90a7",
+      "paper_id": "2025.naacl-long.449",
+      "claim": "Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships.",
+      "supporting_excerpt": "Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships.",
+      "relation": "supports"
+    }
+  }
+}

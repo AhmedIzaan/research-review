@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-08T10:18:34.864743+00:00",
+  "credential_present": true,
+  "model": "gemini-3.5-flash-lite",
+  "status": "success",
+  "response": {
+    "status": "ok"
+  },
+  "api_events": [
+    {
+      "label": "connection_check",
+      "model": "gemini-3.5-flash-lite",
+      "attempt": 1,
+      "timestamp": "2026-11-08T10:18:34.868180+00:00",
+      "prompt_hash": "af9568f1011f040d0305effba07f9d15140245755345d443744123dea4b65e4e",
+      "input_tokens": 18,
+      "output_tokens": 6,
+      "thinking_tokens": 0,
+      "total_tokens": 24,
+      "estimated_cost_usd": 0.0,
+      "status": "ok",
+      "validation_failure": false,
+      "elapsed_seconds": 1.6739066189984442
+    }
+  ]
+}

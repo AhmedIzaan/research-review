@@ -1,0 +1,81 @@
+{
+  "protocol": "stratified_purposive_bm25_v1",
+  "corpus_fingerprint": "f7fab07f8dc5320a4a579d579ec0f27f30c3fe49ce3ec487f8c98418dc3b5e07",
+  "seeds_fingerprint": "7fe6a120aace27ef18bf24d7aacb448476ca0126b56f9f5af77bea58272b3bcc",
+  "selection": [
+    {
+      "paper_id": "2024.acl-long.71",
+      "stratum": "retrieval",
+      "query": "retrieval augmented generation evidence grounding",
+      "pass": 1
+    },
+    {
+      "paper_id": "2024.acl-long.668",
+      "stratum": "factuality",
+      "query": "factuality hallucination verification factual consistency",
+      "pass": 1
+    },
+    {
+      "paper_id": "2025.naacl-long.509",
+      "stratum": "efficiency",
+      "query": "efficient inference quantization compression language model",
+      "pass": 1
+    },
+    {
+      "paper_id": "2024.acl-long.406",
+      "stratum": "reasoning",
+      "query": "compositional reasoning logical reasoning language models",
+      "pass": 1
+    },
+    {
+      "paper_id": "2024.acl-long.174",
+      "stratum": "multilinguality",
+      "query": "multilingual cross lingual low resource transfer",
+      "pass": 1
+    },
+    {
+      "paper_id": "2024.acl-long.288",
+      "stratum": "evaluation",
+      "query": "benchmark evaluation reliability language models",
+      "pass": 1
+    },
+    {
+      "paper_id": "2025.naacl-long.491",
+      "stratum": "retrieval",
+      "query": "retrieval augmented generation evidence grounding",
+      "pass": 2
+    },
+    {
+      "paper_id": "2024.acl-long.586",
+      "stratum": "factuality",
+      "query": "factuality hallucination verification factual consistency",
+      "pass": 2
+    },
+    {
+      "paper_id": "2024.acl-long.544",
+      "stratum": "efficiency",
+      "query": "efficient inference quantization compression language model",
+      "pass": 2
+    },
+    {
+      "paper_id": "2025.naacl-long.420",
+      "stratum": "reasoning",
+      "query": "compositional reasoning logical reasoning language models",
+      "pass": 2
+    },
+    {
+      "paper_id": "2025.naacl-short.8",
+      "stratum": "multilinguality",
+      "query": "multilingual cross lingual low resource transfer",
+      "pass": 2
+    },
+    {
+      "paper_id": "2024.acl-long.624",
+      "stratum": "evaluation",
+      "query": "benchmark evaluation reliability language models",
+      "pass": 2
+    }
+  ],
+  "criteria": "Two per six predefined topic strata, interleaved; BM25 top remaining abstract >=80 words, year 2024–2025, exclude original ideation/review seeds. No experiment outcomes used.",
+  "limitations": "Purposive lexical sample from a bounded ACL corpus, not a random sample of science. Prefixes are smoke tests; full 12 covers all strata twice. Generation repetitions do not increase independent seed count."
+}

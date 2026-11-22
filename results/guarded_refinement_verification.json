@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-15T11:42:55.111209+00:00",
+  "protocol": "specialized_review_v3_guarded",
+  "software_tests": {
+    "command": "../.venv/bin/python -m pytest -q",
+    "passed": 133,
+    "skipped": 2,
+    "failed": 0,
+    "scope": "Full suite; final budget-default consistency change additionally checked with three targeted tests."
+  },
+  "frontend_tests": {
+    "command": "node tests/trace-ui.test.cjs",
+    "passed": 14,
+    "failed": 0,
+    "scope": "Minimal DOM harness and helper tests, not browser screenshots"
+  },
+  "dry_run": {
+    "independent_seeds": 3,
+    "rounds": 1,
+    "conditions": [
+      "one_shot",
+      "generic",
+      "generic_matched",
+      "full",
+      "full_unguarded"
+    ],
+    "judge_repeats": 2,
+    "planned_calls_before_retries": 93,
+    "upper_attempts_with_retries": 279,
+    "network_calls": 0
+  },
+  "historical_integrity": {
+    "smoke_raw_records_hash_checked": 157,
+    "smoke_v2_raw_records_hash_checked": 174,
+    "paper_source_records_hash_checked": 177,
+    "changed": []
+  },
+  "live_experiments_for_new_protocol": "not_started; user will run",
+  "human_evaluation": "packet and strict import implemented; no real ratings supplied",
+  "quality_improvements": "untested empirical hypothesis; software fixtures are not research findings",
+  "paper": "unchanged pending new real experiment results"
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "blind_id": "e7f12abb685106864f1a41be",
+    "seed_id": "topic:Reducing incorrect answers in RAG systems by detecting contradictions between retrieved documents and allowing the model to abstain when evidence is insufficient.",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 0,
+    "run_id": "fff8592ef95a73dda616",
+    "is_final": false,
+    "idea": {
+      "title": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification",
+      "research_problem": "Large Language Models relying on Retrieval-Augmented Generation frequently hallucinate or generate ungrounded responses when confronted with conflicting or insufficient evidence passages, failing to abstain appropriately when contextually contradictory data is retrieved.",
+      "research_gap": "Bounded search findings indicate that while existing work addresses chunk-free retrieval and contrastive explanations for RAG, current frameworks lack a lightweight inference-time verification mechanism that explicitly detects inter-document contradictions and triggers calibrated model abstention when evidence does not logically entail the answer.",
+      "methodology": "We propose a two-stage inference framework combining text entailment transformation and contradiction detection. First, we adopt a frozen encoder with a lightweight learned query transformer to align retrieval embeddings for semantic entailment. Second, we introduce a structured verification module that decomposes retrieved passages into atomic facts, checks for pairwise contradictions, and evaluates logical entailment against the query. If inter-document contradictions exceed a threshold or entailment scores fall below a calibrated confidence margin, the system forces the generator to abstain rather than hallucinate an answer.",
+      "expected_contribution": "We hypothesize that explicitly modeling inter-document contradictions and coupling them with a calibrated abstention gate will significantly reduce factual hallucination rates in open-domain QA while preserving answer recall on supported queries.",
+      "experimental_setup": "We evaluate on open-domain question answering benchmarks including HotpotQA and subset derivations from REVEAL, using a consumer GPU (12 GB VRAM) for local inference and embedding transformations. We benchmark our pipeline against standard vanilla RAG and contrastive retrieval baselines.",
+      "evaluation_strategy": "We measure Exact Match (EM), F1 score, and specifically Abstention Precision/Recall to quantify whether the model correctly abstains on contradictory or insufficient contexts without refusing answerable queries.",
+      "feasibility_assumptions": [
+        "A consumer GPU with 12 GB VRAM is sufficient to run local inference for small-scale open-source LLMs and embedding transformations without full model retraining.",
+        "Publicly available datasets like HotpotQA and REVEAL provide adequate multi-document instances containing conflicting or noisy evidence passages."
+      ],
+      "references": [],
+      "search_queries": [
+        "contradiction detection in retrieval augmented generation",
+        "abstention mechanisms for faithful question answering",
+        "transform retrieval textual entailment RAG"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "The lightweight query transformation model can be optimized within local hardware constraints without full LLM fine-tuning.",
+          "validation_step": "Train the projection MLP using frozen encoder outputs on a small subset of HotpotQA for 5 epochs and measure gradient stability.",
+          "acceptance_criterion": "Training completes within 4 hours on a 12 GB GPU with validation loss decreasing monotonically.",
+          "fallback": "Substitute the learned MLP with a fixed rule-based query expansion heuristic."
+        },
+        {
+          "assumption": "Prompt-based atomic fact decomposition and contradiction detection can run reliably on a 7B parameter open-weights model.",
+          "validation_step": "Run the 4-step factual decomposition pipeline on a 200-sample validation split and compute agreement with human contradiction labels.",
+          "acceptance_criterion": "Achieves at least 65 percent agreement with reference contradiction tags.",
+          "fallback": "Use stricter regex parsing filters combined with external NLI entailment classifiers."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2025.naacl-short.50",
+          "shared_mechanism": "Utilizes a transform model to align query embeddings for semantic entailment without re-encoding the corpus.",
+          "proposed_difference": "Integrates transform retrieval directly with an explicit inter-document contradiction detector and a calibrated abstention gate, rather than focusing solely on entailment matching.",
+          "verification_needed": "Ablate the transform retrieval component to measure its isolated impact on contradiction detection accuracy."
+        },
+        {
+          "paper_id": "2025.naacl-long.557",
+          "shared_mechanism": "Constructs contrastive explanations or comparative passages to improve reasoning in RAG.",
+          "proposed_difference": "Focuses on automated contradiction detection and programmatic abstention rather than generating qualitative contrastive text demonstrations.",
+          "verification_needed": "Compare output refusal accuracy against contrastive prompt demonstrations on ambiguous datasets."
+        },
+        {
+          "paper_id": "2024.acl-long.254",
+          "shared_mechanism": "Evaluates reasoning chains for attribution to evidence passages and logical consistency.",
+          "proposed_difference": "Applies verification at the retrieved evidence and contradiction-checking stage prior to generation rather than evaluating completed reasoning chains post-hoc.",
+          "verification_needed": "Evaluate runtime overhead and error propagation differences between pre-generation filtering and post-hoc verification."
+        }
+      ]
+    }
+  },
+  {
+    "blind_id": "9cc87cdbee69333b3455b247",
+    "seed_id": "topic:Reducing incorrect answers in RAG systems by detecting contradictions between retrieved documents and allowing the model to abstain when evidence is insufficient.",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 1,
+    "run_id": "fff8592ef95a73dda616",
+    "is_final": true,
+    "idea": {
+      "title": "Mitigating RAG Hallucinations via Contradiction-Aware Abstention and Evidence Entailment Verification",
+      "research_problem": "Large Language Models relying on Retrieval-Augmented Generation frequently hallucinate or generate ungrounded responses when confronted with conflicting or insufficient evidence passages, failing to abstain appropriately when contextually contradictory data is retrieved.",
+      "research_gap": "Bounded search findings indicate that while existing work addresses transform-based textual entailment retrieval and atomic fact state tracking separately, current frameworks lack an integrated, resource-constrained inference-time verification mechanism that explicitly detects inter-document contradictions and triggers calibrated model abstention when evidence does not logically entail the answer.",
+      "methodology": "We propose a two-stage inference framework combining a lightweight query transform for semantic alignment and a structured verification module. First, we adopt a frozen encoder with a lightweight learned query transformer to align retrieval embeddings for semantic entailment. Second, rather than exhaustive multi-step decomposition, we introduce a lightweight cross-encoder NLI scoring module and a contradiction gate to evaluate pairwise passage consistency and logical entailment against the query. If inter-document contradictions exceed a calibrated threshold or entailment scores fall below a confidence margin, the system forces generator abstention. We implement 4-bit INT quantization via bitsandbytes to ensure execution within a 12 GB VRAM limit.",
+      "expected_contribution": "We hypothesize that explicitly modeling inter-document contradictions via a lightweight cross-encoder coupled with a calibrated abstention gate will significantly reduce factual hallucination rates in open-domain QA while preserving answer recall on supported queries.",
+      "experimental_setup": "We evaluate on open-domain question answering benchmarks including HotpotQA and subset derivations from REVEAL, using a single consumer GPU (12 GB VRAM) running a 7B open-weights model with 4-bit quantization. We benchmark our pipeline against standard vanilla RAG, contrastive retrieval baselines, and a sequence-level log-probability abstention baseline.",
+      "evaluation_strategy": "We measure Exact Match (EM), F1 score, and specifically Abstention Precision/Recall to quantify whether the model correctly abstains on contradictory or insufficient contexts without refusing answerable queries.",
+      "feasibility_assumptions": [
+        "A 7B parameter open-weights model with 4-bit INT quantization can execute local inference and embedding transformations within 12 GB VRAM.",
+        "Publicly available datasets like HotpotQA provide adequate multi-document instances containing conflicting or noisy evidence passages."
+      ],
+      "references": [
+        "2025.naacl-short.50",
+        "2025.naacl-long.144",
+        "2024.acl-long.254",
+        "2025.naacl-long.557"
+      ],
+      "search_queries": [
+        "contradiction detection retrieval augmented generation",
+        "abstention mechanisms faithful question answering",
+        "transform retrieval textual entailment RAG"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "The 7B parameter quantized model paired with the cross-encoder verification module fits within the 12GB VRAM constraint during batch inference.",
+          "validation_step": "Run memory profiling over a 50-sample validation batch from HotpotQA while tracking peak VRAM consumption.",
+          "acceptance_criterion": "Peak VRAM usage remains strictly under 11.5 GB.",
+          "fallback": "Reduce the batch size to 1 and offload auxiliary layers to CPU."
+        },
+        {
+          "assumption": "A lightweight cross-encoder NLI classifier correlates reliably with contradiction presence without full prompt-based atomic decomposition.",
+          "validation_step": "Compute classification agreement between the cross-encoder and human-annotated contradiction labels on 200 validation samples.",
+          "acceptance_criterion": "Achieves at least 65 percent agreement with reference contradiction tags.",
+          "fallback": "Incorporate a stricter regex parsing filter combined with verbalized confidence thresholds."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2025.naacl-short.50",
+          "shared_mechanism": "Utilizes a transform model to align query embeddings for semantic entailment without re-encoding the corpus.",
+          "proposed_difference": "Integrates transform retrieval directly with an explicit cross-encoder inter-document contradiction detector and a calibrated abstention gate, rather than focusing solely on entailment matching.",
+          "verification_needed": "Ablate the transform retrieval component to measure its isolated impact on contradiction detection accuracy."
+        },
+        {
+          "paper_id": "2025.naacl-long.557",
+          "shared_mechanism": "Constructs contrastive explanations or comparative passages to improve reasoning in RAG.",
+          "proposed_difference": "Focuses on automated contradiction detection and programmatic abstention rather than generating qualitative contrastive text demonstrations.",
+          "verification_needed": "Compare output refusal accuracy against contrastive prompt demonstrations on ambiguous datasets."
+        },
+        {
+          "paper_id": "2024.acl-long.254",
+          "shared_mechanism": "Evaluates reasoning chains for attribution to evidence passages and logical consistency.",
+          "proposed_difference": "Applies verification at the retrieved evidence and contradiction-checking stage prior to generation rather than evaluating completed reasoning chains post-hoc.",
+          "verification_needed": "Evaluate runtime overhead and error propagation differences between pre-generation filtering and post-hoc verification."
+        },
+        {
+          "paper_id": "2025.naacl-long.144",
+          "shared_mechanism": "Tracks factual consistency and state updates across text segments.",
+          "proposed_difference": "Replaces multi-step LLM-based state tracking with a single-pass cross-encoder verification mechanism to satisfy hardware constraints.",
+          "verification_needed": "Compare the execution time and contradiction accuracy against multi-step decomposition."
+        }
+      ]
+    }
+  }
+]

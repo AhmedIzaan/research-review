@@ -1,0 +1,127 @@
+[
+  {
+    "blind_id": "5f71617c4a0b634a61b271f5",
+    "seed_id": "topic:Does model quantization change schema-valid JSON generation more than task-answer accuracy, and can constrained decoding recover format reliability without masking semantic errors?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 0,
+    "run_id": "0be0f4db5ca65dd08f70",
+    "is_final": true,
+    "accepted": true,
+    "idea": {
+      "title": "Quantization Impact on Schema-Valid JSON Generation and Constrained Decoding Recovery in Low-Resource LLMs",
+      "research_problem": "Does model quantization change schema-valid JSON generation more than task-answer accuracy, and can constrained decoding recover format reliability without masking semantic errors?",
+      "research_gap": "While post-training quantization is widely used to fit models into memory-constrained hardware, and constrained decoding or sketch-guided methods handle structural compliance, bounded literature searches indicate an unexplored trade-off: whether structural format degradation caused by 4-bit or 8-bit quantization diverges from task-answer accuracy degradation, and whether constraint enforcement merely masks underlying semantic hallucinations.",
+      "methodology": "We analyze pre-quantized and unquantized open-weight base models under standard API or local huggingface runtime limits. We evaluate task accuracy alongside strict schema validation (JSON schema adherence) using auxiliary constraint routines. We isolate structural failures from semantic errors by pairing exact-match answer scoring with schema validator outputs across multiple quantization levels (FP16, INT8, INT4).",
+      "expected_contribution": "We expect to demonstrate that quantization disproportionately harms syntax-level JSON schema compliance compared to semantic answer accuracy. Furthermore, we hypothesize that applying constrained decoding recovers structural validity but increases semantic error rates by forcing incorrect generations into valid schemas.",
+      "experimental_setup": "We utilize a 12 GB consumer GPU running open-weight models (e.g., Llama-3-8B via unverified local Hugging Face access). We evaluate on a public dataset of structured information extraction tasks with pre-defined JSON schemas. We measure syntax validity via JSON schema parsers and semantic correctness via exact match and ROUGE.",
+      "evaluation_strategy": "We split the benchmark dataset into a calibration subset (500 samples) to tune decoding threshold parameters and a held-out test set (1,500 samples) for final evaluation. We aggregate confidence scores using mean logit probabilities where available, evaluating exact structural validity and semantic correctness independently.",
+      "feasibility_assumptions": [
+        "A 12 GB consumer GPU can load an 8B parameter model using 4-bit quantization.",
+        "Public JSON extraction datasets can be mapped cleanly to strict JSON schemas.",
+        "Logits or token-level masks can be accessed locally for constraint checks."
+      ],
+      "references": [],
+      "search_queries": [
+        "quantization impact on structured generation schema validity",
+        "constrained decoding syntax error semantic hallucination",
+        "post-training quantization structural degradation LLM"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "4-bit quantization degrades JSON schema compliance more rapidly than semantic accuracy.",
+          "validation_step": "Measure validation error rates and answer accuracy drops across FP16, INT8, and INT4 variants on the calibration set.",
+          "acceptance_criterion": "Statistically significant disproportionate increase in syntax errors over semantic error increases at INT4.",
+          "fallback": "If degradation is uniform, re-frame the study around unified performance decay rather than structural divergence."
+        },
+        {
+          "assumption": "Constrained decoding restores JSON validity without increasing semantic error rates.",
+          "validation_step": "Compare semantic accuracy of constrained versus unconstrained generations on invalid outputs.",
+          "acceptance_criterion": "Semantic error rate remains stable within a 5% margin when constraints force valid syntax.",
+          "fallback": "If semantic error increases significantly, confirm and quantify the masking effect as a primary finding."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2025.naacl-industry.41",
+          "shared_mechanism": "Evaluates 4-bit post-training quantization and its downstream effects on model generation quality.",
+          "proposed_difference": "Focuses specifically on structural JSON schema validity divergence versus task-answer accuracy rather than general text generation quality.",
+          "verification_needed": "Run comparative quantization sweeps measuring syntax versus semantic metrics independently."
+        },
+        {
+          "paper_id": "2024.acl-short.23",
+          "shared_mechanism": "Employs constrained decoding techniques to enforce structural constraints on language model outputs.",
+          "proposed_difference": "Investigates whether constraint enforcement masks underlying semantic errors rather than truly correcting model reasoning.",
+          "verification_needed": "Analyze semantic correctness scores specifically on instances where constraints successfully enforce structural validity."
+        }
+      ],
+      "core_hypothesis": "Model quantization causes a greater degradation in structural JSON schema compliance than in semantic task-answer accuracy, and applying constrained decoding to recover format reliability masks underlying semantic errors.",
+      "distinctive_mechanism": "Joint tracking of structural format failures and semantic correctness across multi-bit quantization tiers combined with constrained decoding error-masking analysis.",
+      "minimum_test": "Evaluate a 4-bit quantized model on 200 schema-constrained extraction instances with and without decoding constraints, measuring both JSON parse success and semantic answer match."
+    }
+  },
+  {
+    "blind_id": "25f9183581ded30ada49fd83",
+    "seed_id": "topic:Does model quantization change schema-valid JSON generation more than task-answer accuracy, and can constrained decoding recover format reliability without masking semantic errors?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 1,
+    "run_id": "0be0f4db5ca65dd08f70",
+    "is_final": false,
+    "accepted": false,
+    "idea": {
+      "title": "Quantization Impact on Schema-Valid JSON Generation and Constrained Decoding Recovery in Low-Resource LLMs",
+      "research_problem": "Does model quantization change schema-valid JSON generation more than task-answer accuracy, and can constrained decoding recover format reliability without masking semantic errors?",
+      "research_gap": "While post-training quantization is widely used to fit models into memory-constrained hardware, and constrained decoding or sketch-guided methods handle structural compliance, bounded literature searches indicate an unexplored trade-off: whether structural format degradation caused by 4-bit or 8-bit quantization diverges from task-answer accuracy degradation, and whether constraint enforcement merely masks underlying semantic hallucinations.",
+      "methodology": "We analyze pre-quantized and unquantized open-weight base models under standard local Hugging Face runtime limits. We evaluate task accuracy alongside strict schema validation (JSON schema adherence) using auxiliary constraint routines. We isolate structural failures from semantic errors by pairing exact-match answer scoring with schema validator outputs across multiple quantization levels (FP16, INT8, INT4).",
+      "expected_contribution": "We expect to demonstrate that quantization disproportionately harms syntax-level JSON schema compliance compared to semantic answer accuracy. Furthermore, we hypothesize that applying constrained decoding recovers structural validity but increases semantic error rates by forcing incorrect generations into valid schemas.",
+      "experimental_setup": "We utilize a 12 GB consumer GPU running open-weight models via local Hugging Face access. We evaluate on a public subset of structured information extraction tasks with pre-defined JSON schemas. We measure syntax validity via JSON schema parsers and semantic correctness via exact match and ROUGE.",
+      "evaluation_strategy": "We split the benchmark dataset into a calibration subset (500 samples) to tune decoding threshold parameters and a held-out test set (1,500 samples) for final evaluation. We aggregate confidence scores using mean logit probabilities where available, evaluating exact structural validity and semantic correctness independently.",
+      "feasibility_assumptions": [
+        "A 12 GB consumer GPU can load an 8B parameter model using 4-bit quantization with context length limits.",
+        "Public JSON extraction datasets can be mapped cleanly to strict JSON schemas.",
+        "Logits or token-level masks can be accessed locally for constraint checks."
+      ],
+      "references": [
+        "2025.naacl-industry.41",
+        "2024.acl-short.23"
+      ],
+      "search_queries": [
+        "quantization impact on structured generation schema validity",
+        "constrained decoding syntax error semantic hallucination",
+        "post-training quantization structural degradation LLM"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "4-bit quantization degrades JSON schema compliance more rapidly than semantic accuracy.",
+          "validation_step": "Measure validation error rates and answer accuracy drops across FP16, INT8, and INT4 variants on the calibration set.",
+          "acceptance_criterion": "Statistically significant disproportionate increase in syntax errors over semantic error increases at INT4.",
+          "fallback": "If degradation is uniform, re-frame the study around unified performance decay rather than structural divergence."
+        },
+        {
+          "assumption": "Constrained decoding restores JSON validity without increasing semantic error rates.",
+          "validation_step": "Compare semantic accuracy of constrained versus unconstrained generations on invalid outputs.",
+          "acceptance_criterion": "Semantic error rate remains stable within a 5% margin when constraints force valid syntax.",
+          "fallback": "If semantic error increases significantly, confirm and quantify the masking effect as a primary finding."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2025.naacl-industry.41",
+          "shared_mechanism": "Evaluates 4-bit post-training quantization and its downstream effects on model generation quality.",
+          "proposed_difference": "Focuses specifically on structural JSON schema validity divergence versus task-answer accuracy rather than general text generation quality.",
+          "verification_needed": "Run comparative quantization sweeps measuring syntax versus semantic metrics independently."
+        },
+        {
+          "paper_id": "2024.acl-short.23",
+          "shared_mechanism": "Employs constrained decoding techniques to enforce structural constraints on language model outputs.",
+          "proposed_difference": "Investigates whether constraint enforcement masks underlying semantic errors rather than truly correcting model reasoning.",
+          "verification_needed": "Analyze semantic correctness scores specifically on instances where constraints successfully enforce structural validity."
+        }
+      ],
+      "core_hypothesis": "Model quantization causes a greater degradation in structural JSON schema compliance than in semantic task-answer accuracy, and applying constrained decoding to recover format reliability masks underlying semantic errors.",
+      "distinctive_mechanism": "Joint tracking of structural format failures and semantic correctness across multi-bit quantization tiers combined with constrained decoding error-masking analysis.",
+      "minimum_test": "Evaluate a 4-bit quantized model on 200 schema-constrained extraction instances with and without decoding constraints, measuring both JSON parse success and semantic answer match."
+    }
+  }
+]

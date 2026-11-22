@@ -1,0 +1,138 @@
+{
+  "saved_configurations": 12,
+  "distinct_seeds": 2,
+  "reviewer_failures": [
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_feasibility",
+      "round": 3,
+      "role": "novelty",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_feasibility",
+      "round": 3,
+      "role": "clarity",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_contrarian",
+      "round": 1,
+      "role": "novelty",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_contrarian",
+      "round": 1,
+      "role": "feasibility",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_contrarian",
+      "round": 1,
+      "role": "clarity",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "full",
+      "round": 1,
+      "role": "clarity",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "full",
+      "round": 2,
+      "role": "feasibility",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_novelty_retrieval",
+      "round": 1,
+      "role": "novelty",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_novelty_retrieval",
+      "round": 1,
+      "role": "clarity",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_novelty_retrieval",
+      "round": 2,
+      "role": "feasibility",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "no_novelty_retrieval",
+      "round": 3,
+      "role": "novelty",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2024.acl-long.18",
+      "configuration": "no_feasibility",
+      "round": 3,
+      "role": "contrarian",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "seed_id": "2025.naacl-long.342",
+      "configuration": "generic",
+      "round": 1,
+      "role": "generic",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    }
+  ],
+  "stopping_reasons": {
+    "one_shot": 2,
+    "iteration_limit": 6,
+    "all_reviewers_failed": 2,
+    "unchanged_proposal": 2
+  },
+  "unique_judgments_attempted": 11,
+  "unique_judgments_accepted": 6,
+  "unique_judgments_failed": 5,
+  "judgment_errors": [
+    {
+      "blind_id": "2fda9cd7f83d166514276ed6",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "blind_id": "de890660363cd3c2eb5bf187",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "blind_id": "cd0f4912684478f0069b135f",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "blind_id": "eb5735af508a39808c9f480f",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    },
+    {
+      "blind_id": "abe4f46c2533f2f9e6885513",
+      "error": "Evidence excerpt does not match retrieved abstract"
+    }
+  ],
+  "all_saved_api_attempts": 129,
+  "api_error_counts": {
+    "HTTP 503": 9,
+    "NetworkOrTimeoutError": 3,
+    "StructuredOutputValidationError": 3
+  },
+  "provider_reported_total_tokens_lower_bound": 570648,
+  "attempts_without_usage_metadata": 12,
+  "scientific_interpretation": "Pilot with incomplete paired outcomes; no efficacy or significance conclusion.",
+  "latest_suite_wall_seconds": 1876.234989
+}

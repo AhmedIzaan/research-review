@@ -1,0 +1,132 @@
+[
+  {
+    "blind_id": "30651de5888331e2eeae9f69",
+    "seed_id": "topic:How do few-shot example order and class imbalance affect pretrained language-model classification, and does balancing example labels improve worst-order performance at a fixed prompt length?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 0,
+    "run_id": "d70b7ca975c06b088020",
+    "is_final": false,
+    "accepted": true,
+    "idea": {
+      "title": "Investigating the Joint Impact of Few-Shot Example Order and Class Imbalance on Pretrained Language Model Classification Robustness",
+      "research_problem": "Pretrained language models exhibit high sensitivity to the ordering and composition of in-context few-shot demonstration examples, particularly under conditions of class imbalance. However, the interaction between demonstration ordering sensitivity and class label distribution skew remains unquantified for text classification.",
+      "research_gap": "Bounded search findings indicate that while prompt sensitivity metrics and cross-lingual example selection have been studied, the combined influence of class imbalance within the few-shot demonstration bank and sequence ordering on worst-case prediction variance is unexplored for mid-to-low resource text classification.",
+      "methodology": "We operationalize demonstration sensitivity by systematically varying example order permutations and class imbalance ratios in the prompt context. Using a fixed prompt length, we construct balanced versus imbalanced demonstration subsets. We measure the variance in classification accuracy and label bias across permutations using an off-the-shelf instruction-tuned model via API access or local inference on a 12GB consumer GPU.",
+      "expected_contribution": "We hypothesize that enforcing label balance within the few-shot demonstration subset significantly reduces prompt ordering sensitivity and improves worst-case classification performance compared to naturally skewed demonstration sets.",
+      "experimental_setup": "We evaluate on a public text classification dataset (e.g., AG News or a publicly accessible multi-class text benchmark) using a 4-shot and 8-shot setting. We test 24 distinct permutations of example orderings under both balanced and heavily imbalanced class distributions, keeping total token length strictly constant across conditions.",
+      "evaluation_strategy": "We report mean accuracy, standard deviation across permutations (sensitivity metric), and worst-case (minimum) accuracy. We split data into a calibration set of 200 samples for prompt template selection and a held-out test set of 1,000 samples. Statistical significance is assessed using paired permutation tests with a confidence threshold of p < 0.05.",
+      "feasibility_assumptions": [
+        "Pretrained models accessed via API or local 12GB GPU can reliably output token log-probabilities or discrete predictions for all permutations.",
+        "Publicly available benchmark texts can be truncated to fit fixed prompt length constraints without losing gold-label semantics.",
+        "Permutation testing across 24 orderings fits within inference time and API rate limits for the 1,000 test instances."
+      ],
+      "references": [
+        "2024.acl-srw.19",
+        "2025.naacl-long.73",
+        "2025.naacl-long.17"
+      ],
+      "search_queries": [
+        "prompt sensitivity class imbalance few-shot classification",
+        "in-context learning order effect text classification",
+        "balanced demonstrations prompt robustness"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "API or local model inference latency allows running 24 order permutations across 1,000 test instances within standard evaluation timeframes.",
+          "validation_step": "Run a pilot test measuring inference time for 50 instances across all 24 permutations.",
+          "acceptance_criterion": "Total pilot execution completes under 30 minutes.",
+          "fallback": "Reduce the evaluated permutation sample space to 8 representative orderings using Latin hypercube sampling."
+        },
+        {
+          "assumption": "Fixed prompt length truncation does not systematically distort class label representations in the demonstration set.",
+          "validation_step": "Inspect token counts and semantic overlap scores of truncated versus full demonstration texts.",
+          "acceptance_criterion": "Cosine similarity between full and truncated text embeddings remains above 0.85.",
+          "fallback": "Adjust the maximum token budget upward to accommodate untruncated shortest-quartile examples."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2025.naacl-long.73",
+          "shared_mechanism": "Evaluates prompt sensitivity and consistency metrics across prompt rephrasings for text classification.",
+          "proposed_difference": "Focuses on demonstration example ordering permutations and class imbalance interaction rather than surface prompt rephrasings.",
+          "verification_needed": "Confirm that ordering variance metrics correlate with or act orthogonally to rephrasing sensitivity."
+        },
+        {
+          "paper_id": "2025.naacl-long.17",
+          "shared_mechanism": "Optimizes few-shot demonstration selection and example bank retrieval for low-resource settings.",
+          "proposed_difference": "Examines explicit class balance constraints within a fixed-length prompt rather than cross-lingual example retrieval banks.",
+          "verification_needed": "Test whether balancing existing retrieved sets further mitigates worst-order performance drops."
+        }
+      ],
+      "core_hypothesis": "Enforcing uniform class label distribution among few-shot in-context examples significantly decreases performance variance across random demonstration orderings compared to imbalanced distributions.",
+      "distinctive_mechanism": "Controlled manipulation of class label counts within a constant-length demonstration sequence to isolate the effect of label balance on sequence-position bias.",
+      "minimum_test": "Compare the variance of classification accuracy across 24 fixed-length order permutations between a balanced 4-shot prompt and an imbalanced 4-shot prompt on a 200-sample validation subset."
+    }
+  },
+  {
+    "blind_id": "4175b54dd02d3f30ee1b127c",
+    "seed_id": "topic:How do few-shot example order and class imbalance affect pretrained language-model classification, and does balancing example labels improve worst-order performance at a fixed prompt length?",
+    "replicate": 0,
+    "configuration": "full",
+    "round": 1,
+    "run_id": "d70b7ca975c06b088020",
+    "is_final": true,
+    "accepted": true,
+    "idea": {
+      "title": "Investigating the Joint Impact of Few-Shot Example Order and Class Imbalance on Pretrained Language Model Classification Robustness",
+      "research_problem": "Pretrained language models exhibit high sensitivity to the ordering and composition of in-context few-shot demonstration examples, particularly under conditions of class imbalance. However, the interaction between demonstration ordering sensitivity and class label distribution skew remains unquantified for text classification.",
+      "research_gap": "Bounded search findings indicate that while prompt sensitivity metrics and cross-lingual example selection have been studied (2025.naacl-long.73, 2025.naacl-long.17), the combined influence of class imbalance within the few-shot demonstration bank and sequence ordering on worst-case prediction variance is unexplored for mid-to-low resource text classification.",
+      "methodology": "We operationalize demonstration sensitivity by systematically varying example order permutations and class imbalance ratios in the prompt context. Using a fixed prompt length without aggressive truncation of semantic cues, we construct balanced versus imbalanced demonstration subsets. We measure the variance in classification accuracy and label bias across permutations using an off-the-shelf instruction-tuned model via API access or local inference on a 12GB consumer GPU.",
+      "expected_contribution": "We hypothesize that enforcing label balance within the few-shot demonstration subset significantly reduces prompt ordering sensitivity and improves worst-case classification performance compared to naturally skewed demonstration sets.",
+      "experimental_setup": "We evaluate on a public text classification dataset (AG News accessed via Hugging Face Datasets) using a 4-shot and 8-shot setting. We test 24 distinct permutations of example orderings under both balanced and heavily imbalanced class distributions, keeping total token length strictly constant across conditions.",
+      "evaluation_strategy": "We report mean accuracy, standard deviation across permutations (sensitivity metric), and worst-case (minimum) accuracy. We split data into a calibration set of 200 samples for prompt template selection and a held-out test set of 1,000 samples. Statistical significance is assessed using paired permutation tests with a confidence threshold of p < 0.05.",
+      "feasibility_assumptions": [
+        "Pretrained models accessed via API or local 12GB GPU can reliably output token log-probabilities or discrete predictions for all permutations.",
+        "Publicly available benchmark texts can be truncated to fit fixed prompt length constraints without losing gold-label semantics.",
+        "Permutation testing across 24 orderings fits within inference time and API rate limits for the 1,000 test instances."
+      ],
+      "references": [
+        "2024.acl-srw.19",
+        "2025.naacl-long.73",
+        "2025.naacl-long.17"
+      ],
+      "search_queries": [
+        "prompt sensitivity class imbalance few-shot classification",
+        "in-context learning order effect text classification",
+        "balanced demonstrations prompt robustness"
+      ],
+      "assumption_checks": [
+        {
+          "assumption": "API or local model inference latency allows running 24 order permutations across 1,000 test instances within standard evaluation timeframes.",
+          "validation_step": "Run a pilot test measuring inference time for 50 instances across all 24 permutations.",
+          "acceptance_criterion": "Total pilot execution completes under 30 minutes.",
+          "fallback": "Reduce the evaluated permutation sample space to 8 representative orderings using Latin hypercube sampling."
+        },
+        {
+          "assumption": "Fixed prompt length truncation does not systematically distort class label representations in the demonstration set.",
+          "validation_step": "Inspect token counts and semantic overlap scores of truncated versus full demonstration texts.",
+          "acceptance_criterion": "Cosine similarity between full and truncated text embeddings remains above 0.85.",
+          "fallback": "Adjust the maximum token budget upward to accommodate untruncated shortest-quartile examples."
+        }
+      ],
+      "prior_work_comparison": [
+        {
+          "paper_id": "2025.naacl-long.73",
+          "shared_mechanism": "Evaluates prompt sensitivity and consistency metrics across prompt variations for text classification.",
+          "proposed_difference": "Focuses on demonstration example ordering permutations and class imbalance interaction rather than surface prompt rephrasings.",
+          "verification_needed": "Confirm that ordering variance metrics correlate with or act orthogonally to rephrasing sensitivity."
+        },
+        {
+          "paper_id": "2025.naacl-long.17",
+          "shared_mechanism": "Optimizes few-shot demonstration selection and example bank retrieval for low-resource settings.",
+          "proposed_difference": "Examines explicit class balance constraints within a fixed-length prompt rather than cross-lingual example retrieval banks.",
+          "verification_needed": "Test whether balancing existing retrieved sets further mitigates worst-order performance drops."
+        }
+      ],
+      "core_hypothesis": "Enforcing uniform class label distribution among few-shot in-context examples significantly decreases performance variance across random demonstration orderings compared to imbalanced distributions.",
+      "distinctive_mechanism": "Controlled manipulation of class label counts within a constant-length demonstration sequence to isolate the effect of label balance on sequence-position bias.",
+      "minimum_test": "Compare the variance of classification accuracy across 24 fixed-length order permutations between a balanced 4-shot prompt and an imbalanced 4-shot prompt on a 200-sample validation subset."
+    }
+  }
+]
